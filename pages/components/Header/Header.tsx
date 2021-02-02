@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Navigation from './Menu/MenuItems';
 import MenuToggle from './Menu/MenuToggle';
 import SideBar from './Menu/SIdeBar';
-import { useDimension } from '../hooks/useDimension';
+import useDimension from '../hooks/useDimension';
 import { MenuIcon } from '../../../styles/Icons';
 
 const Header: FunctionComponent = () => {

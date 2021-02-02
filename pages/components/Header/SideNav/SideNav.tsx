@@ -28,7 +28,7 @@ const variant = {
   },
 };
 
-export const SideNav = () => {
+const SideNav = () => {
   return (
     <SideNavLink variants={variants}>
       <motion.li variants={variant}>
@@ -82,3 +82,5 @@ const SideNavLink = styled(motion.ul)`
     }
   }
 `;
+
+export default SideNav;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { SideNav } from '../SideNav/SideNav';
+import SideNav from '../SideNav/SideNav';
 
 const sidebar = {
   open: (height = 1000) => ({
