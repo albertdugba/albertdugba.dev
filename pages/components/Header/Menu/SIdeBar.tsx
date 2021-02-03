@@ -35,13 +35,13 @@ const Aside = styled(motion.aside)`
   }
 `;
 
-const SideBar = ({ isOpen }) => {
+const SideBar = ({ isOpen, toggleOpen }) => {
   return (
     <Aside
       variants={sidebar}
       initial={false}
       animate={isOpen ? 'open' : 'closed'}>
-      <SideNav />
+      <SideNav toggleOpen={toggleOpen} />
     </Aside>
   );
 };

@@ -28,30 +28,31 @@ const variant = {
   },
 };
 
-const SideNav = () => {
+const SideNav = ({ toggleOpen }) => {
+  const closeMenuLinks = () => toggleOpen();
   return (
     <SideNavLink variants={variants}>
-      <motion.li variants={variant}>
+      <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/">
           <a>Home</a>
         </Link>
       </motion.li>
-      <motion.li variants={variant}>
+      <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/#about">
           <a>About</a>
         </Link>
       </motion.li>
-      <motion.li variants={variant}>
+      <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/#blog">
           <a>Blog</a>
         </Link>
       </motion.li>
-      <motion.li variants={variant}>
+      <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/#works">
           <a>Works</a>
         </Link>
       </motion.li>
-      <motion.li variants={variant}>
+      <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/#contact">
           <a>Contact</a>
         </Link>
