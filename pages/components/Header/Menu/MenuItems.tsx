@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import MenuItem from './MenuItem';
@@ -11,7 +12,7 @@ const variants = {
   },
 };
 
-const Navigation = () => {
+const Navigation: FunctionComponent = () => {
   return (
     <MenuContainer variants={variants}>
       <MenuItem />

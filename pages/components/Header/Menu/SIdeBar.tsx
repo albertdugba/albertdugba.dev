@@ -30,7 +30,7 @@ const Aside = styled(motion.aside)`
   right: 100px;
   width: 240px;
   background: var(--primaryColor);
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     display: none;
   }
 `;

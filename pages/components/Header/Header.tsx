@@ -14,7 +14,7 @@ const Header: FunctionComponent = () => {
 
   return (
     <NavBar>
-      <div className="container">
+      <div>
         <Nav custom={height} ref={containerRef} className="container">
           <SideBar isOpen={isOpen} />
           <h1>Albert.</h1>
