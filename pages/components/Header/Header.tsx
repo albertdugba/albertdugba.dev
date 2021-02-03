@@ -5,17 +5,14 @@ import styled from 'styled-components';
 import Navigation from './Menu/MenuItems';
 import MenuToggle from './Menu/MenuToggle';
 import SideBar from './Menu/SIdeBar';
-import useDimension from '../hooks/useDimension';
 
 const Header: FunctionComponent = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-  const { height } = useDimension(containerRef);
 
   return (
     <NavBar>
       <div>
-        <Nav custom={height} ref={containerRef} className="container">
+        <Nav className="container">
           <SideBar isOpen={isOpen} />
           <h1>Albert.</h1>
           <div className="icon">
