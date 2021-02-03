@@ -5,17 +5,12 @@ import styled from 'styled-components';
 
 const NavItem = styled(motion.li)`
   list-style: none;
-`;
-
-const NavLink = styled.a`
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s ease-out;
-  color: inherit;
-
-  &:hover {
-    border-bottom: 1px solid var(--primaryColor);
+  a {
+    color: black;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 800;
+    color: var(--primaryColor);
   }
 `;
 

@@ -1,13 +1,11 @@
-import { useRef } from 'react';
-
+import { FunctionComponent, useRef } from 'react';
 import { useCycle, motion } from 'framer-motion';
-import { FunctionComponent, useState } from 'react';
 import styled from 'styled-components';
+
 import Navigation from './Menu/MenuItems';
 import MenuToggle from './Menu/MenuToggle';
 import SideBar from './Menu/SIdeBar';
 import useDimension from '../hooks/useDimension';
-import { MenuIcon } from '../../../styles/Icons';
 
 const Header: FunctionComponent = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -22,7 +20,6 @@ const Header: FunctionComponent = () => {
           <h1>Albert.</h1>
           <div className="icon">
             <MenuToggle toggle={() => toggleOpen()} />
-            {/* <MenuIcon width="24" height="24" toggle={() => toggleOpen()} />{' '} */}
           </div>
           <Navigation />
         </Nav>

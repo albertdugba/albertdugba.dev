@@ -32,7 +32,6 @@ const MenuToggle = ({ toggle }) => {
     <Button onClick={toggle}>
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <Path
-          color="teal"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
