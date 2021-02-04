@@ -36,9 +36,8 @@ const About = () => {
 const AboutContent = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 35px;
   img {
     order: -1;
     width: 100%;
