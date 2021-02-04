@@ -3,16 +3,16 @@ import Card from '../lib/card';
 
 const About = () => {
   return (
-    <Dash id="about">
+    <Dash id="about" className="contaier">
       <h2>About.</h2>
 
       <AboutContent>
         <Card>
-          <h1>
+          <h2>
             {' '}
             I enjoy software development because it allows me to express my
             creativity
-          </h1>
+          </h2>
           <h4>Hey Albert here</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti

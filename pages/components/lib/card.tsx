@@ -6,6 +6,12 @@ const CardStyle = styled.div`
   padding-right: 30px;
   width: 100%;
   max-width: 550px;
+  margin: auto;
+
+  @media (max-width: 600px) {
+    max-width: 500px;
+    width: 93%;
+  }
 `;
 
 const Card = ({ children }) => {

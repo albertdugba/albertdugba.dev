@@ -47,10 +47,10 @@ const Hero = () => {
     <>
       <Container>
         <aside className="aside">
-          <h1>
+          <h2 className="contaier">
             Hi, welcome to my site, my name is Albert and I'm a{' '}
             {`${words[index].substring(0, subIndex)}${blink ? '|' : ''}`}
-          </h1>
+          </h2>
         </aside>
 
         <section></section>
@@ -62,8 +62,12 @@ const Hero = () => {
 const Container = styled.div`
   height: calc(100vh - 80px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
+  background: #34223a;
+  color: white;
+  text-align: center;
+  justify-content: center;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
@@ -75,7 +79,8 @@ const Container = styled.div`
     h1 {
       font-size: 3rem;
       @media (max-width: 600px) {
-        font-size: 1.5rem;
+        margin-top: 70px;
+        font-size: 2.5rem;
         grid-template-columns: 1fr;
       }
     }

@@ -15,8 +15,7 @@ export default function Home() {
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        style={{ marginTop: '51px' }}
-        className="container">
+        style={{ marginTop: '51px' }}>
         <Hero />
         <About />
       </motion.main>
