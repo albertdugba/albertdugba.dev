@@ -69,6 +69,7 @@ const Hero = () => {
 };
 
 const Container = styled.div`
+  height: 80vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
