@@ -1,20 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300&display=swap');
+@import 'fonts';
+@import 'variables';
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Assistant', sans-serif;
-  // background-color: #2f2733;
+  font-family: 'Product Sans Regular';
 }
 
 * {
   box-sizing: border-box;
-}
-
-:root {
-  // colors
-  --primaryColor: rgb(45, 30, 56);
 }
 
 .container {

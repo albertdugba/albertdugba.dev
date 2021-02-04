@@ -8,7 +8,12 @@ const Hero = () => {
   const [index, setIndex] = useState(0);
   const [blink, setBlink] = useState(true);
 
-  const words = ['Frontend Developer', 'Technical Writer'];
+  const words = [
+    'Frontend Developer',
+    'Mobile Developer',
+    'Technical Writer',
+    'Problem Solver',
+  ];
   // typeWriter
   useEffect(() => {
     if (index === words.length) return;
@@ -45,9 +50,12 @@ const Hero = () => {
 
   return (
     <>
-      <Container className="container">
+      <Container>
         <aside className="aside">
-          <h1>Hello my name is Albert Dugba, I'm a </h1>
+          <h1>
+            Hello my <br /> name is <br />
+            Albert Dugba, <br /> I'm a{' '}
+          </h1>
           <h1>
             {' '}
             {`${words[index].substring(0, subIndex)}${blink ? '|' : ''}`}

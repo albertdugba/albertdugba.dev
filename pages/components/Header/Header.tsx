@@ -14,7 +14,7 @@ const Header: FunctionComponent = () => {
       <div>
         <Nav className="container">
           <SideBar isOpen={isOpen} toggleOpen={toggleOpen} />
-          <h1>Albert.</h1>
+          <h1>@lbert.</h1>
           <div className="icon">
             <MenuToggle toggle={() => toggleOpen()} />
           </div>
