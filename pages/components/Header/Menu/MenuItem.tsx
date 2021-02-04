@@ -10,7 +10,6 @@ const NavItem = styled(motion.li)`
     text-decoration: none;
     margin-left: 25px;
     font-weight: 800;
-    color: var(--primaryColor);
   }
 `;
 
