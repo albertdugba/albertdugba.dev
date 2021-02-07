@@ -33,11 +33,6 @@ const SideNav = ({ toggleOpen }) => {
   return (
     <SideNavLink variants={variants}>
       <motion.li variants={variant} onClick={closeMenuLinks}>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </motion.li>
-      <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/#about">
           <a>About</a>
         </Link>
@@ -67,6 +62,7 @@ const SideNavLink = styled(motion.ul)`
   padding: 20px 28px;
   justify-content: center;
   height: 70vh;
+  z-index: 12;
 
   li {
     padding-top: 20px;

@@ -34,11 +34,6 @@ const MenuItem: FunctionComponent = () => {
   return (
     <>
       <NavItem variants={variants}>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </NavItem>
-      <NavItem>
         <Link href="/#about">
           <a>About</a>
         </Link>

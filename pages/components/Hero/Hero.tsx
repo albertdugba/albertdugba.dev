@@ -13,12 +13,14 @@ import TypeScript from '../../../styles/Icons/typescript';
 const Hero = () => {
   return (
     <>
-      <Container>
+      <Container className="container">
         <aside className="aside">
-          <h1>
-            Hi, welcome to my site, my name is Albert and I'm Software Engineer
-            {/* with a focus on frontend development */}
-          </h1>
+          <h1>Frontend Developer.</h1>
+          <span>
+            I like to craft solid and scalable frontend products with great user
+            experiences.
+          </span>
+          <h4>Design Systems. UI Engineering. Progressive Apps. Performance</h4>
         </aside>
 
         <Section
@@ -67,11 +69,11 @@ const Hero = () => {
 
 const Section = styled(motion.section)`
   position: relative;
-  width: 18rem;
-  height: 18rem;
+  width: 4rem;
+  height: 10rem;
   padding: 2.8em;
   border-radius: 50%;
-  margin: 1.75em auto 0;
+  margin: auto 0;
 
   li {
     display: block;
@@ -79,9 +81,9 @@ const Section = styled(motion.section)`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 4em;
-    height: 4em;
-    margin: -2em;
+    width: 2rem;
+    height: 2rem;
+    margin: -2rem;
   }
 
   .github--icon {
@@ -112,33 +114,39 @@ const Section = styled(motion.section)`
 `;
 
 const Container = styled.div`
-  height: calc(100vh - 50px);
+  height: calc(100vh - 10px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  background: #34223a;
-  color: white;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  place-items: center;
+  color: var(--primaryColor);
   text-align: center;
   justify-content: center;
   font-family: var(--fontFamily2);
   overflow: hidden;
-
-  h2 {
-  }
+  grid-gap: -20px;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    margin-top: 50px;
   }
 
   .aside {
     margin-top: -100px;
+    text-align: left;
+
+    h4 {
+      font-family: var(--fontFamily4);
+    }
+
     h1 {
       font-size: 2.5rem;
-      @media (max-width: 600px) {
-        margin-top: 70px;
-        font-size: 2.5rem;
-        grid-template-columns: 1fr;
+    }
+    @media (max-width: 701px) {
+      margin-top: 0px;
+      max-width: 90%;
+      margin: auto;
+
+      h1 {
+        font-size: 2rem;
       }
     }
   }

@@ -34,6 +34,7 @@ const NavBar = styled.header`
   height: 60px;
   background-color: white;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 `;
 
 const Nav = styled(motion.nav)`
