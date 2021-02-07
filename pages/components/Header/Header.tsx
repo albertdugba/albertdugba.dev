@@ -1,4 +1,4 @@
-import { FunctionComponent, useRef } from 'react';
+import { FunctionComponent } from 'react';
 import { useCycle, motion } from 'framer-motion';
 import styled from 'styled-components';
 
