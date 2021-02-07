@@ -3,13 +3,12 @@ import styled from 'styled-components';
 const CardStyle = styled.div`
   padding: 1rem;
   box-shadow: -4px -5px 10px var(--primaryColor);
-  padding-right: 30px;
-  width: 100%;
-  max-width: 550px;
+  width: 90%;
+  max-width: 500px;
   margin: auto;
 
   @media (max-width: 600px) {
-    max-width: 500px;
+    max-width: 450px;
     width: 93%;
   }
 `;

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import HeroSvgImage from '../../../styles/Icons/banner';
 
 const Hero = () => {
   const [subIndex, setSubIndex] = useState(0);
@@ -53,14 +52,16 @@ const Hero = () => {
           </h2>
         </aside>
 
-        <section></section>
+        <section>
+          <h1>Image goes here</h1>
+        </section>
       </Container>
     </>
   );
 };
 
 const Container = styled.div`
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -68,6 +69,10 @@ const Container = styled.div`
   color: white;
   text-align: center;
   justify-content: center;
+  font-family: var(--fontFamily2);
+
+  h2 {
+  }
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
