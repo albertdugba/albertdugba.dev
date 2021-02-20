@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Twitter from '../../../../styles/Icons/twitter';
+import Dev from '../../../../styles/Icons/dev';
+import Medium from '../../../../styles/Icons/medium';
+import LinkedIn from '../../../../styles/Icons/linkedin';
 
 const variants = {
   open: {
@@ -50,6 +54,29 @@ const SideNav = ({ toggleOpen }) => {
       <motion.li variants={variant} onClick={closeMenuLinks}>
         <Link href="/#contact">
           <a>Contact</a>
+        </Link>
+      </motion.li>
+
+      <motion.li>
+        <Link href="https://twitter.com/Albert_Dugba">
+          <a>
+            <Twitter width="1rem" height="1rem" />
+          </a>
+        </Link>
+        <Link href="https://twitter.com/Albert_Dugba">
+          <a>
+            <Dev width="1rem" height="1rem" />
+          </a>
+        </Link>
+        <Link href="https://twitter.com/Albert_Dugba">
+          <a>
+            <Medium width="1rem" height="1rem" />
+          </a>
+        </Link>
+        <Link href="https://twitter.com/Albert_Dugba">
+          <a>
+            <LinkedIn width="1rem" height="1rem" />
+          </a>
         </Link>
       </motion.li>
     </SideNavLink>
