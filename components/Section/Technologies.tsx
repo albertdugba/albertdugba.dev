@@ -18,13 +18,13 @@ const Technologies = () => {
     <div className="container">
       <h1>Tools and Technologies</h1>
       <IconsContainer>
-        <FireBase width={60} height={60} />
-        <GraphQL color="grey" width={60} height={60} />
-        <NextJS color="grey" width={60} height={60} />
-        <Terminal width={60} height={60} />
+        <FireBase width={60} height={60} color="yello" />
+        <GraphQL width={60} height={60} />
+        <NextJS width={60} height={60} />
+        <Terminal width={60} height={60} color="black" />
         <Redux width={60} height={60} />
-        <NodeJS color="grey" width={60} height={60} />
-        <ReactJS width={60} height={60} />
+        <NodeJS width={60} height={60} />
+        <ReactJS width={60} height={60} color="blue" />
       </IconsContainer>
     </div>
   );

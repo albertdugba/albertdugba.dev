@@ -1,6 +1,4 @@
-import React from 'react';
-
-const FireBase = ({ width, height }) => (
+const FireBase = ({ width, height, color }) => (
   <svg
     aria-hidden="true"
     focusable="false"

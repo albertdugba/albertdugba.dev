@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
@@ -10,7 +11,6 @@ const NavMenu = styled.nav`
   width: 100%;
   height: 100%;
   z-index: 999;
-  visibility: hidden;
 
   .nav-menu-inner {
     min-height: 100vh;
@@ -49,36 +49,48 @@ const NavMenu = styled.nav`
   }
 `;
 
-export const NavigationMenu = () => {
+interface NavMenuProps {
+  toggleMenu: boolean;
+  setToggleMenu: Function;
+}
+
+export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
   return (
     <>
-      <NavMenu>
-        <div className="close-nav-menu">&times;</div>
-        <div className="nav-menu-inner">
-          <ul>
-            <li>
-              <Link href="#">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                <a>About</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="#">
-                <a>Works</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </NavMenu>
+      {toggleMenu && (
+        <NavMenu>
+          <div
+            role="button"
+            onClick={() => setToggleMenu(false)}
+            className="close-nav-menu">
+            &times;
+          </div>
+          <div className="nav-menu-inner">
+            <ul>
+              <li>
+                <Link href="#">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>About</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>Blog</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>Works</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </NavMenu>
+      )}
     </>
   );
 };

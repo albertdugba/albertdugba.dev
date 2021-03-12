@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Medium = ({ width, height }) => (
   <svg
     aria-hidden="true"

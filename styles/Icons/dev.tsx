@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Dev = ({ width, height }) => (
   <svg
     aria-hidden="true"

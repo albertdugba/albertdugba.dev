@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import Moon from '../../styles/Icons/Moon';
 
 const Container = styled.header`
   display: flex;
@@ -50,7 +51,11 @@ const Container = styled.header`
   }
 `;
 
-export const Header = () => {
+interface HeaderProps {
+  setToggleMenu: Function;
+}
+
+export const Header = ({ setToggleMenu }: HeaderProps) => {
   return (
     <>
       <div>
@@ -62,10 +67,15 @@ export const Header = () => {
           <nav className="nav__container">
             <ul>
               <li>
-                <Link href="#">Home</Link>
+                <Link href="#">
+                  <Moon height={20} width={20} color="blue" />
+                </Link>
               </li>
 
-              <li className="hamburger__menu">
+              <li
+                className="hamburger__menu"
+                role="button"
+                onClick={() => setToggleMenu(prevState => !prevState)}>
                 <span />
                 <span className="last-child" />
               </li>

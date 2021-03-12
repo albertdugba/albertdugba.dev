@@ -1,5 +1,3 @@
-import React from 'react';
-
 const HeroSvgImage = props => (
   <svg viewBox="0 0 650 650" {...props}>
     <defs>
