@@ -34,10 +34,38 @@ export const Home = () => {
           <div></div>
           <div></div>
           <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         <div className="effect effect-3"></div>
         <div className="effect effect-4"></div>
         <div className="effect effect-5">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
           <div></div>
           <div></div>
           <div></div>

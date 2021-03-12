@@ -21,6 +21,7 @@ const Container = styled.header`
         flex-direction: column;
         height: 20px;
         width: 20px;
+        cursor: pointer;
 
         span {
           height: 2px;
@@ -42,6 +43,7 @@ const Container = styled.header`
           margin-right: 2rem;
           height: 100%;
           text-decoration: none;
+          color: inherit;
         }
       }
     }
@@ -53,8 +55,8 @@ export const Header = () => {
     <>
       <div>
         <Container className="container">
-          <div className="logo">
-            <Link href="#">AD.</Link>
+          <div>
+            <h3>AD.</h3>
           </div>
 
           <nav className="nav__container">
