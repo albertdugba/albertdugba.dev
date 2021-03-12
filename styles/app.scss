@@ -7,6 +7,8 @@ body {
   margin: 0;
   font-family: var(--fontFamily1);
   scroll-behavior: smooth;
+  // color: #fff;
+  // background-color: #060614;
 }
 
 * {
@@ -28,7 +30,7 @@ body {
   margin: auto;
 }
 
-// Effects
+//Animation Effects
 .effect-wrap .effect {
   position: absolute;
   z-index: 1;
@@ -137,7 +139,7 @@ body {
 }
 
 .effect-5 {
-  right: 10%;
+  right: 9%;
   top: 5%;
   width: 70px;
   display: flex;
@@ -161,4 +163,3 @@ body {
     transform: scale(2);
   }
 }
-// Home Section

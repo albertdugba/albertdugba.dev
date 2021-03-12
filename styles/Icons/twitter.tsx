@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Twitter = ({ width, height }) => (
+const Twitter = ({ width, height, color }) => (
   <svg
     aria-hidden="true"
     focusable="false"
