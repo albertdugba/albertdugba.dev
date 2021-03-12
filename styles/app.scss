@@ -68,7 +68,7 @@ body {
 .effect-2 div {
   height: 3px;
   width: 3px;
-  background: #ff9c09;
+  background: #2427d6;
   margin: 0 3px 10px;
 }
 
@@ -92,7 +92,7 @@ body {
   border: 25px solid rgb(24, 24, 155);
   border-radius: 50%;
   left: 50%;
-  top: -120px;
+  top: -160px;
   animation: leftBounce 3s ease-in-out infinite;
 }
 
@@ -127,21 +127,19 @@ body {
 }
 
 .effect-5 {
-  height: 50px;
-  width: 50px;
   right: 10%;
   top: 5%;
-  right: 10%;
+  width: 40px;
   display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  border-radius: 50%;
-  animation: spin 6s linear infinite;
+  flex-wrap: wrap;
+  animation: topBounce 2s ease-in-out infinite;
 }
 
 .effect-5 div {
+  height: 3px;
   width: 3px;
-  background: #4dd0e1;
+  background: #2427d6;
+  margin: 0 3px 10px;
 }
 
 @keyframes tri {

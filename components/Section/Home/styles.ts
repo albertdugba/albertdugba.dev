@@ -15,10 +15,10 @@ const GridContainer = styled.div`
 
   .info__text {
     h1 {
-      font-size: 3.9rem;
+      font-size: 4rem;
     }
 
-    img {
+    .info__img {
       object-fit: contain;
       width: 100%;
       max-width: 800px;
