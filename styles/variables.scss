@@ -12,6 +12,20 @@
   --fontFamily5: 'Product Sans Medium Regular';
   --fontFamily6: 'Product Sans Black Regular';
 
-  // elevation
-  --elevation1: '';
+  --skinColor: #fb8398;
+  // --skinColor: #ec9412;
+  // --skinColor: #1fc586;
+  // --skinColor: #2eb1ed;
+  // --skinColor: #cc3a3b;
+
+  --bgBlack900: #0000;
+  --bgBlack100: #dddd;
+  --bgBlack50: #eff0f4;
+  --textBlack900: #0000;
+  --textBlack700: #5555;
+  --textBlack300: #bbb;
+
+  --outerShadow: 3px 3px 3px #d0d0d0, -3px -3px -3px #f8f8f8;
+  --outerShadow0: 0px 0px 0px #d0d0d0, 0px 0px 0px #f8f8f8;
+  --innerShadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
 }
