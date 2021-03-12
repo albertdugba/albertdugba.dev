@@ -16,7 +16,6 @@ const NavMenu = styled.nav`
     min-height: 100vh;
 
     ul {
-      background-color: violet;
       padding: 1rem;
 
       li {

@@ -76,16 +76,13 @@ export const Home = () => {
             <span>Design Systems. </span>
             <span>Web Optimization. </span>
             <span>Design Systems. </span>
-            <span>Design Systems. </span>
           </div>
 
-          <div className="home-img">
-            <div className="img-box">
-              <img
-                src="https://res.cloudinary.com/practicaldev/image/fetch/s--iOYHlV4o--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/23934/e82e4303-0604-40eb-a785-52ad1a40d4f1.jpg"
-                alt=""
-              />
-            </div>
+          <div className="info__img">
+            {/* <img
+              src="https://res.cloudinary.com/practicaldev/image/fetch/s--iOYHlV4o--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/23934/e82e4303-0604-40eb-a785-52ad1a40d4f1.jpg"
+              alt=""
+            /> */}
           </div>
         </GridContainer>
       </div>

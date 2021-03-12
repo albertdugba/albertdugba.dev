@@ -7,8 +7,6 @@ body {
   margin: 0;
   font-family: var(--fontFamily1);
   scroll-behavior: smooth;
-  // background-color: rgb(17, 5, 146);
-  // color: #fff;
 }
 
 * {
@@ -89,11 +87,19 @@ body {
 .effect-3 {
   height: 180px;
   width: 180px;
-  border: 25px solid rgb(24, 24, 155);
+  border: 25px solid #18189b;
   border-radius: 50%;
   left: 50%;
   top: -160px;
   animation: leftBounce 3s ease-in-out infinite;
+
+  @media (max-width: 901px) {
+    height: 80px;
+    width: 80px;
+    left: 30%;
+    top: -100px;
+    border: 15px solid #18189b;
+  }
 }
 
 @keyframes leftBounce {
@@ -109,15 +115,19 @@ body {
 
 .effect-4 {
   border-top: 30px solid transparent;
-  border-left: 30px solid rgb(8, 39, 124);
+  border-left: 30px solid #18189b;
   left: 30%;
   top: 20%;
+
+  @media (max-width: 901px) {
+    display: none;
+  }
 }
 
 .effect-4:before {
   content: '';
   border-top: 30px solid transparent;
-  border-left: 30px solid rgb(36, 43, 102);
+  border-left: 30px solid #18189b;
   position: absolute;
   left: -30px;
   opacity: 0.5;
@@ -138,7 +148,7 @@ body {
 .effect-5 div {
   height: 3px;
   width: 3px;
-  background: #2427d6;
+  background: #18189b;
   margin: 0 3px 10px;
 }
 
@@ -152,17 +162,3 @@ body {
   }
 }
 // Home Section
-
-.home-section .home-img .img-box {
-  max-width: 450px;
-  margin: auto;
-  display: block;
-  border-radius: 50%;
-  padding: 15px;
-}
-
-.home-section .home-img .img-box img {
-  width: 100%;
-  border-radius: 50%;
-  border: 10px solid transparent;
-}

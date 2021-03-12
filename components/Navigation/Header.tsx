@@ -10,13 +10,36 @@ const Container = styled.header`
     ul {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+
+      &::nth-child(3) {
+      }
+
+      .hamburger__menu {
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        width: 20px;
+
+        span {
+          height: 2px;
+          width: 32px;
+          background: purple;
+          margin-top: 5px;
+        }
+
+        .last-child {
+          width: 25px;
+        }
+      }
 
       li {
         list-style: none;
 
         a {
           display: block;
-          margin-left: 1.2rem;
+          margin-right: 2rem;
           height: 100%;
           text-decoration: none;
         }
@@ -39,11 +62,10 @@ export const Header = () => {
               <li>
                 <Link href="#">Home</Link>
               </li>
-              <li>
-                <Link href="#">Blog</Link>
-              </li>
-              <li>
-                <Link href="#">Works</Link>
+
+              <li className="hamburger__menu">
+                <span />
+                <span className="last-child" />
               </li>
             </ul>
           </nav>
