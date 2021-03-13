@@ -107,10 +107,10 @@ export const Home = () => {
           </div>
 
           <div className="info__img">
-            {/* <img
+            <img
               src="https://res.cloudinary.com/practicaldev/image/fetch/s--iOYHlV4o--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/23934/e82e4303-0604-40eb-a785-52ad1a40d4f1.jpg"
               alt=""
-            /> */}
+            />
           </div>
         </GridContainer>
       </div>

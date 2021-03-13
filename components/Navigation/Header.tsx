@@ -27,7 +27,7 @@ const Container = styled.header`
         span {
           height: 2px;
           width: 32px;
-          background: purple;
+          background: #0d0d7e;
           margin-top: 5px;
         }
 

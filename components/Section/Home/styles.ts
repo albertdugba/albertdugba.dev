@@ -9,20 +9,28 @@ const HomeContainer = styled.div`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   margin-top: 30px;
+
+  @media (max-width: 801px) {
+    grid-template-columns: 1fr;
+  }
 
   .info__text {
     h1 {
       font-size: 4rem;
     }
+  }
 
-    .info__img img {
-      object-fit: contain;
-      width: 100%;
-      max-width: 200px;
-      border-radius: 50%;
+  .info__img {
+    @media (max-width: 801px) {
       display: none;
+    }
+    img {
+      height: 220px;
+      width: 220px;
+      object-fit: contain;
+      border-radius: 50%;
     }
   }
 `;
