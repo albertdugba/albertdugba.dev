@@ -57,6 +57,12 @@ const NavLink = styled.a`
   text-decoration: none;
   color: #fff;
   text-align: left;
+  border-bottom: 2px transparent solid;
+  transition: 0.5s ease border;
+
+  &:hover {
+    border-bottom: 2px solid #fff;
+  }
 
   @media (max-width: 801px) {
     font-size: 3.5rem;
