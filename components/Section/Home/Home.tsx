@@ -100,7 +100,7 @@ export const Home = () => {
         <GridContainer>
           <div className="info__text">
             <h2>I'm Albert Dugba</h2>
-            <h1>Frontend Developer.</h1>
+            <h1>Frontend Engineer.</h1>
             <span>Design Systems. </span>
             <span>Web Optimization. </span>
             <span>Progressive Web Apps. </span>

@@ -23,14 +23,14 @@ const GridContainer = styled.div`
   }
 
   .info__img {
+    position: relative;
     @media (max-width: 801px) {
       display: none;
     }
     img {
-      height: 220px;
-      width: 220px;
+      height: 250px;
+      width: 250px;
       object-fit: contain;
-      border-radius: 50%;
     }
   }
 `;

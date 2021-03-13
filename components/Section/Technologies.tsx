@@ -5,12 +5,62 @@ import NodeJS from '../../styles/Icons/node';
 import ReactJS from '../../styles/Icons/react';
 import Redux from '../../styles/Icons/redux';
 import Terminal from '../../styles/Icons/terminal';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slide = keyframes`
+0%{
+  transform:translate(5px)
+}
+
+5%{
+  transform:translate(15px)
+}
+
+15%{
+  transform:translate(20px)
+}
+
+25%{
+
+  transform:translate(35px)
+}
+30%{
+
+  transform:translate(45px)
+}
+35%{
+
+  transform:translate(50px)
+}
+40%{
+
+  transform:translate(55px)
+}
+45%{
+
+  transform:translate(60px)
+}
+50%{
+
+  transform:translate(65px)
+}
+55%{
+
+  transform:translate(70px)
+}
+`;
 
 const IconsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
+  animation: ${slide} 10s linear infinite;
+  padding: 1rem;
+
+  & svg {
+    padding-left: 1.2rem;
+  }
 `;
 
 const Technologies = () => {

@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 const NavMenu = styled(motion.nav)`
@@ -11,27 +10,19 @@ const NavMenu = styled(motion.nav)`
   width: 100%;
   height: 100%;
   z-index: 999;
-
-  .nav--menu__secondary {
-    background: black;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-  }
+  overflow: hidden;
 
   .nav-menu-inner {
-    min-height: 100vh;
+    /* min-height: 100vh; */
 
     ul {
       padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      @media (max-width: 801px) {
+        align-items: flex-start;
+      }
 
       li {
         display: block;
@@ -55,7 +46,7 @@ const NavMenu = styled(motion.nav)`
     text-align: center;
     cursor: pointer;
     top: 25px;
-    right: 45px;
+    right: 27px;
     color: #fff;
   }
 `;
@@ -65,8 +56,10 @@ const NavLink = styled.a`
   font-size: 4.2rem;
   text-decoration: none;
   color: #fff;
+  text-align: left;
 
-  a:hover {
+  @media (max-width: 801px) {
+    font-size: 3.5rem;
   }
 `;
 
@@ -75,12 +68,21 @@ interface NavMenuProps {
   setToggleMenu: Function;
 }
 
+const variants = {
+  open: { y: 0 },
+  closed: { y: '-100%' },
+};
+
 export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
   return (
     <>
-      {toggleMenu && (
-        <AnimatePresence>
-          <NavMenu initial={{ y: -100 }} animate={{ y: 0 }} exit={{ y: 0 }}>
+      <>
+        {toggleMenu && (
+          <NavMenu
+            variants={variants}
+            initial="closed"
+            animate={toggleMenu ? 'open' : 'closed'}
+            transition={{ damping: 19, type: 'spring' }}>
             <div className="nav--menu__secondar">
               <div
                 role="button"
@@ -88,8 +90,9 @@ export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
                 className="close-nav-menu">
                 X
               </div>
+
               <div className="nav-menu-inner">
-                <ul>
+                <ul onClick={() => setToggleMenu(false)}>
                   <li>
                     <NavLink href="#">
                       <a>About</a>
@@ -114,8 +117,8 @@ export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
               </div>
             </div>
           </NavMenu>
-        </AnimatePresence>
-      )}
+        )}
+      </>
     </>
   );
 };

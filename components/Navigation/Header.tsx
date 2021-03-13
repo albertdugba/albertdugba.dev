@@ -6,15 +6,13 @@ const Container = styled.header`
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
+  position: relative;
 
   .nav__container {
     ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      &::nth-child(3) {
-      }
 
       .hamburger__menu {
         margin-left: 1.5rem;
@@ -38,10 +36,10 @@ const Container = styled.header`
 
       li {
         list-style: none;
+        margin-right: 1rem;
 
         a {
           display: block;
-          margin-right: 2rem;
           height: 100%;
           text-decoration: none;
           color: inherit;
@@ -61,7 +59,7 @@ export const Header = ({ setToggleMenu }: HeaderProps) => {
       <div>
         <Container className="container">
           <div>
-            <h3>AD.</h3>
+            <h3>&lt; AD / &gt;</h3>
           </div>
 
           <nav className="nav__container">
