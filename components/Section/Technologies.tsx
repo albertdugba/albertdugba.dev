@@ -16,7 +16,7 @@ const IconsContainer = styled.div`
 const Technologies = () => {
   return (
     <div className="container">
-      <h1>Tools and Technologies</h1>
+      <h1>Tools and technologies I use</h1>
       <IconsContainer>
         <FireBase width={60} height={60} color="yello" />
         <GraphQL width={60} height={60} />
