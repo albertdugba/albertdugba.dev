@@ -6,7 +6,6 @@ const Container = styled.header`
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
-  position: relative;
 
   .nav__container {
     ul {
@@ -66,7 +65,9 @@ export const Header = ({ setToggleMenu }: HeaderProps) => {
             <ul>
               <li>
                 <Link href="#">
-                  <Moon height={20} width={20} color="blue" />
+                  <a>
+                    <Moon height={25} width={25} color="blue" />
+                  </a>
                 </Link>
               </li>
 

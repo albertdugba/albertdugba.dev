@@ -8,7 +8,7 @@ body {
   font-family: var(--fontFamily1);
   scroll-behavior: smooth;
   // color: #fff;
-  // background-color: #060614;
+  // background-color: #09090a;
 }
 
 * {
@@ -42,7 +42,7 @@ body {
   border: 4px solid #8a49ff;
   right: 10%;
   bottom: 10%;
-  animation: spin 10s linear infinite;
+  // animation: spin 10s linear infinite;
 }
 
 .effect-2 {
@@ -51,7 +51,7 @@ body {
   width: 70px;
   display: flex;
   flex-wrap: wrap;
-  animation: topBounce 5s ease-in-out infinite;
+  // animation: topBounce 5s ease-in-out infinite;
 }
 
 @keyframes topBounce {
@@ -92,14 +92,14 @@ body {
   border: 25px solid #18189b;
   border-radius: 50%;
   left: 50%;
-  top: -160px;
-  animation: leftBounce 3s ease-in-out infinite;
+  top: -200px;
+  // animation: leftBounce 3s ease-in-out infinite;
 
   @media (max-width: 901px) {
     height: 80px;
     width: 80px;
     left: 30%;
-    top: -100px;
+    top: -120px;
     border: 15px solid #18189b;
   }
 }
@@ -135,7 +135,7 @@ body {
   opacity: 0.5;
   left: -35px;
   top: -25px;
-  animation: tri 3s ease-in-out infinite;
+  // animation: tri 3s ease-in-out infinite;
 }
 
 .effect-5 {
@@ -144,7 +144,7 @@ body {
   width: 70px;
   display: flex;
   flex-wrap: wrap;
-  animation: topBounce 2s ease-in-out infinite;
+  // animation: topBounce 2s ease-in-out infinite;
 }
 
 .effect-5 div {

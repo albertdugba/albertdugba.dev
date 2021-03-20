@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const NavMenu = styled(motion.nav)`
@@ -10,19 +11,15 @@ const NavMenu = styled(motion.nav)`
   width: 100%;
   height: 100%;
   z-index: 999;
-  overflow: hidden;
 
   .nav-menu-inner {
-    /* min-height: 100vh; */
+    min-height: 100vh;
 
     ul {
       padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      @media (max-width: 801px) {
-        align-items: flex-start;
-      }
 
       li {
         display: block;
@@ -46,7 +43,7 @@ const NavMenu = styled(motion.nav)`
     text-align: center;
     cursor: pointer;
     top: 25px;
-    right: 27px;
+    right: 45px;
     color: #fff;
   }
 `;
@@ -56,17 +53,6 @@ const NavLink = styled.a`
   font-size: 4.2rem;
   text-decoration: none;
   color: #fff;
-  text-align: left;
-  border-bottom: 2px transparent solid;
-  transition: 0.5s ease border;
-
-  &:hover {
-    border-bottom: 2px solid #fff;
-  }
-
-  @media (max-width: 801px) {
-    font-size: 3.5rem;
-  }
 `;
 
 interface NavMenuProps {
@@ -74,57 +60,49 @@ interface NavMenuProps {
   setToggleMenu: Function;
 }
 
-const variants = {
-  open: { y: 0 },
-  closed: { y: '-100%' },
-};
-
 export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
   return (
     <>
-      <>
-        {toggleMenu && (
+      {toggleMenu && (
+        <AnimatePresence>
           <NavMenu
-            variants={variants}
-            initial="closed"
-            animate={toggleMenu ? 'open' : 'closed'}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            exit={{ y: 0 }}
             transition={{ damping: 19, type: 'spring' }}>
-            <div className="nav--menu__secondar">
-              <div
-                role="button"
-                onClick={() => setToggleMenu(false)}
-                className="close-nav-menu">
-                X
-              </div>
-
-              <div className="nav-menu-inner">
-                <ul onClick={() => setToggleMenu(false)}>
-                  <li>
-                    <NavLink href="#">
-                      <a>About</a>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="#">
-                      <a>Blog</a>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="#">
-                      <a>Works</a>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink href="#">
-                      <a>Reach Out</a>
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
+            <div
+              role="button"
+              onClick={() => setToggleMenu(false)}
+              className="close-nav-menu">
+              X
+            </div>
+            <div className="nav-menu-inner">
+              <ul>
+                <li>
+                  <NavLink href="#">
+                    <a>About</a>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink href="#">
+                    <a>Blog</a>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink href="/works">
+                    <a>Works</a>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink href="#">
+                    <a>Reach Out</a>
+                  </NavLink>
+                </li>
+              </ul>
             </div>
           </NavMenu>
-        )}
-      </>
+        </AnimatePresence>
+      )}
     </>
   );
 };
