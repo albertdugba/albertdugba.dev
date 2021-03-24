@@ -48,7 +48,7 @@ const NavMenu = styled(motion.nav)`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   display: inline-block;
   font-size: 4.2rem;
   text-decoration: none;
