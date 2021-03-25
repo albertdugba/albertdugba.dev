@@ -7,9 +7,9 @@ body {
   margin: 0;
   font-family: var(--fontFamily1);
   scroll-behavior: smooth;
-  color: #232324;
+  // color: #232324;
   // color: #fff;
-  // background-color: #030303;
+  // background-color: #110410;
 }
 
 * {
@@ -37,22 +37,13 @@ body {
   z-index: 1;
 }
 
-.effect-1 {
-  width: 30px;
-  height: 30px;
-  border: 4px solid #8a49ff;
-  right: 10%;
-  bottom: 10%;
-  // animation: spin 10s linear infinite;
-}
-
 .effect-2 {
   left: 3%;
   bottom: 20%;
   width: 70px;
   display: flex;
   flex-wrap: wrap;
-  // animation: topBounce 5s ease-in-out infinite;
+  animation: topBounce 5s ease-in-out infinite;
 }
 
 @keyframes topBounce {
@@ -84,59 +75,7 @@ body {
 
 .effect-2 {
   left: 8%;
-  bottom: 20%;
-}
-
-.effect-3 {
-  height: 180px;
-  width: 180px;
-  border: 25px solid #18189b;
-  border-radius: 50%;
-  left: 50%;
-  top: -200px;
-  // animation: leftBounce 3s ease-in-out infinite;
-
-  @media (max-width: 901px) {
-    height: 80px;
-    width: 80px;
-    left: 30%;
-    top: -120px;
-    border: 15px solid #18189b;
-  }
-}
-
-@keyframes leftBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateX(25px);
-  }
-}
-
-.effect-4 {
-  border-top: 30px solid transparent;
-  border-left: 30px solid #18189b;
-  left: 30%;
-  top: 20%;
-
-  @media (max-width: 901px) {
-    display: none;
-  }
-}
-
-.effect-4:before {
-  content: '';
-  border-top: 30px solid transparent;
-  border-left: 30px solid #18189b;
-  position: absolute;
-  left: -30px;
-  opacity: 0.5;
-  left: -35px;
-  top: -25px;
-  // animation: tri 3s ease-in-out infinite;
+  bottom: 10%;
 }
 
 .effect-5 {
@@ -145,7 +84,7 @@ body {
   width: 70px;
   display: flex;
   flex-wrap: wrap;
-  // animation: topBounce 2s ease-in-out infinite;
+  animation: topBounce 5s ease-in-out infinite;
 }
 
 .effect-5 div {
@@ -153,14 +92,4 @@ body {
   width: 3px;
   background: #18189b;
   margin: 0 3px 10px;
-}
-
-@keyframes tri {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(2);
-  }
 }

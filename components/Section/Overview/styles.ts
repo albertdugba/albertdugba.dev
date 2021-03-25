@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
+    place-items: center;
   }
 
   .text p {

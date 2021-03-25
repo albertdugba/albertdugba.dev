@@ -8,7 +8,7 @@ const Container = styled.div`
   background: #abb7bd;
 
   h1 {
-    font-size: 5.4rem;
+    font-size: 3.4rem;
   }
 `;
 

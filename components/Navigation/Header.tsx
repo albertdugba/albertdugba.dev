@@ -23,9 +23,9 @@ const Container = styled.header`
 
         span {
           height: 2px;
-          width: 32px;
+          width: 40px;
           background: #0d0d7e;
-          margin-top: 5px;
+          margin-top: 8px;
         }
 
         .last-child {
@@ -66,7 +66,7 @@ export const Header = ({ setToggleMenu }: HeaderProps) => {
               <li>
                 <Link href="#">
                   <a>
-                    <Moon height={25} width={25} color="blue" />
+                    <Moon height={35} width={35} color="blue" />
                   </a>
                 </Link>
               </li>
