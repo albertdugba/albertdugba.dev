@@ -10,6 +10,7 @@ const HomeContainer = styled.div`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  place-items: center;
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
@@ -34,6 +35,17 @@ const GridContainer = styled.div`
   .info__img {
     position: relative;
 
+    &:before {
+      position: absolute;
+      content: 'Hellooo';
+      height: 100%;
+      width: 100%;
+      border: 1px solid purple;
+      top: 8%;
+      left: 10%;
+      z-index: -1;
+    }
+
     img {
       height: 350px;
       width: 350px;
@@ -51,10 +63,26 @@ const GridContainer = styled.div`
 
     .right__dots {
       position: absolute;
-      right: 0px;
-      left: 52%;
+      right: 20px;
+      left: 92%;
       bottom: 3%;
       z-index: -1;
+    }
+
+    .zigzag__line--right {
+      position: absolute;
+      right: -2%;
+      left: 120%;
+      bottom: 50%;
+      transform: translateX(-20px);
+    }
+
+    .zigzag__line--left {
+      position: absolute;
+      top: 40%;
+      left: -20%;
+      bottom: 50%;
+      transform: rotate(30deg);
     }
   }
 `;
