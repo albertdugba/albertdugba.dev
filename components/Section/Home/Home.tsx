@@ -1,116 +1,38 @@
+import Dots from 'styles/Icons/dots';
 import { HomeContainer, GridContainer } from './styles';
 
 export const Home = () => {
   return (
     <HomeContainer>
-      <div className="effect-wrap">
-        <div className="effect effect-2">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        {/* <div className="effect effect-4"></div> */}
-        <div className="effect effect-5">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
       <div className="container">
         <GridContainer>
           <div className="info__text">
-            <h2>I'm</h2>
-            <h2>Albert Dugba</h2>
-            <h1>Frontend Engineer.</h1>
-            <span>Design Systems. </span>
-            <span>Web Optimization. </span>
-            <span>Progressive Web Apps. </span>
+            <h1>Frontend Developer.</h1>
+            <div>
+              <p>
+                I like to build solid and scalable frontend products with great
+                user experience.
+              </p>
+
+              <p>
+                I am very enthusiastist about building design systems,
+                Progressive Web Apps, Performant User Interfaces.
+              </p>
+            </div>
           </div>
 
           <div className="info__img">
+            <div className="left__dots">
+              <Dots />
+            </div>
+
             <img
               src="https://res.cloudinary.com/practicaldev/image/fetch/s--iOYHlV4o--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/23934/e82e4303-0604-40eb-a785-52ad1a40d4f1.jpg"
               alt=""
             />
+            <div className="right__dots">
+              <Dots />
+            </div>
           </div>
         </GridContainer>
       </div>

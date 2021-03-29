@@ -2,6 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+/**
+  @styles
+ */
 const NavMenu = styled(motion.nav)`
   position: fixed;
   background-color: #0a0a3d;

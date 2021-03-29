@@ -9,8 +9,7 @@ const HomeContainer = styled.div`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  margin-top: 30px;
+  grid-template-columns: 1fr 1fr;
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
@@ -19,22 +18,43 @@ const GridContainer = styled.div`
   .info__text {
     h1 {
       font-size: 4rem;
+      color: #9588aa;
     }
 
     h2 {
       font-size: 1.8rem;
     }
+
+    div p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
   }
 
   .info__img {
     position: relative;
-    @media (max-width: 801px) {
-      display: none;
-    }
+
     img {
-      height: 250px;
-      width: 250px;
+      height: 350px;
+      width: 350px;
       object-fit: contain;
+    }
+
+    .left__dots {
+      position: absolute;
+      top: -11%;
+      height: 100%;
+      width: 100%;
+      left: -10%;
+      z-index: -1;
+    }
+
+    .right__dots {
+      position: absolute;
+      right: 0px;
+      left: 52%;
+      bottom: 3%;
+      z-index: -1;
     }
   }
 `;
