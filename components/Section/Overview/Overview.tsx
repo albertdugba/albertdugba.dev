@@ -4,19 +4,19 @@ import Dots from 'styles/Icons/dots';
 
 const Overview = () => {
   return (
-    <>
+    <div style={{ background: '#f2edf5' }}>
       <Container className="container">
         <div className="bio--container">
           <div className="bio--divider">
-            <span>Bio</span>
+            <span>About Me</span>
           </div>
           <div className="bio--container__dots">
             <Dots />
           </div>
           <div className="bio--container__info">
-            <p>
-              <strong> Hey, I'm Albert Dugba, </strong>
-            </p>
+            <div>
+              <h1> Hey, I'm Albert Dugba, </h1>
+            </div>
             <p>I am a self taught software engineer from Ghana.</p>
             <p>
               I have have 2 years of experience building applications with
@@ -24,15 +24,160 @@ const Overview = () => {
               right tools to deliver fast, performant and accessiblity from the
               ground up.
             </p>
-            <Link href="/works">
-              <button>
-                <a>See my works</a>
-              </button>
-            </Link>
+
+            {/* <p>
+              I work with tools and technologies like Reactjs, Nextjs, firebase,
+              graphQL, typescript
+            </p> */}
           </div>
         </div>
+
+        <div>
+          <svg
+            style={{ borderRadius: '5px' }}
+            width="523"
+            height="348"
+            viewBox="0 0 523 348"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect width="523" height="348" fill="#E5E5E5" />
+            <g clip-path="url(#clip0)">
+              <rect width="523" height="348" rx="7" fill="white" />
+              <rect y="-4" width="523" height="34" fill="#EEE8F7" />
+              <circle cx="19" cy="13" r="7" fill="#9A1515" />
+              <circle cx="42" cy="13" r="7" fill="#FBF2A3" />
+              <circle cx="68" cy="13" r="7" fill="#448E4C" />
+              <rect
+                x="28"
+                y="59"
+                width="42"
+                height="35"
+                rx="4"
+                fill="#EBE6F7"
+              />
+              <rect
+                x="26"
+                y="133"
+                width="42"
+                height="35"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="26"
+                y="207"
+                width="42"
+                height="35"
+                rx="4"
+                fill="#ECE9F3"
+              />
+              <rect
+                x="26"
+                y="284"
+                width="42"
+                height="35"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="75"
+                y="59"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="133"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="207"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="284"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="75"
+                y="72"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="146"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="220"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="297"
+                width="309"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect x="75" y="86" width="70" height="8" rx="4" fill="#7E3180" />
+              <rect
+                x="73"
+                y="160"
+                width="70"
+                height="8"
+                rx="4"
+                fill="#B8A7DE"
+              />
+              <rect
+                x="73"
+                y="234"
+                width="70"
+                height="8"
+                rx="4"
+                fill="#54417C"
+              />
+              <rect
+                x="73"
+                y="311"
+                width="70"
+                height="8"
+                rx="4"
+                fill="#D1C1F2"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="523" height="348" rx="7" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
       </Container>
-    </>
+    </div>
   );
 };
 

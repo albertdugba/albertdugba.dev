@@ -11,6 +11,7 @@ export const Container = styled.div`
   }
 
   .bio--container {
+    position: relative;
     .bio--divider {
       display: flex;
       align-items: center;
@@ -26,14 +27,18 @@ export const Container = styled.div`
         margin-bottom: 1rem;
       }
     }
-    position: relative;
+
     &__dots {
       z-index: -1;
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 20%;
     }
 
     &__info {
       z-index: 1;
-      background: rgba(255, 255, 255, 0.9);
       position: absolute;
       top: 50px;
     }
