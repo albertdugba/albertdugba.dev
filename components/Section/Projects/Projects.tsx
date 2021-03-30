@@ -1,5 +1,16 @@
 import Link from 'next/link';
-import { Container, ButtonLink, CardList, Card } from './styles';
+import {
+  Container,
+  ButtonLink,
+  CardList,
+  Card,
+  CardHeader,
+  CardAuthor,
+  AuthorAvatar,
+  AuthorName,
+  AuthorNamePrefix,
+  Tags,
+} from './styles';
 
 const Projects = () => {
   return (
@@ -17,28 +28,37 @@ const Projects = () => {
 
           <CardList>
             <Card>
-              <header className="card-header">
+              <CardHeader>
                 <p>31st March, 2021</p>
                 <h2>Blog Card</h2>
-              </header>
+              </CardHeader>
+              <CardAuthor>
+                <AuthorAvatar>
+                  <img src="https://instagram.facc1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/p640x640/165471823_894836077733531_4585199131174438146_n.jpg?tp=1&_nc_ht=instagram.facc1-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=RB8y058YcWkAX-PddBr&ccb=7-4&oh=90736025cab2b3f938d2ab284e5d01cc&oe=608AD651&_nc_sid=83d603" />
+                </AuthorAvatar>
+                <svg className="half-circle" viewBox="0 0 106 57">
+                  <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+                </svg>
+                <AuthorNamePrefix>Author</AuthorNamePrefix>
+              </CardAuthor>
             </Card>
             <Card>
-              <header className="card-header">
+              <CardHeader>
                 <p>31st March, 2021</p>
                 <h2>Blog Card</h2>
-              </header>
+              </CardHeader>
             </Card>
             <Card>
-              <header className="card-header">
+              <CardHeader>
                 <p>31st March, 2021</p>
                 <h2>Blog Card</h2>
-              </header>
+              </CardHeader>
             </Card>
             <Card>
-              <header className="card-header">
+              <CardHeader>
                 <p>31st March, 2021</p>
                 <h2>Blog Card</h2>
-              </header>
+              </CardHeader>
             </Card>
           </CardList>
         </Container>
