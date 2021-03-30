@@ -13,6 +13,7 @@ const GridContainer = styled.div`
   grid-gap: 1rem;
   place-items: center;
   padding-top: 20px;
+  justify-content: center;
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
@@ -49,7 +50,7 @@ const GridContainer = styled.div`
     }
 
     img {
-      max-width: 100%;
+      max-width: 300px;
       height: auto;
       object-fit: contain;
     }
@@ -102,7 +103,7 @@ const GridContainer = styled.div`
       }
 
       img {
-        max-width: 100%;
+        max-width: 300px;
         height: auto;
         display: block;
         margin-left: auto;

@@ -4,8 +4,9 @@ import Moon from '../../styles/Icons/Moon';
 
 const Container = styled.header`
   display: flex;
-  margin-top: 10px;
+  padding-top: 20px;
   justify-content: space-between;
+  align-items: center;
 
   .nav__container {
     ul {
@@ -58,7 +59,7 @@ export const Header = ({ setToggleMenu }: HeaderProps) => {
       <div>
         <Container className="container">
           <div>
-            <h3>&lt; Albert Dugba / &gt;</h3>
+            <h3>Albert Dugba </h3>
           </div>
 
           <nav className="nav__container">

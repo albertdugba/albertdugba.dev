@@ -3,25 +3,41 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-top: 15rem;
+  /* background: teal; */
+  padding: 1rem;
+  /* height: 50vh; */
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
-    place-items: center;
+    padding-top: 20rem;
   }
 
-  .text p {
-    .span1 {
-      border-bottom: 2px solid blue;
+  .bio--container {
+    .bio--divider {
+      display: flex;
+      align-items: center;
+      &:before {
+        position: absolute;
+        content: '';
+        width: 10%;
+        background: red;
+        height: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
     }
-    .span2 {
-      border-bottom: 2px solid green;
+    position: relative;
+    &__dots {
+      z-index: -1;
     }
 
-    .span3 {
-      border-bottom: 2px solid red;
-      transform: translate(-20px);
+    &__info {
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.9);
+      position: absolute;
+      top: 50px;
     }
   }
 
