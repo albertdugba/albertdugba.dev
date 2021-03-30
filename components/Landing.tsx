@@ -5,6 +5,7 @@ import { NavigationMenu } from './Navigation/NavMenu';
 import { Home } from './Section/Home/Home';
 import Overview from './Section/Overview/Overview';
 import Projects from './Section/Projects/Projects';
+import Blog from './Section/Blog/Blog';
 
 const Landing = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -15,6 +16,7 @@ const Landing = () => {
       <Home />
       <Overview />
       <Projects />
+      <Blog />
     </div>
   );
 };
