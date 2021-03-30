@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* background: teal; */
   padding: 1rem;
-  /* height: 50vh; */
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;

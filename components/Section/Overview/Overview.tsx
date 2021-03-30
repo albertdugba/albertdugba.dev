@@ -15,13 +15,14 @@ const Overview = () => {
           </div>
           <div className="bio--container__info">
             <p>
-              I am a JavaScript and Frontend Engineer. I design with CSS and
-              develop quality, user friendly, and scalable products with {'  '}
-              <span className="span1">performance</span>,{' '}
-              <span className="span2">accessibility</span>{' '}
-              <span className="span3">progressive enhancement</span> in mind
-              from the ground up.
-              <br /> I enjoy building design systems for products & projects.
+              <strong> Hey, I'm Albert Dugba, </strong>
+            </p>
+            <p>I am a self taught software engineer from Ghana.</p>
+            <p>
+              I have have 2 years of experience building applications with
+              frontend technologies. As a UI engineer, I thrive to work with the
+              right tools to deliver fast, performant and accessiblity from the
+              ground up.
             </p>
             <Link href="/works">
               <button>

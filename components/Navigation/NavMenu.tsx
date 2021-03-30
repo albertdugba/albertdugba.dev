@@ -31,31 +31,16 @@ const NavMenu = styled(motion.nav)`
         &::last-child {
           margin-bottom: 0;
         }
+
+        a {
+          display: inline-block;
+          font-size: 3.5rem;
+          text-decoration: none;
+          color: #fff;
+        }
       }
     }
   }
-
-  .close-nav-menu {
-    height: 40px;
-    width: 40px;
-    display: block;
-    line-height: 35px;
-    border-radius: 50%;
-    position: absolute;
-    border: 1px solid #dddd;
-    text-align: center;
-    cursor: pointer;
-    top: 25px;
-    right: 45px;
-    color: #fff;
-  }
-`;
-
-const NavLink = styled(Link)`
-  display: inline-block;
-  font-size: 4.2rem;
-  text-decoration: none;
-  color: #fff;
 `;
 
 interface NavMenuProps {
@@ -82,24 +67,24 @@ export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
             <div className="nav-menu-inner">
               <ul>
                 <li>
-                  <NavLink href="#">
+                  <Link href="#">
                     <a>About</a>
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink href="#">
+                  <Link href="#">
                     <a>Blog</a>
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink href="/works">
+                  <Link href="/works">
                     <a>Works</a>
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink href="#">
+                  <Link href="#">
                     <a>Reach Out</a>
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
             </div>
