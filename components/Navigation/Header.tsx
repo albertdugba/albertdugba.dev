@@ -58,7 +58,7 @@ export const Header = ({ setToggleMenu }: HeaderProps) => {
       <div>
         <Container className="container">
           <div>
-            <h3>&lt; AD / &gt;</h3>
+            <h3>&lt; Albert Dugba / &gt;</h3>
           </div>
 
           <nav className="nav__container">

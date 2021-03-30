@@ -65,7 +65,7 @@ interface NavMenuProps {
 
 export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
   return (
-    <>
+    <div className="container">
       {toggleMenu && (
         <AnimatePresence>
           <NavMenu
@@ -106,6 +106,6 @@ export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
           </NavMenu>
         </AnimatePresence>
       )}
-    </>
+    </div>
   );
 };

@@ -3,14 +3,16 @@ import styled from 'styled-components';
 const HomeContainer = styled.div`
   position: relative;
   padding: 45px 0;
-  height: 90vh;
+  height: 100vh;
   align-items: center;
 `;
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
   place-items: center;
+  padding-top: 20px;
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
@@ -47,8 +49,8 @@ const GridContainer = styled.div`
     }
 
     img {
-      height: 350px;
-      width: 350px;
+      max-width: 100%;
+      height: auto;
       object-fit: contain;
     }
 
@@ -63,7 +65,7 @@ const GridContainer = styled.div`
 
     .right__dots {
       position: absolute;
-      right: 20px;
+      right: 1px;
       left: 92%;
       bottom: 3%;
       z-index: -1;
@@ -83,6 +85,51 @@ const GridContainer = styled.div`
       left: -20%;
       bottom: 50%;
       transform: rotate(30deg);
+    }
+
+    @media (max-width: 901px) {
+      margin-top: 4rem;
+
+      &:before {
+        position: absolute;
+        content: 'Hellooo';
+        height: 100%;
+        width: 95%;
+        border: 1px solid grey;
+        top: 4%;
+        left: 10%;
+        z-index: -1;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .right__dots {
+        position: absolute;
+        right: 1px;
+        left: 82%;
+        bottom: 3%;
+        z-index: -1;
+      }
+
+      .left__dots {
+        position: absolute;
+        top: -15%;
+        height: 100%;
+        width: 100%;
+        left: -4%;
+        z-index: -1;
+      }
+
+      .zigzag__line--right,
+      .zigzag__line--left {
+        display: none;
+      }
     }
   }
 `;
