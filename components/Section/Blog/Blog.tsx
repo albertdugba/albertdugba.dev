@@ -10,7 +10,7 @@ import {
 const Blog = () => {
   return (
     <div className="container" style={{ color: '#fff' }}>
-      <h1 style={{ color: 'black' }}>Recent blog posts</h1>
+      <h1 style={{ color: 'black' }}>I write sometimes, </h1>
       <CardList>
         <Card>
           <CardHeader>
@@ -26,18 +26,6 @@ const Blog = () => {
             <a href="#">css</a>
             <a href="#">web-dev</a>
           </CardAuthor>
-        </Card>
-        <Card>
-          <CardHeader>
-            <p>31st March, 2021</p>
-            <h2>Blog Card</h2>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader>
-            <p>31st March, 2021</p>
-            <h2>Blog Card</h2>
-          </CardHeader>
         </Card>
         <Card>
           <CardHeader>
