@@ -43,6 +43,10 @@ export const Home = () => {
             </div>
           </div>
         </GridContainer>
+
+        <div className="down__dots">
+          <Dots />
+        </div>
       </div>
     </HomeContainer>
   );

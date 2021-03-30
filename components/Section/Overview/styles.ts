@@ -3,44 +3,23 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-items: center;
   padding: 1rem;
+  .svg--container {
+    width: 100%;
+  }
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
-    padding-top: 20rem;
-  }
+    padding-top: 8rem;
+    margin-top: 12rem;
+    grid-gap: 20px;
+    background: none;
 
-  .bio--container {
-    position: relative;
-    .bio--divider {
-      display: flex;
-      align-items: center;
-      &:before {
-        position: absolute;
-        content: '';
-        width: 10%;
-        background: red;
-        height: 9px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-      }
-    }
-
-    &__dots {
-      z-index: -1;
-      content: '';
-      position: absolute;
-      height: 100%;
+    .svg--container {
       width: 100%;
-      top: 20%;
-    }
-
-    &__info {
-      z-index: 1;
-      position: absolute;
-      top: 50px;
+      margin-left: auto;
     }
   }
 

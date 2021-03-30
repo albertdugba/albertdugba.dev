@@ -1,40 +1,31 @@
 import { Container } from './styles';
-import Link from 'next/link';
-import Dots from 'styles/Icons/dots';
 
 const Overview = () => {
   return (
-    <div style={{ background: '#f2edf5' }}>
+    <div style={{ background: '#EBE6F3' }}>
       <Container className="container">
-        <div className="bio--container">
-          <div className="bio--divider">
-            <span>About Me</span>
+        <div>
+          <div>
+            <h1>About Me</h1>
+            <h1> Hey, I'm Albert Dugba.</h1>
           </div>
-          <div className="bio--container__dots">
-            <Dots />
-          </div>
-          <div className="bio--container__info">
-            <div>
-              <h1> Hey, I'm Albert Dugba, </h1>
-            </div>
-            <p>I am a self taught software engineer from Ghana.</p>
-            <p>
-              I have have 2 years of experience building applications with
-              frontend technologies. As a UI engineer, I thrive to work with the
-              right tools to deliver fast, performant and accessiblity from the
-              ground up.
-            </p>
+          <p>I am a self taught software engineer from Ghana.</p>
+          <p>
+            I have 2 years of experience building applications with frontend
+            technologies. As a UI engineer, I thrive to work with the right
+            tools to deliver fast, performant and accessiblity from the ground
+            up.
+          </p>
 
-            {/* <p>
-              I work with tools and technologies like Reactjs, Nextjs, firebase,
-              graphQL, typescript
-            </p> */}
-          </div>
+          <p>
+            I work with tools and technologies like Reactjs, Nextjs, firebase,
+            graphQL, typescript
+          </p>
         </div>
 
         <div>
           <svg
-            style={{ borderRadius: '5px' }}
+            className="svg--container"
             width="523"
             height="348"
             viewBox="0 0 523 348"

@@ -5,6 +5,15 @@ const HomeContainer = styled.div`
   padding: 45px 0;
   height: 100vh;
   align-items: center;
+
+  .down__dots {
+    position: absolute;
+    bottom: -9%;
+
+    @media (max-width: 866px) {
+      display: none;
+    }
+  }
 `;
 
 const GridContainer = styled.div`
