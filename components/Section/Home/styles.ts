@@ -3,12 +3,11 @@ import styled from 'styled-components';
 const HomeContainer = styled.div`
   position: relative;
   padding: 45px 0;
-  height: 100vh;
-  align-items: center;
+  /* height: 100vh; */
 
   .down__dots {
     position: absolute;
-    bottom: -9%;
+    bottom: -8%;
 
     @media (max-width: 866px) {
       display: none;
@@ -57,9 +56,8 @@ const GridContainer = styled.div`
       left: 10%;
       z-index: -1;
     }
-
     img {
-      max-width: 300px;
+      max-width: 290px;
       height: auto;
       object-fit: contain;
     }
@@ -112,7 +110,8 @@ const GridContainer = styled.div`
       }
 
       img {
-        max-width: 300px;
+        width: 100%;
+        object-fit: contain;
         height: auto;
         display: block;
         margin-left: auto;

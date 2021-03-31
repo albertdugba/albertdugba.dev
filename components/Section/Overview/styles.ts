@@ -6,41 +6,23 @@ export const Container = styled.div`
   grid-gap: 20px;
   align-items: center;
   padding: 1rem;
+
+  .info {
+    margin-top: -2rem;
+  }
+
   .svg--container {
     width: 100%;
   }
 
-  @media (max-width: 801px) {
+  @media (max-width: 802px) {
     grid-template-columns: 1fr;
-    padding-top: 8rem;
-    margin-top: 12rem;
     grid-gap: 20px;
     background: none;
 
     .svg--container {
       width: 100%;
       margin-left: auto;
-    }
-  }
-
-  button {
-    background: none;
-    border: none;
-    outline: none;
-    display: block;
-    font-size: 1rem;
-    font-weight: bold;
-    position: relative;
-    min-width: 180px;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    font-family: inherit;
-    transition: background 0.4s ease-out;
-    background-color: blue;
-
-    a {
-      color: #fff;
-      text-decoration: none;
     }
   }
 

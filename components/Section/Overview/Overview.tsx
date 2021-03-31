@@ -4,7 +4,7 @@ const Overview = () => {
   return (
     <div style={{ background: '#EBE6F3' }}>
       <Container className="container">
-        <div>
+        <div className="info">
           <div>
             <h1>About Me</h1>
             <h1> Hey, I'm Albert Dugba.</h1>
@@ -32,7 +32,7 @@ const Overview = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <rect width="523" height="348" fill="#E5E5E5" />
-            <g clip-path="url(#clip0)">
+            <g clipPath="url(#clip0)">
               <rect width="523" height="348" rx="7" fill="white" />
               <rect y="-4" width="523" height="34" fill="#EEE8F7" />
               <circle cx="19" cy="13" r="7" fill="#9A1515" />

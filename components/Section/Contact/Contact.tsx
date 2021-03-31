@@ -24,26 +24,26 @@ const Contact = () => {
 
       <FormContainer>
         <form action="">
-          <h1>Lets talk</h1>
+          <h1>Send me a message!</h1>
           <div className="input-group">
             <input type="text" required />
             <span className="highlight"></span>
             <span className="bar"></span>
-            <label>Name</label>
+            <label htmlFor="name">Name</label>
           </div>
 
           <div className="input-group">
             <input type="text" required />
             <span className="highlight"></span>
             <span className="bar"></span>
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
           </div>
 
           <div className="input-group">
             <textarea></textarea>
             <span className="highlight"></span>
             <span className="bar"></span>
-            <label>Message</label>
+            <label htmlFor="message">Message</label>
           </div>
 
           <button>Send</button>

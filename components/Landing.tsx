@@ -6,6 +6,7 @@ import Overview from './Section/Overview/Overview';
 import Projects from './Section/Projects/Projects';
 import Blog from './Section/Blog/Blog';
 import Contact from './Section/Contact/Contact';
+import Footer from './Section/Footer/Footer';
 
 const Landing = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -18,6 +19,7 @@ const Landing = () => {
       <Projects />
       <Blog />
       <Contact />
+      <Footer />
     </div>
   );
 };

@@ -9,12 +9,13 @@ const FormContainer = styled.div`
   @media (max-width: 801px) {
     left: 0%;
   }
+
   form {
     width: 100%;
-    max-width: 550px;
+    max-width: 650px;
     padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.9);
     opacity: 0.8;
 
     .input-group {
@@ -41,8 +42,7 @@ const FormContainer = styled.div`
 
     label {
       color: #999;
-      font-size: 18px;
-      font-weight: normal;
+      font-size: 1.2rem;
       position: absolute;
       pointer-events: none;
       left: 5px;
@@ -87,7 +87,6 @@ const FormContainer = styled.div`
 
 const ContactContainer = styled.div`
   position: relative;
-  /* background: violet; */
 
   @media (max-width: 501px) {
     .icons-group svg {
