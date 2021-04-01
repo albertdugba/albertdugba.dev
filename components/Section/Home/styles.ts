@@ -19,7 +19,7 @@ const GridContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   place-items: center;
-  padding-top: 20px;
+  padding-top: 50px;
   justify-content: center;
 
   @media (max-width: 801px) {

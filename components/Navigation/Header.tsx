@@ -4,7 +4,7 @@ import Moon from '../../styles/Icons/Moon';
 
 const Container = styled.header`
   display: flex;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   justify-content: space-between;
   align-items: center;
   position: fixed;

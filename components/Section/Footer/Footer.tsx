@@ -1,8 +1,9 @@
 import Dev from 'styles/Icons/dev';
 import Github from 'styles/Icons/github';
+import Instagram from 'styles/Icons/instagram';
 import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
-import { FooterContainer } from './style';
+import { FooterContainer, Social, FooterSocialContainer } from './style';
 const Footer = () => {
   return (
     <>
@@ -15,15 +16,16 @@ const Footer = () => {
 
           <hr />
 
-          <div>
+          <FooterSocialContainer>
             <span>&copy; {new Date().getFullYear()} Albert Dugba</span>
-            <div className="handles">
-              <Github width={20} height={20} color="#ddd" />
-              <Twitter width={20} height={20} color="#ddd" />
-              <LinkedIn width={20} height={20} />
-              <Dev width={20} height={20} />
-            </div>
-          </div>
+            <Social>
+              <Github width={20} height={20} color="purple" />
+              <Twitter width={20} height={20} color="purple" />
+              <LinkedIn size={20} color="purple" />
+              <Dev size={20} color="purple" />
+              <Instagram size={20} color="purple" />
+            </Social>
+          </FooterSocialContainer>
         </div>
       </FooterContainer>
     </>
