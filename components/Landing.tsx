@@ -8,8 +8,13 @@ import Blog from './Section/Blog/Blog';
 import Contact from './Section/Contact/Contact';
 import Footer from './Section/Footer/Footer';
 
+interface ToggleMenu {
+  toggleMenu: boolean;
+  setToggleMenu: Function;
+}
+
 const Landing = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState<ToggleMenu>();
   return (
     <div>
       <Header setToggleMenu={setToggleMenu} />

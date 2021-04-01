@@ -57,7 +57,7 @@ interface HeaderProps {
   setToggleMenu: Function;
 }
 
-export const Header = ({ setToggleMenu }: HeaderProps) => {
+export const Header = ({ setToggleMenu }) => {
   return (
     <>
       <div>
