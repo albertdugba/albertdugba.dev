@@ -5,41 +5,36 @@ import styled from 'styled-components';
 /**
   @styles
  */
-const NavMenu = styled(motion.nav)`
-  position: fixed;
-  background-color: #0a0a3d;
-  padding: 0 15px;
-  left: 0;
-  top: 0;
-  width: 100%;
+
+const NavOverlay = styled.div`
   height: 100%;
-  z-index: 999;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: red;
+  overflow-x: hidden;
+  transition: 0.5s;
 
-  .nav-menu-inner {
-    min-height: 100vh;
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 
-    ul {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      li {
-        display: block;
-        margin-bottom: 20px;
-
-        &::last-child {
-          margin-bottom: 0;
-        }
-
-        a {
-          display: inline-block;
-          font-size: 3.5rem;
-          text-decoration: none;
-          color: #fff;
-        }
-      }
+    li a {
+      font-size: 3rem;
+      color: #fff;
+      text-decoration: none;
     }
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
@@ -50,45 +45,39 @@ interface NavMenuProps {
 
 export const NavigationMenu = ({ toggleMenu, setToggleMenu }: NavMenuProps) => {
   return (
-    <div className="container">
+    <div style={{ background: 'red' }}>
       {toggleMenu && (
         <AnimatePresence>
-          <NavMenu
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            exit={{ y: 0 }}
-            transition={{ damping: 19, type: 'spring' }}>
-            <div
-              role="button"
-              onClick={() => setToggleMenu(false)}
-              className="close-nav-menu">
-              X
+          <NavOverlay>
+            <div className="container flex">
+              <h1>Albert Dugba</h1>
+
+              <div
+                role="button"
+                onClick={() => setToggleMenu(false)}
+                className="close-nav-menu">
+                X
+              </div>
             </div>
-            <div className="nav-menu-inner">
-              <ul>
-                <li>
-                  <Link href="#">
-                    <a>About</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a>Blog</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/works">
-                    <a>Works</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
-                    <a>Reach Out</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </NavMenu>
+
+            <ul>
+              <li>
+                <Link href="#">
+                  <a>Blog</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/works">
+                  <a>Works</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>Resumè</a>
+                </Link>
+              </li>
+            </ul>
+          </NavOverlay>
         </AnimatePresence>
       )}
     </div>

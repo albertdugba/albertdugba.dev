@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
   @media (max-width: 801px) {
-    margin-top: 35%;
+    margin-top: 45%;
   }
 
   @media (min-width: 801px) {

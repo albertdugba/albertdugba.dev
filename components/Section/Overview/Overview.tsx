@@ -6,8 +6,7 @@ const Overview = () => {
       <Container className="container">
         <div className="info">
           <div>
-            <h1>About Me</h1>
-            <h1> Hey, I'm Albert Dugba.</h1>
+            <h1>Bio</h1>
           </div>
           <p>I am a self taught software engineer from Ghana.</p>
           <p>
