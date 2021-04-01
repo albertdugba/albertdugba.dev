@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FooterContainer = styled.div`
   background: teal;
-  margin-top: 20%;
+  margin-top: 40%;
 `;
 
 export { FooterContainer };

@@ -3,11 +3,10 @@ import styled from 'styled-components';
 const HomeContainer = styled.div`
   position: relative;
   padding: 45px 0;
-  /* height: 100vh; */
 
   .down__dots {
     position: absolute;
-    bottom: -8%;
+    bottom: -29%;
 
     @media (max-width: 866px) {
       display: none;
@@ -111,6 +110,7 @@ const GridContainer = styled.div`
 
       img {
         width: 100%;
+        /* max-width: 270px; */
         object-fit: contain;
         height: auto;
         display: block;

@@ -46,7 +46,7 @@ const Contact = () => {
             <label htmlFor="message">Message</label>
           </div>
 
-          <button>Send</button>
+          <button className="slide">Shoot</button>
         </form>
       </FormContainer>
     </ContactContainer>

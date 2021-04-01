@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
+  height: auto;
   position: absolute;
-  top: 15%;
-  left: 20%;
+  top: 5%;
+  left: 10%;
   right: 0;
 
   @media (max-width: 801px) {
@@ -18,9 +19,34 @@ const FormContainer = styled.div`
     background: rgba(255, 255, 255, 0.9);
     opacity: 0.8;
 
+    button {
+      background: none;
+      width: 97%;
+      border: 1px solid;
+      font: inherit;
+      line-height: 1;
+      margin: 0.5em;
+      padding: 1em 2em;
+      transition: 0.25s;
+      cursor: pointer;
+
+      &.slide:hover,
+      &.slide:focus {
+        box-shadow: inset 6.5em 0 0 0 var(--hover);
+      }
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: purple;
+        border: none;
+      }
+    }
+
     .input-group {
       position: relative;
-      margin: 40px 0 20px;
+      margin: 0px 0 2px;
+      padding: 1rem;
     }
 
     input,
@@ -32,6 +58,7 @@ const FormContainer = styled.div`
       width: 100%;
       border: none;
       outline: none;
+      background: #fff;
       border-bottom: 1px solid #757575;
     }
 
@@ -45,7 +72,7 @@ const FormContainer = styled.div`
       font-size: 1.2rem;
       position: absolute;
       pointer-events: none;
-      left: 5px;
+      left: 16px;
       top: 10px;
       transition: 0.2s ease all;
       -moz-transition: 0.2s ease all;
