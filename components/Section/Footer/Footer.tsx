@@ -6,7 +6,7 @@ import Twitter from 'styles/Icons/twitter';
 import { FooterContainer, Social, FooterSocialContainer } from './style';
 const Footer = () => {
   return (
-    <>
+    <div>
       <FooterContainer>
         <div className="container">
           <div>
@@ -28,7 +28,7 @@ const Footer = () => {
           </FooterSocialContainer>
         </div>
       </FooterContainer>
-    </>
+    </div>
   );
 };
 

@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  margin-top: 40%;
+  @media (max-width: 801px) {
+    margin-top: 35%;
+  }
+
+  @media (min-width: 801px) {
+    margin-top: 15%;
+  }
 `;
 
 const Social = styled.div`
   display: flex;
   align-items: center;
   svg {
-    margin-left: 1.2rem;
+    margin-left: 1rem;
     cursor: pointer;
   }
 `;
