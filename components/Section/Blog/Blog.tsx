@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { CardList, Card, CardHeader, CardAuthor } from './styles';
 
 const Blog = () => {
@@ -9,8 +10,12 @@ const Blog = () => {
       <CardList>
         <Card>
           <CardHeader>
-            <p>31st March, 2021</p>
-            <h2>Blog Card</h2>
+            <Link href="/blog">
+              <div>
+                <p>31st March, 2021</p>
+                <h2>Blog Card</h2>
+              </div>
+            </Link>
           </CardHeader>
           <CardAuthor>
             <a href="#">html</a>

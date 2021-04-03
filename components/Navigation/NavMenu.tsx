@@ -38,11 +38,6 @@ const NavMenu = styled(motion.nav)`
   }
 `;
 
-interface NavMenuProps {
-  toggleMenu: boolean;
-  setToggleMenu: Function;
-}
-
 export const NavigationMenu = ({ toggleMenu, setToggleMenu }) => {
   return (
     <div className="container">
@@ -52,7 +47,7 @@ export const NavigationMenu = ({ toggleMenu, setToggleMenu }) => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             exit={{ y: 0 }}
-            transition={{ damping: 19, type: 'spring' }}>
+            transition={{ damping: 18, type: 'spring' }}>
             <div
               role="button"
               onClick={() => setToggleMenu(false)}

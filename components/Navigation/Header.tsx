@@ -7,10 +7,10 @@ const Container = styled.header`
   /* padding-top: 20px; */
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  /* position: fixed;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1; */
 
   .nav__container {
     ul {
@@ -52,10 +52,6 @@ const Container = styled.header`
     }
   }
 `;
-
-interface HeaderProps {
-  setToggleMenu: Function;
-}
 
 export const Header = ({ setToggleMenu }) => {
   return (
