@@ -18,7 +18,7 @@ const Project = ({
   <ProjectStyles>
     <div className="project__logo">
       <Link href="/works/project1">
-        <Image width="150" height="150" src={projectImage} />
+        <Image width="200" height="200" src={projectImage} />
       </Link>
     </div>
     <div className="project__details">
@@ -43,7 +43,7 @@ const ProjectStyles = styled.div`
   border-radius: 4px;
   margin: 10px;
   min-width: 30%;
-  height: 15rem;
+  height: 310px;
 
   img {
     width: 100%;
@@ -52,7 +52,7 @@ const ProjectStyles = styled.div`
   }
 
   .project__logo {
-    height: 120px;
+    height: 180px;
     background: #f6f3f6;
     display: flex;
     align-items: center;

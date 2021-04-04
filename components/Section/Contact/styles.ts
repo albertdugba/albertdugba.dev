@@ -58,12 +58,12 @@ const FormContainer = styled.div`
       width: 100%;
       border: none;
       outline: none;
-      background: #fff;
+      background: transparent;
       border-bottom: 1px solid #757575;
     }
 
     input:focus,
-    textarea:focu {
+    textarea:focus {
       outline: none;
     }
 
@@ -73,15 +73,14 @@ const FormContainer = styled.div`
       position: absolute;
       pointer-events: none;
       left: 16px;
-      top: 10px;
+      top: 15px;
       transition: 0.2s ease all;
       -moz-transition: 0.2s ease all;
       -webkit-transition: 0.2s ease all;
     }
 
     input:focus ~ label,
-    input:valid ~ label,
-    textarea:focus ~ label {
+    input:valid ~ label {
       top: -20px;
       font-size: 14px;
       color: #4285f4;
@@ -100,7 +99,7 @@ const FormContainer = styled.div`
       width: 0;
       bottom: 1px;
       position: absolute;
-      background: #4285f4;
+      /* background: #4285f4; */
       transition: 0.2s ease all;
       -moz-transition: 0.2s ease all;
       -webkit-transition: 0.2s ease all;

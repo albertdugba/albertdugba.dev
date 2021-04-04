@@ -1,9 +1,14 @@
+import { useForm, useFormspree } from '@formspree/react';
 import { FormContainer, ContactContainer } from './styles';
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm('meqvqaka');
+  console.log(state.submitting);
+  console.log(state.succeeded);
+  console.log(state.errors);
+
   return (
     <ContactContainer className="container">
-      {/* <h1>Find me </h1> */}
       <div className="icons-group">
         <svg
           width="505"
@@ -23,24 +28,24 @@ const Contact = () => {
       </div>
 
       <FormContainer>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <h1>Send me a message!</h1>
           <div className="input-group">
-            <input type="text" required />
+            <input type="text" id="name" name="name" required />
             <span className="highlight"></span>
             <span className="bar"></span>
             <label htmlFor="name">Name</label>
           </div>
 
           <div className="input-group">
-            <input type="text" required />
+            <input type="email" id="email" name="email" required />
             <span className="highlight"></span>
             <span className="bar"></span>
             <label htmlFor="email">Email</label>
           </div>
 
           <div className="input-group">
-            <textarea></textarea>
+            <textarea id="message" name="message" />
             <span className="highlight"></span>
             <span className="bar"></span>
             <label htmlFor="message">Message</label>

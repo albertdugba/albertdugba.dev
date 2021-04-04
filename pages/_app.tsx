@@ -3,6 +3,7 @@ import { Header } from 'components/Navigation/Header';
 import { NavigationMenu } from 'components/Navigation/NavMenu';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { FormspreeProvider } from '@formspree/react';
 
 interface ToggleMenu {
   toggleMenu: boolean;

@@ -5,7 +5,7 @@ import Project from '../components/containers/Project';
 
 const ProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 `;
 
 const WorksPage = () => {
