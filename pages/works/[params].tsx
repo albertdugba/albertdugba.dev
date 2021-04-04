@@ -1,5 +1,11 @@
+import ProjectsBanner from 'components/containers/ProjectsBanner';
+
 const Hello = () => {
-  return <h1 className="container">Project Details</h1>;
+  return (
+    <>
+      <ProjectsBanner title="Ytakenote" />
+    </>
+  );
 };
 
 export default Hello;
