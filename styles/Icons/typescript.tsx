@@ -11,7 +11,7 @@ const TypeScript = ({ width, height, color }) => (
     }}
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 256 256">
-    <path fill="#007ACC" d="M0 128v128h256V0H0z" />
+    <path fill={color} d="M0 128v128h256V0H0z" />
     <path
       d="M56.611 128.85l-.081 10.483h33.32v94.68H113.42v-94.68h33.32v-10.28c0-5.69-.122-10.444-.284-10.566c-.122-.162-20.399-.244-44.983-.203l-44.739.122l-.122 10.443z"
       fill="#FFF"

@@ -11,8 +11,8 @@ const Contact = () => {
           viewBox="0 0 505 332"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
-          <rect width="505" height="332" fill="#E5E5E5" />
-          <rect width="505" height="332" fill="white" />
+          <rect width="505" height="332" fill="none" />
+          <rect width="505" height="332" fill="none" />
           <ellipse cx="282.5" cy="116.5" rx="73.5" ry="74.5" fill="#5C2984" />
           <ellipse cx="160.5" cy="213.5" rx="73.5" ry="74.5" fill="#C654D0" />
           <path

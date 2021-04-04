@@ -55,14 +55,9 @@ export const NavigationMenu = ({ toggleMenu, setToggleMenu }) => {
               X
             </div>
             <div className="nav-menu-inner">
-              <ul>
+              <ul onClick={() => setToggleMenu(false)}>
                 <li>
-                  <Link href="#">
-                    <a>About</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#">
+                  <Link href="/blog">
                     <a>Blog</a>
                   </Link>
                 </li>

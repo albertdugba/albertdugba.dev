@@ -7,7 +7,7 @@ const Projects = () => {
       <div className="container">
         <Container>
           <div className="works">
-            <h1>I design and experiments with new technologies.</h1>
+            <h1>I develop and experiments with new technologies.</h1>
             <ButtonLink>
               <Link href="/works">
                 <a>See my work</a>

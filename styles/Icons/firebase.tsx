@@ -80,10 +80,10 @@ const FireBase = ({ width, height, color }) => (
     </defs>
     <path
       d="M0 282.998l2.123-2.972L102.527 89.512l.212-2.017L58.48 4.358C54.77-2.606 44.33-.845 43.114 6.951L0 282.998z"
-      fill="#FFC24A"
+      fill={color}
     />
     <use
-      fill="#FFA712"
+      fill={color}
       fillRule="evenodd"
       xlinkHref="#IconifyId-1777af5fff6-5c642c-41"
     />
@@ -93,10 +93,10 @@ const FireBase = ({ width, height, color }) => (
     />
     <path
       d="M135.005 150.38l32.955-33.75l-32.965-62.93c-3.129-5.957-11.866-5.975-14.962 0L102.42 87.287v2.86l32.584 60.233z"
-      fill="#F4BD62"
+      fill={color}
     />
     <use
-      fill="#FFA50E"
+      fill={color}
       fillRule="evenodd"
       xlinkHref="#IconifyId-1777af5fff6-5c642c-42"
     />
@@ -105,20 +105,20 @@ const FireBase = ({ width, height, color }) => (
       xlinkHref="#IconifyId-1777af5fff6-5c642c-42"
     />
     <path
-      fill="#F6820C"
+      fill={color}
       d="M0 282.998l.962-.968l3.496-1.42l128.477-128l1.628-4.431l-32.05-61.074z"
     />
     <path
       d="M139.121 347.551l116.275-64.847l-33.204-204.495c-1.039-6.398-8.888-8.927-13.468-4.34L0 282.998l115.608 64.548a24.126 24.126 0 0 0 23.513.005"
-      fill="#FDE068"
+      fill={color}
     />
     <path
       d="M254.354 282.16L221.402 79.218c-1.03-6.35-7.558-8.977-12.103-4.424L1.29 282.6l114.339 63.908a23.943 23.943 0 0 0 23.334.006l115.392-64.355z"
-      fill="#FCCA3F"
+      fill={color}
     />
     <path
       d="M139.12 345.64a24.126 24.126 0 0 1-23.512-.005L.931 282.015l-.93.983l115.607 64.548a24.126 24.126 0 0 0 23.513.005l116.275-64.847l-.285-1.752l-115.99 64.689z"
-      fill="#EEAB37"
+      fill={color}
     />
   </svg>
 );
