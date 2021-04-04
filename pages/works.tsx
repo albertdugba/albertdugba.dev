@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Head from 'next/head';
-import Link from 'next/link';
+import Image from 'next/image';
 import GraphQL from 'styles/Icons/graphql';
 import TypeScript from 'styles/Icons/typescript';
 import Terminal from 'styles/Icons/terminal';
@@ -130,25 +130,25 @@ const WorksPage = () => {
           <ProjectsContainer>
             <Project
               heading="Personal Website"
-              projectImage="Image"
+              projectImage="/ytakenote.png"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
+            <Project
+              heading="Ytakenote"
+              projectImage="/ytakenote.png"
+              linkContent="ytakenote.com"
+              hrefLink="https://ytakenote.com"
+            />
+            <Project
+              heading="Store"
+              projectImage="/ytakenote.png"
               linkContent="albertdugba.dev"
               hrefLink="https://www.albertdugba.dev"
             />
             <Project
               heading="Personal Website"
-              projectImage="Image"
-              linkContent="albertdugba.dev"
-              hrefLink="https://www.albertdugba.dev"
-            />
-            <Project
-              heading="Personal Website"
-              projectImage="Image"
-              linkContent="albertdugba.dev"
-              hrefLink="https://www.albertdugba.dev"
-            />
-            <Project
-              heading="Personal Website"
-              projectImage="Image"
+              projectImage="/ytakenote.png"
               linkContent="albertdugba.dev"
               hrefLink="https://www.albertdugba.dev"
             />

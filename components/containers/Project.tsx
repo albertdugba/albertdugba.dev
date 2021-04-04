@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import Image from 'next/image';
 
 interface ProjectProps {
   projectImage: string;
@@ -15,7 +16,11 @@ const Project = ({
   linkContent,
 }: ProjectProps) => (
   <ProjectStyles>
-    <div className="project__logo">{projectImage}</div>
+    <div className="project__logo">
+      <Link href="/works/project1">
+        <Image width="150" height="150" src={projectImage} />
+      </Link>
+    </div>
     <div className="project__details">
       <h3>{heading}</h3>
       <div className="project__link">
@@ -34,16 +39,21 @@ export default Project;
  */
 
 const ProjectStyles = styled.div`
-  /* padding: 10px; */
   box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   margin: 10px;
   min-width: 30%;
   height: 15rem;
 
+  img {
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+  }
+
   .project__logo {
     height: 120px;
-    background: #f1e9f0;
+    background: #f6f3f6;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
