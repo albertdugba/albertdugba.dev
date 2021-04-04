@@ -9,6 +9,7 @@ import Github from 'styles/Icons/github';
 import NodeJS from 'styles/Icons/node';
 import NextJS from 'styles/Icons/nextjs';
 import ReactJS from 'styles/Icons/react';
+import Project from 'components/containers/Project';
 
 const Container = styled.div`
   min-height: 100%;
@@ -86,31 +87,6 @@ const ProjectsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `;
 
-const Project = styled.div`
-  /* padding: 10px; */
-  box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.6);
-  border-radius: 4px;
-  margin: 10px;
-  min-width: 30%;
-  height: 15rem;
-
-  .project__logo {
-    height: 120px;
-    background: #f1e9f0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.4s ease-out;
-  }
-
-  .project__details {
-    padding: 1rem;
-  }
-`;
-
 const WorksPage = () => {
   return (
     <>
@@ -152,24 +128,30 @@ const WorksPage = () => {
         <div className="container">
           <h1>Some selected projects that I have worked on.</h1>
           <ProjectsContainer>
-            <Project className="flex between">
-              <div className="project__logo">Image goes here</div>
-              <div className="project__details">
-                <h3>Personal Details</h3>
-                <div className="project__link">
-                  <Link href="https://www.albertdugba.dev">
-                    <a target="_blank">albertdugba.dev</a>
-                  </Link>
-                </div>
-              </div>
-            </Project>
-            <Project className="flex between">
-              <div className="project__logo">Image goes here</div>
-              <div className="project__details">
-                <h3>Personal Details</h3>
-                <div className="project__link">albertdugba.dev</div>
-              </div>
-            </Project>
+            <Project
+              heading="Personal Website"
+              projectImage="Image"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
+            <Project
+              heading="Personal Website"
+              projectImage="Image"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
+            <Project
+              heading="Personal Website"
+              projectImage="Image"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
+            <Project
+              heading="Personal Website"
+              projectImage="Image"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
           </ProjectsContainer>
         </div>
       </div>
