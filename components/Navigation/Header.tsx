@@ -12,6 +12,11 @@ const Container = styled.header`
   left: 0;
   z-index: 1; */
 
+  h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .nav__container {
     ul {
       display: flex;

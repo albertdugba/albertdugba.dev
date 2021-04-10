@@ -1,40 +1,33 @@
+import { PostContext, Posts } from 'context/blog';
 import Link from 'next/link';
+import { useContext, useState } from 'react';
 import { CardList, Card, CardHeader, CardAuthor } from './styles';
 
-const Blog = () => {
+const Blog = ({ posts }) => {
+  console.log(posts);
+
   return (
     <div className="container" style={{ color: '#fff' }}>
       <h1 style={{ color: 'black' }}>
         I write sometimes, check out my latest posts{' '}
       </h1>
+
       <CardList>
-        <Card>
-          <CardHeader>
-            <Link href="/blog">
-              <div>
-                <p>31st March, 2021</p>
-                <h2>Blog Card</h2>
-              </div>
-            </Link>
-          </CardHeader>
-          <CardAuthor>
-            <a href="#">html</a>
-            <a href="#">css</a>
-            <a href="#">web-dev</a>
-          </CardAuthor>
-        </Card>
-        <Card>
-          <CardHeader>
-            <p>31st March, 2021</p>
-            <h2>Blog Card</h2>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader>
-            <p>31st March, 2021</p>
-            <h2>Blog Card</h2>
-          </CardHeader>
-        </Card>
+        {posts.map(post => (
+          <Card>
+            <CardHeader>
+              <Link href="/blog">
+                <div>
+                  <p>31st March, 2021</p>
+                  <h2>{post.title}</h2>
+                </div>
+              </Link>
+            </CardHeader>
+            <CardAuthor>
+              <a href="#">{post.tags}</a>
+            </CardAuthor>
+          </Card>
+        ))}
       </CardList>
     </div>
   );

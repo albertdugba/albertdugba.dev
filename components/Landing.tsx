@@ -5,13 +5,13 @@ import Blog from './Section/Blog/Blog';
 import Contact from './Section/Contact/Contact';
 import Footer from './Section/Footer/Footer';
 
-const Landing = () => {
+const Landing = ({ posts }) => {
   return (
     <div>
       <Home />
       <Overview />
       <Projects />
-      <Blog />
+      <Blog posts={posts} />
       <Contact />
       <Footer />
     </div>

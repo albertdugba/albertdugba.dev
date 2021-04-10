@@ -4,6 +4,7 @@ import { NavigationMenu } from 'components/Navigation/NavMenu';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { FormspreeProvider } from '@formspree/react';
+import { PostContext, postsContextDefaultValue } from 'context/blog';
 
 interface ToggleMenu {
   toggleMenu: boolean;
@@ -14,11 +15,14 @@ function MyApp({ Component, pageProps }) {
   const [toggleMenu, setToggleMenu] = useState<ToggleMenu>();
   const router = useRouter();
   const showHeader = router.pathname === '/blog' ? false : true;
+
   return (
     <>
       {showHeader && <Header setToggleMenu={setToggleMenu} />}
       <NavigationMenu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
-      <Component {...pageProps} />
+      <PostContext.Provider value={postsContextDefaultValue}>
+        <Component {...pageProps} />
+      </PostContext.Provider>
     </>
   );
 }

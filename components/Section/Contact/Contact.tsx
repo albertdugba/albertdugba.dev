@@ -3,9 +3,6 @@ import { FormContainer, ContactContainer } from './styles';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('meqvqaka');
-  console.log(state.submitting);
-  console.log(state.succeeded);
-  console.log(state.errors);
 
   return (
     <ContactContainer className="container">
@@ -26,12 +23,13 @@ const Contact = () => {
           />
         </svg>
       </div>
-
       <FormContainer>
+        <h1>Hello</h1>
         <form onSubmit={handleSubmit}>
           <h1>Send me a message!</h1>
           <div className="input-group">
             <input type="text" id="name" name="name" required />
+            <input type="hidden" name="_next" value="/thanks.html" />
             <span className="highlight"></span>
             <span className="bar"></span>
             <label htmlFor="name">Name</label>
@@ -45,13 +43,15 @@ const Contact = () => {
           </div>
 
           <div className="input-group">
-            <textarea id="message" name="message" />
+            <textarea id="message" name="message" required />
             <span className="highlight"></span>
             <span className="bar"></span>
             <label htmlFor="message">Message</label>
           </div>
 
-          <button className="slide">Shoot</button>
+          <button className="slide">
+            {state.submitting ? 'Submitting' : 'Shoot'}
+          </button>
         </form>
       </FormContainer>
     </ContactContainer>

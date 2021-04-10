@@ -39,11 +39,16 @@ export default Project;
  */
 
 const ProjectStyles = styled.div`
-  box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   margin: 10px;
   min-width: 30%;
   height: 310px;
+  box-shadow: 0px 4px 6px rgba(160, 156, 161, 0.18);
+  transition: 0.5 transform ease-out;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 
   img {
     width: 100%;
