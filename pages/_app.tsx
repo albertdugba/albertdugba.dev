@@ -3,8 +3,6 @@ import { Header } from 'components/Navigation/Header';
 import { NavigationMenu } from 'components/Navigation/NavMenu';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { FormspreeProvider } from '@formspree/react';
-import { PostContext, postsContextDefaultValue } from 'context/blog';
 
 interface ToggleMenu {
   toggleMenu: boolean;
@@ -20,9 +18,7 @@ function MyApp({ Component, pageProps }) {
     <>
       {showHeader && <Header setToggleMenu={setToggleMenu} />}
       <NavigationMenu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
-      <PostContext.Provider value={postsContextDefaultValue}>
-        <Component {...pageProps} />
-      </PostContext.Provider>
+      <Component {...pageProps} />
     </>
   );
 }

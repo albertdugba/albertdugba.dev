@@ -1,6 +1,4 @@
-import { PostContext, Posts } from 'context/blog';
 import Link from 'next/link';
-import { useContext, useState } from 'react';
 import { CardList, Card, CardHeader, CardAuthor } from './styles';
 
 const Blog = ({ posts }) => {
@@ -14,12 +12,14 @@ const Blog = ({ posts }) => {
 
       <CardList>
         {posts.map(post => (
-          <Card>
+          <Card key={post.id}>
             <CardHeader>
-              <Link href="/blog">
+              <Link href={`/blog/[slug]`} as={`/blog/${post.slug}`}>
                 <div>
                   <p>31st March, 2021</p>
-                  <h2>{post.title}</h2>
+                  <a>
+                    <h2>{post.title}</h2>
+                  </a>
                 </div>
               </Link>
             </CardHeader>

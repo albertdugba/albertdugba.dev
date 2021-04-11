@@ -69,19 +69,6 @@ const CardAuthor = styled.div`
   grid-template-columns: 75x 1fr;
   align-items: center;
   margin: 3rem 0 0;
-
-  .half-circle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 48px;
-    fill: none;
-    stroke: #ff8a00;
-    stroke-width: 8;
-    stroke-linecap: round;
-    pointer-events: none;
-  }
 `;
 const AuthorAvatar = styled.a`
   grid-area: auto;
