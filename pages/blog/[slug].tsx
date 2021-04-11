@@ -42,7 +42,7 @@ import { GraphQLClient } from 'graphql-request';
 // };
 
 const BlogPage = ({ post }) => {
-  return <h1 className="container">Blog Page:{post.title}</h1>;
+  return <h1 className="container">Blog Page:</h1>;
 };
 
 export default BlogPage;
