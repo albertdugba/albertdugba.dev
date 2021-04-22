@@ -46,9 +46,8 @@ const FormContainer = styled.form`
   }
 
   button {
-    background: red;
-    width: 97%;
-    border: 1px solid;
+    /* background: var(--headerColor); */
+    width: 100%;
     font: inherit;
     line-height: 1;
     margin: 0.5em;

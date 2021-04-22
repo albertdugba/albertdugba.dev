@@ -3,7 +3,7 @@ import { Container, ButtonLink } from './styles';
 
 const Projects = () => {
   return (
-    <div style={{ background: '#000' }}>
+    <div style={{ background: 'var(--sectionBgColor)' }}>
       <div className="container">
         <Container>
           <div className="works">

@@ -1,7 +1,38 @@
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  padding: 1rem;
+  .divider {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+  }
+  /* margin-right: 12px; */
+  li {
+    list-style: none;
+  }
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    &--links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      margin-left: 2rem;
+
+      li {
+        padding: 0.7rem;
+      }
+
+      a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.3rem;
+      }
+    }
+  }
 
   @media (max-width: 801px) {
     margin-top: 50%;
