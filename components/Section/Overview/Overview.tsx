@@ -3,7 +3,7 @@ import { Container } from './styles';
 const Overview = () => {
   return (
     <div style={{ background: '#EBE6F3' }}>
-      <Container className="container">
+      <Container className="container pb-1">
         <div className="info">
           <div>
             <h1>Bio</h1>

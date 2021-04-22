@@ -4,8 +4,18 @@ import { CardList, Card, CardHeader, CardAuthor } from './styles';
 const Blog = ({ posts }) => {
   return (
     <div className="container" style={{ color: '#fff' }}>
-      <h1 style={{ color: 'black' }}>
-        I write sometimes, check out my latest posts{' '}
+      <h1
+        style={{
+          color: 'black',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+        className="pd-1">
+        I write sometimes, check out my latest posts
+        <Link href="/all-posts">
+          <a>View all posts</a>
+        </Link>
       </h1>
 
       <CardList>

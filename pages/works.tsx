@@ -45,9 +45,20 @@ const WorksPage = () => {
               linkContent="albertdugba.dev"
               hrefLink="https://www.albertdugba.dev"
             />
+            <Project
+              heading="Personal Website"
+              projectImage="/ytakenote.png"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
+            <Project
+              heading="Personal Website"
+              projectImage="/ytakenote.png"
+              linkContent="albertdugba.dev"
+              hrefLink="https://www.albertdugba.dev"
+            />
           </ProjectsContainer>
         </div>
-
         <Footer />
       </div>
     </>
