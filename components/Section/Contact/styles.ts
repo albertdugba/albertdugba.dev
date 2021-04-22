@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const FormContainer = styled.form`
+const FormContainer = styled.div`
   width: 100%;
   max-width: 650px;
   padding: 1rem;
@@ -46,14 +46,15 @@ const FormContainer = styled.form`
   }
 
   button {
-    /* background: var(--headerColor); */
+    background: var(--headerColor);
+    font-family: inherit;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
     width: 100%;
-    font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    /* padding: 1em 2em; */
-    transition: 0.25s;
-    cursor: pointer;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #757575;
   }
 `;
 

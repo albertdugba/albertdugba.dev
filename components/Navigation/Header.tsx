@@ -33,18 +33,18 @@ export const Header: FunctionComponent = () => {
                 </Link>
               </li>
 
-              {/* <li
+              <li
                 className="hamburger__menu"
                 role="button"
                 onClick={() => setToggleMenu(true)}>
-                <span />
-                <span className="last-child" />
-              </li> */}
+                <div />
+                <div className="last-child" />
+              </li>
             </ul>
           </nav>
         </Container>
       </div>
-      {/* <NavOverlay toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} /> */}
+      <NavOverlay toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
     </>
   );
 };
@@ -78,7 +78,7 @@ const Container = styled.header`
         width: 20px;
         cursor: pointer;
 
-        span {
+        div {
           height: 2px;
           width: 40px;
           background: #0d0d7e;

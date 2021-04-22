@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div``;
-
 const FooterContainer = styled.footer`
   .divider {
     border-top: 1px solid #ddd;
