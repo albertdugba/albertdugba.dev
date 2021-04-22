@@ -13,7 +13,7 @@ const Blog = ({ posts }) => {
         }}
         className="pd-1">
         I write sometimes, check out my latest posts
-        <Link href="/all-posts">
+        <Link href="/posts">
           <a>View all posts</a>
         </Link>
       </h1>

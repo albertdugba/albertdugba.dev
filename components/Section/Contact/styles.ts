@@ -5,8 +5,8 @@ const FormContainer = styled.form`
   max-width: 650px;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: var(--secondaryColor);
   background: rgba(255, 255, 255, 0.9);
-  opacity: 0.8;
 
   position: absolute;
   top: 5%;
