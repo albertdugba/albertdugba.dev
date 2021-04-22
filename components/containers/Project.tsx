@@ -17,8 +17,10 @@ const Project = ({
 }: ProjectProps) => (
   <ProjectStyles>
     <div className="project__logo">
-      <Link href="/works/project1">
-        <Image width="200" height="200" src={projectImage} />
+      <Link href="/works/project">
+        <a>
+          <Image width="200" height="200" src={projectImage} />
+        </a>
       </Link>
     </div>
     <div className="project__details">
