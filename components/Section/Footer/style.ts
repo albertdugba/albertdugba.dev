@@ -7,12 +7,11 @@ const FooterContainer = styled.footer`
     border-bottom: 1px solid #ddd;
     padding: 1rem;
   }
-  /* margin-right: 12px; */
+
   li {
     list-style: none;
   }
   .footer__inner {
-    /* display: flex; */
     align-items: center;
     margin-top: 1rem;
 

@@ -1,3 +1,4 @@
+import { SocialLinks } from 'components/containers/Social';
 import Link from 'next/link';
 import Dev from 'styles/Icons/dev';
 import Github from 'styles/Icons/github';
@@ -50,11 +51,25 @@ const Footer = () => {
           <FooterSocialContainer className="container pd-1">
             <h3>&copy; {new Date().getFullYear()} Albert Dugba</h3>
             <Social>
-              <Github width={20} height={20} color="grey" />
-              <Twitter width={20} height={20} color="#fff" />
-              <LinkedIn size={20} color="#EBE6F3" />
-              <Dev size={20} color="#EBE6F3" />
-              <Instagram size={20} color="#EBE6F3" />
+              <SocialLinks
+                link="https://github.com/albertdugba"
+                component={<Github width={20} height={20} color="#fff" />}
+              />
+
+              <SocialLinks
+                link="https://twitter.com/Albert_Dugba"
+                component={<Twitter width={20} height={20} color="#fff" />}
+              />
+
+              <SocialLinks
+                link="https://www.linkedin.com/in/albert-dugba-723a3489/"
+                component={<LinkedIn size={20} color="#EBE6F3" />}
+              />
+
+              <SocialLinks
+                link="https://dev.to/albertdugba"
+                component={<Dev size={20} color="#EBE6F3" />}
+              />
             </Social>
           </FooterSocialContainer>
         </div>

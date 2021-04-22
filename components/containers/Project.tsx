@@ -63,7 +63,8 @@ const ProjectStyles = styled.div`
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     cursor: pointer;
     transition: background 0.4s ease-out;
   }
