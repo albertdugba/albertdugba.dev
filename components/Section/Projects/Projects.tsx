@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container, ButtonLink } from './styles';
+import { Container } from './styles';
 
 const Projects = () => {
   return (

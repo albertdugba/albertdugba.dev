@@ -50,7 +50,7 @@ const Footer = () => {
           <FooterSocialContainer className="container pd-1">
             <h3>&copy; {new Date().getFullYear()} Albert Dugba</h3>
             <Social>
-              <Github width={20} height={20} color="#EBE6F3" />
+              <Github width={20} height={20} color="grey" />
               <Twitter width={20} height={20} color="#fff" />
               <LinkedIn size={20} color="#EBE6F3" />
               <Dev size={20} color="#EBE6F3" />

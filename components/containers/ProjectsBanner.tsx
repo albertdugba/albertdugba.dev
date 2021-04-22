@@ -19,6 +19,11 @@ const ProjectsBanner = ({ title }: Props) => (
         <div className="graphql">
           <GraphQL width={40} height={40} color="grey" />
         </div>
+
+        <div className="terminal">
+          <Terminal width={40} height={40} color="grey" />
+        </div>
+
         <div className="typescript">
           <TypeScript width={40} height={40} color="grey" />
         </div>
@@ -38,7 +43,7 @@ const ProjectsBanner = ({ title }: Props) => (
       </div>
 
       <Container className="container">
-        <h1 className="title">{title}</h1>
+        <h2 className="title">{title}</h2>
       </Container>
     </SvgIcons>
   </div>
@@ -69,28 +74,42 @@ const SvgIcons = styled.div`
   position: relative;
   padding: 10px;
 
+  .terminal {
+    position: absolute;
+    right: 0%;
+    top: 0;
+
+    @media (min-width: 801px) {
+      display: none;
+    }
+  }
+
   .graphql {
     position: absolute;
     right: 0%;
     top: 0;
+
+    @media (max-width: 801px) {
+      display: none;
+    }
   }
 
   .typescript {
     position: absolute;
     bottom: 0%;
     right: 0;
-  }
-
-  .terminal {
-    position: absolute;
-    bottom: 0%;
-    left: 0;
+    @media (max-width: 801px) {
+      display: none;
+    }
   }
 
   .firebase {
     position: absolute;
     top: 30%;
     left: 80%;
+    @media (max-width: 801px) {
+      display: none;
+    }
 
     @media (max-width: 801px) {
       left: 90%;
@@ -108,12 +127,24 @@ const SvgIcons = styled.div`
     bottom: 0;
     top: 60%;
     left: 10%;
+    @media (max-width: 801px) {
+      display: none;
+    }
+  }
+
+  .nodejs {
+    @media (max-width: 801px) {
+      display: none;
+    }
   }
 
   .react {
     position: absolute;
     top: 30%;
     left: 20%;
+    @media (max-width: 801px) {
+      display: none;
+    }
 
     @media (max-width: 801px) {
       top: -2%;
