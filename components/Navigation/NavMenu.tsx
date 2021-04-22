@@ -107,7 +107,7 @@ const Overlay = styled.div`
     align-items: center;
     justify-content: center;
     text-align: left;
-    height: 100vh;
+    /* height: 100vh; */
 
     li {
       padding-top: 50px;
@@ -132,8 +132,8 @@ const CloseButton = styled.button`
   width: 110px;
   border-radius: 50%;
   position: absolute;
-  top: 1%;
-  right: 5%;
+  top: 0%;
+  right: 2%;
 `;
 
 const SocialContainer = styled.div`
@@ -142,7 +142,7 @@ const SocialContainer = styled.div`
   justify-content: center;
   width: 100%;
   border-top: 1px solid var(--secondaryColor);
-  margin-top: auto;
+  margin: 50px auto;
 
   svg {
     margin: 20px auto;
