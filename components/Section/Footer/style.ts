@@ -4,15 +4,21 @@ const Wrapper = styled.div``;
 
 const FooterContainer = styled.footer`
   .divider {
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    max-width: 96%;
+    margin: auto;
     padding: 1rem;
+
+    @media (max-width: 901px) {
+      width: 95%;
+    }
   }
 
   li {
     list-style: none;
+    padding: 1rem;
   }
   .footer__inner {
-    align-items: center;
     margin-top: 1rem;
 
     &--links {
@@ -20,7 +26,6 @@ const FooterContainer = styled.footer`
       flex-direction: column;
       justify-content: center;
       padding: 1rem;
-      margin-left: 2rem;
 
       li {
         padding: 0.7rem;
@@ -47,6 +52,10 @@ const FooterContainer = styled.footer`
 const Social = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 653px) {
+    display: none;
+  }
   svg {
     margin-left: 2rem;
     cursor: pointer;

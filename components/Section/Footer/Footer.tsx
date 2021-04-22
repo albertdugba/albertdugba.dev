@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="footer__inner--links">
               <li>Say Hello</li>
               <li>
-                <a href="mailto:m.albert.dugba@gmail.com">
+                <a href="mailto:albert.dugba@gmail.com">
                   albert.dugba@gmail.com
                 </a>
               </li>
@@ -46,9 +46,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="divider container"></div>
+          <div className="divider" />
 
-          <FooterSocialContainer className="container pd-1">
+          <FooterSocialContainer className="pd-1" style={{ padding: '1rem' }}>
             <h3>&copy; {new Date().getFullYear()} Albert Dugba</h3>
             <Social>
               <SocialLinks
