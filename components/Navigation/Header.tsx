@@ -34,11 +34,31 @@ export const Header: FunctionComponent = () => {
               </li>
 
               <li
-                className="hamburger__menu"
-                role="button"
-                onClick={() => setToggleMenu(true)}>
-                <div />
-                <div className="last-child" />
+                onClick={() => setToggleMenu(true)}
+                className="hamburger__menu">
+                <div>
+                  <svg
+                    width="62"
+                    height="62"
+                    viewBox="0 0 62 62"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line
+                      y1="9"
+                      x2="48"
+                      y2="9"
+                      stroke="var(--primaryColor)"
+                      strokeWidth="4"
+                    />
+                    <line
+                      y1="21"
+                      x2="28"
+                      y2="21"
+                      stroke="var(--primaryColor)"
+                      strokeWidth="4"
+                    />
+                  </svg>
+                </div>
               </li>
             </ul>
           </nav>
@@ -77,17 +97,6 @@ const Container = styled.header`
         height: 20px;
         width: 20px;
         cursor: pointer;
-
-        div {
-          height: 2px;
-          width: 40px;
-          background: #0d0d7e;
-          margin-top: 8px;
-        }
-
-        .last-child {
-          width: 25px;
-        }
       }
 
       li {

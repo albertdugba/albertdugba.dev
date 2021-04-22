@@ -2,31 +2,32 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
+  const handleClose = () => setToggleMenu(false);
   return (
     <>
       <div className="container">
         {toggleMenu && (
           <Overlay>
-            <ul onClick={() => setToggleMenu(false)}>
-              <li>
+            <ul>
+              <li onClick={handleClose}>
                 <Link href="/works">
                   <a>Works</a>
                 </Link>
               </li>
-              <li>
+              <li onClick={handleClose}>
                 <Link href="/posts">
                   <a>Blog</a>
                 </Link>
               </li>
-              <li>
+              <li onClick={handleClose}>
                 <Link href="/resume">
                   <a>Rèsume</a>
                 </Link>
               </li>
               <CloseButton onClick={() => setToggleMenu(false)}>
                 <svg
-                  width="69"
-                  height="68"
+                  width="49"
+                  height="49"
                   viewBox="0 0 69 68"
                   xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0)">
@@ -36,7 +37,7 @@ export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
                       x2="64.4671"
                       y2="66.6408"
                       stroke="var(--secondaryColor)"
-                      stroke-width="4"
+                      strokeWidth="4"
                     />
                     <line
                       x1="70.4039"
@@ -44,7 +45,7 @@ export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
                       x2="1.40385"
                       y2="69.4245"
                       stroke="var(--secondaryColor)"
-                      stroke-width="4"
+                      strokeWidth="4"
                     />
                   </g>
                 </svg>
