@@ -4,9 +4,10 @@ import Instagram from 'styles/Icons/instagram';
 import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
 import { FooterContainer, Social, FooterSocialContainer } from './style';
+
 const Footer = () => {
   return (
-    <div>
+    <div style={{ background: '#000', height: '50vh', color: 'white' }}>
       <FooterContainer>
         <div className="container">
           <div>

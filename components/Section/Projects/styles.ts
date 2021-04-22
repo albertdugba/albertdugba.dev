@@ -5,14 +5,15 @@ const ButtonLink = styled.div`
     text-decoration: none;
     display: inline-block;
     height: auto;
-    border: 1px solid purple;
+    border: 1px solid #fff;
     padding: 1rem 3rem;
-    background: purple;
+    background: var(--primaryColor);
     font-family: inherit;
     color: #fff;
 
     &:hover {
-      background-color: violet;
+      background-color: var(--primaryColor);
+      /* border: none; */
     }
   }
 `;

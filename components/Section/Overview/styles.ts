@@ -9,7 +9,11 @@ export const Container = styled.div`
   margin-top: 6rem;
 
   .info {
-    margin-top: -2rem;
+    margin-top: 0.5rem;
+
+    h1 {
+      color: var(--primaryColor);
+    }
   }
 
   .svg--container {

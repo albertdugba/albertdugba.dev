@@ -29,7 +29,7 @@ const GridContainer = styled.div`
   .info__text {
     h1 {
       font-size: 4rem;
-      color: #9588aa;
+      color: var(--primaryColor);
     }
 
     h2 {
@@ -50,7 +50,7 @@ const GridContainer = styled.div`
       content: 'Hellooo';
       height: 100%;
       width: 100%;
-      border: 1px solid purple;
+      border: 1px solid var(--primaryColor);
       top: 8%;
       left: 10%;
       z-index: -1;

@@ -1,8 +1,8 @@
 import '../styles/app.scss';
 import { Header } from 'components/Navigation/Header';
-import { NavigationMenu } from 'components/Navigation/NavMenu';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import Layout from 'components/containers/Layout';
 
 interface ToggleMenu {
   toggleMenu: boolean;
@@ -10,16 +10,15 @@ interface ToggleMenu {
 }
 
 function MyApp({ Component, pageProps }) {
-  const [toggleMenu, setToggleMenu] = useState<ToggleMenu>();
+  const [_, setToggleMenu] = useState<ToggleMenu>();
   const router = useRouter();
   const showHeader = router.pathname === '/blog' ? false : true;
 
   return (
-    <>
-      {showHeader && <Header setToggleMenu={setToggleMenu} />}
-      <NavigationMenu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+    <Layout>
+      {showHeader && <Header />}
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
 }
 

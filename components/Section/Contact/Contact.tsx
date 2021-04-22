@@ -24,29 +24,22 @@ const Contact = () => {
         </svg>
       </div>
       <FormContainer>
-        <h1>Hello</h1>
         <form onSubmit={handleSubmit}>
           <h1>Send me a message!</h1>
           <div className="input-group">
+            <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" required />
             <input type="hidden" name="_next" value="/thanks.html" />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label htmlFor="name">Name</label>
           </div>
 
           <div className="input-group">
-            <input type="email" id="email" name="email" required />
-            <span className="highlight"></span>
-            <span className="bar"></span>
             <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
           </div>
 
           <div className="input-group">
-            <textarea id="message" name="message" required />
-            <span className="highlight"></span>
-            <span className="bar"></span>
             <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" required />
           </div>
 
           <button className="slide">

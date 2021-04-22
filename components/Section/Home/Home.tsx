@@ -25,7 +25,7 @@ export const Home = () => {
 
           <div className="info__img">
             <div className="left__dots">
-              <Dots />
+              <Dots color="var(--primaryColor)" />
             </div>
             <div className="zigzag__line--left">
               <ZigZag size={50} color="#9588AA" />
@@ -38,7 +38,7 @@ export const Home = () => {
               height="auto"
             />
             <div className="right__dots">
-              <Dots />
+              <Dots color="var(--primaryColor)" />
             </div>
 
             <div className="zigzag__line--right">
@@ -48,7 +48,7 @@ export const Home = () => {
         </GridContainer>
 
         <div className="down__dots">
-          <Dots />
+          <Dots color="var(--primaryColor)" />
         </div>
       </div>
     </HomeContainer>

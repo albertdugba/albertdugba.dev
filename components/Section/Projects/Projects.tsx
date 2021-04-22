@@ -3,16 +3,18 @@ import { Container, ButtonLink } from './styles';
 
 const Projects = () => {
   return (
-    <div style={{ background: '#201c29' }}>
+    <div style={{ background: '#000' }}>
       <div className="container">
         <Container>
           <div className="works">
             <h1>I develop and experiments with new technologies.</h1>
-            <ButtonLink>
-              <Link href="/works">
-                <a>See my work</a>
-              </Link>
-            </ButtonLink>
+            <Link href="/works">
+              <button className="btn-1">
+                <span>
+                  <a>See my work</a>
+                </span>
+              </button>
+            </Link>
           </div>
         </Container>
       </div>

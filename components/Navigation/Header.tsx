@@ -1,16 +1,63 @@
 import Link from 'next/link';
+import { useState, FunctionComponent, Dispatch } from 'react';
 import styled from 'styled-components';
 import Moon from '../../styles/Icons/Moon';
+import { NavOverlay } from './NavMenu';
+
+type ToggleMenu = {
+  toggleMenu: boolean;
+};
+
+export const Header: FunctionComponent = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  return (
+    <>
+      <div>
+        <Container className="container">
+          <div>
+            <h3>
+              <Link href="/">
+                <a>Albert Dugba</a>
+              </Link>{' '}
+            </h3>
+          </div>
+
+          <nav className="nav__container">
+            <ul>
+              <li>
+                <Link href="#">
+                  <a>
+                    <Moon height={35} width={35} color="blue" />
+                  </a>
+                </Link>
+              </li>
+
+              <li
+                className="hamburger__menu"
+                role="button"
+                onClick={() => setToggleMenu(true)}>
+                <span />
+                <span className="last-child" />
+              </li>
+            </ul>
+          </nav>
+        </Container>
+      </div>
+      {/* <NavOverlay toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} /> */}
+    </>
+  );
+};
+
+/**
+ * @styles
+ */
 
 const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  /* position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1; */
 
   h3 a {
     text-decoration: none;
@@ -57,41 +104,3 @@ const Container = styled.header`
     }
   }
 `;
-
-export const Header = ({ setToggleMenu }) => {
-  return (
-    <>
-      <div>
-        <Container className="container">
-          <div>
-            <h3>
-              <Link href="/">
-                <a>Albert Dugba</a>
-              </Link>{' '}
-            </h3>
-          </div>
-
-          <nav className="nav__container">
-            <ul>
-              <li>
-                <Link href="#">
-                  <a>
-                    <Moon height={35} width={35} color="blue" />
-                  </a>
-                </Link>
-              </li>
-
-              <li
-                className="hamburger__menu"
-                role="button"
-                onClick={() => setToggleMenu(prevState => !prevState)}>
-                <span />
-                <span className="last-child" />
-              </li>
-            </ul>
-          </nav>
-        </Container>
-      </div>
-    </>
-  );
-};

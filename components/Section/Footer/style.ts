@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
+  padding: 1rem;
+
   @media (max-width: 801px) {
-    margin-top: 45%;
+    margin-top: 50%;
   }
 
   @media (min-width: 801px) {
-    margin-top: 15%;
+    margin-top: 22%;
   }
 `;
 
