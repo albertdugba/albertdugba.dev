@@ -13,7 +13,7 @@ interface Props {
 }
 
 const ProjectsBanner = ({ title }: Props) => (
-  <div style={{ background: '#142b2e' }}>
+  <div style={{ background: 'var(--headerColor)' }}>
     <SvgIcons className="container">
       <div className="overlay">
         <div className="graphql">

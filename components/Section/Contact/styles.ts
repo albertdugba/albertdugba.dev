@@ -46,27 +46,15 @@ const FormContainer = styled.form`
   }
 
   button {
-    background: none;
+    background: red;
     width: 97%;
     border: 1px solid;
     font: inherit;
     line-height: 1;
     margin: 0.5em;
-    padding: 1em 2em;
+    /* padding: 1em 2em; */
     transition: 0.25s;
     cursor: pointer;
-
-    &.slide:hover,
-    &.slide:focus {
-      box-shadow: inset 6.5em 0 0 0 var(--hover);
-    }
-
-    &:hover,
-    &:focus {
-      color: #fff;
-      background-color: purple;
-      border: none;
-    }
   }
 `;
 

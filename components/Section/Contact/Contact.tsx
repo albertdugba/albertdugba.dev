@@ -42,8 +42,8 @@ const Contact = () => {
             <textarea id="message" name="message" required />
           </div>
 
-          <button className="slide">
-            {state.submitting ? 'Submitting' : 'Shoot'}
+          <button className="btn-1">
+            <span>{state.submitting ? 'Submitting' : 'Shoot'}</span>
           </button>
         </form>
       </FormContainer>
