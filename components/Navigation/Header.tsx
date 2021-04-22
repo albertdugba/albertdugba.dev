@@ -48,14 +48,14 @@ export const Header: FunctionComponent = () => {
                       x2="48"
                       y2="9"
                       stroke="var(--primaryColor)"
-                      strokeWidth="4"
+                      strokeWidth="3"
                     />
                     <line
                       y1="21"
                       x2="28"
                       y2="21"
                       stroke="var(--primaryColor)"
-                      strokeWidth="4"
+                      strokeWidth="3"
                     />
                   </svg>
                 </div>
@@ -85,6 +85,7 @@ const Container = styled.header`
   }
 
   .nav__container {
+    padding: 0.6rem;
     ul {
       display: flex;
       justify-content: space-between;

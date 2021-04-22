@@ -50,7 +50,7 @@ const Footer = () => {
 
           <FooterSocialContainer className="pd-1" style={{ padding: '1rem' }}>
             <h3>
-              &copy; {new Date().getFullYear()} Albert Dugba - (version 1.0)
+              &copy; {new Date().getFullYear()} Albert Dugba - ( version 1.0 )
             </h3>
             <Social>
               <SocialLinks
