@@ -32,8 +32,8 @@ const CardList = styled.section`
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 18px;
+    height: 18px;
   }
   &::-webkit-scrollbar-thumb {
     background: #201c29;
@@ -55,7 +55,11 @@ const CardHeader = styled.header`
   }
 
   &:hover {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background: linear-gradient(
+      90deg,
+      var(--secondaryColor),
+      var(--primaryColor)
+    );
     text-shadow: none;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

@@ -33,13 +33,13 @@ export const Header: FunctionComponent = () => {
                 </Link>
               </li>
 
-              <li
+              {/* <li
                 className="hamburger__menu"
                 role="button"
                 onClick={() => setToggleMenu(true)}>
                 <span />
                 <span className="last-child" />
-              </li>
+              </li> */}
             </ul>
           </nav>
         </Container>
@@ -79,10 +79,10 @@ const Container = styled.header`
         cursor: pointer;
 
         span {
-          /* height: 2px; */
-          /* width: 40px;
+          height: 2px;
+          width: 40px;
           background: #0d0d7e;
-          margin-top: 8px; */
+          margin-top: 8px;
         }
 
         .last-child {

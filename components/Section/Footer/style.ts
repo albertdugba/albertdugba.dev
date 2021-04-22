@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const Wrapper = styled.div``;
+
 const FooterContainer = styled.footer`
   .divider {
     border-bottom: 1px solid #ddd;
@@ -10,7 +12,7 @@ const FooterContainer = styled.footer`
     list-style: none;
   }
   .footer__inner {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     margin-top: 1rem;
 
@@ -47,12 +49,13 @@ const Social = styled.div`
   display: flex;
   align-items: center;
   svg {
-    margin-left: 1rem;
+    margin-left: 2rem;
     cursor: pointer;
   }
 `;
 
 const FooterSocialContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -5,7 +5,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm('meqvqaka');
 
   return (
-    <ContactContainer className="container">
+    <ContactContainer className="container pd-1">
       <div className="icons-group">
         <svg
           width="505"

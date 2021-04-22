@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import ProjectsBanner from 'components/containers/ProjectsBanner';
 import Project from '../components/containers/Project';
+import Footer from 'components/Section/Footer/Footer';
 
 const ProjectsContainer = styled.div`
   display: grid;
@@ -46,6 +47,8 @@ const WorksPage = () => {
             />
           </ProjectsContainer>
         </div>
+
+        <Footer />
       </div>
     </>
   );
