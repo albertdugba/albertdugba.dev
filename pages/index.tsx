@@ -33,6 +33,10 @@ export default function Home({
       <Head>
         <title>Albert Dugba</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="Albert Dugba - Portfolio & Personal Website"
+          content="Albert Dugba - Portfoio & Personal Website"
+        />
       </Head>
 
       <Landing posts={posts} />

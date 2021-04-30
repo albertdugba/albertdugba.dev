@@ -15,6 +15,9 @@ const WorksPage = () => {
       <Head>
         <title>Works - Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="Albert Dugba - Works & Projects"
+          content="Albert Dugba - Works & Projects"></meta>
       </Head>
       <ProjectsBanner title="/Works" />
       <div>

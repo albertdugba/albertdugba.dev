@@ -33,7 +33,32 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>{this.props.styles}</Head>
+        <Head>
+          {this.props.styles}
+
+          <meta name="author" content="Albert Dugba" />
+          <meta
+            name="keywords"
+            content="Albert Dugba, albertdugba.dev frontend engineer."
+          />
+          <meta property="og:url" content="https://www.albertdugba.dev/" />
+          <meta property="og:locale" content="en-US" />
+          <meta property="og:type" content="website" />
+          <meta
+            name="description"
+            content="Hi, I&#x27;m Albert Dugba, Software Engineer."
+          />
+          <meta
+            property="og:description"
+            content="Hi, I&#x27;m Albert Dugba, Software Engineer."
+          />
+
+          <meta
+            name="msapplication-config"
+            content="/icons/browserconfig.xml"
+          />
+          <meta name="twitter:site" content="@Albert_Dugba" />
+        </Head>
         <body>
           <Main />
           <NextScript />
