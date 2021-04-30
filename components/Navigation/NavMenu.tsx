@@ -5,12 +5,16 @@ import Dev from 'styles/Icons/dev';
 import Github from 'styles/Icons/github';
 import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
+import { motion } from 'framer-motion';
 
 export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
   const handleClose = () => setToggleMenu(false);
   return (
     <>
-      <div className="container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="container">
         {toggleMenu && (
           <Overlay>
             <ul>
@@ -80,7 +84,7 @@ export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
             </ul>
           </Overlay>
         )}
-      </div>
+      </motion.div>
     </>
   );
 };
@@ -89,7 +93,7 @@ export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
  * @styles
  */
 
-const Overlay = styled.div`
+const Overlay = styled(motion.div)`
   background-color: #0e0613;
   color: #fff;
   position: fixed;

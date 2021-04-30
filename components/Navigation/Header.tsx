@@ -13,8 +13,8 @@ export const Header: FunctionComponent = () => {
 
   return (
     <>
-      <div>
-        <Container className="container">
+      <Wrapper>
+        <HeaderContainer className="container">
           <div>
             <h3>
               <Link href="/">
@@ -62,8 +62,8 @@ export const Header: FunctionComponent = () => {
               </li>
             </ul>
           </nav>
-        </Container>
-      </div>
+        </HeaderContainer>
+      </Wrapper>
       <NavOverlay toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
     </>
   );
@@ -73,11 +73,29 @@ export const Header: FunctionComponent = () => {
  * @styles
  */
 
-const Container = styled.header`
+const Wrapper = styled.div`
+  position: fixed;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 20;
+  /* padding: -1rem; */
+`;
+
+const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 
   h3 a {
     text-decoration: none;
