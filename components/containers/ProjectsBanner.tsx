@@ -13,7 +13,7 @@ interface Props {
 }
 
 const ProjectsBanner = ({ title }: Props) => (
-  <div style={{ background: 'var(--headerColor)' }}>
+  <div style={{ background: 'var(--headerColor)', marginTop: '5.3rem' }}>
     <SvgIcons className="container">
       <div className="overlay">
         <div className="graphql">
@@ -87,7 +87,7 @@ const SvgIcons = styled.div`
   .graphql {
     position: absolute;
     right: 0%;
-    top: 0;
+    top: 5%;
 
     @media (max-width: 801px) {
       display: none;

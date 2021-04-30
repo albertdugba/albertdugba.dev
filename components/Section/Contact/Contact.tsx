@@ -1,8 +1,13 @@
-import { useForm, useFormspree } from '@formspree/react';
+import { useForm, useFormspree, ValidationError } from '@formspree/react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { FormContainer, ContactContainer } from './styles';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('meqvqaka');
+  const [alert, setAlert] = useState();
+  console.log(state);
+  const router = useRouter();
 
   return (
     <ContactContainer className="container pd-1">
@@ -24,26 +29,34 @@ const Contact = () => {
         </svg>
       </div>
       <FormContainer>
+        {state.succeeded && (
+          <p style={{ background: '#80b897', color: '#fff', padding: '.9rem' }}>
+            Message has been successfully sent!
+          </p>
+        )}
         <form onSubmit={handleSubmit}>
           <h1>Send me a message!</h1>
           <div className="input-group">
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" required />
-            <input type="hidden" name="_next" value="/thanks.html" />
           </div>
-
+          <ValidationError field="name" prefix="Name" errors={state.errors} />
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" required />
           </div>
-
+          <ValidationError
+            field="message"
+            prefix="Message"
+            errors={state.errors}
+          />
           <div className="input-group">
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" required />
           </div>
 
           <button>
-            <span>{state.submitting ? 'Submitting' : 'Shoot'} </span>
+            <span>{state.submitting ? 'Submitting...' : 'Shoot'} </span>
           </button>
         </form>
       </FormContainer>

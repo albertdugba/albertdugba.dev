@@ -49,9 +49,12 @@ const Footer = () => {
           <div className="divider" />
 
           <FooterSocialContainer className="pd-1" style={{ padding: '1rem' }}>
-            <p>
-              &copy; {new Date().getFullYear()} Albert Dugba - ( version 1.0 )
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ fontSize: '1.5rem' }}>&copy;</span>{' '}
+              <p className="ml-1">
+                {new Date().getFullYear()} Albert Dugba - ( version 1.0 )
+              </p>
+            </div>
             <Social>
               <SocialLinks
                 link="https://github.com/albertdugba"
