@@ -1,18 +1,21 @@
-type PostProps = {
-  id: string;
-  title: string;
-  body: string;
-  tags: string;
-};
+import styled from 'styled-components';
 
-const PostDetails = ({ id, title, body, tags }: PostProps) => {
+const PostDetails = ({ coverImage, title, content }) => {
   return (
-    <div className="container">
-      <h1>Blog Post Details:{title}</h1>
-      <section>Body:{body}</section>
-      <div>Tags:{tags}</div>
-    </div>
+    <Wrapper className="container">
+      <img src={coverImage.url} />
+      <p>{title}</p>
+      <p>{content.text}</p>
+    </Wrapper>
   );
 };
 
 export default PostDetails;
+
+/**
+ * @styles
+ */
+
+const Wrapper = styled.div`
+  margin-top: 100px;
+`;

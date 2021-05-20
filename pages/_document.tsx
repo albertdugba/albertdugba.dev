@@ -53,10 +53,6 @@ class MyDocument extends Document {
             content="Hi, I&#x27;m Albert Dugba, Software Engineer."
           />
 
-          <meta
-            name="msapplication-config"
-            content="/icons/browserconfig.xml"
-          />
           <meta name="twitter:site" content="@Albert_Dugba" />
         </Head>
         <body>

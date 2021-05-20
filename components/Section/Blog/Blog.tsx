@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { CardList, Card, CardHeader, CardAuthor } from './styles';
 
 const Blog = ({ posts }) => {
+  console.log(posts);
   return (
     <div className="container" style={{ color: '#fff' }}>
       <h1
@@ -22,18 +23,16 @@ const Blog = ({ posts }) => {
         {posts.map((post, idx) => (
           <Card key={idx}>
             <CardHeader>
-              <Link href={`/post/[title]`} as={`/post/${post.title}`}>
+              <Link href={`/post/[slug]`} as={`/post/${post.slug}`}>
                 <div>
-                  <p>31st March, 2021</p>
+                  <p>{post.date}</p>
                   <a>
                     <h2>{post.title}</h2>
                   </a>
                 </div>
               </Link>
             </CardHeader>
-            <CardAuthor>
-              <a href="#">{post.tags}</a>
-            </CardAuthor>
+            <CardAuthor>{/* <a href="#">{post.tags}</a> */}</CardAuthor>
           </Card>
         ))}
       </CardList>

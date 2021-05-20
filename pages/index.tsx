@@ -5,17 +5,27 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 export const getStaticProps: GetStaticProps = async context => {
   const graphcms = new GraphQLClient(
-    'https://api-us-west-2.graphcms.com/v2/ckn7dbcigby0f01xrec441zrb/master'
+    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
   );
 
   const { posts } = await graphcms.request(`
   query Posts() {
-    posts{
+    posts {
+      id
       title
-      body
-      tags
+      excerpt
+      slug
+      coverImage {
+        id
+        url
+      }
+      author {
+        id
+        name
+      }
+      date
     }
-  } 
+  }
   `);
 
   return {
