@@ -6,7 +6,8 @@ import Layout from 'components/containers/Layout';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const showHeader = router.pathname === '/post' ? false : true;
+  console.log(router.pathname);
+  const showHeader = router.pathname === '/post/[slug]' ? false : true;
 
   return (
     <Layout>

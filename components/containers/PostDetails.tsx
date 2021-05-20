@@ -1,11 +1,24 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 const PostDetails = ({ coverImage, title, content }) => {
   return (
-    <Wrapper className="container">
-      <img src={coverImage.url} />
-      <p>{title}</p>
-      <p>{content.text}</p>
+    <Wrapper>
+      <div>
+        <img
+          src={coverImage.url}
+          alt={title}
+          style={{
+            height: 'auto',
+            width: '100%',
+            objectFit: 'cover',
+          }}
+        />
+        <div className="container">
+          <h1>{title}</h1>
+          <p>{content.text}</p>
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -16,6 +29,4 @@ export default PostDetails;
  * @styles
  */
 
-const Wrapper = styled.div`
-  margin-top: 100px;
-`;
+const Wrapper = styled.div``;

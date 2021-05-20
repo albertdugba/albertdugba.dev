@@ -5,7 +5,7 @@ import Moon from '../../styles/Icons/Moon';
 import { NavOverlay } from './NavMenu';
 
 type ToggleMenu = {
-  toggleMenu: boolean;
+  showHeader: string;
 };
 
 export const Header: FunctionComponent = () => {
@@ -74,7 +74,6 @@ export const Header: FunctionComponent = () => {
  */
 
 const Wrapper = styled.div`
-  position: fixed;
   height: 80px;
   position: fixed;
   top: 0;
@@ -83,7 +82,6 @@ const Wrapper = styled.div`
   width: 100%;
   background-color: #fff;
   z-index: 20;
-  /* padding: -1rem; */
 `;
 
 const HeaderContainer = styled.header`
