@@ -19,7 +19,7 @@ export const getStaticProps = async ({ params }) => {
         id
         title
         content{
-          text
+          markdown
         }
         slug
         coverImage {

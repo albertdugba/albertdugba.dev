@@ -16,7 +16,7 @@ const PostDetails = ({ coverImage, title, content }) => {
         />
         <div className="container">
           <h1>{title}</h1>
-          <p>{content.text}</p>
+          <p>{content.markdown}</p>
         </div>
       </div>
     </Wrapper>

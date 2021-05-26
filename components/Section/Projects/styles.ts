@@ -4,7 +4,7 @@ const ButtonLink = styled.div`
   a {
     text-decoration: none;
     display: inline-block;
-    height: auto;
+    height: 40px;
     border: 1px solid #fff;
     padding: 1rem 3rem;
     background: var(--primaryColor);
@@ -13,21 +13,44 @@ const ButtonLink = styled.div`
 
     &:hover {
       background-color: var(--primaryColor);
-      /* border: none; */
     }
   }
 `;
 
 const Container = styled.div`
-  /* display: flex; */
-  align-items: center;
-  /* background: #17141d; */
-  color: #fff;
-  padding: 1rem;
+  position: relative;
+  height: 420px;
+  overflow: hidden;
 
-  .works {
-    /* width: 50%; */
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
   }
 `;
 
-export { Container, ButtonLink };
+const ContentBody = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .works {
+    background: var(--secondaryColor);
+    padding: 2rem;
+    border-radius: 4px;
+  }
+
+  .works h1 {
+    font-size: 2rem;
+  }
+`;
+
+export { Container, ButtonLink, ContentBody };

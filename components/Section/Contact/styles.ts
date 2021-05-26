@@ -7,6 +7,7 @@ const FormContainer = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   background: var(--secondaryColor);
   background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 
   position: absolute;
   top: 5%;
@@ -60,8 +61,10 @@ const FormContainer = styled.div`
 
 const ContactContainer = styled.div`
   position: relative;
+  margin-top: 8rem;
 
   @media (max-width: 501px) {
+    margin-top: 2rem;
     .icons-group svg {
       width: 100%;
     }

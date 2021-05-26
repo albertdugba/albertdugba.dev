@@ -1,24 +1,24 @@
 import Link from 'next/link';
-import { Container } from './styles';
+import { Container, ContentBody } from './styles';
 
 const Projects = () => {
   return (
-    <div style={{ background: 'var(--sectionBgColor)' }}>
-      <div className="container">
-        <Container>
-          <div className="works">
-            <h1>I develop and experiments with new technologies.</h1>
-            <Link href="/works">
-              <button className="btn-1">
-                <span>
-                  <a>See my work</a>
-                </span>
-              </button>
-            </Link>
-          </div>
-        </Container>
-      </div>
-    </div>
+    <Container>
+      <img src="./tech-doodle-lg.png" />
+
+      <ContentBody>
+        <div className="works container">
+          <h1>I develop and experiments with new technologies.</h1>
+          <Link href="/works">
+            <button className="btn-1">
+              <span>
+                <a>See my work</a>
+              </span>
+            </button>
+          </Link>
+        </div>
+      </ContentBody>
+    </Container>
   );
 };
 

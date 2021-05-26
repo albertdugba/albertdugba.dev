@@ -29,5 +29,7 @@ button {
   cursor: pointer;
   font-family: inherit;
   background: var(--primaryColor);
-  padding: 0.6rem 1.2rem;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  border-radius: 5px;
 }
