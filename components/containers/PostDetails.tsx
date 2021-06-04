@@ -1,7 +1,17 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import { FunctionComponent } from 'react';
 
-const PostDetails = ({ coverImage, title, content }) => {
+interface PostProps {
+  coverImage: any;
+  title: string;
+  content: any;
+}
+
+const PostDetails: FunctionComponent<PostProps> = ({
+  coverImage,
+  title,
+  content,
+}) => {
   return (
     <Wrapper>
       <div>

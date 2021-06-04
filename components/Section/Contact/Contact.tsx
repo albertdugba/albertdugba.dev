@@ -1,11 +1,9 @@
+import { FunctionComponent } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { useRouter } from 'next/router';
 import { FormContainer, ContactContainer } from './styles';
 
-const Contact = () => {
+const Contact: FunctionComponent = () => {
   const [state, handleSubmit] = useForm('meqvqaka');
-  console.log(state);
-  const router = useRouter();
 
   return (
     <ContactContainer className="container pd-1">

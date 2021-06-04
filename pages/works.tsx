@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import styled from 'styled-components';
 import ProjectsBanner from 'components/containers/ProjectsBanner';
 import Project from '../components/containers/Project';
 import Footer from 'components/Section/Footer/Footer';
@@ -9,7 +10,7 @@ const ProjectsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 `;
 
-const WorksPage = () => {
+const WorksPage: FunctionComponent = () => {
   return (
     <>
       <Head>

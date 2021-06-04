@@ -7,12 +7,13 @@ import Github from 'styles/Icons/github';
 import NodeJS from 'styles/Icons/node';
 import NextJS from 'styles/Icons/nextjs';
 import ReactJS from 'styles/Icons/react';
+import { FunctionComponent } from 'react';
 
 interface Props {
   title: string;
 }
 
-const ProjectsBanner = ({ title }: Props) => (
+const ProjectsBanner: FunctionComponent<Props> = ({ title }) => (
   <div style={{ background: 'var(--headerColor)', marginTop: '5.3rem' }}>
     <SvgIcons className="container">
       <div className="overlay">

@@ -1,12 +1,8 @@
 import Link from 'next/link';
-import { useState, FunctionComponent, Dispatch } from 'react';
+import { useState, FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Moon from '../../styles/Icons/Moon';
 import { NavOverlay } from './NavMenu';
-
-type ToggleMenu = {
-  showHeader: string;
-};
 
 export const Header: FunctionComponent = () => {
   const [toggleMenu, setToggleMenu] = useState(false);

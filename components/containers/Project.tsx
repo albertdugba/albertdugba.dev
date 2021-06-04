@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { FunctionComponent } from 'react';
 
 interface ProjectProps {
   projectImage: string;
@@ -9,12 +10,12 @@ interface ProjectProps {
   linkContent: string;
 }
 
-const Project = ({
+const Project: FunctionComponent<ProjectProps> = ({
   projectImage,
   heading,
   hrefLink,
   linkContent,
-}: ProjectProps) => (
+}) => (
   <ProjectStyles>
     <div className="project__logo">
       <Link href="/works/project">

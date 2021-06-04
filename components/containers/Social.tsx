@@ -1,6 +1,12 @@
 import Link from 'next/link';
+import { FunctionComponent } from 'react';
 
-export const SocialLinks = ({ link, component }) => {
+interface Props {
+  link: string;
+  component?;
+}
+
+export const SocialLinks: FunctionComponent<Props> = ({ link, component }) => {
   return (
     <>
       <Link href={link}>

@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import { CardList, Card, CardHeader, CardAuthor } from './styles';
+import { FunctionComponent } from 'react';
+interface PostProps {
+  posts: any[];
+}
 
-const Blog = ({ posts }) => {
-  console.log(posts);
+const Blog: FunctionComponent<PostProps> = ({ posts }) => {
   return (
     <div className="container" style={{ color: '#fff' }}>
       <h1

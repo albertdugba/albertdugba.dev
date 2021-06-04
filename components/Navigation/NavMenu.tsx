@@ -6,8 +6,16 @@ import Github from 'styles/Icons/github';
 import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
 import { motion } from 'framer-motion';
+import { FunctionComponent } from 'react';
+interface NavProps {
+  toggleMenu: boolean;
+  setToggleMenu: (boolean) => void;
+}
 
-export const NavOverlay = ({ setToggleMenu, toggleMenu }) => {
+export const NavOverlay: FunctionComponent<NavProps> = ({
+  setToggleMenu,
+  toggleMenu,
+}) => {
   const handleClose = () => setToggleMenu(false);
   return (
     <>

@@ -1,4 +1,3 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
 import { GraphQLClient } from 'graphql-request';
 import PostDetails from 'components/containers/PostDetails';
 

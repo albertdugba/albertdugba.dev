@@ -1,9 +1,9 @@
 import Dots from 'styles/Icons/dots';
 import ZigZag from 'styles/Icons/zigzag';
 import { HomeContainer, GridContainer } from './styles';
-import Image from 'next/image';
+import { FunctionComponent } from 'react';
 
-export const Home = () => {
+export const Home: FunctionComponent = () => {
   return (
     <HomeContainer>
       <div className="container">

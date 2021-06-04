@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Container, ContentBody } from './styles';
+import { FunctionComponent } from 'react';
 
-const Projects = () => {
+const Projects: FunctionComponent = () => {
   return (
     <Container>
       <img src="./tech-doodle-lg.png" />
