@@ -22,6 +22,11 @@
   margin-top: 1rem;
 }
 
+.line__break {
+  width: 100%;
+  border-bottom: 1px solid var(--primaryColor);
+}
+
 .flex {
   display: flex;
 }

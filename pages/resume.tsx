@@ -1,13 +1,14 @@
-import { List } from 'components/containers/List';
-import { ResumeLayout } from 'components/containers/ResumeLayout';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { List } from 'components/containers/List';
+import { ResumeLayout } from 'components/containers/ResumeLayout';
 
 const Resume = () => {
   const technologies = [
     'JavaScript',
     'React',
+    'Redux / Redux-toolkit',
     'GraphQL',
     'Next.js',
     'Typescript',
@@ -27,8 +28,7 @@ const Resume = () => {
 
   const tools = [
     'Cypress',
-    'Github',
-    'Github Actions',
+    'Github / Github Actions',
     'Yarn',
     'Npm',
     'Webpack',
@@ -45,40 +45,41 @@ const Resume = () => {
       </Head>
       <Container>
         <GridLayout>
-          <section className="right">
-            <div>
-              <h1>Albert</h1>
-              <h1>Dugba</h1>
-              <h2>Frontend Engineer</h2>
-              <p>A self taught software engineer valued</p>
+          <section className="left">
+            <div style={{ padding: '0', margin: '0', lineHeight: '1.2' }}>
+              <div>
+                <h1 style={{ color: 'var(--primaryColor)', lineHeight: '0' }}>
+                  Albert
+                </h1>
+                <h1 style={{ color: 'var(--primaryColor)' }}>Dugba</h1>
+              </div>
+              <h2>Software Engineer</h2>
+              <p>
+                A self taught software engineer passionate about creating rich
+                and intelligent User Interfaces. I am open to opportunities to
+                learn new technologies, grow and add value to the company.
+              </p>
             </div>
+            <div className="pt-1 mt-1 line__break" />
             <ResumeLayout
               jobTitle="Frontend Engineer"
-              company="Ytakenote"
-              date="January 2021 - Present"
+              company="Ytakenote App"
+              date="Jan 2021 - Present"
               jobDescription="I orchestrated and developed the frontend infrastructure,
               design and functionality for Ytakenote's new
               JavaScript-centric app powered by React."
             />
             <ResumeLayout
               jobTitle="Frontend Engineer"
-              company="Ytakenote"
-              date="January 2021 - Present"
+              company="Origo Health"
+              date="Oct 2020 - Feb 2021"
               jobDescription="I orchestrated and developed the frontend infrastructure,
               design and functionality for Ytakenote's new
               JavaScript-centric app powered by React."
             />
             <ResumeLayout
-              jobTitle="Frontend Engineer"
-              company="Ytakenote"
-              date="January 2021 - Present"
-              jobDescription="I orchestrated and developed the frontend infrastructure,
-              design and functionality for Ytakenote's new
-              JavaScript-centric app powered by React."
-            />
-            <ResumeLayout
-              jobTitle="Frontend Engineer"
-              company="Ytakenote"
+              jobTitle="Flutter Developer"
+              company="Renegades Africa"
               date="January 2021 - Present"
               jobDescription="I orchestrated and developed the frontend infrastructure,
               design and functionality for Ytakenote's new
@@ -86,8 +87,8 @@ const Resume = () => {
             />
           </section>
 
-          <div className="left">
-            <div className="flex__column">
+          <div className="right">
+            <div className="flex__column hide-on-mobile">
               <span>
                 <Link href="https://albertdugba.dev">
                   <a target="_">albertdugba.dev</a>
@@ -96,7 +97,7 @@ const Resume = () => {
               <span>Accra, Ghana</span>
             </div>
 
-            <List items={technologies} title="Core technologies:" />
+            <List items={technologies} title="Core:" />
             <List items={others} title="Others:" />
             <List items={tools} title="Tools:" />
           </div>
@@ -114,9 +115,13 @@ export default Resume;
 
 const Container = styled.div`
   background-color: #ebe6f3;
+  width: 100%;
   min-height: 100vh;
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
+  @media (max-width: 950px) {
+    max-width: 100%;
+  }
 `;
 
 const GridLayout = styled.div`
@@ -125,16 +130,30 @@ const GridLayout = styled.div`
   padding: 2rem;
   grid-gap: 40px;
 
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+  }
+
   .right {
     border: 1px solid #ddd;
     padding: 1rem;
+
+    @media (max-width: 950px) {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 1rem;
+      .hide-on-mobile {
+        display: none;
+      }
+    }
     h1 {
-      font-size: 4rem;
+      font-size: 5rem;
     }
   }
 
   .left {
     border: 1px solid #ddd;
     padding: 1rem;
+    order: -1;
   }
 `;
