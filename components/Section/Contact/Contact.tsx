@@ -1,11 +1,9 @@
-import { useForm, useFormspree, ValidationError } from '@formspree/react';
-import { useState, useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { useRouter } from 'next/router';
 import { FormContainer, ContactContainer } from './styles';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('meqvqaka');
-  const [alert, setAlert] = useState();
   console.log(state);
   const router = useRouter();
 
