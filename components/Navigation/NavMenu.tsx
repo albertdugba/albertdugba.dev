@@ -5,7 +5,7 @@ import Dev from 'styles/Icons/dev';
 import Github from 'styles/Icons/github';
 import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FunctionComponent } from 'react';
 interface NavProps {
   toggleMenu: boolean;
@@ -18,13 +18,13 @@ export const NavOverlay: FunctionComponent<NavProps> = ({
 }) => {
   const handleClose = () => setToggleMenu(false);
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="container">
+    <motion.div className="container">
+      <AnimatePresence>
         {toggleMenu && (
-          <Overlay>
+          <Overlay
+            initial={{ opacity: 0, height: '0' }}
+            animate={{ opacity: 1, height: '100vh' }}
+            exit={{ opacity: 0, height: '0' }}>
             <ul>
               <li onClick={handleClose}>
                 <Link href="/works">
@@ -92,8 +92,8 @@ export const NavOverlay: FunctionComponent<NavProps> = ({
             </ul>
           </Overlay>
         )}
-      </motion.div>
-    </>
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
