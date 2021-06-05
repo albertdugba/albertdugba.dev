@@ -3,9 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { List } from 'components/containers/List';
 import { ResumeLayout } from 'components/containers/ResumeLayout';
-import { ResumeOverlay } from 'components/containers/ResumeOverlay';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
 const Resume = () => {
   const technologies = [
@@ -31,7 +29,8 @@ const Resume = () => {
 
   const tools = [
     'Cypress',
-    'Github / Github Actions',
+    'Github',
+    'Github Actions',
     'Yarn',
     'Npm',
     'Webpack',
@@ -52,24 +51,6 @@ const Resume = () => {
       <GridLayout>
         <section className="left">
           <div style={{ padding: '0', margin: '0', lineHeight: '1.2' }}>
-            <h3 onClick={() => setToggle(prevState => !prevState)}>Menu</h3>
-            <MobileOnly>
-              {toggled && <Backdrop onClick={() => setToggle(false)} />}
-              {toggled && (
-                <motion.div initial={{ width: 0 }} animate={{ width: '40%' }}>
-                  <ResumeOverlay title="Tech Stack I work & have experience with.">
-                    <div style={{ height: '200px' }}>
-                      <div className="justify__around">
-                        <List items={technologies} title="Core Stack:" />
-                        <List items={others} title="Others:" />
-                        <List items={tools} title="Tools:" />
-                      </div>
-                    </div>
-                  </ResumeOverlay>
-                </motion.div>
-              )}
-            </MobileOnly>
-
             <div>
               <h1 style={{ color: 'var(--primaryColor)', lineHeight: '0' }}>
                 Albert
@@ -120,10 +101,11 @@ const Resume = () => {
             </span>
             <span>Accra, Ghana</span>
           </div>
-
-          <List items={technologies} title="Core:" />
-          <List items={others} title="Others:" />
-          <List items={tools} title="Tools:" />
+          <div className="mobile">
+            <List items={technologies} title="Core Stacks:" />
+            <List items={others} title="Others:" />
+            <List items={tools} title="Tools:" />
+          </div>
         </div>
       </GridLayout>
     </>
@@ -151,7 +133,7 @@ const GridLayout = styled.div`
   min-height: 100vh;
   display: grid;
   grid-template-columns: 6fr 350px;
-  background-color: #ebe6f3;
+  background-color: #f3f1f7;
   grid-gap: 40px;
   width: 100vw;
 
@@ -164,8 +146,17 @@ const GridLayout = styled.div`
     padding: 1rem;
 
     @media (max-width: 950px) {
-      display: none;
+      order: -2;
+      .hide-on-mobile {
+        display: none;
+      }
+
+      .mobile {
+        display: flex;
+        justify-content: space-around;
+      }
     }
+
     h1 {
       font-size: 5rem;
     }
@@ -173,7 +164,6 @@ const GridLayout = styled.div`
 
   .left {
     padding: 1rem;
-    order: -1;
   }
 `;
 
