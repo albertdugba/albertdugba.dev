@@ -59,7 +59,7 @@ const Resume = () => {
                 <motion.div initial={{ width: 0 }} animate={{ width: '40%' }}>
                   <ResumeOverlay title="Tech Stack I work & have experience with.">
                     <div style={{ height: '200px' }}>
-                      <div className="flex">
+                      <div className="justify__around">
                         <List items={technologies} title="Core Stack:" />
                         <List items={others} title="Others:" />
                         <List items={tools} title="Tools:" />

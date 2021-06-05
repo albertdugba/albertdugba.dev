@@ -9,7 +9,7 @@ interface Props {
 export const ResumeOverlay = ({ children, title }: Props) => {
   return (
     <Wrapper>
-      <h3 style={{ background: 'orange' }}>{title}</h3>
+      <h3>{title}</h3>
       <Content>{children}</Content>
     </Wrapper>
   );
@@ -18,8 +18,8 @@ export const ResumeOverlay = ({ children, title }: Props) => {
 const Wrapper = styled.div`
   position: absolute;
   top: 15%;
-  left: 7%;
-  right: 7%;
+  left: 3%;
+  right: 3%;
   min-height: 20%;
   background: white;
   border-radius: 4px;
