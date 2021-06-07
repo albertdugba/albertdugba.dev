@@ -10,8 +10,8 @@ const Landing = ({ posts }) => {
     <div>
       <Home />
       <Overview />
-      <Projects />
-      <Blog posts={posts} />
+      <Projects posts={posts} />
+      {/* <Blog posts={posts} /> */}
       <Contact />
       <Footer />
     </div>

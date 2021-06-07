@@ -7,7 +7,7 @@ const FormContainer = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   background: var(--secondaryColor);
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 6px;
+  border-radius: 1px;
 
   position: absolute;
   top: 5%;
@@ -44,18 +44,6 @@ const FormContainer = styled.div`
 
   label {
     display: block;
-  }
-
-  button {
-    background: var(--headerColor);
-    font-family: inherit;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 100%;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #757575;
   }
 `;
 

@@ -18,38 +18,50 @@ const ButtonLink = styled.div`
 `;
 
 const Container = styled.div`
-  position: relative;
-  height: 420px;
-  overflow: hidden;
-
-  img {
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-  }
+  background: var(--primaryColor);
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ContentBody = styled.div`
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background: var(--primaryColor);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  /* max-width: 800px; */
+  /* margin: auto; */
 
-  .works {
-    background: var(--secondaryColor);
-    padding: 2rem;
-    border-radius: 4px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    /* max-width: 400px; */
+    padding: 1rem;
   }
 
-  .works h1 {
-    font-size: 2rem;
+  .card {
+    background: #fff;
+    width: 600px;
+    padding: 4rem;
+    min-height: 400px;
+    height: 100%;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+    /* border-radius: 1px; */
+    display: flex;
+    flex-direction: column;
+    flex: 45% 0 45%;
+
+    @media (max-width: 700px) {
+      width: 320px;
+      min-height: 200px;
+      padding: 1rem;
+    }
+
+    &__footer {
+      margin-top: auto;
+    }
+
+    &__footer button {
+    }
   }
 `;
 

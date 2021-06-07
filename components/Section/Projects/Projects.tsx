@@ -2,21 +2,36 @@ import Link from 'next/link';
 import { Container, ContentBody } from './styles';
 import { FunctionComponent } from 'react';
 
-const Projects: FunctionComponent = () => {
+interface PostProps {
+  posts: any[];
+}
+
+const Projects: FunctionComponent<PostProps> = ({ posts }) => {
   return (
     <Container>
-      <img src="./tech-doodle-lg.png" />
-
-      <ContentBody>
-        <div className="works container">
-          <h1>I develop and experiments with new technologies.</h1>
-          <Link href="/works">
-            <button className="btn-1">
-              <span>
-                <a>See my work</a>
-              </span>
-            </button>
-          </Link>
+      <ContentBody className='container'>
+        <div className='card'>
+          <div>
+            <h1>I build and experiment</h1>
+            <h3>About open source, web applications etc</h3>
+          </div>
+          <div className='card__footer'>
+            <Link href='/works'>
+              <button>see my work</button>
+            </Link>
+          </div>
+        </div>
+        <div style={{ height: '100%', width: '2px', background: '#fff' }} />
+        <div className='card'>
+          <div>
+            <h1>I write sometimes </h1>
+            <h3>About frontend development, tools etc</h3>
+          </div>
+          <div className='card__footer'>
+            <Link href='/posts'>
+              <button>read my blog posts</button>
+            </Link>
+          </div>
         </div>
       </ContentBody>
     </Container>

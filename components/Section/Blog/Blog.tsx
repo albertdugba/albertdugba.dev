@@ -7,7 +7,7 @@ interface PostProps {
 
 const Blog: FunctionComponent<PostProps> = ({ posts }) => {
   return (
-    <div className="container" style={{ color: '#fff' }}>
+    <div className='container' style={{ color: '#fff' }}>
       <h1
         style={{
           color: 'black',
@@ -15,9 +15,10 @@ const Blog: FunctionComponent<PostProps> = ({ posts }) => {
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
-        className="pd-1">
+        className='pd-1'
+      >
         I write sometimes, check out my latest posts
-        <Link href="/posts">
+        <Link href='/posts'>
           <a>View all posts</a>
         </Link>
       </h1>
@@ -35,7 +36,6 @@ const Blog: FunctionComponent<PostProps> = ({ posts }) => {
                 </div>
               </Link>
             </CardHeader>
-            <CardAuthor>{/* <a href="#">{post.tags}</a> */}</CardAuthor>
           </Card>
         ))}
       </CardList>

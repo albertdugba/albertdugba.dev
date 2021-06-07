@@ -67,7 +67,7 @@ const Footer = () => {
               />
 
               <SocialLinks
-                link="https://www.linkedin.com/in/albert-dugba-723a3489/"
+                link="https://www.linkedin.com/in/albertdugba"
                 component={<LinkedIn size={20} color="#EBE6F3" />}
               />
 

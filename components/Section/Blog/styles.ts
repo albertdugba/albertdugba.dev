@@ -4,43 +4,20 @@ const Card = styled.article`
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 350px;
-  width: 390px;
-  min-width: 250px;
+  height: 100px;
+  width: 100px;
+  min-width: 450px;
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 5px;
   background-color: #17141d;
-  box-shadow: -1rem 0 3rem #000;
+  /* box-shadow: -1rem 0 3rem #000; */
   transition: 0.2s;
-
-  &:hover {
-    transform: translateY(-1rem);
-  }
-
-  &:hover ~ & {
-    transform: translateX(50px);
-  }
-
-  &::not(:first-child) {
-    margin-left: -30px;
-  }
 `;
 const CardList = styled.section`
   display: flex;
-  padding: 3rem;
+  /* padding: 2rem; */
   width: 100%;
   overflow-x: scroll;
-
-  &::-webkit-scrollbar {
-    width: 18px;
-    height: 18px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #201c29;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25) inset -2px -2px 2px
-      rgba(0, 0, 0, 0.2);
-  }
 `;
 
 const CardHeader = styled.header`
@@ -54,17 +31,7 @@ const CardHeader = styled.header`
     cursor: pointer;
   }
 
-  &:hover {
-    background: linear-gradient(
-      90deg,
-      var(--secondaryColor),
-      var(--primaryColor)
-    );
-    text-shadow: none;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
+  
 `;
 
 const CardAuthor = styled.div`

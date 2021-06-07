@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { GraphQLClient } from 'graphql-request';
 import Landing from '../components/Landing';
+import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 export const getStaticProps: GetStaticProps = async context => {
