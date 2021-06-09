@@ -47,14 +47,7 @@ const AllPosts = ({ posts }) => {
             <div className='card-body'>
               <span className='tag tag-teal'>{post.slug}</span>
               <h4>{post.title}</h4>
-
-              <div className='user'>
-                <img src={post.coverImage.url} alt='user' />
-                <div className='user-info'>
-                  <h5>{post.date}</h5>
-                  <small>2h ago</small>
-                </div>
-              </div>
+              <h3>Posted on {post.date}</h3>
             </div>
           </div>
         </PostCardContainer>
@@ -67,20 +60,19 @@ export default AllPosts;
 
 const Wrapper = styled.div`
   margin-top: 100px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
 `;
 
 const PostCardContainer = styled.div`
-  display: flex;
-  /* justify-content: space-evenly; */
-  flex-wrap: wrap;
-
   .card {
     margin: 10px;
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 340px;
+    width: 350px;
 
     .card-header img {
       width: 100%;
@@ -93,8 +85,8 @@ const PostCardContainer = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 20px;
-      min-height: 50px;
+      padding: 10px;
+      height: 200px;
     }
 
     .tag {
