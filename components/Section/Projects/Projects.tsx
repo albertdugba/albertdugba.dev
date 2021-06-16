@@ -29,7 +29,7 @@ const Projects: FunctionComponent<PostProps> = ({ posts }) => {
           </div>
           <div className='card__footer'>
             <Link href='/posts'>
-              <button>read my blog posts</button>
+              <button>View all posts</button>
             </Link>
           </div>
         </div>

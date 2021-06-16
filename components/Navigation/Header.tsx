@@ -10,48 +10,50 @@ export const Header: FunctionComponent = () => {
   return (
     <>
       <Wrapper>
-        <HeaderContainer className="container">
+        <HeaderContainer className='container'>
           <div>
             <h3>
-              <Link href="/">
+              <Link href='/'>
                 <a>Albert Dugba</a>
               </Link>{' '}
             </h3>
           </div>
 
-          <nav className="nav__container">
+          <nav className='nav__container'>
             <ul>
               <li>
-                <Link href="#">
+                <Link href='#'>
                   <a>
-                    <Moon height={35} width={35} color="blue" />
+                    <Moon height={35} width={35} color='var(--primaryColor)' />
                   </a>
                 </Link>
               </li>
 
               <li
                 onClick={() => setToggleMenu(true)}
-                className="hamburger__menu">
+                className='hamburger__menu'
+              >
                 <div>
                   <svg
-                    width="62"
-                    height="62"
-                    viewBox="0 0 62 62"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    width='62'
+                    height='62'
+                    viewBox='0 0 62 62'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
                     <line
-                      y1="9"
-                      x2="48"
-                      y2="9"
-                      stroke="var(--primaryColor)"
-                      strokeWidth="3"
+                      y1='9'
+                      x2='48'
+                      y2='9'
+                      stroke='var(--primaryColor)'
+                      strokeWidth='3'
                     />
                     <line
-                      y1="21"
-                      x2="28"
-                      y2="21"
-                      stroke="var(--primaryColor)"
-                      strokeWidth="3"
+                      y1='21'
+                      x2='28'
+                      y2='21'
+                      stroke='var(--primaryColor)'
+                      strokeWidth='3'
                     />
                   </svg>
                 </div>

@@ -40,8 +40,8 @@ const ContentBody = styled.div`
 
   .card {
     background: #fff;
-    width: 600px;
-    padding: 4rem;
+    width: 700px;
+    padding: 5rem;
     min-height: 400px;
     height: 100%;
     /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
@@ -51,9 +51,13 @@ const ContentBody = styled.div`
     flex: 45% 0 45%;
 
     @media (max-width: 700px) {
-      width: 320px;
+      width: 460px;
       min-height: 200px;
       padding: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      width: 350px;
     }
 
     &__footer {

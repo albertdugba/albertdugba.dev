@@ -5,30 +5,30 @@ import { FunctionComponent } from 'react';
 
 interface ProjectProps {
   projectImage: string;
-  heading: string;
+  title: string;
   hrefLink: string;
   linkContent: string;
 }
 
 const Project: FunctionComponent<ProjectProps> = ({
   projectImage,
-  heading,
+  title,
   hrefLink,
   linkContent,
 }) => (
   <ProjectStyles>
-    <div className="project__logo">
-      <Link href="/works/project">
+    <div className='project__logo'>
+      <Link href='/work/[title]' as={`/work/${title}`}>
         <a>
-          <Image width="200" height="200" src={projectImage} />
+          <Image width='200' height='200' src={projectImage} />
         </a>
       </Link>
     </div>
-    <div className="project__details">
-      <h3>{heading}</h3>
-      <div className="project__link">
+    <div className='project__details'>
+      <h3>{title}</h3>
+      <div className='project__link'>
         <Link href={hrefLink}>
-          <a target="_blank">{linkContent}</a>
+          <a target='_blank'>{linkContent}</a>
         </Link>
       </div>
     </div>

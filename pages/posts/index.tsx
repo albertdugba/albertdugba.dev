@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 
-export const getStaticProps: GetStaticProps = async (context) => {
+
+
+
+
+export const getStaticProps: GetStaticProps = async context => {
   const graphcms = new GraphQLClient(
     'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
   );
@@ -38,18 +43,20 @@ const AllPosts = ({ posts }) => {
   console.log(posts);
   return (
     <Wrapper className='container'>
-      {posts.map((post) => (
+      {posts.map(post => (
         <PostCardContainer key={post.id}>
-          <div className='card'>
-            <div className='card-header'>
-              <img src={post.coverImage.url} alt='rover' />
+          <Link href={`/post/[slug]`} as={`/post/${post.slug}`}>
+            <div className='card'>
+              <div className='card-header'>
+                <img src={post.coverImage.url} alt='rover' />
+              </div>
+              <div className='card-body'>
+                <span className='tag tag-teal'>{post.slug}</span>
+                <h4>{post.title}</h4>
+                <h3>Posted on {post.date}</h3>
+              </div>
             </div>
-            <div className='card-body'>
-              <span className='tag tag-teal'>{post.slug}</span>
-              <h4>{post.title}</h4>
-              <h3>Posted on {post.date}</h3>
-            </div>
-          </div>
+          </Link>
         </PostCardContainer>
       ))}
     </Wrapper>
@@ -62,7 +69,7 @@ const Wrapper = styled.div`
   margin-top: 100px;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
 const PostCardContainer = styled.div`

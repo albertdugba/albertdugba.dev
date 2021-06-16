@@ -2,7 +2,6 @@ import { GraphQLClient } from 'graphql-request';
 import PostDetails from 'components/containers/PostDetails';
 
 const Post = ({ post }) => {
-  console.log(post);
   return <PostDetails {...post} />;
 };
 

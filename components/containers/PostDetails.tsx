@@ -24,7 +24,7 @@ const PostDetails: FunctionComponent<PostProps> = ({
             objectFit: 'cover',
           }}
         />
-        <div className="container">
+        <div className='container'>
           <h1>{title}</h1>
           <p>{content.markdown}</p>
         </div>
