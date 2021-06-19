@@ -3,10 +3,6 @@ import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
-
-
-
-
 export const getStaticProps: GetStaticProps = async context => {
   const graphcms = new GraphQLClient(
     'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
@@ -69,7 +65,7 @@ const Wrapper = styled.div`
   margin-top: 100px;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `;
 
 const PostCardContainer = styled.div`
@@ -79,7 +75,7 @@ const PostCardContainer = styled.div`
     border-radius: 6px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 350px;
+    width: 300px;
 
     .card-header img {
       width: 100%;

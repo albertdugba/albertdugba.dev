@@ -46,8 +46,8 @@ const ProjectStyles = styled.div`
   margin: 10px;
   min-width: 30%;
   height: 310px;
-  box-shadow: 0px 4px 6px rgba(160, 156, 161, 0.18);
-  transition: 0.5 transform ease-out;
+  box-shadow: 0px 4px 8px rgba(160, 156, 161, 0.18);
+  transition: 0.5s transform ease-out;
 
   &:hover {
     transform: translateY(-3px);

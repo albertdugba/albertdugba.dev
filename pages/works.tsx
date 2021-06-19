@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import ProjectsBanner from 'components/containers/ProjectsBanner';
 import Project from '../components/containers/Project';
 import Footer from 'components/Section/Footer/Footer';
+import { GraphQLClient } from 'graphql-request';
 
 const ProjectsContainer = styled.div`
   display: grid;
@@ -36,10 +37,34 @@ export const projectData = [
 ];
 
 interface Props {
-  data: [];
+  works: [];
 }
 
-const WorksPage: FunctionComponent<Props> = () => {
+export const getStaticProps = async () => {
+  const graphcms = new GraphQLClient(
+    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
+  );
+
+  const { works } = await graphcms.request(`
+  query Works(){
+    works{
+      title
+      linkContent
+      projectImage
+      hrefLink
+    }
+  }
+  `);
+
+  return {
+    props: {
+      works,
+    },
+  };
+};
+
+const WorksPage = ({ works }) => {
+  console.log('Works ', works);
   return (
     <>
       <Head>
@@ -55,7 +80,7 @@ const WorksPage: FunctionComponent<Props> = () => {
         <div className='container'>
           <h1>Some selected projects that I have worked on.</h1>
           <ProjectsContainer>
-            {projectData.map((project, idx) => (
+            {works.map((project, idx) => (
               <Link
                 key={idx}
                 href={`/work/[params]`}
