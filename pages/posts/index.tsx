@@ -3,7 +3,7 @@ import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async () => {
   const graphcms = new GraphQLClient(
     'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
   );
@@ -36,7 +36,6 @@ export const getStaticProps: GetStaticProps = async context => {
 };
 
 const AllPosts = ({ posts }) => {
-  console.log(posts);
   return (
     <Wrapper className='container'>
       {posts.map(post => (

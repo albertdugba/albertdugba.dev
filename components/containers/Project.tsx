@@ -8,6 +8,7 @@ interface ProjectProps {
   title: string;
   hrefLink: string;
   linkContent: string;
+  slug: string;
 }
 
 const Project: FunctionComponent<ProjectProps> = ({
@@ -15,10 +16,11 @@ const Project: FunctionComponent<ProjectProps> = ({
   title,
   hrefLink,
   linkContent,
+  slug,
 }) => (
   <ProjectStyles>
     <div className='project__logo'>
-      <Link href='/work/[title]' as={`/work/${title}`}>
+      <Link href='/work/[slug]' as={`/work/${slug}`}>
         <a>
           <Image width='200' height='200' src={projectImage} />
         </a>
@@ -27,7 +29,7 @@ const Project: FunctionComponent<ProjectProps> = ({
     <div className='project__details'>
       <h3>{title}</h3>
       <div className='project__link'>
-        <Link href={hrefLink}>
+        <Link href={hrefLink} as={hrefLink}>
           <a target='_blank'>{linkContent}</a>
         </Link>
       </div>

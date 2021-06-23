@@ -12,32 +12,8 @@ const ProjectsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 `;
 
-// export const getStaticPaths = async () => {};
-// export const getStaticProps = async () => {};
-
-export const projectData = [
-  {
-    title: 'Personal Website',
-    projectImage: '/ytakenote.png',
-    linkContent: 'albertdugba.dev',
-    hrefLink: 'https://www.albertdugba.dev',
-  },
-  {
-    title: 'Personal Website',
-    projectImage: '/ytakenote.png',
-    linkContent: 'albertdugba.dev',
-    hrefLink: 'https://www.albertdugba.dev',
-  },
-  {
-    title: 'Ytakenote',
-    projectImage: '/ytakenote.png',
-    linkContent: 'ytakenote.com',
-    hrefLink: 'https://ytakenote.com',
-  },
-];
-
 interface Props {
-  works: [];
+  works: any[];
 }
 
 export const getStaticProps = async () => {
@@ -52,6 +28,7 @@ export const getStaticProps = async () => {
       linkContent
       projectImage
       hrefLink
+      slug
     }
   }
   `);
@@ -63,8 +40,8 @@ export const getStaticProps = async () => {
   };
 };
 
-const WorksPage = ({ works }) => {
-  console.log('Works ', works);
+const WorksPage: FunctionComponent<Props> = ({ works }) => {
+  console.log(works);
   return (
     <>
       <Head>
@@ -72,21 +49,22 @@ const WorksPage = ({ works }) => {
         <link rel='icon' href='/favicon.ico' />
         <meta
           name='Albert Dugba - Works & Projects'
-          content='Albert Dugba - Works & Projects'
+          content='Albert Dugba - Works & Projects | Portfolio'
         ></meta>
       </Head>
       <ProjectsBanner title='/Works' />
       <div>
         <div className='container'>
-          <h1>Some selected projects that I have worked on.</h1>
+          <h2>Some selected projects that I have worked on.</h2>
           <ProjectsContainer>
             {works.map((project, idx) => (
               <Link
                 key={idx}
-                href={`/work/[params]`}
-                as={`/work/${project.title}`}
+                href={`/work/[slug]`}
+                as={`/work/${project.slug}`}
               >
                 <Project
+                  slug={project.slug}
                   title={project.title}
                   projectImage={project.projectImage}
                   linkContent={project.linkContent}
