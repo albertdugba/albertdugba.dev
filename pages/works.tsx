@@ -27,6 +27,7 @@ export const getStaticProps = async () => {
       title
       linkContent
       projectImage
+      projectImages
       hrefLink
       slug
     }

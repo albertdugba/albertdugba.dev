@@ -2,8 +2,14 @@ import ProjectsBanner from 'components/containers/ProjectsBanner';
 import { GraphQLClient } from 'graphql-request';
 
 const Work = ({ works }) => {
-  console.log('[Works]  ', works);
-  return <ProjectsBanner title='[Project Name]' {...works} />;
+  console.log(works);
+  return (
+    <div>
+      {works.map(work => (
+        <ProjectsBanner key={work.slug} {...work} />
+      ))}
+    </div>
+  );
 };
 
 export const getStaticProps = async ({ params }) => {
@@ -17,9 +23,11 @@ export const getStaticProps = async ({ params }) => {
     works(where: {slug: $slug}) {
       title
       projectImage
+      projectImages
       linkContent
       hrefLink
       jobDescription
+      slug
     }
   }
   `,
@@ -45,6 +53,7 @@ export const getStaticPaths = async () => {
       title
       linkContent
       projectImage
+      projectImages
       hrefLink
       slug
     }

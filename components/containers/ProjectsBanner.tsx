@@ -5,50 +5,59 @@ import Terminal from 'styles/Icons/terminal';
 import FireBase from 'styles/Icons/firebase';
 import Github from 'styles/Icons/github';
 import NodeJS from 'styles/Icons/node';
-import NextJS from 'styles/Icons/nextjs';
 import ReactJS from 'styles/Icons/react';
-import { FunctionComponent } from 'react';
 
-interface Props {
-  title: string;
-}
+const ProjectsBanner = props => {
+  return (
+    <>
+      <div style={{ background: 'var(--headerColor)', marginTop: '5.3rem' }}>
+        <SvgIcons className='container'>
+          <div className='overlay'>
+            <div className='graphql'>
+              <GraphQL width={40} height={40} color='grey' />
+            </div>
 
-const ProjectsBanner: FunctionComponent<Props> = ({ title }) => (
-  <div style={{ background: 'var(--headerColor)', marginTop: '5.3rem' }}>
-    <SvgIcons className="container">
-      <div className="overlay">
-        <div className="graphql">
-          <GraphQL width={40} height={40} color="grey" />
-        </div>
+            <div className='terminal'>
+              <Terminal width={40} height={40} color='grey' />
+            </div>
 
-        <div className="terminal">
-          <Terminal width={40} height={40} color="grey" />
-        </div>
+            <div className='typescript'>
+              <TypeScript width={40} height={40} color='grey' />
+            </div>
 
-        <div className="typescript">
-          <TypeScript width={40} height={40} color="grey" />
-        </div>
+            <div className='firebase'>
+              <FireBase width={40} height={40} color='grey' />
+            </div>
+            <div className='github'>
+              <Github width={40} height={40} color='grey' />
+            </div>
+            <div className='nodejs'>
+              <NodeJS width={40} height={40} color='grey' />
+            </div>
+            <div className='react'>
+              <ReactJS width={40} height={40} color='grey' />
+            </div>
+          </div>
 
-        <div className="firebase">
-          <FireBase width={40} height={40} color="grey" />
-        </div>
-        <div className="github">
-          <Github width={40} height={40} color="grey" />
-        </div>
-        <div className="nodejs">
-          <NodeJS width={40} height={40} color="grey" />
-        </div>
-        <div className="react">
-          <ReactJS width={40} height={40} color="grey" />
-        </div>
+          <Container className='container'>
+            <h2 className='title'>{props.title}</h2>
+          </Container>
+        </SvgIcons>
       </div>
 
-      <Container className="container">
-        <h2 className="title">{title}</h2>
-      </Container>
-    </SvgIcons>
-  </div>
-);
+      <div className='container'>
+        <h1>{props.hrefLink}</h1>
+        <div>
+          {props.projectImages?.map(item => {
+            return item.image.map((image, idx) => (
+              <img key={idx} src={image} />
+            ));
+          })}
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default ProjectsBanner;
 
