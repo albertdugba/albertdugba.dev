@@ -2,10 +2,11 @@ import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
-import ProjectsBanner from 'components/containers/ProjectsBanner';
+import ProjectsDetails from 'components/containers/ProjectsDetails';
 import Project from '../components/containers/Project';
 import Footer from 'components/Section/Footer/Footer';
 import { GraphQLClient } from 'graphql-request';
+import { Banner } from 'components/containers/Banner';
 
 const ProjectsContainer = styled.div`
   display: grid;
@@ -53,7 +54,8 @@ const WorksPage: FunctionComponent<Props> = ({ works }) => {
           content='Albert Dugba - Works & Projects | Portfolio'
         ></meta>
       </Head>
-      <ProjectsBanner title='/Works' />
+
+      <Banner title='< Works / >' />
       <div>
         <div className='container'>
           <h2>Some selected projects that I have worked on.</h2>

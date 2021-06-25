@@ -1,12 +1,11 @@
-import ProjectsBanner from 'components/containers/ProjectsBanner';
+import ProjectsDetails from 'components/containers/ProjectsDetails';
 import { GraphQLClient } from 'graphql-request';
 
 const Work = ({ works }) => {
-  console.log(works);
   return (
     <div>
       {works.map((work: any) => (
-        <ProjectsBanner key={work.slug} {...work} />
+        <ProjectsDetails key={work.slug} {...work} />
       ))}
     </div>
   );
@@ -28,6 +27,7 @@ export const getStaticProps = async ({ params }) => {
       hrefLink
       jobDescription
       slug
+      companyInfo
     }
   }
   `,
@@ -56,6 +56,7 @@ export const getStaticPaths = async () => {
       projectImages
       hrefLink
       slug
+      companyInfo
     }
   }
 `);

@@ -9,59 +9,55 @@ export const Header: FunctionComponent = () => {
 
   return (
     <>
-      <Wrapper>
-        <HeaderContainer className='container'>
-          <div>
-            <h3>
-              <Link href='/'>
-                <a>Albert Dugba</a>
-              </Link>{' '}
-            </h3>
-          </div>
+      <HeaderContainer className='container'>
+        <div>
+          <h3>
+            <Link href='/'>
+              <a>Albert Dugba</a>
+            </Link>{' '}
+          </h3>
+        </div>
 
-          <nav className='nav__container'>
-            <ul>
-              <li>
-                <Link href='#'>
-                  <a>
-                    <Moon height={35} width={35} color='var(--primaryColor)' />
-                  </a>
-                </Link>
-              </li>
+        <nav className='nav__container'>
+          <ul>
+            <li>
+              <Link href='#'>
+                <a>
+                  <Moon height={35} width={35} color='var(--primaryColor)' />
+                </a>
+              </Link>
+            </li>
 
-              <li
-                onClick={() => setToggleMenu(true)}
-                className='hamburger__menu'
-              >
-                <div>
-                  <svg
-                    width='62'
-                    height='62'
-                    viewBox='0 0 62 62'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <line
-                      y1='9'
-                      x2='48'
-                      y2='9'
-                      stroke='var(--primaryColor)'
-                      strokeWidth='3'
-                    />
-                    <line
-                      y1='21'
-                      x2='28'
-                      y2='21'
-                      stroke='var(--primaryColor)'
-                      strokeWidth='3'
-                    />
-                  </svg>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </HeaderContainer>
-      </Wrapper>
+            <li onClick={() => setToggleMenu(true)} className='hamburger__menu'>
+              <div>
+                <svg
+                  width='62'
+                  height='62'
+                  viewBox='0 0 62 62'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <line
+                    y1='9'
+                    x2='48'
+                    y2='9'
+                    stroke='var(--primaryColor)'
+                    strokeWidth='3'
+                  />
+                  <line
+                    y1='21'
+                    x2='28'
+                    y2='21'
+                    stroke='var(--primaryColor)'
+                    strokeWidth='3'
+                  />
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </HeaderContainer>
+
       <NavOverlay toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
     </>
   );
@@ -71,27 +67,11 @@ export const Header: FunctionComponent = () => {
  * @styles
  */
 
-const Wrapper = styled.div`
-  height: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: #fff;
-  z-index: 20;
-`;
-
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  background: #fff;
 
   h3 a {
     text-decoration: none;
