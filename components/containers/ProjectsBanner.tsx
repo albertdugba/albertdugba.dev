@@ -7,7 +7,7 @@ import Github from 'styles/Icons/github';
 import NodeJS from 'styles/Icons/node';
 import ReactJS from 'styles/Icons/react';
 
-const ProjectsBanner = props => {
+const ProjectsBanner = ({ title, hrefLink, projectImages }) => {
   return (
     <>
       <div style={{ background: 'var(--headerColor)', marginTop: '5.3rem' }}>
@@ -40,16 +40,16 @@ const ProjectsBanner = props => {
           </div>
 
           <Container className='container'>
-            <h2 className='title'>{props.title}</h2>
+            <h2 className='title'>{title}</h2>
           </Container>
         </SvgIcons>
       </div>
 
       <div className='container'>
-        <h1>{props.hrefLink}</h1>
+        <h1>{hrefLink}</h1>
         <div>
-          {props.projectImages?.map(item => {
-            return item.image.map((image, idx) => (
+          {projectImages?.map(item => {
+            return item.image.map((image: string, idx) => (
               <img key={idx} src={image} />
             ));
           })}

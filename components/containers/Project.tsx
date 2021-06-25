@@ -22,7 +22,10 @@ const Project: FunctionComponent<ProjectProps> = ({
     <div className='project__logo'>
       <Link href='/work/[slug]' as={`/work/${slug}`}>
         <a>
-          <Image width='200' height='200' src={projectImage} />
+          <img
+            style={{ width: '100%', height: 'auto', maxWidth: '250px' }}
+            src={projectImage}
+          />
         </a>
       </Link>
     </div>

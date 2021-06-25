@@ -5,7 +5,7 @@ import Layout from 'components/containers/Layout';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  console.log(router.pathname);
+
   const showHeader =
     router.pathname === '/post/[slug]' || router.pathname === '/resume'
       ? false

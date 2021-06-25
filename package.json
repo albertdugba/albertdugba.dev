@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@formspree/react": "^2.2.3",
@@ -24,8 +25,14 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
+    "babel-jest": "^27.0.5",
+    "jest": "^27.0.5",
+    "jest-dom": "^4.0.0",
     "typescript": "^4.1.3"
   }
 }

@@ -5,7 +5,7 @@ const Work = ({ works }) => {
   console.log(works);
   return (
     <div>
-      {works.map(work => (
+      {works.map((work: any) => (
         <ProjectsBanner key={work.slug} {...work} />
       ))}
     </div>
