@@ -4,6 +4,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
+import { Banner } from './Banner';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -17,23 +18,35 @@ const ProjectsBanner = ({
   jobDescription,
 }) => {
   const [showNav, setShowNav] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     window.addEventListener('scroll', e => {
       if (window.scrollY > 100) {
+        console.log(window.scrollY);
         setShowNav(true);
       } else setShowNav(false);
+
+      if (window.scrollY) {
+        setScrollPosition(window.scrollY);
+      }
     });
     return () =>
-      window.removeEventListener('scroll', e => {
-        console.log(e);
+      window.removeEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          setShowNav(true);
+        } else setShowNav(false);
+
+        if (window.scrollY) {
+          setScrollPosition(window.scrollY);
+        }
       });
   }, []);
   return (
     <section>
-      <div className={showNav && 'nav__bg'}>
+      <div className={showNav ? 'nav__bg' : ''}>
         {showNav && (
-          <div className='nav'>
+          <ShowNavbar>
             <div className='flex align__center justify__between container'>
               <img
                 style={{ maxWidth: '150px' }}
@@ -46,9 +59,10 @@ const ProjectsBanner = ({
                 </li>
               </ul>
             </div>
-          </div>
+          </ShowNavbar>
         )}
       </div>
+
       <Container
         className='container'
         initial={{ minHeight: '0vh', width: '0%', opacity: 0 }}
@@ -81,7 +95,15 @@ const ProjectsBanner = ({
 
         <div className='work__info'>
           <div>
-            <img style={{ maxWidth: '200px' }} src={projectImage} alt={slug} />
+            <img
+              style={{
+                maxWidth: '200px',
+                transform: scrollPosition > 30 && 'skewY(.352rad)',
+                opacity: scrollPosition > 30 && '0',
+              }}
+              src={projectImage}
+              alt={slug}
+            />
           </div>
 
           <div className='work__text'>
@@ -89,62 +111,6 @@ const ProjectsBanner = ({
             <p style={{ background: '#ece8f0c6', padding: '1rem' }}>
               {companyInfo}
             </p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
-
-            <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
-          </div>
-          <div className='work__text'>
-            <h2>{title}</h2>
-            <p>{companyInfo}</p>
 
             <h2>My Contribution</h2>
             <p>{jobDescription}</p>
@@ -160,6 +126,16 @@ export default ProjectsBanner;
 /**
  * @styles
  */
+
+const ShowNavbar = styled.section`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5);
+`;
 
 const Container = styled(motion.div)`
   height: 100vh;

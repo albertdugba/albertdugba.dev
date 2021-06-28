@@ -43,7 +43,6 @@ export const getStaticProps = async () => {
 };
 
 const WorksPage: FunctionComponent<Props> = ({ works }) => {
-  console.log(works);
   return (
     <>
       <Head>
@@ -55,25 +54,22 @@ const WorksPage: FunctionComponent<Props> = ({ works }) => {
         ></meta>
       </Head>
 
-      <Banner title='< Works / >' />
+      <Banner
+        title='Works'
+        subTitle='Some selected projects that I have worked on.'
+      />
       <div>
         <div className='container'>
-          <h2>Some selected projects that I have worked on.</h2>
           <ProjectsContainer>
             {works.map((project, idx) => (
-              <Link
+              <Project
                 key={idx}
-                href={`/work/[slug]`}
-                as={`/work/${project.slug}`}
-              >
-                <Project
-                  slug={project.slug}
-                  title={project.title}
-                  projectImage={project.projectImage}
-                  linkContent={project.linkContent}
-                  hrefLink={project.hrefLink}
-                />
-              </Link>
+                slug={project.slug}
+                title={project.title}
+                projectImage={project.projectImage}
+                linkContent={project.linkContent}
+                hrefLink={project.hrefLink}
+              />
             ))}
           </ProjectsContainer>
         </div>
