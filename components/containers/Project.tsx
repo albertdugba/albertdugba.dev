@@ -19,16 +19,16 @@ const Project: FunctionComponent<ProjectProps> = ({
   slug,
 }) => (
   <ProjectStyles>
-    <div className='project__logo'>
-      <Link href='/work/[slug]' as={`/work/${slug}`}>
+    <Link href='/work/[slug]' as={`/work/${slug}`}>
+      <div className='project__logo'>
         <a>
           <img
             style={{ width: '100%', height: 'auto', maxWidth: '250px' }}
             src={projectImage}
           />
         </a>
-      </Link>
-    </div>
+      </div>
+    </Link>
     <div className='project__details'>
       <h3>{title}</h3>
       <div className='project__link'>
