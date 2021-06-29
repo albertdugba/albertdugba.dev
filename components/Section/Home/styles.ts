@@ -1,20 +1,62 @@
 import styled from 'styled-components';
 
-const HomeContainer = styled.div`
+const HomeContainer = styled.img`
   position: relative;
   padding: 45px 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  display: flex;
+  background: var(--primaryColor);
+  filter: contrast(100%);
+`;
 
-  .down__dots {
+const Wrapper = styled.div`
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .text {
+    background: var(--primaryColor);
+    opacity: 0.99;
     position: absolute;
-    bottom: -29%;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+  }
 
-    @media (max-width: 866px) {
-      display: none;
+  .grid__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    place-items: center;
+    padding-top: 50px;
+    justify-content: center;
+
+    @media (max-width: 801px) {
+      grid-template-columns: 1fr;
     }
   }
 `;
 
 const GridContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--primaryColor);
+  overflow: hidden;
+  z-index: 10;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
@@ -27,6 +69,7 @@ const GridContainer = styled.div`
   }
 
   .info__text {
+    margin-left: 3rem;
     h1 {
       font-size: 4rem;
       color: var(--primaryColor);
@@ -143,4 +186,34 @@ const GridContainer = styled.div`
   }
 `;
 
-export { HomeContainer, GridContainer };
+const NavLink = styled.a`
+  display: block;
+  text-decoration: none;
+  color: #fff;
+
+  li {
+    list-style: none;
+  }
+`;
+
+const Card = styled.div`
+  width: 100%;
+  max-width: 20%;
+  height: 50vh;
+  background: #fff;
+  color: #000;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 9px;
+  padding: 1rem;
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  z-index: 10000;
+`;
+
+export { HomeContainer, GridContainer, Wrapper, NavLink, Card, CardContainer };

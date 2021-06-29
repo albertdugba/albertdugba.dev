@@ -28,28 +28,42 @@ export const getStaticProps: GetStaticProps = async context => {
   }
   `);
 
+  const { works } = await graphcms.request(`
+  query Works(){
+    works {
+      title
+      linkContent
+      projectImage
+      hrefLink
+      slug
+    }
+  }
+  `);
+
   return {
     props: {
       posts,
+      works,
     },
   };
 };
 
 export default function Home({
   posts,
+  works,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
         <title>Albert Dugba</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
         <meta
-          name="Albert Dugba - Portfolio & Personal Website"
-          content="Albert Dugba - Portfoio & Personal Website"
+          name='Albert Dugba - Portfolio & Personal Website'
+          content='Albert Dugba - Portfoio & Personal Website'
         />
       </Head>
 
-      <Landing posts={posts} />
+      <Landing posts={posts} works={works} />
     </>
   );
 }

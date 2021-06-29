@@ -9,12 +9,12 @@ export const Header: FunctionComponent = () => {
 
   return (
     <>
-      <HeaderContainer className='container'>
+      {/* <HeaderContainer className='container'>
         <div>
           <h3>
             <Link href='/'>
               <a>Albert Dugba</a>
-            </Link>{' '}
+            </Link>
           </h3>
         </div>
 
@@ -56,7 +56,7 @@ export const Header: FunctionComponent = () => {
             </li>
           </ul>
         </nav>
-      </HeaderContainer>
+      </HeaderContainer> */}
 
       <NavOverlay toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
     </>

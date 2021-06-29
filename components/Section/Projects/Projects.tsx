@@ -1,39 +1,60 @@
-import Link from 'next/link';
-import { Container, ContentBody } from './styles';
+import { Container, Card } from './styles';
 import { FunctionComponent } from 'react';
+import { GraphQLClient } from 'graphql-request';
+import { motion } from 'framer-motion';
 
-interface PostProps {
-  posts: any[];
+interface Props {
+  works: any[];
 }
 
-const Projects: FunctionComponent<PostProps> = ({ posts }) => {
+export const getStaticProps = async () => {
+  const graphcms = new GraphQLClient(
+    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
+  );
+
+  const { works } = await graphcms.request(`
+  query Works(){
+    works {
+      title
+      linkContent
+      projectImage
+      hrefLink
+      slug
+    }
+  }
+  `);
+
+  return {
+    props: {
+      works,
+    },
+  };
+};
+
+const Projects: FunctionComponent<Props> = ({ works }) => {
   return (
     <Container>
-      <ContentBody className='container'>
-        <div className='card'>
+      {works?.map((work, idx) => (
+        <Card key={idx}>
+          <img
+            src={work.projectImage}
+            alt={work.title}
+            style={{ width: '100%', maxWidth: '200px' }}
+          />
           <div>
-            <h1>I build and experiment</h1>
-            <h3>About open source, web applications etc</h3>
+            <h2>{work.title}</h2>
+            <span>React</span>
           </div>
-          <div className='card__footer'>
-            <Link href='/works'>
-              <button>see my work</button>
-            </Link>
-          </div>
-        </div>
-        <div style={{ height: '100%', width: '2px', background: '#fff' }} />
-        <div className='card'>
-          <div>
-            <h1>I write sometimes </h1>
-            <h3>About frontend development, tools etc</h3>
-          </div>
-          <div className='card__footer'>
-            <Link href='/posts'>
-              <button>View all posts</button>
-            </Link>
-          </div>
-        </div>
-      </ContentBody>
+
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: '20%' }}
+            className='card__overlay'
+          >
+            <span>View Project</span>
+          </motion.div>
+        </Card>
+      ))}
     </Container>
   );
 };
