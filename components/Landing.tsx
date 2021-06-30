@@ -61,7 +61,7 @@ const Landing = ({ posts, works }) => {
       </motion.div>
 
       <div className='circle'>
-        <CircleOutline size={80} color='var(--secondaryColor)' />
+        <CircleOutline size={80} color='#dfd3d6' />
       </div>
 
       <div className='triange'>
@@ -73,7 +73,7 @@ const Landing = ({ posts, works }) => {
       </div>
 
       <div className='b-circle'>
-        <BigCirle size={90} color='purple' />
+        <BigCirle size={90} color='#c9bad6' />
       </div>
     </Wrapper>
   );

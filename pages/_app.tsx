@@ -1,5 +1,4 @@
 import '../styles/app.scss';
-import { Header } from 'components/Navigation/Header';
 import { useRouter } from 'next/router';
 import Layout from 'components/containers/Layout';
 
@@ -15,7 +14,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
-      {showHeader && <Header />}
       <Component {...pageProps} />
     </Layout>
   );
