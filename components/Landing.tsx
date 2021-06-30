@@ -10,17 +10,25 @@ import { Home } from './Section/Home/Home';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Github from 'styles/Icons/github';
+import { motion } from 'framer-motion';
 
 const Landing = ({ posts, works }) => {
   return (
     <Wrapper>
-      <div className='profile'>
-        <img
+      <motion.div
+        className='profile'
+        initial={{ y: '0' }}
+        animate={{ y: '-5%' }}
+      >
+        <motion.img
+          initial={{ height: '0px', width: '0px' }}
+          animate={{ height: '150px', width: '150px' }}
+          transition={{ type: 'spring', delay: 0.5 }}
           src='https://scontent.facc6-1.fna.fbcdn.net/v/t1.6435-0/p526x296/199548180_4843198325707173_1589442917293810159_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeGOemwec3Sm0Ilhp_BE4-jSkBJ2qBLkopmQEnaoEuSimbwybb5za71pusO-YCw3CjkN7XuTtpgZsBKaueOuO4eC&_nc_ohc=lf6fKinu5m4AX9S899g&tn=y1hXR3x2ilqp3-Fs&_nc_ht=scontent.facc6-1.fna&tp=6&oh=e5f7ad5db1dc9a9e793d4a321cd21fbe&oe=60DEDB9E'
           style={{ width: '150px', height: '150px', borderRadius: '50%' }}
         />
 
-        <div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className='align__center text__center'>
             <p> Hi</p> <span role='img'>👋</span>I'm Albert Dugba
           </div>
@@ -30,17 +38,23 @@ const Landing = ({ posts, works }) => {
           experience.
           <p>I like to build design systems</p>
           <p>
-            Check out my <Link href='/works'>works</Link>
-            and <Link href='/posts'> articles</Link>
+            Check out my{' '}
+            <Link href='/works'>
+              <a>articles</a>
+            </Link>
+            and{' '}
+            <Link href='/posts'>
+              <a>articles</a>
+            </Link>
           </p>
-        </div>
+        </motion.div>
         <div className='flex'>
           <Github height={20} width={20} color='#000' />
           <Github height={20} width={20} color='#000' />
           <Github height={20} width={20} color='#000' />
           <Github height={20} width={20} color='#000' />
         </div>
-      </div>
+      </motion.div>
 
       <div className='circle'>
         <CircleOutline size={80} color='var(--secondaryColor)' />
@@ -61,18 +75,19 @@ const Landing = ({ posts, works }) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* background: var(--primaryColor); */
+  background: rgb(2, 0, 36);
+  background: #f1e0e3;
   position: relative;
   overflow: hidden;
 
   a {
-    display: block;
-    margin-left: 0.7rem;
+    display: inline-block;
+    /* margin-left: 0.7rem; */
   }
 
   .circle {
@@ -83,8 +98,9 @@ const Wrapper = styled.div`
 
   .triange {
     position: absolute;
-    bottom: -50px;
+    bottom: -30px;
     left: 0;
+    transform: rotateX(180deg);
   }
 
   .fing {

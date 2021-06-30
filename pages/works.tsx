@@ -47,7 +47,7 @@ const WorksPage: FunctionComponent<Props> = ({ works }) => {
       <Wrapper>
         <div className='flex__column'>
           <HomeContainer src='./tech-doodle.png' />
-          <HomeContainer src='./tech-doodle.png' />
+          {/* <HomeContainer src='./tech-doodle.png' /> */}
         </div>
         <div className='text'>
           <div className='justify__between container'>
@@ -90,18 +90,27 @@ const WorksPage: FunctionComponent<Props> = ({ works }) => {
             </ul>
           </div>
 
-          <CardContainer className='container'>
-            {works?.map(work => (
-              <>
-                <Card>
-                  <img
-                    style={{ width: '100%', maxWidth: '150px' }}
-                    src={work.projectImage}
-                  />
-                </Card>
-              </>
-            ))}
-          </CardContainer>
+          <div>
+            <CardContainer className='container'>
+              {works?.map(work => (
+                <>
+                  <Card>
+                    <img
+                      style={{
+                        width: '100%',
+                        maxWidth: '200px',
+                        margin: '25px auto',
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '1rem',
+                      }}
+                      src={work.projectImage}
+                    />
+                  </Card>
+                </>
+              ))}
+            </CardContainer>
+          </div>
         </div>
       </Wrapper>
     </>
@@ -112,7 +121,6 @@ export default WorksPage;
 
 const HomeContainer = styled(motion.img)`
   position: relative;
-  /* padding: 1rem 0; */
   overflow: hidden;
   width: 100%;
   height: 100vh;
@@ -129,6 +137,7 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -158,9 +167,10 @@ const NavLink = styled.a`
 const Card = styled.div`
   width: 100%;
   max-width: 220px;
-  height: 20vh;
+  height: 50vh;
   background: #fff;
   color: #000;
+  margin-top: 0.4rem;
   margin-left: 1rem;
   margin-right: 1rem;
   border-radius: 9px;
@@ -171,7 +181,9 @@ const CardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70%;
-  z-index: 10000;
+  height: 100%;
+  /* z-index: 10000; */
+  overflow-x: scroll;
   overflow-y: scroll;
+  white-space: nowrap;
 `;
