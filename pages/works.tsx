@@ -127,9 +127,13 @@ const HomeContainer = styled(motion.img)`
   object-fit: cover;
   max-width: 100%;
   display: flex;
-  background: var(--primaryColor);
-  filter: contrast(100%);
-  /* margin: 5px auto; */
+  filter: contrast(90%);
+  object-position: left top;
+  background-image: linear-gradient(
+    to right,
+    rgba(white, 0.1),
+    rgba(0, 0, 0, 0)
+  );
 `;
 
 const Wrapper = styled.div`
