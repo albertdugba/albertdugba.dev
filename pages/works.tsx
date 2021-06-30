@@ -6,6 +6,7 @@ import LinkedIn from 'styles/Icons/linkedin';
 import Dev from 'styles/Icons/dev';
 import styled from 'styled-components';
 import { GraphQLClient } from 'graphql-request';
+import { motion } from 'framer-motion';
 
 interface Props {
   works: any[];
@@ -80,10 +81,12 @@ const WorksPage: FunctionComponent<Props> = ({ works }) => {
               <NavLink href='/posts'>
                 <li className='mr-1'>Blog</li>
               </NavLink>
-              <img
-                src='https://scontent.facc6-1.fna.fbcdn.net/v/t1.6435-0/p526x296/199548180_4843198325707173_1589442917293810159_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeGOemwec3Sm0Ilhp_BE4-jSkBJ2qBLkopmQEnaoEuSimbwybb5za71pusO-YCw3CjkN7XuTtpgZsBKaueOuO4eC&_nc_ohc=lf6fKinu5m4AX9S899g&tn=y1hXR3x2ilqp3-Fs&_nc_ht=scontent.facc6-1.fna&tp=6&oh=e5f7ad5db1dc9a9e793d4a321cd21fbe&oe=60DEDB9E'
-                style={{ width: '40px', height: '40px', borderRadius: '50%' }}
-              />
+              <NavLink href='/'>
+                <img
+                  src='https://scontent.facc6-1.fna.fbcdn.net/v/t1.6435-0/p526x296/199548180_4843198325707173_1589442917293810159_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeGOemwec3Sm0Ilhp_BE4-jSkBJ2qBLkopmQEnaoEuSimbwybb5za71pusO-YCw3CjkN7XuTtpgZsBKaueOuO4eC&_nc_ohc=lf6fKinu5m4AX9S899g&tn=y1hXR3x2ilqp3-Fs&_nc_ht=scontent.facc6-1.fna&tp=6&oh=e5f7ad5db1dc9a9e793d4a321cd21fbe&oe=60DEDB9E'
+                  style={{ width: '40px', height: '40px', borderRadius: '50%' }}
+                />
+              </NavLink>
             </ul>
           </div>
 
@@ -107,7 +110,7 @@ const WorksPage: FunctionComponent<Props> = ({ works }) => {
 
 export default WorksPage;
 
-const HomeContainer = styled.img`
+const HomeContainer = styled(motion.img)`
   position: relative;
   padding: 45px 0;
   overflow: hidden;

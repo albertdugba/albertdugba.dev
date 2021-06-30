@@ -47,7 +47,7 @@ const Landing = ({ posts, works }) => {
       </div>
 
       <div className='triange'>
-        <Triange size={300} />
+        <Triange size={120} />
       </div>
 
       <div className='fing'>
@@ -55,7 +55,7 @@ const Landing = ({ posts, works }) => {
       </div>
 
       <div className='b-circle'>
-        <BigCirle size={150} color='purple' />
+        <BigCirle size={90} color='purple' />
       </div>
     </Wrapper>
   );
@@ -83,14 +83,14 @@ const Wrapper = styled.div`
 
   .triange {
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
   }
 
   .fing {
     position: absolute;
     top: -60px;
-    left: 10%;
+    left: 1%;
     transform: skewY(20px);
   }
 
