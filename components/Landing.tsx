@@ -17,12 +17,16 @@ const Landing = ({ posts, works }) => {
     <Wrapper>
       <motion.div
         className='profile'
-        initial={{ y: '0' }}
+        initial={{ y: '20%' }}
         animate={{ y: '-5%' }}
       >
         <motion.img
-          initial={{ height: '0px', width: '0px' }}
-          animate={{ height: '150px', width: '150px' }}
+          initial={{ height: '0px', width: '0px', transform: 'skewY(0)' }}
+          animate={{
+            height: '150px',
+            width: '150px',
+            transform: 'skewY(20px)',
+          }}
           transition={{ type: 'spring', delay: 0.5 }}
           src='https://scontent.facc6-1.fna.fbcdn.net/v/t1.6435-0/p526x296/199548180_4843198325707173_1589442917293810159_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeGOemwec3Sm0Ilhp_BE4-jSkBJ2qBLkopmQEnaoEuSimbwybb5za71pusO-YCw3CjkN7XuTtpgZsBKaueOuO4eC&_nc_ohc=lf6fKinu5m4AX9S899g&tn=y1hXR3x2ilqp3-Fs&_nc_ht=scontent.facc6-1.fna&tp=6&oh=e5f7ad5db1dc9a9e793d4a321cd21fbe&oe=60DEDB9E'
           style={{ width: '150px', height: '150px', borderRadius: '50%' }}
@@ -36,11 +40,11 @@ const Landing = ({ posts, works }) => {
           engineer, I thrive to work with the right tools to deliver fast,
           performant and accessiblity from the ground up with great user
           experience.
-          <p>I like to build design systems</p>
+          <p>I like to build design systems.</p>
           <p>
-            Check out my{' '}
+            Check out my{'      '}
             <Link href='/works'>
-              <a>articles</a>
+              <a>works</a>
             </Link>
             and{' '}
             <Link href='/posts'>
@@ -85,6 +89,13 @@ const Wrapper = styled(motion.div)`
   position: relative;
   overflow: hidden;
 
+  p,
+  span {
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+    color: #575353;
+  }
+
   a {
     display: inline-block;
     /* margin-left: 0.7rem; */
@@ -106,8 +117,14 @@ const Wrapper = styled(motion.div)`
   .fing {
     position: absolute;
     top: -60px;
-    left: 1%;
-    transform: skewY(20px);
+    left: 0%;
+    transform: rotate(-180deg);
+
+    @media (max-width: 601px) {
+      left: -20%;
+      top: -90px;
+      transform: rotate(-180deg);
+    }
   }
 
   .b-circle {
@@ -134,7 +151,7 @@ const Wrapper = styled(motion.div)`
     &:after {
       content: '';
       position: absolute;
-      bottom: 0px;
+      bottom: -2px;
       height: 20px;
       width: 98%;
       border-bottom: 5px solid var(--secondaryColor);
