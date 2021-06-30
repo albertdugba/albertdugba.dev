@@ -188,8 +188,7 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
     <>
       <Wrapper>
         <div className='flex__column'>
-          <HomeContainer src='./tech-doodle.png' />
-          <HomeContainer src='./tech-doodle.png' />
+          <HomeContainer src='./blog.jpg' />
         </div>
         <div className='text'>
           <div className='justify__between container'>
@@ -273,8 +272,8 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   .text {
-    background: var(--primaryColor);
-    opacity: 0.99;
+    background: rgba(0, 0, 0, 0.75);
+    filter: contrast(100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -316,64 +315,6 @@ const GridContainer = styled.div`
 
   @media (max-width: 801px) {
     grid-template-columns: 1fr;
-  }
-
-  .info__text {
-    margin-left: 3rem;
-    h1 {
-      font-size: 4rem;
-      color: var(--primaryColor);
-    }
-
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    div p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-  }
-
-  .info__img {
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content: 'Hellooo';
-      height: 100%;
-      width: 100%;
-      border: 1px solid var(--primaryColor);
-      top: 8%;
-      left: 10%;
-      z-index: -1;
-    }
-    img {
-      max-width: 290px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .left__dots {
-      position: absolute;
-      top: -11%;
-      height: 100%;
-      width: 100%;
-      left: -10%;
-      z-index: -1;
-    }
-
-    .zigzag__line--left {
-      position: absolute;
-      top: 40%;
-      left: -20%;
-      bottom: 50%;
-      transform: rotate(30deg);
-    }
-
-    @media (max-width: 901px) {
-      margin-top: 4rem;
-    }
   }
 `;
 

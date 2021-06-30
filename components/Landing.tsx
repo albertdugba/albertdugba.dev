@@ -8,6 +8,8 @@ import Triange from 'styles/Icons/triangle';
 import ZigZag from 'styles/Icons/zigzag';
 import { Home } from './Section/Home/Home';
 import styled from 'styled-components';
+import Link from 'next/link';
+import Github from 'styles/Icons/github';
 
 const Landing = ({ posts, works }) => {
   return (
@@ -18,12 +20,42 @@ const Landing = ({ posts, works }) => {
           style={{ width: '150px', height: '150px', borderRadius: '50%' }}
         />
 
-        <p>
-          Hi <span role='img'>👋</span>
-          <br />
-          My name is Albert Dugba, a self taught engineer from Ghana with 2+
-          years
-        </p>
+        <div>
+          <div className='align__center text__center'>
+            <p> Hi</p> <span role='img'>👋</span>I'm Albert Dugba
+          </div>
+          <br />A self taught engineer from Ghana with 2+ years. As a UI
+          engineer, I thrive to work with the right tools to deliver fast,
+          performant and accessiblity from the ground up with great user
+          experience.
+          <p>I like to build design systems</p>
+          <p>
+            Check out my <Link href='/works'>works</Link>
+            and <Link href='/posts'> articles</Link>
+          </p>
+        </div>
+        <div className='flex'>
+          <Github height={20} width={20} color='#000' />
+          <Github height={20} width={20} color='#000' />
+          <Github height={20} width={20} color='#000' />
+          <Github height={20} width={20} color='#000' />
+        </div>
+      </div>
+
+      <div className='circle'>
+        <CircleOutline size={80} color='var(--secondaryColor)' />
+      </div>
+
+      <div className='triange'>
+        <Triange size={300} />
+      </div>
+
+      <div className='fing'>
+        <Fing size={200} />
+      </div>
+
+      <div className='b-circle'>
+        <BigCirle size={150} color='purple' />
       </div>
     </Wrapper>
   );
@@ -34,15 +66,47 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: var(--primaryColor);
+  /* background: var(--primaryColor); */
+  position: relative;
+  overflow: hidden;
+
+  a {
+    display: block;
+    margin-left: 0.7rem;
+  }
+
+  .circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .triange {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .fing {
+    position: absolute;
+    top: -60px;
+    left: 10%;
+    transform: skewY(20px);
+  }
+
+  .b-circle {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+  }
 
   .profile {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 90%;
-    min-height: 50%;
+    min-height: 60%;
     background: #fff;
-    border-radius: 30px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +114,16 @@ const Wrapper = styled.div`
     padding: 1.5rem;
     margin-top: 50px;
     position: relative;
+    border-bottom: 5px solid purple;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      height: 20px;
+      width: 98%;
+      border-bottom: 5px solid var(--secondaryColor);
+      border-radius: 25px;
+    }
 
     img {
       position: absolute;
@@ -63,7 +137,7 @@ const Wrapper = styled.div`
     }
 
     @media (min-width: 801px) {
-      max-width: 40%;
+      max-width: 45%;
     }
   }
 `;

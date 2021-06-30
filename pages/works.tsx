@@ -130,7 +130,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   .text {
-    background: var(--primaryColor);
+    background: rgba(24, 23, 26, 0.9);
     opacity: 0.99;
     position: absolute;
     top: 0;
