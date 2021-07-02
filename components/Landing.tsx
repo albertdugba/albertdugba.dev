@@ -12,7 +12,7 @@ import Link from 'next/link';
 import Github from 'styles/Icons/github';
 import { motion } from 'framer-motion';
 
-const Landing = ({ posts, works }) => {
+const Landing = () => {
   return (
     <Wrapper>
       <motion.div
@@ -28,7 +28,7 @@ const Landing = ({ posts, works }) => {
             transform: 'skewY(20px)',
           }}
           transition={{ type: 'spring', delay: 0.5 }}
-          src='https://scontent.facc6-1.fna.fbcdn.net/v/t1.6435-0/p526x296/199548180_4843198325707173_1589442917293810159_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeGOemwec3Sm0Ilhp_BE4-jSkBJ2qBLkopmQEnaoEuSimbwybb5za71pusO-YCw3CjkN7XuTtpgZsBKaueOuO4eC&_nc_ohc=lf6fKinu5m4AX9S899g&tn=y1hXR3x2ilqp3-Fs&_nc_ht=scontent.facc6-1.fna&tp=6&oh=e5f7ad5db1dc9a9e793d4a321cd21fbe&oe=60DEDB9E'
+          src='./albertdugba.jpg'
           style={{ width: '150px', height: '150px', borderRadius: '50%' }}
         />
 
@@ -53,10 +53,10 @@ const Landing = ({ posts, works }) => {
           </p>
         </motion.div>
         <div className='flex'>
-          <Github height={20} width={20} color='#000' />
-          <Github height={20} width={20} color='#000' />
-          <Github height={20} width={20} color='#000' />
-          <Github height={20} width={20} color='#000' />
+          <Github size={20} color='#000' />
+          <Github size={20} color='#000' />
+          <Github size={20} color='#000' />
+          <Github size={20} color='#000' />
         </div>
       </motion.div>
 

@@ -63,7 +63,7 @@ export default function Home({
         />
       </Head>
 
-      <Landing posts={posts} works={works} />
+      <Landing />
     </>
   );
 }
