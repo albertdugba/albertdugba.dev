@@ -62,7 +62,6 @@ export default function Home({
           content='Albert Dugba - Portfoio & Personal Website'
         />
       </Head>
-
       <Landing />
     </>
   );

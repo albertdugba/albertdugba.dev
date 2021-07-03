@@ -1,5 +1,5 @@
+import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useState, FunctionComponent } from 'react';
 import { SocialLinks } from 'components/containers/Social';
 import Github from 'styles/Icons/github';
 import Twitter from 'styles/Icons/twitter';
@@ -34,11 +34,13 @@ export const Div: FunctionComponent<Props> = ({
         ));
       case '/posts':
         return posts?.map((post, index) => (
-          <ProjectCard
-            key={index}
-            logo={post.coverImage.url}
-            title={post.slug}
-          />
+          <>
+            <ProjectCard
+              key={index}
+              logo={post.coverImage.url}
+              title={post.slug}
+            />
+          </>
         ));
 
       default:
@@ -55,22 +57,22 @@ export const Div: FunctionComponent<Props> = ({
           <div className='flex'>
             <SocialLinks
               link='link'
-              component={<Github size={30} color='#fff' />}
+              component={<Github size={22} color='#fff' />}
             />
             <SocialLinks
               className='ml-1'
               link='link'
-              component={<LinkedIn size={30} color='#fff' />}
+              component={<LinkedIn size={22} color='#fff' />}
             />
             <SocialLinks
               className='ml-1'
               link='link'
-              component={<Twitter size={30} color='#fff' />}
+              component={<Twitter size={22} color='#fff' />}
             />
             <SocialLinks
               className='ml-1'
               link='link'
-              component={<Dev size={30} color='#fff' />}
+              component={<Dev size={22} color='#fff' />}
             />
           </div>
 
@@ -104,7 +106,32 @@ export const Div: FunctionComponent<Props> = ({
 
 const CardsContainer = styled.div`
   display: flex;
-  overflow-x: scroll;
+  flex-direction: row;
+  /* white-space: nowrap; */
+  /* position: relative; */
+  overflow-x: auto;
+  /* max-height: 20%; */
+  border: 1px solid red;
+  padding: 1rem;
+  width: 400px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100px;
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100px;
+    top: 0;
+    right: 0;
+  }
 `;
 
 const Nav = styled.ul`

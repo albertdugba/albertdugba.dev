@@ -16,9 +16,9 @@ export const ProjectCard: FunctionComponent<CardProps> = ({ logo, title }) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 280px;
-  height: 400px;
-  background: #fff;
+  max-width: 220px;
+  height: 300px;
+  background: #efddf5;
   border-radius: 10px;
   padding: 1rem;
   display: flex;
