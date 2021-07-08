@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, forwardRef } from 'react';
 import styled from 'styled-components';
 
 type CardProps = {
@@ -16,9 +16,9 @@ export const ProjectCard: FunctionComponent<CardProps> = ({ logo, title }) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 220px;
+  max-width: 450px;
   height: 300px;
-  background: #efddf5;
+  background: #ebdfeb;
   border-radius: 10px;
   padding: 1rem;
   display: flex;

@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { Div } from '../components/UI/Div';
+import Layout from 'components/layout';
 
 interface Props {
   works: any[];
@@ -32,7 +33,7 @@ export const getStaticProps = async () => {
 };
 
 const WorksPage: FunctionComponent<Props> = ({ works }) => {
-  return <Div works={works} backgroungImage='./tech-doodle.png' />;
+  return <Layout />;
 };
 
 export default WorksPage;

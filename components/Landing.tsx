@@ -27,7 +27,7 @@ const Landing = () => {
             width: '150px',
             transform: 'skewY(20px)',
           }}
-          transition={{ type: 'spring', delay: 0.5 }}
+          transition={{ type: 'tween', delay: 0.5 }}
           src='./albertdugba.jpg'
           style={{ width: '150px', height: '150px', borderRadius: '50%' }}
         />
@@ -40,7 +40,7 @@ const Landing = () => {
           engineer, I thrive to work with the right tools to deliver fast,
           performant and accessiblity from the ground up with great user
           experience.
-          <p>I like to build design systems.</p>
+          {/* <p>I like to build design systems.</p>
           <p>
             Check out my{'      '}
             <Link href='/works'>
@@ -50,7 +50,7 @@ const Landing = () => {
             <Link href='/posts'>
               <a>articles</a>
             </Link>
-          </p>
+          </p> */}
         </motion.div>
         <div className='flex'>
           <Github size={20} color='#000' />
@@ -88,13 +88,6 @@ const Wrapper = styled(motion.div)`
   background: #f1e0e3;
   position: relative;
   overflow: hidden;
-
-  p,
-  span {
-    line-height: 1.2;
-    letter-spacing: 1.2px;
-    color: #575353;
-  }
 
   a {
     display: inline-block;

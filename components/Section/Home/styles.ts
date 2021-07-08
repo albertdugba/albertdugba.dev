@@ -209,11 +209,8 @@ const Card = styled.div`
 `;
 
 const CardContainer = styled.div`
+  padding: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70%;
-  z-index: 10000;
 `;
 
 export { HomeContainer, GridContainer, Wrapper, NavLink, Card, CardContainer };
