@@ -50,13 +50,12 @@ const FooterContainer = styled.footer`
 const Social = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  width: 100%;
 
-  @media (max-width: 653px) {
-    display: none;
-  }
-  svg {
-    margin-left: 2rem;
-    cursor: pointer;
+  svg:hover {
+    fill: var(--primaryColor);
   }
 `;
 

@@ -85,29 +85,6 @@ const Wrapper = styled.section`
   height: 100vh;
   overflow: hidden;
 
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: auto;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .card {
-    margin-top: 40px;
-    min-height: 350px;
-    justify-content: center;
-    width: 100%;
-    max-width: 550px;
-    background-color: #e1e1e1;
-    color: #000;
-    border-radius: 10px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 1rem;
-  }
-
   .layout {
     position: absolute;
     top: 0;

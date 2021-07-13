@@ -1,14 +1,14 @@
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { Div } from '../../components/UI/Div';
+import Layout from 'components/layout';
 
 interface Props {
   posts: any[];
 }
 
 const AllPosts: FunctionComponent<Props> = ({ posts }) => {
-  return <Div posts={posts} />;
+  return <Layout />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
