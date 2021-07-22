@@ -37,7 +37,7 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
               <SwiperSlide key={idx}>
                 <Link href='/work/[slug]' as={`/work/${work.slug}`}>
                   <Card>
-                    <span>Note Taking platform</span>
+                    <span>{work.tag}</span>
                     <div className='card__body'>
                       <img src={work.projectImage} />
                     </div>
@@ -121,7 +121,7 @@ const Card = styled.div`
   }
 
   @media (max-width: 601px) {
-    height: 300px;
+    height: 320px;
     width: 270px;
     margin-top: 50px;
     h1 {

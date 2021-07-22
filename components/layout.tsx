@@ -33,6 +33,7 @@ export const getStaticProps = async () => {
       projectImages
       hrefLink
       slug
+      tag
     }
   }
   `);

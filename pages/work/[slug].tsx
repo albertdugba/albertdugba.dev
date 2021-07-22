@@ -28,6 +28,7 @@ export const getStaticProps = async ({ params }) => {
       jobDescription
       slug
       companyInfo
+      tag
     }
   }
   `,
@@ -57,6 +58,7 @@ export const getStaticPaths = async () => {
       hrefLink
       slug
       companyInfo
+      tag
     }
   }
 `);
