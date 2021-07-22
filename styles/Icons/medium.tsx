@@ -1,4 +1,7 @@
-const Medium = ({ size, color }) => (
+import { IconProps } from '../../components/types/types';
+import { FunctionComponent } from 'react';
+
+const Medium: FunctionComponent<IconProps> = ({ size, color }) => (
   <svg
     aria-hidden='true'
     focusable='false'

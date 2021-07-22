@@ -1,4 +1,7 @@
-const Fing = ({ size, ...rest }) => (
+import { IconProps } from '../../components/types/types';
+import { FunctionComponent } from 'react';
+
+const Fing: FunctionComponent<IconProps> = ({ size, ...rest }) => (
   <svg
     width={size}
     height={size}

@@ -33,7 +33,7 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
         style={{ height: '100vh' }}
       >
         {router.pathname === '/works'
-          ? works.map((work, idx) => (
+          ? works?.map((work, idx) => (
               <SwiperSlide key={idx}>
                 <Link href='/work/[slug]' as={`/work/${work.slug}`}>
                   <Card>
@@ -45,7 +45,7 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
                 </Link>
               </SwiperSlide>
             ))
-          : posts.map((post, idx) => (
+          : posts?.map((post, idx) => (
               <SwiperSlide key={idx}>
                 <Link href='/post/[slug]' as={`/post/${post.slug}`}>
                   <Card>

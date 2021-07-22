@@ -1,4 +1,7 @@
-const Twitter = ({ size, color }) => (
+import { IconProps } from '../../components/types/types';
+import { FunctionComponent } from 'react';
+
+const Twitter: FunctionComponent<IconProps> = ({ size, color }) => (
   <svg
     aria-hidden='true'
     focusable='false'

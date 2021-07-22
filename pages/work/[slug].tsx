@@ -1,7 +1,13 @@
 import ProjectsDetails from 'components/containers/ProjectsDetails';
 import { GraphQLClient } from 'graphql-request';
+import { FunctionComponent } from 'react';
+import { GetStaticProps } from 'next';
 
-const Work = ({ works }) => {
+interface IProps {
+  works: any[];
+}
+
+const Work: FunctionComponent<IProps> = ({ works }) => {
   return (
     <div>
       {works.map((work: any) => (

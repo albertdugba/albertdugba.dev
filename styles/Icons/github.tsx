@@ -1,4 +1,7 @@
-const Github = ({ size, color }) => (
+import { IconProps } from '../../components/types/types';
+import { FunctionComponent } from 'react';
+
+const Github: FunctionComponent<IconProps> = ({ size, color }) => (
   <svg
     aria-hidden='true'
     focusable='false'

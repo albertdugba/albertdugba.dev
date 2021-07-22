@@ -12,8 +12,8 @@ import { Backdrop } from './UI/Backdrop/Backdrop';
 import { IconLinks } from './UI/Mobile/IconLinks';
 import { AnimatePresence } from 'framer-motion';
 import Medium from 'styles/Icons/medium';
-import Times from 'styles/Icons/Times';
 import { useRouter } from 'next/router';
+import Times from 'styles/Icons/times';
 
 interface IProps {
   imageBackground: string;
@@ -68,14 +68,14 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             <Times
               size={35}
               color='var(--secondaryColor)'
-              class='menu__bar'
+              className='menu__bar'
               onClick={() => setToggleMenu(preState => !preState)}
             />
           ) : (
             <Menu
               size={35}
               color='var(--secondaryColor)'
-              class='menu__bar'
+              className='menu__bar'
               onClick={() => setToggleMenu(preState => !preState)}
             />
           )}

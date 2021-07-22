@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,8 +6,17 @@ import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
+interface IProps {
+  title: string;
+  hrefLink: string;
+  projectImages: any[];
+  projectImage: string;
+  slug: string;
+  companyInfo: string;
+  jobDescription: string;
+}
 
-const ProjectsBanner = ({
+const ProjectsBanner: FunctionComponent<IProps> = ({
   title,
   hrefLink,
   projectImages,
@@ -97,8 +106,8 @@ const ProjectsBanner = ({
             <img
               style={{
                 maxWidth: '200px',
-                transform: scrollPosition > 30 && 'skewY(.352rad)',
-                opacity: scrollPosition > 30 && '0',
+                // transform: scrollPosition > 30 && 'skewY(0.352rad)',
+                // opacity: scrollPosition > 30 && '0',
               }}
               src={projectImage}
               alt={slug}

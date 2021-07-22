@@ -1,4 +1,7 @@
-const Menu = ({ size, color, ...rest }) => (
+import { IconProps } from 'components/types/types';
+import { FunctionComponent } from 'react';
+
+const Menu: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     aria-hidden='true'

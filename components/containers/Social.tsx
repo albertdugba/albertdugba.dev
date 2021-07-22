@@ -3,8 +3,8 @@ import { FunctionComponent } from 'react';
 
 interface Props {
   link: string;
-  component?;
-  className?;
+  component?: any;
+  className?: string;
 }
 
 export const SocialLinks: FunctionComponent<Props> = ({
