@@ -12,7 +12,6 @@ import { SocialLinks } from './containers/Social';
 import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
 import Medium from 'styles/Icons/medium';
-import { Social } from './Section/Footer/style';
 
 const Landing = () => {
   return (
@@ -106,6 +105,18 @@ const Landing = () => {
     </Wrapper>
   );
 };
+
+const Social = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  width: 100%;
+
+  svg:hover {
+    fill: var(--primaryColor);
+  }
+`;
 
 const Wrapper = styled(motion.div)`
   display: flex;
