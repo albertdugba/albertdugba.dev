@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import { SocialLinks } from './containers/Social';
 import Github from 'styles/Icons/github';
@@ -7,18 +7,45 @@ import LinkedIn from 'styles/Icons/linkedin';
 import Dev from 'styles/Icons/dev';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectCard } from './UI/ProjectCard';
+import { CardsCarousel } from './UI/Carousel/CardsCarousel';
+import { GraphQLClient } from 'graphql-request';
 
-interface Iprops {
-  main?: ReactNode;
+interface IProps {
   works?: any[];
-  posts?: any[];
+  children: ReactNode;
 }
 
-const Layout = () => {
+export const getStaticProps = async () => {
+  const graphcms = new GraphQLClient(
+    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
+  );
+
+  const { works } = await graphcms.request(`
+  query Works() {
+    works{
+      title
+      linkContent
+      projectImage
+      projectImages
+      hrefLink
+      slug
+    }
+  }
+  `);
+
+  return {
+    props: {
+      works,
+    },
+  };
+};
+
+const Layout: FunctionComponent<IProps> = ({ works, children }) => {
   return (
     <Wrapper>
       <div className='background'>
+        <img src='./tech-doodle.png' alt='Background' />
+        <img src='./tech-doodle.png' alt='Background' />
         <img src='./tech-doodle.png' alt='Background' />
       </div>
       <div className='layout'>
@@ -71,13 +98,34 @@ const Layout = () => {
             </li>
           </Nav>
         </div>
+        {children}
       </div>
-      <ProjectCard />
     </Wrapper>
   );
 };
 
 export default Layout;
+
+const Works = styled.div`
+  overflow-y: scroll;
+  /* overflow-x: scroll; */
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  height: 100vh;
+  width: 100%;
+  h1 {
+    /* height: 400px; */
+    height: 400px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 1rem;
+    background: #cfe6e9;
+    color: #000;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+`;
 
 const Wrapper = styled.section`
   position: relative;
@@ -91,12 +139,13 @@ const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(24, 23, 26, 0.9);
+    background: rgba(24, 23, 26, 0.95);
     color: #fff;
     overflow: scroll;
   }
 
   .background {
+    overflow: hidden;
     img {
       width: 100%;
       height: auto;

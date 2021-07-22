@@ -2,13 +2,18 @@ import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Layout from 'components/layout';
+import { CardsCarousel } from 'components/UI/Carousel/CardsCarousel';
 
 interface Props {
   posts: any[];
 }
 
 const AllPosts: FunctionComponent<Props> = ({ posts }) => {
-  return <Layout />;
+  return (
+    <Layout>
+      <CardsCarousel posts={posts} />
+    </Layout>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -82,7 +82,7 @@ const Landing = () => {
             component={<Twitter size={25} color='#c9bad6' />}
           />
           <SocialLinks
-            link='https://twitter.com/Albert_Dugba'
+            link='https://medium.com/@albert.dugba'
             component={<Medium size={25} color='#c9bad6' />}
           />
         </Social>
