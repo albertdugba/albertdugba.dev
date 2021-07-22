@@ -7,12 +7,14 @@ import LinkedIn from 'styles/Icons/linkedin';
 import Dev from 'styles/Icons/dev';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CardsCarousel } from './UI/Carousel/CardsCarousel';
 import { GraphQLClient } from 'graphql-request';
 import Menu from 'styles/Icons/menu';
 import { Backdrop } from './UI/Backdrop/Backdrop';
 import { IconLinks } from './UI/Mobile/IconLinks';
 import { AnimatePresence } from 'framer-motion';
+import Medium from 'styles/Icons/medium';
+import Times from 'styles/Icons/Times';
+import { useRouter } from 'next/router';
 
 interface IProps {
   imageBackground: string;
@@ -47,6 +49,7 @@ export const getStaticProps = async () => {
 
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const router = useRouter();
   return (
     <Wrapper>
       {toggleMenu && <Backdrop />}
@@ -62,36 +65,46 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
       </div>
       <div className='layout'>
         <div className=' container justify__between'>
-          <Menu
-            size={35}
-            color='var(--secondaryColor)'
-            class='menu__bar'
-            onClick={() => setToggleMenu(preState => !preState)}
-          />
+          {toggleMenu ? (
+            <Times
+              size={35}
+              color='var(--secondaryColor)'
+              class='menu__bar'
+              onClick={() => setToggleMenu(preState => !preState)}
+            />
+          ) : (
+            <Menu
+              size={35}
+              color='var(--secondaryColor)'
+              class='menu__bar'
+              onClick={() => setToggleMenu(preState => !preState)}
+            />
+          )}
+
           <div className='menu__bar'>
             <AnimatePresence>{toggleMenu && <IconLinks />}</AnimatePresence>
           </div>
 
           <div className='flex social__container'>
             <SocialLinks
-              link='link'
-              component={<Github size={25} color='#fff' />}
-            />
-
-            <SocialLinks
               className='ml-1'
-              link='link'
-              component={<LinkedIn size={22} color='#fff' />}
+              link='https://github.com/albertdugba'
+              component={<Github size={25} color='#c9bad6' />}
             />
             <SocialLinks
               className='ml-1'
-              link='link'
-              component={<Twitter size={22} color='#fff' />}
+              link='https://www.linkedin.com/in/albertdugba/'
+              component={<LinkedIn size={23} color='#c9bad6' />}
             />
             <SocialLinks
               className='ml-1'
-              link='link'
-              component={<Dev size={22} color='#fff' />}
+              link='https://twitter.com/Albert_Dugba'
+              component={<Twitter size={25} color='#c9bad6' />}
+            />
+            <SocialLinks
+              className='ml-1'
+              link='https://medium.com/@albert.dugba'
+              component={<Medium size={25} color='#c9bad6' />}
             />
           </div>
 
@@ -121,6 +134,28 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           </Nav>
         </div>
 
+        {router.pathname === '/posts' && (
+          <div className='header__tab'>
+            <div className='container mt-1'>
+              <div
+                className='flex'
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  background: 'var(--secondaryColor)',
+                  borderRadius: '20px',
+                  paddingLeft: '0.8rem',
+                  paddingRight: '0.8rem',
+                  paddingTop: '0.2rem',
+                  paddingBottom: '0.2rem',
+                }}
+              >
+                <Link href='/all-posts'>View all posts</Link>
+                <span className='ml-1'>&rarr;</span>
+              </div>
+            </div>
+          </div>
+        )}
         {children}
       </div>
     </Wrapper>
@@ -151,11 +186,24 @@ const Wrapper = styled.section`
     }
 
     .header__tab {
-      background: rgba(0, 0, 0, 0.1);
-      padding: 1rem;
       border-radius: 9px;
-      max-width: 80px;
-      margin: auto;
+      width: 100%;
+      margin-top: 20px;
+
+      div {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+          color: #fff;
+          font-size: 0.9rem;
+        }
+      }
+
+      a {
+        color: var(--secondaryColor);
+        text-decoration: none;
+      }
     }
 
     @media (max-width: 701px) {

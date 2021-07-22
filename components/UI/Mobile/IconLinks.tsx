@@ -5,6 +5,7 @@ import LinkedIn from 'styles/Icons/linkedin';
 import Twitter from 'styles/Icons/twitter';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Medium from 'styles/Icons/medium';
 
 export const IconLinks = () => {
   return (
@@ -16,24 +17,24 @@ export const IconLinks = () => {
         exit={{ opacity: 0 }}
       >
         <SocialLinks
-          link='link'
-          component={<Github size={25} color='#fff' />}
+          link='https://github.com/albertdugba'
+          component={<Github size={25} color='#c9bad6' />}
         />
 
         <SocialLinks
           className='ml-1'
-          link='link'
-          component={<LinkedIn size={22} color='#fff' />}
+          link='https://www.linkedin.com/in/albertdugba/'
+          component={<LinkedIn size={23} color='#c9bad6' />}
         />
         <SocialLinks
           className='ml-1'
-          link='link'
-          component={<Twitter size={22} color='#fff' />}
+          link='https://twitter.com/Albert_Dugba'
+          component={<Twitter size={25} color='#c9bad6' />}
         />
         <SocialLinks
           className='ml-1'
-          link='link'
-          component={<Dev size={22} color='#fff' />}
+          link='https://medium.com/@albert.dugba'
+          component={<Medium size={29} color='#c9bad6' />}
         />
       </Wrapper>
     </>
