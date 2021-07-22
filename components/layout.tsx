@@ -68,9 +68,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             onClick={() => setToggleMenu(preState => !preState)}
           />
           <div className='menu__bar'>
-            <AnimatePresence>
-              {toggleMenu && <IconLinks isToggled={toggleMenu} />}
-            </AnimatePresence>
+            <AnimatePresence>{toggleMenu && <IconLinks />}</AnimatePresence>
           </div>
 
           <div className='flex social__container'>
