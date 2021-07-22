@@ -92,11 +92,11 @@ const Landing = () => {
       </div>
 
       <div className='triange'>
-        <Triange size={120} />
+        <Triange color='var(--secondaryColor)' size={120} />
       </div>
 
       <div className='fing'>
-        <Fing size={200} />
+        <Fing color="#2B0A4B'" size={200} />
       </div>
 
       <div className='b-circle'>

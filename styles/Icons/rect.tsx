@@ -1,4 +1,7 @@
-const Rect = ({ size, ...rest }) => (
+import { IconProps } from '../../components/types/types';
+import { FunctionComponent } from 'react';
+
+const Rect: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg
     width={size}
     height={size}
@@ -7,7 +10,7 @@ const Rect = ({ size, ...rest }) => (
     xmlns='http://www.w3.org/2000/svg'
     {...rest}
   >
-    <rect x='87' y='60' width='76' height='258' fill='#2B0A4B' />
+    <rect x='87' y='60' width='76' height='258' fill={color} />
   </svg>
 );
 
