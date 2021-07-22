@@ -121,7 +121,7 @@ const Card = styled.div`
   }
 
   @media (max-width: 601px) {
-    height: 190px;
+    height: 300px;
     width: 270px;
     margin-top: 50px;
     h1 {
