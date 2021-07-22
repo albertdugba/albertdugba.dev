@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Link from 'next/link';
+import React, { FunctionComponent } from 'react';
 
-const propTypes = {
-  activeTab: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
+interface ITabProps {
+  activeTab: string;
+  label?: string;
+  onClick: (e: any) => void;
+  href?: string;
+}
 
-export const Tab = ({ activeTab, label, onClick, href, ...rest }) => {
+export const Tab: FunctionComponent<ITabProps> = ({
+  activeTab,
+  label,
+  onClick,
+  href,
+  ...rest
+}) => {
   if (href) {
     return (
       <a
