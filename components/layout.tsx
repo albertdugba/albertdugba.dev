@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import { SocialLinks } from './containers/Social';
 import Github from 'styles/Icons/github';
@@ -9,6 +9,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CardsCarousel } from './UI/Carousel/CardsCarousel';
 import { GraphQLClient } from 'graphql-request';
+import Menu from 'styles/Icons/menu';
+import { Backdrop } from './UI/Backdrop/Backdrop';
+import { IconLinks } from './UI/Mobile/IconLinks';
+import { AnimatePresence } from 'framer-motion';
 
 interface IProps {
   imageBackground: string;
@@ -41,8 +45,10 @@ export const getStaticProps = async () => {
 };
 
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <Wrapper>
+      {toggleMenu && <Backdrop />}
       <div className='background'>
         <img src={imageBackground} alt='Background' />
         <img src={imageBackground} alt='Background' />
@@ -54,8 +60,20 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
         <img src={imageBackground} alt='Background' />
       </div>
       <div className='layout'>
-        <div className='container justify__between'>
-          <div className='flex'>
+        <div className=' container justify__between'>
+          <Menu
+            size={35}
+            color='var(--secondaryColor)'
+            class='menu__bar'
+            onClick={() => setToggleMenu(preState => !preState)}
+          />
+          <div className='menu__bar'>
+            <AnimatePresence>
+              {toggleMenu && <IconLinks isToggled={toggleMenu} />}
+            </AnimatePresence>
+          </div>
+
+          <div className='flex social__container'>
             <SocialLinks
               link='link'
               component={<Github size={25} color='#fff' />}
@@ -103,6 +121,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             </li>
           </Nav>
         </div>
+
         {children}
       </div>
     </Wrapper>
@@ -110,27 +129,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
 };
 
 export default Layout;
-
-const Works = styled.div`
-  overflow-y: scroll;
-  /* overflow-x: scroll; */
-  display: flex;
-  max-width: 100%;
-  margin: auto;
-  height: 100vh;
-  width: 100%;
-  h1 {
-    /* height: 400px; */
-    height: 400px;
-    width: 250px;
-    border-radius: 10px;
-    padding: 1rem;
-    background: #cfe6e9;
-    color: #000;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-`;
 
 const Wrapper = styled.section`
   position: relative;
@@ -144,9 +142,32 @@ const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(24, 23, 26, 0.9);
+    background: rgba(15, 13, 19, 0.85);
     color: #fff;
-    overflow: scroll;
+
+    .menu__bar {
+      display: none;
+      z-index: 200;
+      cursor: pointer;
+    }
+
+    .header__tab {
+      background: rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      border-radius: 9px;
+      max-width: 80px;
+      margin: auto;
+    }
+
+    @media (max-width: 701px) {
+      .social__container {
+        display: none;
+      }
+
+      .menu__bar {
+        display: block;
+      }
+    }
   }
 
   .background {
@@ -174,5 +195,12 @@ const Nav = styled.ul`
     display: block;
     text-decoration: none;
     color: #fff;
+
+    @media (max-width: 701px) {
+      img {
+        height: 40px;
+        width: 40px;
+      }
+    }
   }
 `;

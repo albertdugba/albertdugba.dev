@@ -49,4 +49,5 @@ const Card = styled.div`
   margin-right: 1rem;
   padding: 1rem;
   background: linear-gradient(150deg, #e1e1e1, #1d161f 100%);
+  
 `;
