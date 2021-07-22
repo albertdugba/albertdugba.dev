@@ -4,7 +4,6 @@ import { SocialLinks } from './containers/Social';
 import Github from 'styles/Icons/github';
 import Twitter from 'styles/Icons/twitter';
 import LinkedIn from 'styles/Icons/linkedin';
-import Dev from 'styles/Icons/dev';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
