@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
 
 const WorksPage: FunctionComponent<Props> = ({ works }) => {
   return (
-    <Layout>
+    <Layout imageBackground='./tech-doodle.png'>
       <CardsCarousel works={works} />
     </Layout>
   );

@@ -11,7 +11,7 @@ import { CardsCarousel } from './UI/Carousel/CardsCarousel';
 import { GraphQLClient } from 'graphql-request';
 
 interface IProps {
-  works?: any[];
+  imageBackground: string;
   children: ReactNode;
 }
 
@@ -40,13 +40,18 @@ export const getStaticProps = async () => {
   };
 };
 
-const Layout: FunctionComponent<IProps> = ({ works, children }) => {
+const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   return (
     <Wrapper>
       <div className='background'>
-        <img src='./tech-doodle.png' alt='Background' />
-        <img src='./tech-doodle.png' alt='Background' />
-        <img src='./tech-doodle.png' alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
+        <img src={imageBackground} alt='Background' />
       </div>
       <div className='layout'>
         <div className='container justify__between'>
@@ -139,7 +144,7 @@ const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(24, 23, 26, 0.95);
+    background: rgba(24, 23, 26, 0.9);
     color: #fff;
     overflow: scroll;
   }
@@ -151,6 +156,7 @@ const Wrapper = styled.section`
       height: auto;
       object-fit: cover;
       object-position: left top;
+      margin-top: -20px;
       background-image: linear-gradient(
         to right,
         rgba(white, 0.1),

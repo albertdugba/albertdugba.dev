@@ -3,6 +3,7 @@ import SwiperCore, { Pagination, Navigation, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 interface IProps {
   works?: any[];
@@ -35,16 +36,20 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
         {router.pathname === '/works'
           ? works.map((work, idx) => (
               <SwiperSlide key={idx}>
-                <Card>
-                  <h1>{work?.title}</h1>
-                </Card>
+                <Link href='/work/[slug]' as={`/work/${work.slug}`}>
+                  <Card>
+                    <h1>{work?.title}</h1>
+                  </Card>
+                </Link>
               </SwiperSlide>
             ))
           : posts.map((post, idx) => (
               <SwiperSlide key={idx}>
-                <Card>
-                  <h1>{post.title}</h1>
-                </Card>
+                <Link href='/post/[slug]' as={`/post/${post.slug}`}>
+                  <Card>
+                    <h1>{post.title}</h1>
+                  </Card>
+                </Link>
               </SwiperSlide>
             ))}
       </Swiper>
@@ -57,7 +62,7 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  height: 350px;
+  height: 300px;
   width: 450px;
   padding: 1rem;
   border-radius: 15px;
@@ -66,6 +71,6 @@ const Card = styled.div`
   position: relative;
   overflow: hidden;
   background: #29203a;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   background: linear-gradient(30deg, #454349 10%, #21132b);
 `;

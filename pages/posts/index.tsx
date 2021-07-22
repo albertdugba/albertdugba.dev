@@ -10,7 +10,7 @@ interface Props {
 
 const AllPosts: FunctionComponent<Props> = ({ posts }) => {
   return (
-    <Layout>
+    <Layout imageBackground='./blog-doodle.jpg'>
       <CardsCarousel posts={posts} />
     </Layout>
   );
