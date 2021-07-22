@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
-import { Banner } from './Banner';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 

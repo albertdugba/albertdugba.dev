@@ -6,7 +6,7 @@ import Twitter from 'styles/Icons/twitter';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const IconLinks = ({ isToggled }) => {
+export const IconLinks = () => {
   return (
     <>
       <Wrapper
