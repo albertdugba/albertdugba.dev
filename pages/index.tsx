@@ -11,6 +11,7 @@ export default function Home() {
           name='Albert Dugba - Portfolio & Personal Website'
           content='Albert Dugba - Portfoio & Personal Website'
         />
+        <meta property='og:title' content='Official webiste of Albert Dugba' />
       </Head>
       <Landing />
     </>

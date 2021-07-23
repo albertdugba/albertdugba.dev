@@ -49,10 +49,7 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
               <SwiperSlide key={idx}>
                 <Link href='/post/[slug]' as={`/post/${post.slug}`}>
                   <Card>
-                    {/* <span>{post.slug}</span> */}
                     <h1>{post.title}</h1>
-
-                    {/* <img src={post.coverImage.url} /> */}
                   </Card>
                 </Link>
               </SwiperSlide>
@@ -67,6 +64,24 @@ const Wrapper = styled.div`
   @media (max-width: 701px) {
     margin-top: 50px;
   }
+`;
+
+const PostCard = styled.figure`
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 290px;
+  height: 395px;
+  padding: 20px 20px;
+  background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
 `;
 
 const Card = styled.div`

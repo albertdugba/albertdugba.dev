@@ -51,6 +51,8 @@ const Wrapper = styled(motion.div)`
 
   @media (max-width: 701px) {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 200;
     background: var(--secondaryColor);
     border-radius: 8px;

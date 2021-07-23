@@ -12,7 +12,6 @@ import { Backdrop } from './UI/Backdrop/Backdrop';
 import { IconLinks } from './UI/Mobile/IconLinks';
 import { AnimatePresence } from 'framer-motion';
 import Medium from 'styles/Icons/medium';
-import { useRouter } from 'next/router';
 import Times from 'styles/Icons/times';
 
 interface IProps {
@@ -48,10 +47,10 @@ export const getStaticProps = async () => {
 
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const router = useRouter();
+
   return (
     <Wrapper>
-      {toggleMenu && <Backdrop />}
+      {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
       <div className='background'>
         <img src={imageBackground} alt='Background' />
         <img src={imageBackground} alt='Background' />
@@ -133,28 +132,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           </Nav>
         </div>
 
-        {router.pathname === '/posts' && (
-          <div className='header__tab'>
-            <div className='container mt-1'>
-              <div
-                className='flex'
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  background: 'var(--secondaryColor)',
-                  borderRadius: '20px',
-                  paddingLeft: '0.8rem',
-                  paddingRight: '0.8rem',
-                  paddingTop: '0.2rem',
-                  paddingBottom: '0.2rem',
-                }}
-              >
-                <Link href='/all-posts'>View all posts</Link>
-                <span className='ml-1'>&rarr;</span>
-              </div>
-            </div>
-          </div>
-        )}
         {children}
       </div>
     </Wrapper>
@@ -240,7 +217,7 @@ const Nav = styled.ul`
   a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: var(--secondaryColor);
 
     @media (max-width: 701px) {
       img {

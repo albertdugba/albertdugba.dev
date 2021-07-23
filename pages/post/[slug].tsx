@@ -1,11 +1,12 @@
 import { GraphQLClient } from 'graphql-request';
 import PostDetails from 'components/containers/PostDetails';
 
-const Post = ({ post }) => {
+const Post = ({ post }: any) => {
   return <PostDetails {...post} />;
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
+  console.log(params);
   const graphcms = new GraphQLClient(
     'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
   );
@@ -73,7 +74,7 @@ export const getStaticPaths = async () => {
   );
 
   return {
-    paths: posts.map(({ slug }) => ({
+    paths: posts.map(({ slug }: any) => ({
       params: { slug },
     })),
     fallback: false,

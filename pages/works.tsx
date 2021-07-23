@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import Layout from 'components/layout';
 import { CardsCarousel } from 'components/UI/Carousel/CardsCarousel';
+import Head from 'next/head';
 
 interface Props {
   works: any[];
@@ -35,9 +36,14 @@ export const getStaticProps = async () => {
 
 const WorksPage: FunctionComponent<Props> = ({ works }) => {
   return (
-    <Layout imageBackground='./tech-doodle.png'>
-      <CardsCarousel works={works} />
-    </Layout>
+    <>
+      <Head>
+        <title>My Works | Projects</title>
+      </Head>
+      <Layout imageBackground='./tech-doodle.png'>
+        <CardsCarousel works={works} />
+      </Layout>
+    </>
   );
 };
 

@@ -3,6 +3,8 @@ import { GraphQLClient } from 'graphql-request';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Layout from 'components/layout';
 import { CardsCarousel } from 'components/UI/Carousel/CardsCarousel';
+import Link from 'next/link';
+import Head from 'next/head';
 
 interface Props {
   posts: any[];
@@ -10,9 +12,35 @@ interface Props {
 
 const AllPosts: FunctionComponent<Props> = ({ posts }) => {
   return (
-    <Layout imageBackground='./blog-doodle.jpg'>
-      <CardsCarousel posts={posts} />
-    </Layout>
+    <>
+      <Head>
+        <title>Blog Posts</title>
+      </Head>
+
+      <Layout imageBackground='./blog-doodle.jpg'>
+        <div className='header__tab'>
+          <div className='container mt-1'>
+            <div
+              className='flex'
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: 'var(--secondaryColor)',
+                borderRadius: '20px',
+                paddingLeft: '0.8rem',
+                paddingRight: '0.8rem',
+                paddingTop: '0.2rem',
+                paddingBottom: '0.2rem',
+              }}
+            >
+              <Link href='/all-posts'>View all posts</Link>
+              <span className='ml-1'>&rarr;</span>
+            </div>
+          </div>
+        </div>
+        <CardsCarousel posts={posts} />
+      </Layout>
+    </>
   );
 };
 

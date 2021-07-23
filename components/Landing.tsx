@@ -6,7 +6,6 @@ import CircleOutline from 'styles/Icons/circle-outline';
 import Fing from 'styles/Icons/fing';
 import Rect from 'styles/Icons/rect';
 import Triange from 'styles/Icons/triangle';
-import { Home } from './Section/Home/Home';
 import Github from 'styles/Icons/github';
 import { SocialLinks } from './containers/Social';
 import LinkedIn from 'styles/Icons/linkedin';
