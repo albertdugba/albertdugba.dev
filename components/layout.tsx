@@ -20,9 +20,7 @@ interface IProps {
 }
 
 export const getStaticProps = async () => {
-  const graphcms = new GraphQLClient(
-    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
-  );
+  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
 
   const { works } = await graphcms.request(`
   query Works() {
@@ -51,81 +49,76 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   return (
     <Wrapper>
       {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
-      <div className='background'>
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
-        <img src={imageBackground} alt='Background' />
+      <div className="background">
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
       </div>
-      <div className='layout'>
-        <div className=' container justify__between'>
+      <div className="layout">
+        <div className=" container justify__between">
           {toggleMenu ? (
             <Times
               size={35}
-              color='var(--secondaryColor)'
-              className='menu__bar'
-              onClick={() => setToggleMenu(preState => !preState)}
+              color="var(--secondaryColor)"
+              className="menu__bar"
+              onClick={() => setToggleMenu((preState) => !preState)}
             />
           ) : (
             <Menu
               size={35}
-              color='var(--secondaryColor)'
-              className='menu__bar'
-              onClick={() => setToggleMenu(preState => !preState)}
+              color="var(--secondaryColor)"
+              className="menu__bar"
+              onClick={() => setToggleMenu((preState) => !preState)}
             />
           )}
 
-          <div className='menu__bar'>
+          <div className="menu__bar">
             <AnimatePresence>{toggleMenu && <IconLinks />}</AnimatePresence>
           </div>
 
-          <div className='flex social__container'>
+          <div className="flex social__container">
             <SocialLinks
-              className='ml-1'
-              link='https://github.com/albertdugba'
-              component={<Github size={25} color='#c9bad6' />}
+              className="ml-1"
+              link="https://github.com/albertdugba"
+              component={<Github size={25} color="#c9bad6" />}
             />
             <SocialLinks
-              className='ml-1'
-              link='https://www.linkedin.com/in/albertdugba/'
-              component={<LinkedIn size={23} color='#c9bad6' />}
+              className="ml-1"
+              link="https://www.linkedin.com/in/albertdugba/"
+              component={<LinkedIn size={23} color="#c9bad6" />}
             />
             <SocialLinks
-              className='ml-1'
-              link='https://twitter.com/Albert_Dugba'
-              component={<Twitter size={25} color='#c9bad6' />}
+              className="ml-1"
+              link="https://twitter.com/Albert_Dugba"
+              component={<Twitter size={25} color="#c9bad6" />}
             />
             <SocialLinks
-              className='ml-1'
-              link='https://medium.com/@albert.dugba'
-              component={<Medium size={25} color='#c9bad6' />}
+              className="ml-1"
+              link="https://medium.com/@albert.dugba"
+              component={<Medium size={25} color="#c9bad6" />}
             />
           </div>
 
-          <Nav className='justify__between'>
-            <li className='ml-1'>
-              <Link href='/works'>
+          <Nav className="justify__between">
+            <li className="ml-1">
+              <Link href="/works">
                 <a>Works</a>
               </Link>
             </li>
-            <li className='ml-1'>
-              <Link href='/posts'>
+            <li className="ml-1">
+              <Link href="/posts">
                 <a>Blog</a>
               </Link>
             </li>
-            <li className='ml-1'>
-              <Link href='/'>
+            <li className="ml-1">
+              <Link href="/">
                 <a>
-                  <Image
-                    src='/albertdugba.jpg'
-                    width={45}
-                    height={45}
-                    className='round__border--radius'
-                  />
+                  <Image src="/albertdugba.jpg" width={45} height={45} className="round__border--radius" />
                 </a>
               </Link>
             </li>
@@ -201,11 +194,7 @@ const Wrapper = styled.section`
       object-fit: cover;
       object-position: left top;
       margin-top: -20px;
-      background-image: linear-gradient(
-        to right,
-        rgba(white, 0.1),
-        rgba(0, 0, 0, 0.8)
-      );
+      background-image: linear-gradient(to right, rgba(white, 0.1), rgba(0, 0, 0, 0.8));
     }
   }
 `;

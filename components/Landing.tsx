@@ -15,11 +15,7 @@ import Medium from 'styles/Icons/medium';
 const Landing = () => {
   return (
     <Wrapper>
-      <motion.div
-        className='profile'
-        initial={{ y: '20%' }}
-        animate={{ y: '-5%' }}
-      >
+      <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-5%' }}>
         <motion.img
           initial={{ height: '0px', width: '0px', transform: 'skewY(0)' }}
           animate={{
@@ -28,7 +24,7 @@ const Landing = () => {
             transform: 'skewY(20px)',
           }}
           transition={{ type: 'spring', delay: 0.5 }}
-          src='./albertdugba.jpg'
+          src="./albertdugba.jpg"
           style={{
             width: '150px',
             height: '150px',
@@ -38,7 +34,7 @@ const Landing = () => {
         />
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div
-            className='text__center'
+            className="text__center"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -47,59 +43,49 @@ const Landing = () => {
             }}
           >
             <p>Hi</p> {'  '}
-            <span role='img'>👋</span>
+            <span role="img">👋</span>
           </div>
           <p>
-            I'm <strong>Albert Dugba</strong>, self taught software engineer
-            with 2+ years of experience. As a UI engineer, I thrive to work with
-            the right tools to deliver fast, performant and accessiblity from
-            the ground up with great user experience.
+            I'm <strong>Albert Dugba</strong>, self taught software engineer with 2+ years of experience. As a UI
+            engineer, I thrive to work with the right tools to deliver fast, performant and accessiblity from the ground
+            up with great user experience.
           </p>
-          <p className='links'>
+          <p className="links">
             Kindly check out my{' '}
-            <Link href='/works'>
-              <a className='hover hover-3'>works</a>
+            <Link href="/works">
+              <a className="hover hover-3">works</a>
             </Link>{' '}
             and{' '}
-            <Link href='/posts'>
-              <a className='hover hover-3'>articles</a>
+            <Link href="/posts">
+              <a className="hover hover-3">articles</a>
             </Link>
           </p>
         </motion.div>
         <Social>
+          <SocialLinks link="https://github.com/albertdugba" component={<Github size={25} color="#c9bad6" />} />
           <SocialLinks
-            link='https://github.com/albertdugba'
-            component={<Github size={25} color='#c9bad6' />}
+            link="https://www.linkedin.com/in/albertdugba/"
+            component={<LinkedIn size={23} color="#c9bad6" />}
           />
-          <SocialLinks
-            link='https://www.linkedin.com/in/albertdugba/'
-            component={<LinkedIn size={23} color='#c9bad6' />}
-          />
-          <SocialLinks
-            link='https://twitter.com/Albert_Dugba'
-            component={<Twitter size={25} color='#c9bad6' />}
-          />
-          <SocialLinks
-            link='https://medium.com/@albert.dugba'
-            component={<Medium size={25} color='#c9bad6' />}
-          />
+          <SocialLinks link="https://twitter.com/Albert_Dugba" component={<Twitter size={25} color="#c9bad6" />} />
+          <SocialLinks link="https://medium.com/@albert.dugba" component={<Medium size={25} color="#c9bad6" />} />
         </Social>
       </motion.div>
 
-      <div className='circle'>
-        <CircleOutline size={80} color='#dfd3d6' />
+      <div className="circle">
+        <CircleOutline size={80} color="#dfd3d6" />
       </div>
 
-      <div className='triange'>
-        <Triange color='var(--secondaryColor)' size={120} />
+      <div className="triange">
+        <Triange color="var(--secondaryColor)" size={120} />
       </div>
 
-      <div className='fing'>
+      <div className="fing">
         <Fing color="#2B0A4B'" size={200} />
       </div>
 
-      <div className='b-circle'>
-        <BigCirle size={90} color='#c9bad6' />
+      <div className="b-circle">
+        <BigCirle size={90} color="#c9bad6" />
       </div>
     </Wrapper>
   );

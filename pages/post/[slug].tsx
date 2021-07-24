@@ -7,9 +7,7 @@ const Post = ({ post }: any) => {
 
 export const getStaticProps = async ({ params }: any) => {
   console.log(params);
-  const graphcms = new GraphQLClient(
-    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
-  );
+  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
 
   const { post } = await graphcms.request(
     `
@@ -45,9 +43,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export const getStaticPaths = async () => {
-  const graphcms = new GraphQLClient(
-    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
-  );
+  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
 
   const { posts } = await graphcms.request(
     `

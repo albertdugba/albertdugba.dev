@@ -1,6 +1,6 @@
 const ViewAllPosts = () => {
   return (
-    <div className='container'>
+    <div className="container">
       <h1>View All Posts</h1>
     </div>
   );

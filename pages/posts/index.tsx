@@ -17,11 +17,11 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
         <title>Blog Posts</title>
       </Head>
 
-      <Layout imageBackground='./blog-doodle.jpg'>
-        <div className='header__tab'>
-          <div className='container mt-1'>
+      <Layout imageBackground="./blog-doodle.jpg">
+        <div className="header__tab">
+          <div className="container mt-1">
             <div
-              className='flex'
+              className="flex"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -33,8 +33,8 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
                 paddingBottom: '0.2rem',
               }}
             >
-              <Link href='/all-posts'>View all posts</Link>
-              <span className='ml-1'>&rarr;</span>
+              <Link href="/all-posts">View all posts</Link>
+              <span className="ml-1">&rarr;</span>
             </div>
           </div>
         </div>
@@ -45,9 +45,7 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const graphcms = new GraphQLClient(
-    'https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master'
-  );
+  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
 
   const { posts } = await graphcms.request(`
   query Posts() {
