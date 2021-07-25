@@ -1,11 +1,12 @@
+import Head from 'next/head';
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
-import Head from 'next/head';
-import Layout from '@components/layout';
-import { CardsCarousel } from '@components/UI/Carousel/CardsCarousel';
+import { CardsCarousel } from '@components/UI/Carousel';
+import Layout from '@components/Layout/layout';
+import { IWorkProps } from 'types/types';
 
 interface IProps {
-  works: any[];
+  works: IWorkProps[];
 }
 
 export const getStaticProps = async () => {

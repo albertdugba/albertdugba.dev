@@ -1,25 +1,21 @@
 import styled from 'styled-components';
+import { FunctionComponent } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import SwiperCore, { Pagination, Navigation, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FunctionComponent } from 'react';
-import { useRouter } from 'next/router';
+import { ICardProps } from 'types/types';
 
-interface IProps {
-  works?: any[];
-  posts?: any[];
-}
-
-export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
+export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) => {
   SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
   const router = useRouter();
 
   return (
-    <Wrapper className='container'>
+    <Wrapper className="container">
       <Swiper
         navigation
         pagination={{ clickable: true }}
-        effect='coverflow'
+        effect="coverflow"
         autoplay={true}
         coverflowEffect={{
           rotate: 10,
@@ -35,10 +31,10 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
         {router.pathname === '/works'
           ? works?.map((work, idx) => (
               <SwiperSlide key={idx}>
-                <Link href='/work/[slug]' as={`/work/${work.slug}`}>
+                <Link href="/work/[slug]" as={`/work/${work.slug}`}>
                   <Card>
                     <span>{work.tag}</span>
-                    <div className='card__body'>
+                    <div className="card__body">
                       <img src={work.projectImage} />
                     </div>
                   </Card>
@@ -47,10 +43,11 @@ export const CardsCarousel: FunctionComponent<IProps> = ({ works, posts }) => {
             ))
           : posts?.map((post, idx) => (
               <SwiperSlide key={idx}>
-                <Link href='/post/[slug]' as={`/post/${post.slug}`}>
-                  <Card>
+                <Link href="/post/[slug]" as={`/post/${post.slug}`}>
+                  <PostCard>
+                    <h3>Article on {post.date}</h3>
                     <h1>{post.title}</h1>
-                  </Card>
+                  </PostCard>
                 </Link>
               </SwiperSlide>
             ))}
@@ -64,24 +61,6 @@ const Wrapper = styled.div`
   @media (max-width: 701px) {
     margin-top: 50px;
   }
-`;
-
-const PostCard = styled.figure`
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 290px;
-  height: 395px;
-  padding: 20px 20px;
-  background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  overflow: hidden;
 `;
 
 const Card = styled.div`
@@ -142,5 +121,15 @@ const Card = styled.div`
     h1 {
       font-size: 1rem;
     }
+  }
+`;
+
+const PostCard = styled(Card)`
+  padding: 1.3rem;
+  p {
+    margin-top: -6px;
+  }
+  h1 {
+    margin-top: -1rem;
   }
 `;

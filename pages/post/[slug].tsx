@@ -1,4 +1,4 @@
-import PostDetails from '@components/containers/PostDetails';
+import PostDetails from '@components/template/Posts/PostDetails';
 import { GraphQLClient } from 'graphql-request';
 
 const Post = ({ post }: any) => {

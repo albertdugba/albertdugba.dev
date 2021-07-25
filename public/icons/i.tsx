@@ -1,5 +1,5 @@
-import { IconProps } from '../../../src/components/types/types';
 import { FunctionComponent } from 'react';
+import { IconProps } from 'types/types';
 
 const I: FunctionComponent<IconProps> = ({ size, ...rest }) => (
   <svg

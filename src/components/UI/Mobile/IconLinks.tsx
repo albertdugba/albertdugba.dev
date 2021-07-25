@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { SocialLinks } from '@components/containers/Social';
 import Github from '@icons/github';
 import LinkedIn from '@icons/linkedin';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
+import { SocialLinks } from '@components/template/SocialLinks';
+
 
 export const IconLinks = () => {
   return (

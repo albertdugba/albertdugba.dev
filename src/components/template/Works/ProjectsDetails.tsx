@@ -4,19 +4,11 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
+import { IWorkProps } from 'types/types';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
-interface IProps {
-  title: string;
-  hrefLink: string;
-  projectImages: any[];
-  projectImage: string;
-  slug: string;
-  companyInfo: string;
-  jobDescription: string;
-}
 
-const ProjectsBanner: FunctionComponent<IProps> = ({
+export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
   title,
   hrefLink,
   projectImages,
@@ -29,7 +21,7 @@ const ProjectsBanner: FunctionComponent<IProps> = ({
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    window.addEventListener('scroll', e => {
+    window.addEventListener('scroll', (e) => {
       if (window.scrollY > 100) {
         console.log(window.scrollY);
         setShowNav(true);
@@ -55,12 +47,8 @@ const ProjectsBanner: FunctionComponent<IProps> = ({
       <div className={showNav ? 'nav__bg' : ''}>
         {showNav && (
           <ShowNavbar>
-            <div className='flex align__center justify__between container'>
-              <img
-                style={{ maxWidth: '150px' }}
-                src={projectImage}
-                alt={slug}
-              />
+            <div className="flex align__center justify__between container">
+              <img style={{ maxWidth: '150px' }} src={projectImage} alt={slug} />
               <ul>
                 <li style={{ listStyle: 'none' }}>
                   <button>Visit site</button>
@@ -72,14 +60,14 @@ const ProjectsBanner: FunctionComponent<IProps> = ({
       </div>
 
       <Container
-        className='container'
+        className="container"
         initial={{ minHeight: '0vh', width: '0%', opacity: 0 }}
         animate={{ minHeight: '100vh', width: '100%', opacity: 1 }}
         transition={{ type: 'tween', duration: 1 }}
       >
-        <div className='work__carousel container'>
-          <Swiper autoplay={true} id='section' wrapperTag='ul'>
-            {projectImages?.map(item => {
+        <div className="work__carousel container">
+          <Swiper autoplay={true} id="section" wrapperTag="ul">
+            {projectImages?.map((item) => {
               return item.image.map((image: string, idx: number) => (
                 <SwiperSlide key={idx}>
                   <img
@@ -101,7 +89,7 @@ const ProjectsBanner: FunctionComponent<IProps> = ({
           </Swiper>
         </div>
 
-        <div className='work__info'>
+        <div className="work__info">
           <div>
             <img
               style={{
@@ -114,11 +102,9 @@ const ProjectsBanner: FunctionComponent<IProps> = ({
             />
           </div>
 
-          <div className='work__text'>
+          <div className="work__text">
             <h2>{title}</h2>
-            <p style={{ background: '#ece8f0c6', padding: '1rem' }}>
-              {companyInfo}
-            </p>
+            <p style={{ background: '#ece8f0c6', padding: '1rem' }}>{companyInfo}</p>
 
             <h2>My Contribution</h2>
             <p>{jobDescription}</p>

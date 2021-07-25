@@ -1,12 +1,11 @@
 import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
-import { SocialLinks } from './containers/Social';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
-import { Backdrop } from './UI/Backdrop/Backdrop';
-import { IconLinks } from './UI/Mobile/IconLinks';
+import { Backdrop } from '../UI/Backdrop/Backdrop';
+import { IconLinks } from '../UI/Mobile/IconLinks';
 import { AnimatePresence } from 'framer-motion';
 import Times from '@icons/times';
 import Menu from '@icons/menu';
@@ -14,6 +13,7 @@ import Github from '@icons/github';
 import LinkedIn from '@icons/linkedin';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
+import { SocialLinks } from '@components/template/SocialLinks';
 
 interface IProps {
   imageBackground: string;
@@ -53,12 +53,12 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
       <div className="background">
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
+        {/* <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" /> */}
       </div>
       <div className="layout">
         <div className=" container justify__between">
@@ -189,13 +189,13 @@ const Wrapper = styled.section`
 
   .background {
     overflow: hidden;
+
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
       object-position: left top;
       margin-top: -20px;
-      background-image: linear-gradient(to right, rgba(white, 0.1), rgba(0, 0, 0, 0.8));
     }
   }
 `;
