@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { SocialLinks } from './containers/Social';
 import LinkedIn from '@icons/linkedin';
 import CircleOutline from '@icons/circle-outline';
 import Triange from '@icons/triangle';
@@ -10,6 +9,7 @@ import BigCirle from '@icons/big-cirlce';
 import Github from '@icons/github';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
+import { SocialLinks } from './template/SocialLinks';
 
 const Landing = () => {
   return (
