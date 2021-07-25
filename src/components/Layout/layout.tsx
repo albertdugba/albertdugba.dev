@@ -53,12 +53,12 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
       <div className="background">
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
-        {/* <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
         <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" /> */}
+        <img src={imageBackground} alt="Background" />
+        <img src={imageBackground} alt="Background" />
       </div>
       <div className="layout">
         <div className=" container justify__between">
