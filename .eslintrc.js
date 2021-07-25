@@ -11,7 +11,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'airbnb',
     'plugin:prettier/recommended',
-    'plugin:import/errors',
+    'plugin:import/errors', 
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',

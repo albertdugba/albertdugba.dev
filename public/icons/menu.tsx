@@ -1,4 +1,4 @@
-import { IconProps } from 'components/types/types';
+import { IconProps } from '@/types/types';
 import { FunctionComponent } from 'react';
 
 const Menu: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (

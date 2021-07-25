@@ -1,18 +1,19 @@
 import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import { SocialLinks } from './containers/Social';
-import Github from 'styles/Icons/github';
-import Twitter from 'styles/Icons/twitter';
-import LinkedIn from 'styles/Icons/linkedin';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
-import Menu from 'styles/Icons/menu';
 import { Backdrop } from './UI/Backdrop/Backdrop';
 import { IconLinks } from './UI/Mobile/IconLinks';
 import { AnimatePresence } from 'framer-motion';
-import Medium from 'styles/Icons/medium';
-import Times from 'styles/Icons/times';
+import Times from '@icons/times';
+import Menu from '@icons/menu';
+import Github from '@icons/github';
+import LinkedIn from '@icons/linkedin';
+import Twitter from '@icons/twitter';
+import Medium from '@icons/medium';
 
 interface IProps {
   imageBackground: string;

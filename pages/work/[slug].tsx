@@ -1,4 +1,4 @@
-import ProjectsDetails from 'components/containers/ProjectsDetails';
+import ProjectsDetails from '@/containers/ProjectsDetails';
 import { GraphQLClient } from 'graphql-request';
 import { FunctionComponent } from 'react';
 import { GetStaticProps } from 'next';

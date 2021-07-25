@@ -1,4 +1,4 @@
-import { IconProps } from '../../components/types/types';
+import { IconProps } from '../../../src/components/types/types';
 import { FunctionComponent } from 'react';
 
 const I: FunctionComponent<IconProps> = ({ size, ...rest }) => (

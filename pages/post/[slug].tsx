@@ -1,5 +1,5 @@
+import PostDetails from '@components/containers/PostDetails';
 import { GraphQLClient } from 'graphql-request';
-import PostDetails from 'components/containers/PostDetails';
 
 const Post = ({ post }: any) => {
   return <PostDetails {...post} />;

@@ -1,40 +1,36 @@
-import { SocialLinks } from 'components/containers/Social';
-import Dev from 'styles/Icons/dev';
-import Github from 'styles/Icons/github';
-import LinkedIn from 'styles/Icons/linkedin';
-import Twitter from 'styles/Icons/twitter';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Medium from 'styles/Icons/medium';
+import { SocialLinks } from '@components/containers/Social';
+import Github from '@icons/github';
+import LinkedIn from '@icons/linkedin';
+import Twitter from '@icons/twitter';
+import Medium from '@icons/medium';
 
 export const IconLinks = () => {
   return (
     <>
       <Wrapper
-        className='container'
+        className="container"
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: 1, height: '49px' }}
         exit={{ opacity: 0 }}
       >
-        <SocialLinks
-          link='https://github.com/albertdugba'
-          component={<Github size={25} color='#c9bad6' />}
-        />
+        <SocialLinks link="https://github.com/albertdugba" component={<Github size={25} color="#c9bad6" />} />
 
         <SocialLinks
-          className='ml-1'
-          link='https://www.linkedin.com/in/albertdugba/'
-          component={<LinkedIn size={23} color='#c9bad6' />}
+          className="ml-1"
+          link="https://www.linkedin.com/in/albertdugba/"
+          component={<LinkedIn size={23} color="#c9bad6" />}
         />
         <SocialLinks
-          className='ml-1'
-          link='https://twitter.com/Albert_Dugba'
-          component={<Twitter size={25} color='#c9bad6' />}
+          className="ml-1"
+          link="https://twitter.com/Albert_Dugba"
+          component={<Twitter size={25} color="#c9bad6" />}
         />
         <SocialLinks
-          className='ml-1'
-          link='https://medium.com/@albert.dugba'
-          component={<Medium size={29} color='#c9bad6' />}
+          className="ml-1"
+          link="https://medium.com/@albert.dugba"
+          component={<Medium size={29} color="#c9bad6" />}
         />
       </Wrapper>
     </>

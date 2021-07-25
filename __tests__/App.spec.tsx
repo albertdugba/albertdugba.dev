@@ -1,6 +1,8 @@
+import Landing from '@components/Landing';
+import Layout from '@components/layout';
+import MyApp from '@pages/_app';
 import { render, screen } from '@testing-library/react';
-import MyApp from 'pages/_app';
 
-test('Certify that App is running', () => {
-  // render(<MyApp />);
+test('Render the landing page', () => {
+  render(<Landing />);
 });

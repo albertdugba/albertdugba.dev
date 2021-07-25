@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
-import Layout from 'components/layout';
-import { CardsCarousel } from 'components/UI/Carousel/CardsCarousel';
+import Layout from '@components/layout';
+import { CardsCarousel } from '@components/UI/Carousel/CardsCarousel';
 
 interface IProps {
   works: any[];

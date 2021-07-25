@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/components/*"],
+      "@pages/*":["pages/*"],
+      "@components/*": ["src/components/*"],
+      "@icons/*":["public/icons/*"]
     },
     "target": "es5",
     "lib": [
@@ -26,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "next.config.js"  ],
   "exclude": [
     "node_modules"
   ]

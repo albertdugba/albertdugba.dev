@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import BigCirle from 'styles/Icons/big-cirlce';
-import CircleOutline from 'styles/Icons/circle-outline';
-import Fing from 'styles/Icons/fing';
-import Rect from 'styles/Icons/rect';
-import Triange from 'styles/Icons/triangle';
-import Github from 'styles/Icons/github';
 import { SocialLinks } from './containers/Social';
-import LinkedIn from 'styles/Icons/linkedin';
-import Twitter from 'styles/Icons/twitter';
-import Medium from 'styles/Icons/medium';
+import LinkedIn from '@icons/linkedin';
+import CircleOutline from '@icons/circle-outline';
+import Triange from '@icons/triangle';
+import Fing from '@icons/fing';
+import BigCirle from '@icons/big-cirlce';
+import Github from '@icons/github';
+import Twitter from '@icons/twitter';
+import Medium from '@icons/medium';
 
 const Landing = () => {
   return (
