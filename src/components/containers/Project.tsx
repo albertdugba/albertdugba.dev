@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import Image from 'next/image';
 import { FunctionComponent } from 'react';
 
 interface ProjectProps {
