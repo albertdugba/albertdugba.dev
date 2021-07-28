@@ -1,6 +1,18 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
+// <!-- Global site tag (gtag.js) - Google Analytics -->
+// <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLBB5PB111"></script>
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+
+//   gtag('config', 'G-GLBB5PB111');
+
+// G-GLBB5PB111
+// </script>
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -39,6 +51,17 @@ class MyDocument extends Document {
           <meta property="og:description" content="Hi, I&#x27;m Albert Dugba, Software Engineer." />
 
           <meta name="twitter:site" content="@Albert_Dugba" />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];  
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GLBB5PB111',{ page_path: window.location.pathname });
+            `,
+            }}
+          />
         </Head>
         <body>
           <Main />
