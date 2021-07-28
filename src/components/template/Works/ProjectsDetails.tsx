@@ -116,7 +116,7 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
             <div>
               <p>{jobDescription}</p>
               <ul>
-                {features.map((feature, idx) => (
+                {features?.map((feature, idx) => (
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
