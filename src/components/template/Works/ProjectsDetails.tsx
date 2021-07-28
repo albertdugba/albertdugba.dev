@@ -16,6 +16,8 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
   slug,
   companyInfo,
   jobDescription,
+  features,
+  challenges,
 }) => {
   const [showNav, setShowNav] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -48,7 +50,13 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
         {showNav && (
           <ShowNavbar>
             <div className="flex align__center justify__between container">
-              <img style={{ maxWidth: '150px' }} src={projectImage} alt={slug} />
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                style={{ maxWidth: '150px' }}
+                src={projectImage}
+                alt={slug}
+              />
               <ul>
                 <li style={{ listStyle: 'none' }}>
                   <button>Visit site</button>
@@ -60,12 +68,11 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
       </div>
 
       <Container
-        className="container"
-        initial={{ minHeight: '0vh', width: '0%', opacity: 0 }}
-        animate={{ minHeight: '100vh', width: '100%', opacity: 1 }}
-        transition={{ type: 'tween', duration: 1 }}
+        // className="container"
+        initial={{ scale: 0.96, y: 30, opacity: 0 }}
+        animate={{ scale: 1, y: 0, opacity: 1, transition: { duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96] } }}
       >
-        <div className="work__carousel container">
+        <div className="work__carousel">
           <Swiper autoplay={true} id="section" wrapperTag="ul">
             {projectImages?.map((item) => {
               return item.image.map((image: string, idx: number) => (
@@ -94,8 +101,7 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
             <img
               style={{
                 maxWidth: '200px',
-                // transform: scrollPosition > 30 && 'skewY(0.352rad)',
-                // opacity: scrollPosition > 30 && '0',
+                perspectiveOrigin: '50% 20%',
               }}
               src={projectImage}
               alt={slug}
@@ -107,7 +113,17 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
             <p style={{ background: '#ece8f0c6', padding: '1rem' }}>{companyInfo}</p>
 
             <h2>My Contribution</h2>
-            <p>{jobDescription}</p>
+            <div>
+              <p>{jobDescription}</p>
+              <ul>
+                {features.map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            <h2>Challenges</h2>
+            <p>{challenges}</p>
           </div>
         </div>
       </Container>
@@ -156,17 +172,15 @@ const Container = styled(motion.div)`
 
   .work__info {
     padding: 3rem;
-    /* overflow-y: auto;
-    overflow-x: hidden; */
     height: 100%;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 55%;
     position: absolute;
     right: 0%;
-    /* height: 100vh; */
-    /* overflow-x: scroll; */
+    bottom: 30px;
 
     @media (max-width: 801px) {
       width: 100%;

@@ -20,7 +20,6 @@ const Landing = () => {
           animate={{
             height: '150px',
             width: '150px',
-            transform: 'skewY(20px)',
           }}
           transition={{ type: 'spring', delay: 0.5 }}
           src="./albertdugba.jpg"

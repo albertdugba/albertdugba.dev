@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import SwiperCore, { Pagination, Navigation, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ICardProps } from 'types/types';
+import { motion } from 'framer-motion';
 
 export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) => {
   SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
@@ -28,29 +29,31 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
         centeredSlides={true}
         style={{ height: '100vh' }}
       >
-        {router.pathname === '/works'
-          ? works?.map((work, idx) => (
-              <SwiperSlide key={idx}>
-                <Link href="/work/[slug]" as={`/work/${work.slug}`}>
-                  <Card>
-                    <span>{work.tag}</span>
-                    <div className="card__body">
-                      <img src={work.projectImage} />
-                    </div>
-                  </Card>
-                </Link>
-              </SwiperSlide>
-            ))
-          : posts?.map((post, idx) => (
-              <SwiperSlide key={idx}>
-                <Link href="/post/[slug]" as={`/post/${post.slug}`}>
-                  <PostCard>
-                    <h3>Article on {post.date}</h3>
-                    <h1>{post.title}</h1>
-                  </PostCard>
-                </Link>
-              </SwiperSlide>
-            ))}
+        <motion.div>
+          {router.pathname === '/works'
+            ? works?.map((work, idx) => (
+                <SwiperSlide key={idx}>
+                  <Link href="/work/[slug]" as={`/work/${work.slug}`}>
+                    <Card>
+                      <span>{work.tag}</span>
+                      <div className="card__body">
+                        <img src={work.projectImage} />
+                      </div>
+                    </Card>
+                  </Link>
+                </SwiperSlide>
+              ))
+            : posts?.map((post, idx) => (
+                <SwiperSlide key={idx}>
+                  <Link href="/post/[slug]" as={`/post/${post.slug}`}>
+                    <PostCard>
+                      <h3>Article on {post.date}</h3>
+                      <h1>{post.title}</h1>
+                    </PostCard>
+                  </Link>
+                </SwiperSlide>
+              ))}
+        </motion.div>
       </Swiper>
     </Wrapper>
   );
@@ -63,7 +66,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   height: 300px;
   width: 450px;
   padding: 1rem;

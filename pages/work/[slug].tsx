@@ -31,6 +31,8 @@ export const getStaticProps = async ({ params }: any) => {
       jobDescription
       slug
       companyInfo
+      features
+      challenges
       tag
     }
   }

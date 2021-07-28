@@ -4,6 +4,7 @@ import { GraphQLClient } from 'graphql-request';
 import { CardsCarousel } from '@components/UI/Carousel';
 import Layout from '@components/Layout/layout';
 import { IWorkProps } from 'types/types';
+import { AnimateSharedLayout, motion } from 'framer-motion';
 
 interface IProps {
   works: IWorkProps[];
@@ -20,6 +21,7 @@ export const getStaticProps = async () => {
       projectImage
       projectImages
       hrefLink
+      features
       slug
       tag
     }
@@ -31,6 +33,21 @@ export const getStaticProps = async () => {
       works,
     },
   };
+};
+
+const cardVariants = {
+  initial: {
+    y: 0,
+  },
+
+  animate: {
+    y: 0,
+    transition: {
+      delayChildren: 0.5,
+      staggerChildren: 0.04,
+      staggerDirection: -1,
+    },
+  },
 };
 
 const WorksPage: FunctionComponent<IProps> = ({ works }) => (

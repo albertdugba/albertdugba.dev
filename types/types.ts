@@ -26,4 +26,6 @@ export interface IWorkProps {
   slug: string;
   companyInfo: string;
   jobDescription: string;
+  features: string[];
+  challenges: string;
 }
