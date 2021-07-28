@@ -67,11 +67,7 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
         )}
       </div>
 
-      <Container
-        // className="container"
-        initial={{ scale: 0.96, y: 30, opacity: 0 }}
-        animate={{ scale: 1, y: 0, opacity: 1, transition: { duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96] } }}
-      >
+      <Container className="container">
         <div className="work__carousel">
           <Swiper autoplay={true} id="section" wrapperTag="ul">
             {projectImages?.map((item) => {

@@ -2,7 +2,7 @@ import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/do
 import { ServerStyleSheet } from 'styled-components';
 
 // <!-- Global site tag (gtag.js) - Google Analytics -->
-// <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLBB5PB111"></script>
+//
 // <script>
 //   window.dataLayer = window.dataLayer || [];
 //   function gtag(){dataLayer.push(arguments);}
@@ -51,6 +51,8 @@ class MyDocument extends Document {
           <meta property="og:description" content="Hi, I&#x27;m Albert Dugba, Software Engineer." />
 
           <meta name="twitter:site" content="@Albert_Dugba" />
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLBB5PB111" />
 
           <script
             dangerouslySetInnerHTML={{
