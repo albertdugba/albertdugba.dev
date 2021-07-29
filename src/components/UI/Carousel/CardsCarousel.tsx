@@ -33,14 +33,27 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
           {router.pathname === '/works'
             ? works?.map((work, idx) => (
                 <SwiperSlide key={idx}>
-                  <Link href="/work/[slug]" as={`/work/${work.slug}`}>
-                    <Card>
-                      <span>{work.tag}</span>
-                      <div className="card__body">
-                        <img src={work.projectImage} />
-                      </div>
-                    </Card>
-                  </Link>
+                  {work.internalRoute ? (
+                    <Link href="/work/[slug]" as={`/work/${work.slug}`}>
+                      <Card>
+                        <span>{work.tag}</span>
+                        <div className="card__body">
+                          {work.projectImage ? <img src={work.projectImage} /> : <h3>{work.title}</h3>}
+                        </div>
+                      </Card>
+                    </Link>
+                  ) : (
+                    <Link href={work.hrefLink}>
+                      <a target="_blank">
+                        <Card>
+                          <span>{work.tag}</span>
+                          <div className="card__body">
+                            {work.projectImage ? <img src={work.projectImage} /> : <h3>{work.title}</h3>}
+                          </div>
+                        </Card>
+                      </a>
+                    </Link>
+                  )}
                 </SwiperSlide>
               ))
             : posts?.map((post, idx) => (

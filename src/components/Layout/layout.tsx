@@ -14,6 +14,7 @@ import LinkedIn from '@icons/linkedin';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
 import { SocialLinks } from '@components/template/SocialLinks';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 interface IProps {
   imageBackground: string;
@@ -50,16 +51,66 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   return (
     <Wrapper>
       {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
-      <div className="background">
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-        <img src={imageBackground} alt="Background" />
-      </div>
+      <AnimateSharedLayout>
+        <motion.div layout className="background">
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+          <motion.img
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
+            src={imageBackground}
+            alt="Background"
+          />
+        </motion.div>
+      </AnimateSharedLayout>
       <div className="layout">
         <div className=" container justify__between">
           {toggleMenu ? (
@@ -208,6 +259,7 @@ const Nav = styled.ul`
     display: block;
     text-decoration: none;
     color: var(--secondaryColor);
+    font-weight: bolder;
 
     @media (max-width: 701px) {
       img {

@@ -18,6 +18,7 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
   jobDescription,
   features,
   challenges,
+  internalRoute,
 }) => {
   const [showNav, setShowNav] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);

@@ -24,6 +24,7 @@ export const getStaticProps = async () => {
       features
       slug
       tag
+      internalRoute
     }
   }
   `);

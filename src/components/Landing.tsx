@@ -24,7 +24,7 @@ const Landing = () => {
           transition={{ type: 'spring', delay: 0.5 }}
           src="./albertdugba.jpg"
           style={{
-            width: '150px',
+            width: '150px', 
             height: '150px',
             borderRadius: '50%',
             border: '2px solid var(--secondaryColor)',

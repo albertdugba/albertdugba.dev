@@ -28,4 +28,5 @@ export interface IWorkProps {
   jobDescription: string;
   features: string[];
   challenges: string;
+  internalRoute: boolean;
 }
