@@ -177,7 +177,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           </Nav>
         </div>
 
-        {children}
+        <div>{children}</div>
       </div>
     </Wrapper>
   );
@@ -204,27 +204,6 @@ const Wrapper = styled.section`
       display: none;
       z-index: 200;
       cursor: pointer;
-    }
-
-    .header__tab {
-      border-radius: 9px;
-      width: 100%;
-      margin-top: 20px;
-
-      div {
-        display: flex;
-        justify-content: flex-end;
-
-        a {
-          color: #fff;
-          font-size: 0.9rem;
-        }
-      }
-
-      a {
-        color: var(--secondaryColor);
-        text-decoration: none;
-      }
     }
 
     @media (max-width: 701px) {

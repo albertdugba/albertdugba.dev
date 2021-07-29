@@ -1,12 +1,20 @@
 import PostDetails from '@components/template/Posts/PostDetails';
 import { GraphQLClient } from 'graphql-request';
+import Head from 'next/head';
 
 const Post = ({ post }: any) => {
-  return <PostDetails {...post} />;
+  console.log(post);
+  return (
+    <>
+      <Head>
+        <title>Albert Dugba Post - {post.slug}</title>
+      </Head>
+      <PostDetails {...post} />
+    </>
+  );
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  console.log(params);
   const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
 
   const { post } = await graphcms.request(

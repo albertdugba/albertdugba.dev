@@ -1,6 +1,7 @@
 import ProjectsDetails from '@components/template/Works/ProjectsDetails';
 import { GraphQLClient } from 'graphql-request';
 import { FunctionComponent } from 'react';
+import Head from 'next/head';
 
 interface IProps {
   works: any[];
@@ -8,11 +9,14 @@ interface IProps {
 
 const Work: FunctionComponent<IProps> = ({ works }) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Project - {works[0].slug}</title>
+      </Head>
       {works.map((work: any) => (
         <ProjectsDetails key={work.slug} {...work} />
       ))}
-    </div>
+    </>
   );
 };
 

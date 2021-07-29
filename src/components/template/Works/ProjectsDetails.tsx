@@ -1,4 +1,5 @@
 import { useState, useEffect, FunctionComponent } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,10 +19,8 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
   jobDescription,
   features,
   challenges,
-  internalRoute,
 }) => {
   const [showNav, setShowNav] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
@@ -29,20 +28,12 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
         console.log(window.scrollY);
         setShowNav(true);
       } else setShowNav(false);
-
-      if (window.scrollY) {
-        setScrollPosition(window.scrollY);
-      }
     });
     return () =>
       window.removeEventListener('scroll', () => {
         if (window.scrollY > 100) {
           setShowNav(true);
         } else setShowNav(false);
-
-        if (window.scrollY) {
-          setScrollPosition(window.scrollY);
-        }
       });
   }, []);
   return (
@@ -60,7 +51,11 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
               />
               <ul>
                 <li style={{ listStyle: 'none' }}>
-                  <button>Visit site</button>
+                  <Link href={hrefLink}>
+                    <a target="_blank">
+                      <button>Visit site</button>
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>

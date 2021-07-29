@@ -44,7 +44,7 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
                     </Link>
                   ) : (
                     <Link href={work.hrefLink}>
-                      <a target="_blank">
+                      <a target="_blank" style={{ textDecoration: 'none' }}>
                         <Card>
                           <span>{work.tag}</span>
                           <div className="card__body">
