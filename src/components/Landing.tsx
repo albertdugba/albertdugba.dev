@@ -10,6 +10,7 @@ import Github from '@icons/github';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
 import { SocialLinks } from './template/SocialLinks';
+import { NavLink } from './UI/Link/link';
 
 const Landing = () => {
   return (
@@ -24,7 +25,7 @@ const Landing = () => {
           transition={{ type: 'spring', delay: 0.5 }}
           src="./albertdugba.jpg"
           style={{
-            width: '150px', 
+            width: '150px',
             height: '150px',
             borderRadius: '50%',
             border: '2px solid var(--secondaryColor)',
@@ -49,14 +50,7 @@ const Landing = () => {
             up with great user experience.
           </p>
           <p className="links">
-            Kindly check out my{' '}
-            <Link href="/works">
-              <a className="hover hover-3">works</a>
-            </Link>{' '}
-            and{' '}
-            <Link href="/posts">
-              <a className="hover hover-3">articles</a>
-            </Link>
+            Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">works</NavLink>
           </p>
         </motion.div>
         <Social>

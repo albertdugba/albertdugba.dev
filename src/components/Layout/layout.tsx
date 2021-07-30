@@ -15,6 +15,7 @@ import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
 import { SocialLinks } from '@components/template/SocialLinks';
 import { motion, AnimateSharedLayout } from 'framer-motion';
+import { NavLink } from '@components/UI/Link/link';
 
 interface IProps {
   imageBackground: string;
@@ -158,20 +159,16 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
 
           <Nav className="justify__between">
             <li className="ml-1">
-              <Link href="/works">
-                <a>Works</a>
-              </Link>
+              <NavLink href="/works">Works</NavLink>
             </li>
             <li className="ml-1">
-              <Link href="/posts">
-                <a>Blog</a>
-              </Link>
+              <NavLink href="/posts" className="ml-1">
+                Blog
+              </NavLink>
             </li>
-            <li className="ml-1">
+            <li className="ml-1 cursor--pointer">
               <Link href="/">
-                <a>
-                  <Image src="/albertdugba.jpg" width={45} height={45} className="round__border--radius" />
-                </a>
+                <Image src="/albertdugba.jpg" width={45} height={45} className="round__border--radius" />
               </Link>
             </li>
           </Nav>

@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SwiperCore, { Pagination, Navigation, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { ICardProps } from 'types/types';
+import { ICardProps } from 'types';
 import { motion } from 'framer-motion';
+import { PostCard } from '../cards/PostCard';
 
 export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) => {
   SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
@@ -34,21 +35,27 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
             ? works?.map((work, idx) => (
                 <SwiperSlide key={idx}>
                   {work.internalRoute ? (
-                    <Link href="/work/[slug]" as={`/work/${work.slug}`}>
+                    <>
                       <Card>
                         <span>{work.tag}</span>
                         <div className="card__body">
-                          {work.projectImage ? <img src={work.projectImage} /> : <h3>{work.title}</h3>}
+                          {work.projectImage ? <img src={work.projectImage} /> : <h1>{work.title}</h1>}
+                        </div>
+
+                        <div className="open--link">
+                          <Link href="/work/[slug]" as={`/work/${work.slug}`}>
+                            {`View ${work.title}`}
+                          </Link>
                         </div>
                       </Card>
-                    </Link>
+                    </>
                   ) : (
                     <Link href={work.hrefLink}>
                       <a target="_blank" style={{ textDecoration: 'none' }}>
                         <Card>
                           <span>{work.tag}</span>
                           <div className="card__body">
-                            {work.projectImage ? <img src={work.projectImage} /> : <h3>{work.title}</h3>}
+                            {work.projectImage ? <img src={work.projectImage} /> : <h2>{work.title}</h2>}
                           </div>
                         </Card>
                       </a>
@@ -59,10 +66,9 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
             : posts?.map((post, idx) => (
                 <SwiperSlide key={idx}>
                   <Link href="/post/[slug]" as={`/post/${post.slug}`}>
-                    <PostCard>
-                      <h3>Article on {post.date}</h3>
-                      <h1>{post.title}</h1>
-                    </PostCard>
+                    <a>
+                      <PostCard image={post.coverImage.url} title={post.title} tags={post.tags} />
+                    </a>
                   </Link>
                 </SwiperSlide>
               ))}
@@ -91,6 +97,19 @@ const Card = styled(motion.div)`
   color: #29203a;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   background: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+
+  .open--link {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover .open--link {
+    opacity: 0.1;
+    visibility: visible;
+  }
 
   .card__body {
     display: flex;
@@ -140,12 +159,12 @@ const Card = styled(motion.div)`
   }
 `;
 
-const PostCard = styled(Card)`
-  padding: 1.3rem;
-  p {
-    margin-top: -6px;
-  }
-  h1 {
-    margin-top: -1rem;
-  }
-`;
+// const PostCard = styled(Card)`
+//   padding: 1.3rem;
+//   p {
+//     margin-top: -6px;
+//   }
+//   h1 {
+//     margin-top: -1rem;
+//   }
+// `;

@@ -5,7 +5,7 @@
       "@pages/*":["pages/*"],
       "@components/*": ["src/components/*"],
       "@icons/*":["public/icons/*"],
-      "@types/":["/types/types/*"]
+      "@types/":["/types/index/*"]
     },
     "target": "es5",
     "lib": [

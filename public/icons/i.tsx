@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'types/types';
+import { IconProps } from 'types';
 
 const I: FunctionComponent<IconProps> = ({ size, ...rest }) => (
   <svg

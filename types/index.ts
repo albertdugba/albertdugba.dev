@@ -16,6 +16,7 @@ export interface ISocialLinksProps {
 export interface ICardProps {
   works?: any[];
   posts?: any[];
+  image?: string;
 }
 
 export interface IWorkProps {
@@ -28,4 +29,10 @@ export interface IWorkProps {
   jobDescription: string;
   features: string[];
   challenges: string;
+}
+
+export interface ILinkProps {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
 }

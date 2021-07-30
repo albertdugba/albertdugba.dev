@@ -5,7 +5,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
-import { IWorkProps } from 'types/types';
+import { IWorkProps } from 'types';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 

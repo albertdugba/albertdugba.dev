@@ -23,10 +23,9 @@ export const getStaticProps = async ({ params }: any) => {
       post(where: { slug: $slug }) {
         id
         title
-        content{
-          markdown
-        }
+        content
         slug
+        tags
         coverImage {
           id
           url
@@ -59,10 +58,9 @@ export const getStaticPaths = async () => {
       posts {
         id
         title
-        content{
-          text
-        }
+        content
         slug
+        tags
         coverImage {
           id
           url
