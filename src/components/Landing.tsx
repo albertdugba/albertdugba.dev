@@ -16,13 +16,7 @@ const Landing = () => {
   return (
     <Wrapper>
       <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-5%' }}>
-        <motion.img
-          initial={{ height: '0px', width: '0px', transform: 'skewY(0)' }}
-          animate={{
-            height: '150px',
-            width: '150px',
-          }}
-          transition={{ type: 'spring', delay: 0.5 }}
+        <img
           src="./albertdugba.jpg"
           style={{
             width: '150px',

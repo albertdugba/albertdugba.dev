@@ -39,12 +39,8 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
                       <Card>
                         <span>{work.tag}</span>
                         <div className="card__body">
-                          {work.projectImage ? <img src={work.projectImage} /> : <h1>{work.title}</h1>}
-                        </div>
-
-                        <div className="open--link">
                           <Link href="/work/[slug]" as={`/work/${work.slug}`}>
-                            {`View ${work.title}`}
+                            {work.projectImage ? <img src={work.projectImage} /> : <h1>{work.title}</h1>}
                           </Link>
                         </div>
                       </Card>
