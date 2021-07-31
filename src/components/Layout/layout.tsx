@@ -54,62 +54,14 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
       {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
       <AnimateSharedLayout>
         <motion.div layout className="background">
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
-          <motion.img
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 0.3, type: 'tween', delay: 0.5 }}
-            src={imageBackground}
-            alt="Background"
-          />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
+          <img src={imageBackground} alt="Background" />
         </motion.div>
       </AnimateSharedLayout>
       <div className="layout">

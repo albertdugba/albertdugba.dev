@@ -67,7 +67,7 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
                 <SwiperSlide key={idx}>
                   <Link href="/post/[slug]" as={`/post/${post.slug}`}>
                     <a>
-                      <PostCard image={post.coverImage.url} title={post.title} tags={post.tags} />
+                      <PostCard image={post.coverImage.url} title={post.title} tags={post.tags} date={post.date} />
                     </a>
                   </Link>
                 </SwiperSlide>

@@ -11,6 +11,7 @@ interface Props {
 }
 
 const AllPosts: FunctionComponent<Props> = ({ posts }) => {
+  console.log(posts);
   return (
     <>
       <Head>
@@ -34,6 +35,7 @@ export const getStaticProps: GetStaticProps = async () => {
       title
       excerpt
       slug
+      tags
       coverImage {
         id
         url

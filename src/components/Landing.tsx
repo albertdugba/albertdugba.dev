@@ -50,7 +50,7 @@ const Landing = () => {
             up with great user experience.
           </p>
           <p className="links">
-            Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">works</NavLink>
+            Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
           </p>
         </motion.div>
         <Social>

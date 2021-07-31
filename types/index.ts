@@ -35,4 +35,5 @@ export interface ILinkProps {
   href: string;
   className?: string;
   children: React.ReactNode;
+  as?: string;
 }
