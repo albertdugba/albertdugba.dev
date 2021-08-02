@@ -2,47 +2,65 @@ import { FunctionComponent } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
 import Times from '@icons/times';
+import { motion } from 'framer-motion';
 
 interface CloseProps {
   handleClose: (e: any) => void;
 }
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transform: `translateY(-0%)`,
+    transition: {
+      staggerChildren: 0.1,
+      damping: 300,
+      type: 'ease',
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
 export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) => {
   const [state, handleSubmit] = useForm('meqvqaka');
-
   return (
     <>
-      <FormContainer onSubmit={handleSubmit} className="contaner">
+      <FormContainer variants={container} initial="hidden" animate="show" onSubmit={handleSubmit} className="contaner">
         <div className="close__wrapper">
           <Times className="close__button" size={30} color="var(--secondaryColor)" onClick={handleClose} />
         </div>
-        <h4 className="form__title">
-          Hi there <span role="img">👋 , like my works, lets talk</span>
-        </h4>
-        <div className="flex__column">
+        <motion.h4 variants={item} className="form__title">
+          Hi there <span role="img">👋 , like my works ?, lets talk</span>
+        </motion.h4>
+        <motion.div variants={item} className="flex__column">
           <label htmlFor="name">Name</label>
           <input className="form__input" type="text" id="name" name="name" required />
-        </div>
+        </motion.div>
         <ValidationError field="name" prefix="Name" errors={state.errors} />
-        <div className="flex__column">
+        <motion.div variants={item} className="flex__column">
           <label htmlFor="email">Email</label>
           <input className="form__input" type="email" id="email" name="email" required />
-        </div>
+        </motion.div>
         <ValidationError field="message" prefix="Message" errors={state.errors} />
-        <div className="flex__column">
+        <motion.div variants={item} className="flex__column">
           <label htmlFor="message">Message</label>
           <textarea className="message__body" id="message" name="message" required />
-        </div>
+        </motion.div>
 
-        <button>
+        <motion.button variants={item}>
           <span>{state.submitting ? 'Submitting...' : 'Shoot'} </span>
-        </button>
+        </motion.button>
       </FormContainer>
     </>
   );
 };
 
-const FormContainer = styled.form`
+const FormContainer = styled(motion.form)`
   max-width: 320px;
   width: 100%;
   margin: auto;

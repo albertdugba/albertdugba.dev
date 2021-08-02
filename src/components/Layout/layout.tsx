@@ -18,6 +18,7 @@ import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink } from '@components/UI/Link/link';
 import Contact from '@icons/chat';
 import { ContactWidget } from '@components/Section/Contact/Contact';
+import ChevronDown from '@icons/chevron-down';
 
 interface IProps {
   imageBackground: string;
@@ -136,7 +137,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
         )}
 
         <div className="contact cursor--pointer" onClick={() => setShowContactWidget((prevState) => !prevState)}>
-          <Contact size={45} color="#fff" />
+          {showContactWidget ? <ChevronDown size={205} color="#fff" /> : <Contact size={45} color="#fff" />}
         </div>
         <div>{children}</div>
       </div>
