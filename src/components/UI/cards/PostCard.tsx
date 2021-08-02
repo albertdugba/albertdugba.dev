@@ -15,7 +15,6 @@ export const PostCard: FunctionComponent<CardProps> = ({ image, title, tags, dat
         <CardInfo>
           <div>
             <h2>{title}</h2>
-
             {tags?.map((tag) => (
               <span>#{tag}</span>
             ))}
@@ -40,13 +39,14 @@ const CardInfo = styled.div`
   padding: 1rem;
 
   .post--meta {
-    position: absolute;
+    /* position: absolute;
     right: 0;
     height: 100%;
     bottom: -90%;
     padding: 1rem;
     font-size: 1.2rem;
     color: #f7e6e6;
+    border: 2px solid white; */
   }
 
   span {

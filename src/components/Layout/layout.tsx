@@ -16,6 +16,8 @@ import Medium from '@icons/medium';
 import { SocialLinks } from '@components/template/SocialLinks';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink } from '@components/UI/Link/link';
+import Contact from '@icons/chat';
+import { ContactWidget } from '@components/Section/Contact/Contact';
 
 interface IProps {
   imageBackground: string;
@@ -48,6 +50,7 @@ export const getStaticProps = async () => {
 
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [showContactWidget, setShowContactWidget] = useState(false);
 
   return (
     <Wrapper>
@@ -126,6 +129,15 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           </Nav>
         </div>
 
+        {showContactWidget && (
+          <div className="container">
+            <ContactWidget handleClose={() => setShowContactWidget(false)} />
+          </div>
+        )}
+
+        <div className="contact cursor--pointer" onClick={() => setShowContactWidget((prevState) => !prevState)}>
+          <Contact size={45} color="#fff" />
+        </div>
         <div>{children}</div>
       </div>
     </Wrapper>
@@ -139,6 +151,22 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+
+  .contact {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    z-index: 3000;
+    background: var(--secondaryColor);
+    padding: 1rem;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
+  }
 
   .layout {
     position: absolute;

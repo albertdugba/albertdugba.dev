@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import LinkedIn from '@icons/linkedin';
 import CircleOutline from '@icons/circle-outline';
