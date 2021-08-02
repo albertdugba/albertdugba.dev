@@ -35,7 +35,7 @@ export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) =>
           <Times className="close__button" size={30} color="var(--secondaryColor)" onClick={handleClose} />
         </div>
         <motion.h4 variants={item} className="form__title">
-          Hi there <span role="img">👋 , like my works ?, lets talk</span>
+          Hi there <span role="img">👋 , lets talk</span>
         </motion.h4>
         <motion.div variants={item} className="flex__column">
           <label htmlFor="name">Name</label>
@@ -65,7 +65,7 @@ const FormContainer = styled(motion.form)`
   width: 100%;
   margin: auto;
   position: absolute;
-  bottom: 90px;
+  bottom: 80px;
   right: 40px;
   min-height: 40vh;
   z-index: 2000;
@@ -80,10 +80,10 @@ const FormContainer = styled(motion.form)`
   &:after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -2px;
     right: 20px;
-    width: 17px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     background: #fff;
     transform: rotate(45deg);
   }
@@ -96,6 +96,7 @@ const FormContainer = styled(motion.form)`
   @media (max-width: 701px) {
     .form__title {
       font-size: 1.3rem;
+      color: var(--primaryColor);
     }
   }
 

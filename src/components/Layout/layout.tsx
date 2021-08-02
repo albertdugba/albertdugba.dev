@@ -1,6 +1,5 @@
 import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
@@ -167,6 +166,10 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: center;
     box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
+
+    @media (max-width: 701px) {
+      bottom: 60px;
+    }
   }
 
   .layout {

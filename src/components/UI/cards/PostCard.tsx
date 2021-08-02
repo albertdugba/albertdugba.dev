@@ -41,12 +41,14 @@ const CardInfo = styled.div`
   .post--meta {
     /* position: absolute;
     right: 0;
-    height: 100%;
-    bottom: -90%;
+    /* top: 0; */
+    /* bottom: 0; */
+    /* height: 10%; */
+    /* bottom: -90%;
     padding: 1rem;
     font-size: 1.2rem;
     color: #f7e6e6;
-    border: 2px solid white; */
+    border: 2px solid white;  */
   }
 
   span {
@@ -66,7 +68,7 @@ const CardInfo = styled.div`
 
 const Container = styled.div`
   height: 55%;
-  width: 50vw;
+  width: 40vw;
   background-size: cover;
   background-position: center;
   background: #fff;
