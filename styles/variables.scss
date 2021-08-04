@@ -1,15 +1,17 @@
 :root {
+  // colors
+  --purple: rgb(136, 115, 156);
+  --white: #fff;
+  --black: #000;
+  --purple100: #c9bad6;
+
   // color intentions
-  --primaryColor: #030005dc;
-  --secondaryColor: rgb(136, 115, 156);
+  --secondaryColor: var(--purple);
+  
 
   // fonts
   --fontFamily1: 'Product Sans Regular';
   --fontFamily2: 'Product Sans Medium Regular';
-  --fontFamily3: 'Product Sans Thin Regular';
-  --fontFamily4: 'Product Sans Light Regular';
-  --fontFamily5: 'Product Sans Medium Regular';
-  --fontFamily6: 'Product Sans Black Regular';
 }
 
 .swiper-container-3d {
@@ -138,20 +140,12 @@ img {
 
 .carousel-inner::before {
   top: 0;
-  background: linear-gradient(
-    0deg,
-    hsla(0, 0%, 100%, 0) 0%,
-    hsla(27, 100%, 48%, 1) 100%
-  );
+  background: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0%, hsla(27, 100%, 48%, 1) 100%);
 }
 
 .carousel-inner::after {
   bottom: 0;
-  background: linear-gradient(
-    0deg,
-    hsla(27, 100%, 48%, 1) 0%,
-    hsla(0, 0%, 100%, 0) 100%
-  );
+  background: linear-gradient(0deg, hsla(27, 100%, 48%, 1) 0%, hsla(0, 0%, 100%, 0) 100%);
 }
 
 .carousel-item {

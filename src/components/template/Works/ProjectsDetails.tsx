@@ -152,7 +152,6 @@ const Container = styled(motion.div)`
   .work__carousel {
     padding: 1.5rem;
     width: 45%;
-    background-color: var(--sec);
     position: fixed;
     left: 0%;
     height: 100vh;

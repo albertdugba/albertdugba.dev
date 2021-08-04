@@ -51,7 +51,6 @@ export const getStaticProps = async () => {
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showContactWidget, setShowContactWidget] = useState(false);
-  // const [playSound, setPlaySound] = useState(new Audio('./pop.wav'));
 
   const handleToggleContactWidget = () => {
     setShowContactWidget((prevState) => !prevState);

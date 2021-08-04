@@ -14,7 +14,7 @@ export const NavLink: FunctionComponent<ILinkProps> = ({ href, children }) => {
 const LinkWrapper = styled.a`
   position: relative;
   cursor: pointer;
-  color: var(--secondaryColor);
+  color: var(--purple100);
 
   &:before {
     content: '';

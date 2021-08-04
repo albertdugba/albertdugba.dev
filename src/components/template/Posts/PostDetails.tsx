@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import { FunctionComponent } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface PostProps {
   coverImage: any;
@@ -7,12 +10,30 @@ interface PostProps {
   content: any;
   tags: string[];
   date: any;
-  md: any;
   author: {
     name: string;
     id: string;
   };
 }
+
+const components = {
+  code({ node, inline, className, children, ...props }: any) {
+    const match = /language-(\w+)/.exec(className || '');
+    return !inline && match ? (
+      <SyntaxHighlighter
+        style={materialOceanic}
+        language={match[1]}
+        PreTag="div"
+        children={String(children).replace(/\n$/, '')}
+        {...props}
+      />
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
+};
 
 const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content, author, date }) => {
   return (
@@ -29,7 +50,9 @@ const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content,
             <h2 className="b-line pb-1">
               Written by {author.name} on {date}
             </h2>
-            <p>{content}</p>
+            <div className="post__content">
+              <ReactMarkdown children={content} components={components} />
+            </div>
           </div>
         </div>
       </div>
@@ -81,9 +104,12 @@ const Wrapper = styled.div`
   }
 
   .post__card {
-    background: #100c14;
-    color: #fff;
+    /* background: #a19ca5; */
+    /* color: #fff; */
     padding: 1rem;
     min-height: 100vh;
+  }
+
+  .post__content {
   }
 `;

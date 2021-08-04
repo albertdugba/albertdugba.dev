@@ -28,6 +28,17 @@ const item = {
 
 export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) => {
   const [state, handleSubmit] = useForm('meqvqaka');
+
+  // const handleShowAlert = () => {
+  //   if (state.succeeded) {
+  //     return (
+  //       <p role="alert" className="form__alert">
+  //         Message successfully sent
+  //       </p>
+  //     );
+  //   }
+  // };
+
   return (
     <>
       <FormContainer variants={container} initial="hidden" animate="show" onSubmit={handleSubmit} className="contaner">
@@ -37,6 +48,7 @@ export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) =>
         <motion.h4 variants={item} className="form__title">
           Hi there <span role="img">👋 , lets talk</span>
         </motion.h4>
+
         <motion.div variants={item} className="flex__column">
           <label htmlFor="name">Name</label>
           <input className="form__input" type="text" id="name" name="name" required />
@@ -76,6 +88,20 @@ const FormContainer = styled(motion.form)`
   flex-direction: column;
   border-radius: 10px;
   font-family: inherit;
+
+  .form__alert {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    left: 20px;
+    width: 90%;
+    z-index: 9999999;
+    font-size: 0.9rem;
+    background: #528b61;
+    border-radius: 4px;
+    padding: 1rem;
+    color: var(--white);
+  }
 
   &:after {
     content: '';
@@ -136,6 +162,7 @@ const FormContainer = styled(motion.form)`
     font-family: inherit;
     overflow: hidden;
     font-size: 1rem;
+    transition: border 0.3s ease-in-out;
 
     &:focus {
       border: 1px solid var(--secondaryColor);
