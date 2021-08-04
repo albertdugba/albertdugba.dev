@@ -61,7 +61,7 @@ export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) =>
 };
 
 const FormContainer = styled(motion.form)`
-  max-width: 320px;
+  max-width: 350px;
   width: 100%;
   margin: auto;
   position: absolute;

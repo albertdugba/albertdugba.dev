@@ -51,6 +51,12 @@ export const getStaticProps = async () => {
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showContactWidget, setShowContactWidget] = useState(false);
+  // const [playSound, setPlaySound] = useState(new Audio('./pop.wav'));
+
+  const handleToggleContactWidget = () => {
+    setShowContactWidget((prevState) => !prevState);
+    new Audio('./pop.wav').play();
+  };
 
   return (
     <Wrapper>
@@ -135,7 +141,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           </div>
         )}
 
-        <div className="contact cursor--pointer" onClick={() => setShowContactWidget((prevState) => !prevState)}>
+        <div className="contact cursor--pointer" onClick={() => handleToggleContactWidget()}>
           {showContactWidget ? <ChevronDown size={205} color="#fff" /> : <Contact size={45} color="#fff" />}
         </div>
         <div>{children}</div>
@@ -168,7 +174,7 @@ const Wrapper = styled.section`
     box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
 
     @media (max-width: 701px) {
-      bottom: 60px;
+      bottom: 80px;
     }
   }
 
