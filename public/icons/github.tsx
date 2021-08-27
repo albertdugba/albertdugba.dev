@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'types';
+import { IconProps } from 'interface';
 
 const Github: FunctionComponent<IconProps> = ({ size, color }) => (
   <svg

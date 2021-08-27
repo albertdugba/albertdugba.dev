@@ -11,7 +11,6 @@ interface Props {
 }
 
 const AllPosts: FunctionComponent<Props> = ({ posts }) => {
-  console.log(posts);
   return (
     <>
       <Head>

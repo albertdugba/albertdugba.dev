@@ -1,4 +1,4 @@
-import { IconProps } from 'types';
+import { IconProps } from 'interface';
 import { FunctionComponent } from 'react';
 
 const Circle: FunctionComponent<IconProps> = (props) => (

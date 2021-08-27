@@ -8,6 +8,7 @@ const Post = ({ post }: any) => {
     <>
       <Head>
         <title>Albert Dugba Post - {post.slug}</title>
+        
       </Head>
       <PostDetails {...post} />
     </>

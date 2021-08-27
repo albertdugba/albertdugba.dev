@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
-import { IconProps } from 'types';
+import { IconProps } from 'interface';
 
 const Contact: FunctionComponent<IconProps> = ({ size, color }) => (
   <motion.svg

@@ -5,7 +5,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import 'swiper/swiper-bundle.css';
-import { IWorkProps } from 'types';
+import { IWorkProps } from 'interface';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -23,9 +23,8 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', (e) => {
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
-        console.log(window.scrollY);
         setShowNav(true);
       } else setShowNav(false);
     });
@@ -64,20 +63,17 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
       </div>
 
       <Container className="container">
-        <div className="work__carousel">
+        <div className="container work__carousel mr-1">
           <Swiper autoplay={true} id="section" wrapperTag="ul">
             {projectImages?.map((item) => {
               return item.image.map((image: string, idx: number) => (
                 <SwiperSlide key={idx}>
                   <img
                     style={{
-                      objectFit: 'contain',
+                      // objectFit: 'contain',
                       display: 'flex',
+                      // maxWidth: '70%',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '100%',
-                      margin: ' 10px auto',
-                      borderRadius: '7px',
                     }}
                     key={idx}
                     src={image}
@@ -88,21 +84,10 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
           </Swiper>
         </div>
 
-        <div className="work__info">
-          <div>
-            <img
-              style={{
-                maxWidth: '200px',
-                perspectiveOrigin: '50% 20%',
-              }}
-              src={projectImage}
-              alt={slug}
-            />
-          </div>
-
-          <div className="work__text">
+        <div>
+          <div className="work__info">
             <h2>{title}</h2>
-            <p style={{ background: '#ece8f0c6', padding: '1rem' }}>{companyInfo}</p>
+            <p style={{ background: '#ece8f0c6', padding: '1rem', borderRadius: '5px' }}>{companyInfo}</p>
 
             <h2>My Contribution</h2>
             <div>
@@ -136,45 +121,14 @@ const ShowNavbar = styled.section`
   width: 100%;
   z-index: 10;
   background-color: #fff;
-  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
 `;
 
 const Container = styled(motion.div)`
+  max-width: 80%;
+  margin: auto;
+  display: flex;
   height: 100vh;
   width: 100%;
-  display: flex;
-  overflow: hidden;
-
-  @media (max-width: 758px) {
-    grid-template-columns: 1fr;
-  }
-
-  .work__carousel {
-    padding: 1.5rem;
-    width: 45%;
-    position: fixed;
-    left: 0%;
-    height: 100vh;
-
-    @media (max-width: 801px) {
-      display: none;
-    }
-  }
-
-  .work__info {
-    padding: 3rem;
-    height: 100%;
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 55%;
-    position: absolute;
-    right: 0%;
-    bottom: 30px;
-
-    @media (max-width: 801px) {
-      width: 100%;
-    }
-  }
+  flex-direction: column;
 `;

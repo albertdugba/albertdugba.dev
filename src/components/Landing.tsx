@@ -42,6 +42,7 @@ const Landing = () => {
             engineer, I thrive to work with the right tools to deliver fast, performant and accessiblity from the ground
             up with great user experience.
           </p>
+          <p>I work with technologies like react,redux,typescript, graphQL</p>
           <p className="links">
             Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
           </p>

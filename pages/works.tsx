@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { CardsCarousel } from '@components/UI/Carousel';
 import Layout from '@components/Layout/layout';
-import { IWorkProps } from 'types';
+import { IWorkProps } from 'interface';
 import { AnimateSharedLayout, motion } from 'framer-motion';
 
 interface IProps {

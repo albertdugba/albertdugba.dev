@@ -68,8 +68,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           <img src={imageBackground} alt="Background" />
           <img src={imageBackground} alt="Background" />
           <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
         </motion.div>
       </AnimateSharedLayout>
       <div className="layout">
