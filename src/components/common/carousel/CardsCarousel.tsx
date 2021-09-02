@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SwiperCore, { Pagination, Navigation, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { ICardProps } from 'interface';
+import { ICardProps } from 'src/lib/interface';
 import { motion } from 'framer-motion';
 import { PostCard } from '../cards/PostCard';
 

@@ -14,25 +14,27 @@ export interface ISocialLinksProps {
 }
 
 export interface ICardProps {
-  works?: any[];
+  works?: IProjectProps[];
   posts?: any[];
   image?: string;
 }
 
-export interface IWorkProps {
-  title: string;
-  hrefLink: string;
-  projectImages: any[];
-  projectImage: string;
-  slug: string;
-  companyInfo: string;
-  jobDescription: string;
-  features: string[];
-  challenges: string;
+export interface IProjectProps {
+  title?: string;
+  hrefLink?: string;
+  projectImages?: any[];
+  projectImage?: string;
+  slug?: string;
+  companyInfo?: string;
+  jobDescription?: string;
+  features?: string[];
+  tech?: string[];
+  github?: string;
+  challenges?: string;
 }
 
 export interface IWorkDetailsProps {
-  works: IWorkProps[];
+  works: IProjectProps[];
 }
 
 export interface ILinkProps {

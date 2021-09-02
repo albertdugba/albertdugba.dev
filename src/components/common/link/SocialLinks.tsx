@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
-import { ISocialLinksProps } from 'interface';
+import { ISocialLinksProps } from 'src/lib/interface';
 
 export const SocialLinks: FunctionComponent<ISocialLinksProps> = ({ link, component, className }) => {
   return (

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { ILinkProps } from 'interface';
+import { ILinkProps } from 'src/lib/interface';
 
 export const NavLink: FunctionComponent<ILinkProps> = ({ href, children }) => {
   return (

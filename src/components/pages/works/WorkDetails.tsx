@@ -1,15 +1,13 @@
 import { useState, useEffect, FunctionComponent } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
-import 'swiper/swiper-bundle.css';
-import { IWorkProps } from 'interface';
+import { IProjectProps } from 'src/lib/interface';
+import { ImageSlider } from '@components/common/carousel';
+import { ProjectTechStack } from './ProjectTechStack';
+import { ProjectInfo } from './ProjectInfo';
 
-SwiperCore.use([Navigation, Pagination, Autoplay]);
-
-export const WorkDetails: FunctionComponent<IWorkProps> = ({
+export const WorkDetails: FunctionComponent<IProjectProps> = ({
   title,
   hrefLink,
   projectImages,
@@ -19,6 +17,8 @@ export const WorkDetails: FunctionComponent<IWorkProps> = ({
   jobDescription,
   features,
   challenges,
+  tech,
+  github,
 }) => {
   const [showNav, setShowNav] = useState(false);
 
@@ -64,59 +64,17 @@ export const WorkDetails: FunctionComponent<IWorkProps> = ({
 
       <Container className="container">
         <div className="container work__carousel mr-1">
-          <Swiper autoplay={true} id="section" wrapperTag="ul">
-            {projectImages?.map((item) => {
-              return item.image.map((image: string, idx: number) => (
-                <SwiperSlide key={idx}>
-                  <img
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
-                    key={idx}
-                    src={image}
-                  />
-                </SwiperSlide>
-              ));
-            })}
-          </Swiper>
+          <ImageSlider projectImages={projectImages} />
         </div>
 
         <div>
-          <div className="work__info">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h1>{title}</h1>
-              <div>
-                <div>
-                  <h3>Tech Stack</h3>
-                  <div>
-                    <div>React, Next.js</div>
-                  </div>
-                </div>
-                <div>Project Involvement</div>
-                <div>Major</div>
-                <div>
-                  <div>Live Url</div>
-                  <div>Github</div>
-                </div>
-              </div>
-            </div>
-
-            <p style={{ background: '#ece8f0c6', padding: '1rem', borderRadius: '5px' }}>{companyInfo}</p>
-
-            <h2>My Contributions</h2>
-            <div>
-              <p>{jobDescription}</p>
-              <ul>
-                {features?.map((feature, idx) => (
-                  <li key={idx}>{feature}</li>
-                ))}
-              </ul>
-            </div>
-
-            <h2>Challenges</h2>
-            <p>{challenges}</p>
-          </div>
+          <ProjectTechStack title={title} github={github} hrefLink={hrefLink} tech={tech} />
+          <ProjectInfo
+            jobDescription={jobDescription}
+            companyInfo={companyInfo}
+            challenges={challenges}
+            features={features}
+          />
         </div>
       </Container>
     </section>
@@ -144,4 +102,9 @@ const Container = styled(motion.div)`
   height: 100vh;
   width: 100%;
   flex-direction: column;
+
+  .wordDetails span {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
 `;

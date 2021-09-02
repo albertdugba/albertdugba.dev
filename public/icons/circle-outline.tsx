@@ -1,4 +1,4 @@
-import { IconProps } from 'interface';
+import { IconProps } from 'src/lib/interface';
 import { FunctionComponent } from 'react';
 
 const CircleOutline: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (

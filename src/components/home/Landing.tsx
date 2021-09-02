@@ -9,6 +9,7 @@ import Github from '@icons/github';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
 import { NavLink, SocialLinks } from '../common/link';
+import { Tag } from '@components/common/tag/Tag';
 
 const Landing = () => {
   return (
@@ -33,7 +34,7 @@ const Landing = () => {
               marginTop: '50px',
             }}
           >
-            <p>Hi</p> {'  '}
+            <h3>Hi</h3> {'  '}
             <span role="img">👋</span>
           </div>
           <p>
@@ -41,7 +42,9 @@ const Landing = () => {
             engineer, I thrive to work with the right tools to deliver fast, performant and accessiblity from the ground
             up with great user experience.
           </p>
-          <p>I work with technologies like react,redux,typescript, graphQL</p>
+          <p>
+            I work with technologies like <Tag>react</Tag>,<Tag>redux</Tag>,<Tag>typescript</Tag>, <Tag></Tag>
+          </p>
           <p className="links">
             Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
           </p>

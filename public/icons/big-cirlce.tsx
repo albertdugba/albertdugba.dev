@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'interface';
+import { IconProps } from 'src/lib/interface';
 
 const BigCirle: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg width={size} height={size} viewBox="0 0 121 119" fill="none" {...rest}>

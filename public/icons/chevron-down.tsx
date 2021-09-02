@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'interface';
+import { IconProps } from 'src/lib/interface';
 import { motion } from 'framer-motion';
 
 const ChevronDown: FunctionComponent<IconProps> = ({ size, color }) => (
