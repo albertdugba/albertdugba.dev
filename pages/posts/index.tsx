@@ -1,10 +1,7 @@
 import { FunctionComponent } from 'react';
-import { GraphQLClient } from 'graphql-request';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
-import Layout from '@components/Layout/layout';
-import { CardsCarousel } from '@components/UI/Carousel/CardsCarousel';
+import Layout from '@components/layout/layout';
+import { CardsCarousel } from '@components/common/carousel/CardsCarousel';
 
 interface Props {
   posts: any[];
@@ -24,34 +21,4 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
-
-  const { posts } = await graphcms.request(`
-  query Posts() {
-    posts {
-      id
-      title
-      excerpt
-      slug
-      tags
-      coverImage {
-        id
-        url
-      }
-      author {
-        id
-        name
-      }
-      date
-    }
-  }
-  `);
-
-  return {
-    props: {
-      posts,
-    },
-  };
-};
 export default AllPosts;

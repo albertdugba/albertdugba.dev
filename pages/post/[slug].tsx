@@ -1,4 +1,4 @@
-import PostDetails from '@components/template/Posts/PostDetails';
+import PostDetails from '@components/pages/posts/PostDetails';
 import { GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
 
@@ -8,7 +8,6 @@ const Post = ({ post }: any) => {
     <>
       <Head>
         <title>Albert Dugba Post - {post.slug}</title>
-        
       </Head>
       <PostDetails {...post} />
     </>

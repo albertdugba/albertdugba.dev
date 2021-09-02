@@ -3,68 +3,47 @@ import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
 import Times from '@icons/times';
 import { motion } from 'framer-motion';
+import { contactItem, contactContainer } from '@components/animation/contactWidget';
 
 interface CloseProps {
   handleClose: (e: any) => void;
 }
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transform: `translateY(-0%)`,
-    transition: {
-      staggerChildren: 0.1,
-      damping: 300,
-      type: 'ease',
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
-
 export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) => {
   const [state, handleSubmit] = useForm('meqvqaka');
 
-  // const handleShowAlert = () => {
-  //   if (state.succeeded) {
-  //     return (
-  //       <p role="alert" className="form__alert">
-  //         Message successfully sent
-  //       </p>
-  //     );
-  //   }
-  // };
-
   return (
     <>
-      <FormContainer variants={container} initial="hidden" animate="show" onSubmit={handleSubmit} className="contaner">
+      <FormContainer
+        variants={contactContainer}
+        initial="hidden"
+        animate="show"
+        onSubmit={handleSubmit}
+        className="contaner"
+      >
         <div className="close__wrapper">
           <Times className="close__button" size={30} color="var(--secondaryColor)" onClick={handleClose} />
         </div>
-        <motion.h4 variants={item} className="form__title">
+        <motion.h4 variants={contactItem} className="form__title">
           Hi there <span role="img">👋 , lets talk</span>
         </motion.h4>
 
-        <motion.div variants={item} className="flex__column">
+        <motion.div variants={contactItem} className="flex__column">
           <label htmlFor="name">Name</label>
           <input className="form__input" type="text" id="name" name="name" required />
         </motion.div>
         <ValidationError field="name" prefix="Name" errors={state.errors} />
-        <motion.div variants={item} className="flex__column">
+        <motion.div variants={contactItem} className="flex__column">
           <label htmlFor="email">Email</label>
           <input className="form__input" type="email" id="email" name="email" required />
         </motion.div>
         <ValidationError field="message" prefix="Message" errors={state.errors} />
-        <motion.div variants={item} className="flex__column">
+        <motion.div variants={contactItem} className="flex__column">
           <label htmlFor="message">Message</label>
           <textarea className="message__body" id="message" name="message" required />
         </motion.div>
 
-        <motion.button variants={item}>
+        <motion.button variants={contactItem}>
           <span>{state.submitting ? 'Submitting...' : 'Shoot'} </span>
         </motion.button>
       </FormContainer>

@@ -9,7 +9,7 @@ import { IWorkProps } from 'interface';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
+export const WorkDetails: FunctionComponent<IWorkProps> = ({
   title,
   hrefLink,
   projectImages,
@@ -70,9 +70,7 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
                 <SwiperSlide key={idx}>
                   <img
                     style={{
-                      // objectFit: 'contain',
                       display: 'flex',
-                      // maxWidth: '70%',
                       alignItems: 'center',
                     }}
                     key={idx}
@@ -86,10 +84,27 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
 
         <div>
           <div className="work__info">
-            <h2>{title}</h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <h1>{title}</h1>
+              <div>
+                <div>
+                  <h3>Tech Stack</h3>
+                  <div>
+                    <div>React, Next.js</div>
+                  </div>
+                </div>
+                <div>Project Involvement</div>
+                <div>Major</div>
+                <div>
+                  <div>Live Url</div>
+                  <div>Github</div>
+                </div>
+              </div>
+            </div>
+
             <p style={{ background: '#ece8f0c6', padding: '1rem', borderRadius: '5px' }}>{companyInfo}</p>
 
-            <h2>My Contribution</h2>
+            <h2>My Contributions</h2>
             <div>
               <p>{jobDescription}</p>
               <ul>
@@ -107,8 +122,6 @@ export const ProjectsBanner: FunctionComponent<IWorkProps> = ({
     </section>
   );
 };
-
-export default ProjectsBanner;
 
 /**
  * @styles

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
-import { Backdrop } from '../UI/Backdrop/Backdrop';
-import { IconLinks } from '../UI/Mobile/IconLinks';
+import { Backdrop } from '../common/backdrop/Backdrop';
+import { IconLinks } from '../common/link/IconLinks';
 import { AnimatePresence } from 'framer-motion';
 import Times from '@icons/times';
 import Menu from '@icons/menu';
@@ -12,11 +12,11 @@ import Github from '@icons/github';
 import LinkedIn from '@icons/linkedin';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
-import { SocialLinks } from '@components/template/SocialLinks';
+import { SocialLinks } from '@components/common/link/SocialLinks';
 import { motion, AnimateSharedLayout } from 'framer-motion';
-import { NavLink } from '@components/UI/Link/link';
+import { NavLink } from '@components/common/link/CustomLink';
 import Contact from '@icons/chat';
-import { ContactWidget } from '@components/Section/Contact/Contact';
+import { ContactWidget } from '@components/widget/contact/Contact';
 import ChevronDown from '@icons/chevron-down';
 
 interface IProps {

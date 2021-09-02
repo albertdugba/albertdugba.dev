@@ -31,6 +31,10 @@ export interface IWorkProps {
   challenges: string;
 }
 
+export interface IWorkDetailsProps {
+  works: IWorkProps[];
+}
+
 export interface ILinkProps {
   href: string;
   className?: string;

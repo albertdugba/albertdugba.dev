@@ -1,20 +1,17 @@
-import ProjectsDetails from '@components/template/Works/ProjectsDetails';
+import Head from 'next/head';
 import { GraphQLClient } from 'graphql-request';
 import { FunctionComponent } from 'react';
-import Head from 'next/head';
+import { WorkDetails } from '@components/pages/works';
+import { IWorkDetailsProps } from 'interface';
 
-interface IProps {
-  works: any[];
-}
-
-const Work: FunctionComponent<IProps> = ({ works }) => {
+const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
   return (
     <>
       <Head>
         <title>Project - {works[0].slug}</title>
       </Head>
       {works.map((work: any) => (
-        <ProjectsDetails key={work.slug} {...work} />
+        <WorkDetails key={work.slug} {...work} />
       ))}
     </>
   );
@@ -25,7 +22,7 @@ export const getStaticProps = async ({ params }: any) => {
 
   const { works } = await graphcms.request(
     `
-  query WorkPageQuery($slug: String!) {
+  query WorkDetailsQuery($slug: String!) {
     works(where: {slug: $slug}) {
       title
       projectImage
@@ -38,6 +35,8 @@ export const getStaticProps = async ({ params }: any) => {
       features
       challenges
       tag
+      tech
+      github
     }
   }
   `,

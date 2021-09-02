@@ -8,8 +8,7 @@ import BigCirle from '@icons/big-cirlce';
 import Github from '@icons/github';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
-import { SocialLinks } from './template/SocialLinks';
-import { NavLink } from './UI/Link/link';
+import { NavLink, SocialLinks } from '../common/link';
 
 const Landing = () => {
   return (
