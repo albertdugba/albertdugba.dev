@@ -22,14 +22,16 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
         </div>
         <div className="flex__column">
           <h3>Project Involvement</h3>
-          <div style={{ color: 'var(--primaryColor)', fontWeight: 'bold', marginTop: '-8px' }}>Major</div>
+          <div className="tag" style={{ color: '#fff', fontWeight: 'bold', marginTop: '-8px', width: '20%' }}>
+            Major
+          </div>
         </div>
 
         <div className="flex__column">
           <h3 className="align__center">
             <World size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Website</h3>
           </h3>
-          <div>
+          <div style={{ marginTop: '-30px' }}>
             <a target="_blank" href={hrefLink}>
               {hrefLink}
             </a>
@@ -41,7 +43,11 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
             <div className="align__center">
               <Github size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Github</h3>
             </div>
-            <a>{github}</a>
+            <div style={{ marginTop: '-10px' }}>
+              <a target="_blank" href={hrefLink}>
+                {hrefLink}
+              </a>
+            </div>
           </div>
         ) : null}
       </div>
@@ -62,6 +68,8 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    white-space: nowrap;
   }
 
   .header {
