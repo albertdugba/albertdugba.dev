@@ -96,13 +96,13 @@ const ShowNavbar = styled(motion.section)`
   background-color: #fff;
 
   .nav__container {
-    max-width: 80%;
+    max-width: 85%;
     margin: auto;
   }
 `;
 
 const Container = styled(motion.div)`
-  max-width: 80%;
+  max-width: 85%;
   margin: auto;
   display: flex;
   height: 100vh;
