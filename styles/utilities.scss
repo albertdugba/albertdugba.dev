@@ -1,5 +1,5 @@
 .container {
-  max-width: 93%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -29,7 +29,7 @@
 
 .line__break {
   width: 100%;
-  border-bottom: 1px solid var(--primaryColor);
+  border-bottom: 1px solid var(--purple100);
 }
 
 .round__border--radius {
@@ -71,4 +71,8 @@
 
 .b-line {
   border-bottom: 1px solid #fff;
+}
+
+.list__style-none {
+  list-style: none;
 }

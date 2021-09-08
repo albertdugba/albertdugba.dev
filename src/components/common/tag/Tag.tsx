@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ReactNode } from 'react';
 
 export const Tag = ({ children }: { children: ReactNode }) => {
-  return (
+  return ( 
     <Wrapper>
       <div>
         <span>{children}</span>
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
     margin: 0;
   }
   & > * {
-    color: var(--secondaryColor);
+    color: var(--primaryColor);
     cursor: pointer;
     position: relative;
     overflow: hidden;

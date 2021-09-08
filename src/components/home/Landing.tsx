@@ -9,7 +9,7 @@ import Github from '@icons/github';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
 import { NavLink, SocialLinks } from '../common/link';
-import { Tag } from '@components/common/tag/Tag';
+import { Tag } from '../common/tag/Tag';
 
 const Landing = () => {
   return (
@@ -43,7 +43,7 @@ const Landing = () => {
             up with great user experience.
           </p>
           <p>
-            I work with technologies like <Tag>react</Tag>,<Tag>redux</Tag>,<Tag>typescript</Tag>, <Tag></Tag>
+            I work with technologies like <Tag>react</Tag>,<Tag>redux</Tag>,<Tag>typescript</Tag>, <Tag>graphQL</Tag>
           </p>
           <p className="links">
             Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
@@ -169,7 +169,7 @@ const Wrapper = styled(motion.div)`
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 90%;
-    min-height: 60%;
+    height: 70%;
     background: #fff;
     border-radius: 25px;
     display: flex;

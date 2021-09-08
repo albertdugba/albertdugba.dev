@@ -12,12 +12,11 @@ import Github from '@icons/github';
 import LinkedIn from '@icons/linkedin';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
-import { SocialLinks } from '@components/common/link/SocialLinks';
 import { motion, AnimateSharedLayout } from 'framer-motion';
-import { NavLink } from '@components/common/link/CustomLink';
 import Contact from '@icons/chat';
-import { ContactWidget } from '@components/widget/contact/Contact';
 import ChevronDown from '@icons/chevron-down';
+import { NavLink, SocialLinks } from '../common/link';
+import { ContactWidget } from '../widget/contact/Contact';
 
 interface IProps {
   imageBackground: string;
@@ -96,22 +95,22 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             <SocialLinks
               className="ml-1"
               link="https://github.com/albertdugba"
-              component={<Github size={25} color="#c9bad6" />}
+              component={<Github size={25} color="#e1e1e1" />}
             />
             <SocialLinks
               className="ml-1"
               link="https://www.linkedin.com/in/albertdugba/"
-              component={<LinkedIn size={23} color="#c9bad6" />}
+              component={<LinkedIn size={23} color="#e1e1e1" />}
             />
             <SocialLinks
               className="ml-1"
               link="https://twitter.com/Albert_Dugba"
-              component={<Twitter size={25} color="#c9bad6" />}
+              component={<Twitter size={25} color="#e1e1e1" />}
             />
             <SocialLinks
               className="ml-1"
               link="https://medium.com/@albert.dugba"
-              component={<Medium size={25} color="#c9bad6" />}
+              component={<Medium size={25} color="#e1e1e1" />}
             />
           </div>
 
@@ -221,7 +220,7 @@ const Nav = styled.ul`
   a {
     display: block;
     text-decoration: none;
-    color: var(--secondaryColor);
+    color: #ddd;
     font-weight: bolder;
 
     @media (max-width: 701px) {

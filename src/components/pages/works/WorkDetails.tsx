@@ -1,11 +1,11 @@
 import { useState, useEffect, FunctionComponent } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { IProjectProps } from 'src/lib/interface';
-import { ImageSlider } from '@components/common/carousel';
+
 import { ProjectTechStack } from './ProjectTechStack';
 import { ProjectInfo } from './ProjectInfo';
+import { ImageSlider } from 'src/components/common/carousel';
 
 export const WorkDetails: FunctionComponent<IProjectProps> = ({
   title,
@@ -39,8 +39,11 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
     <section>
       <div className={showNav ? 'nav__bg' : ''}>
         {showNav && (
-          <ShowNavbar>
-            <div className="flex align__center justify__between container">
+          <ShowNavbar
+            initial={{ top: '-120px', width: '0', left: '-120px', boxShadow: '0' }}
+            animate={{ top: '0', width: '100%', left: '0', boxShadow: '0 4px 9px rgba(0, 0, 0, 0.2)' }}
+          >
+            <div className="flex align__center nav__container justify__between">
               <motion.img
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -50,11 +53,11 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
               />
               <ul>
                 <li style={{ listStyle: 'none' }}>
-                  <Link href={hrefLink}>
-                    <a target="_blank">
-                      <button>Visit site</button>
-                    </a>
-                  </Link>
+                  <a target="_blank" href={hrefLink}>
+                    <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                      Visit site
+                    </motion.button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -62,19 +65,21 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
         )}
       </div>
 
-      <Container className="container">
-        <div className="container work__carousel mr-1">
+      <Container>
+        <div className="work__carousel mr-1">
           <ImageSlider projectImages={projectImages} />
         </div>
 
         <div>
-          <ProjectTechStack title={title} github={github} hrefLink={hrefLink} tech={tech} />
           <ProjectInfo
+            title={title}
             jobDescription={jobDescription}
             companyInfo={companyInfo}
             challenges={challenges}
             features={features}
           />
+          <div className="line__break"></div>
+          <ProjectTechStack github={github} hrefLink={hrefLink} tech={tech} />
         </div>
       </Container>
     </section>
@@ -85,14 +90,15 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
  * @styles
  */
 
-const ShowNavbar = styled.section`
+const ShowNavbar = styled(motion.section)`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   z-index: 10;
   background-color: #fff;
-  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
+
+  .nav__container {
+    max-width: 80%;
+    margin: auto;
+  }
 `;
 
 const Container = styled(motion.div)`

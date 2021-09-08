@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { Tag } from 'src/components/common/tag/Tag';
 
 interface PostProps {
   coverImage: any;
@@ -35,21 +36,20 @@ const components = {
   },
 };
 
-const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content, author, date }) => {
+const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content, author, date, tags }) => {
   return (
     <Wrapper>
-      <div className="post__image" style={{ backgroundImage: `url(${coverImage.url})` }}></div>
       <div>
-        <div className="post__info">
-          <div className="container post__title">
+        <div className="container">
+          <div className="post__info">
             <h1>{title}</h1>
+          </div>
+          <div className="post__image">
+            <img src={coverImage.url} alt="Blog" />
           </div>
         </div>
         <div className="post__card">
           <div className="container">
-            <h2 className="b-line pb-1">
-              Written by {author.name} on {date}
-            </h2>
             <div className="post__content">
               <ReactMarkdown children={content} components={components} />
             </div>
@@ -71,30 +71,22 @@ const Wrapper = styled.div`
   width: 100%;
 
   .post__image {
-    width: 100%;
-    height: 320px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    width: 60%;
+    margin: auto;
+
+    @media (max-width: 758px) {
+      width: 90%;
+    }
   }
 
   .post__info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 320px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-
-    .post__title {
-      display: flex;
+    line-height: 1.2;
+    .post__title h1 {
+      /* display: flex; */
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      /* flex-direction: column; */
       height: 100%;
-      font-size: 2rem;
+      font-size: 1.5rem;
       line-height: 1.3;
 
       @media (max-width: 801px) {

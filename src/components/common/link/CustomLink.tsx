@@ -6,15 +6,19 @@ import { ILinkProps } from 'src/lib/interface';
 export const NavLink: FunctionComponent<ILinkProps> = ({ href, children }) => {
   return (
     <Link href={href}>
-      <LinkWrapper>{children}</LinkWrapper>
+      <LinkWrapper linkColor="landing">{children}</LinkWrapper>
     </Link>
   );
 };
 
-const LinkWrapper = styled.a`
+interface ILink {
+  linkColor: 'landing' | 'pageLink';
+}
+
+const LinkWrapper = styled.a<ILink>`
   position: relative;
   cursor: pointer;
-  color: var(--purple100);
+  color: ${(props) => props.linkColor};
 
   &:before {
     content: '';

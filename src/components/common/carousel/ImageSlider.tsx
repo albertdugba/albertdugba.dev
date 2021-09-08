@@ -16,6 +16,7 @@ export const ImageSlider: FunctionComponent<IProjectProps> = ({ projectImages })
               style={{
                 display: 'flex',
                 alignItems: 'center',
+                maxWidth: '70%',
               }}
               key={idx}
               src={image}

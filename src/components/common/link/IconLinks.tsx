@@ -4,8 +4,7 @@ import Github from '@icons/github';
 import LinkedIn from '@icons/linkedin';
 import Twitter from '@icons/twitter';
 import Medium from '@icons/medium';
-import { SocialLinks } from '@components/common/link/SocialLinks';
-
+import { SocialLinks } from '.';
 
 export const IconLinks = () => {
   return (
