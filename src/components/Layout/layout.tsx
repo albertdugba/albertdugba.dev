@@ -47,7 +47,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
+export const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showContactWidget, setShowContactWidget] = useState(false);
 
@@ -145,8 +145,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
     </Wrapper>
   );
 };
-
-export default Layout;
 
 const Wrapper = styled.section`
   position: relative;
