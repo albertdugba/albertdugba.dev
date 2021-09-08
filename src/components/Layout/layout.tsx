@@ -6,17 +6,10 @@ import { GraphQLClient } from 'graphql-request';
 import { Backdrop } from '../common/backdrop/Backdrop';
 import { IconLinks } from '../common/link/IconLinks';
 import { AnimatePresence } from 'framer-motion';
-import Times from '@icons/times';
-import Menu from '@icons/menu';
-import Github from '@icons/github';
-import LinkedIn from '@icons/linkedin';
-import Twitter from '@icons/twitter';
-import Medium from '@icons/medium';
 import { motion, AnimateSharedLayout } from 'framer-motion';
-import Contact from '@icons/chat';
-import ChevronDown from '@icons/chevron-down';
 import { NavLink, SocialLinks } from '../common/link';
 import { ContactWidget } from '../widget/contact/Contact';
+import * as Icon from '@icons/index';
 
 interface IProps {
   imageBackground: string;
@@ -62,24 +55,19 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
       <AnimateSharedLayout>
         <motion.div layout className="background">
           <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
-          <img src={imageBackground} alt="Background" />
         </motion.div>
       </AnimateSharedLayout>
       <div className="layout">
         <div className=" container justify__between">
           {toggleMenu ? (
-            <Times
+            <Icon.Times
               size={35}
               color="var(--secondaryColor)"
               className="menu__bar"
               onClick={() => setToggleMenu((preState) => !preState)}
             />
           ) : (
-            <Menu
+            <Icon.Menu
               size={35}
               color="var(--secondaryColor)"
               className="menu__bar"
@@ -95,22 +83,22 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
             <SocialLinks
               className="ml-1"
               link="https://github.com/albertdugba"
-              component={<Github size={25} color="#e1e1e1" />}
+              component={<Icon.Github size={25} color="#e1e1e1" />}
             />
             <SocialLinks
               className="ml-1"
               link="https://www.linkedin.com/in/albertdugba/"
-              component={<LinkedIn size={23} color="#e1e1e1" />}
+              component={<Icon.Linkedin size={23} color="#e1e1e1" />}
             />
             <SocialLinks
               className="ml-1"
               link="https://twitter.com/Albert_Dugba"
-              component={<Twitter size={25} color="#e1e1e1" />}
+              component={<Icon.Twitter size={25} color="#e1e1e1" />}
             />
             <SocialLinks
               className="ml-1"
               link="https://medium.com/@albert.dugba"
-              component={<Medium size={25} color="#e1e1e1" />}
+              component={<Icon.Medium size={25} color="#e1e1e1" />}
             />
           </div>
 
@@ -138,7 +126,7 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
         )}
 
         <div className="contact cursor--pointer" onClick={() => handleToggleContactWidget()}>
-          {showContactWidget ? <ChevronDown size={205} color="#fff" /> : <Contact size={45} color="#fff" />}
+          {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
         </div>
         <div>{children}</div>
       </div>
@@ -203,10 +191,9 @@ const Wrapper = styled.section`
 
     img {
       width: 100%;
-      height: auto;
+      height: 100vh;
       object-fit: cover;
       object-position: left top;
-      margin-top: -20px;
     }
   }
 `;

@@ -1,15 +1,9 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import LinkedIn from '@icons/linkedin';
-import CircleOutline from '@icons/circle-outline';
-import Triange from '@icons/triangle';
-import Fing from '@icons/fing';
-import BigCirle from '@icons/big-cirlce';
-import Github from '@icons/github';
-import Twitter from '@icons/twitter';
-import Medium from '@icons/medium';
 import { NavLink, SocialLinks } from '../common/link';
 import { Tag } from '../common/tag/Tag';
+import * as Icon from '@icons/index';
 
 const Landing = () => {
   return (
@@ -50,30 +44,30 @@ const Landing = () => {
           </p>
         </motion.div>
         <Social>
-          <SocialLinks link="https://github.com/albertdugba" component={<Github size={25} color="#c9bad6" />} />
+          <SocialLinks link="https://github.com/albertdugba" component={<Icon.Github size={25} color="#c9bad6" />} />
           <SocialLinks
             link="https://www.linkedin.com/in/albertdugba/"
             component={<LinkedIn size={23} color="#c9bad6" />}
           />
-          <SocialLinks link="https://twitter.com/Albert_Dugba" component={<Twitter size={25} color="#c9bad6" />} />
-          <SocialLinks link="https://medium.com/@albert.dugba" component={<Medium size={25} color="#c9bad6" />} />
+          <SocialLinks link="https://twitter.com/Albert_Dugba" component={<Icon.Twitter size={25} color="#c9bad6" />} />
+          <SocialLinks link="https://medium.com/@albert.dugba" component={<Icon.Medium size={25} color="#c9bad6" />} />
         </Social>
       </motion.div>
 
       <div className="circle">
-        <CircleOutline size={80} color="#dfd3d6" />
+        <Icon.CircleOutline size={80} color="#dfd3d6" />
       </div>
 
       <div className="triange">
-        <Triange color="var(--secondaryColor)" size={120} />
+        <Icon.Triangle color="var(--secondaryColor)" size={120} />
       </div>
 
       <div className="fing">
-        <Fing color="#2B0A4B'" size={200} />
+        <Icon.Fing color="#2B0A4B'" size={200} />
       </div>
 
       <div className="b-circle">
-        <BigCirle size={90} color="#c9bad6" />
+        <Icon.BigCircle size={90} color="#c9bad6" />
       </div>
     </Wrapper>
   );

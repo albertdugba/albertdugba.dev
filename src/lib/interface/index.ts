@@ -5,6 +5,7 @@ export interface IconProps {
   color: string;
   className?: string;
   onClick?: React.MouseEventHandler<SVGElement>;
+  // handleClose?: React.MouseEventHandler<SVGElement>;
 }
 
 export interface ISocialLinksProps {

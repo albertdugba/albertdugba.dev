@@ -4,7 +4,6 @@ import { CardsCarousel } from 'src/components/common/carousel';
 import { GraphQLClient } from 'graphql-request';
 import { Layout } from 'src/components/layout';
 
-
 interface Props {
   posts: any[];
 }
