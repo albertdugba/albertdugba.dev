@@ -49,15 +49,49 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
     new Audio('./pop.wav').play();
   };
 
+  const transition = {
+    duration: 0.5,
+    ease: [0.43, 0.13, 0.23, 0.96],
+  };
+
+  const imageVariants = {
+    exit: { x: '100%', opacity: 0, transition },
+    enter: {
+      x: '0%',
+      opacity: 1,
+      transition,
+    },
+  };
+
+  const bgVariants = {
+    exit: { x: '-100%', opacity: 0, transition },
+    enter: {
+      x: '0%',
+      opacity: 1,
+      transition,
+    },
+  };
+
   return (
-    <Wrapper>
+    <Wrapper initial="exit" animate="enter" exit="exit">
       {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
       <AnimateSharedLayout>
-        <motion.div layout className="background">
-          <img src={imageBackground} alt="Background" />
+        <motion.div initial="exit" animate="enter" exit="exit" className="background">
+          <motion.div
+            variants={imageVariants}
+            className="background__image"
+            style={{
+              backgroundImage: `url(${imageBackground})`,
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              height: '100vh',
+              width: '100%',
+            }}
+          />
         </motion.div>
       </AnimateSharedLayout>
-      <div className="layout">
+      <motion.div className="layout" variants={bgVariants}>
         <div className=" container justify__between">
           {toggleMenu ? (
             <Icon.Times
@@ -129,12 +163,12 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
           {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
         </div>
         <div>{children}</div>
-      </div>
+      </motion.div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.section`
+const Wrapper = styled(motion.section)`
   position: relative;
   width: 100%;
   height: 100vh;
@@ -166,7 +200,7 @@ const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 13, 19, 0.85);
+    background: rgba(0, 0, 0, 0.84);
     color: #fff;
 
     .menu__bar {
@@ -194,6 +228,7 @@ const Wrapper = styled.section`
       height: 100vh;
       object-fit: cover;
       object-position: left top;
+      /* margin-top: -20px; */
     }
   }
 `;

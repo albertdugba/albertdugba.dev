@@ -32,6 +32,8 @@ export interface IProjectProps {
   tech?: string[];
   github?: string;
   challenges?: string;
+  internalRoute?: boolean;
+  tag?: string;
 }
 
 export interface IWorkDetailsProps {

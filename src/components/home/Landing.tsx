@@ -39,7 +39,7 @@ const Landing = () => {
           <p>
             I work with technologies like <Tag>react</Tag>,<Tag>redux</Tag>,<Tag>typescript</Tag>, <Tag>graphQL</Tag>
           </p>
-          <p className="links">
+          <p>
             Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
           </p>
         </motion.div>
