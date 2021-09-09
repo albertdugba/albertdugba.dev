@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
-import { AnimateSharedLayout, motion } from 'framer-motion';
-import { IProjectProps } from '@components/interface';
-import { Layout } from 'src/components/layout';
 import { CardsCarousel } from 'src/components/common/carousel';
+import { Layout } from '@components/layout';
+import { IProjectProps } from 'src/lib/interface';
 
 interface IProps {
   works: IProjectProps[];
