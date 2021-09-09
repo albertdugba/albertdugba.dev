@@ -46,16 +46,14 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
                       </Card>
                     </>
                   ) : (
-                    <Link href={work.hrefLink}>
-                      <a target="_blank" style={{ textDecoration: 'none' }}>
-                        <Card>
-                          <span>{work.tag}</span>
-                          <div className="card__body">
-                            {work.projectImage ? <img src={work.projectImage} /> : <h2>{work.title}</h2>}
-                          </div>
-                        </Card>
-                      </a>
-                    </Link>
+                    <a target="_blank" style={{ textDecoration: 'none' }}>
+                      <Card>
+                        <span>{work?.tag}</span>
+                        <div className="card__body">
+                          {work.projectImage ? <img src={work.projectImage} /> : <h2>{work.title}</h2>}
+                        </div>
+                      </Card>
+                    </a>
                   )}
                 </SwiperSlide>
               ))
@@ -147,7 +145,7 @@ const Card = styled(motion.div)`
 
   @media (max-width: 601px) {
     height: 320px;
-    width: 270px;
+    width: 250px;
     margin-top: 50px;
     h1 {
       font-size: 1rem;
