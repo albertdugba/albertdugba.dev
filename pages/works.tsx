@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
-import { CardsCarousel } from 'src/components/common/carousel';
 import { Layout } from '@components/layout';
 import { IProjectProps } from 'src/lib/interface';
+import { CardsCarousel } from '@components/common/carousel';
 
 interface IProps {
   works: IProjectProps[];
