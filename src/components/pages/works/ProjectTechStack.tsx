@@ -8,16 +8,14 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
   return (
     <Wrapper>
       <div>
-        <div>
-          <div className="flex__column">
-            <h3>Platform Technologies</h3>
-            <div className="flex mr-1" style={{ width: '100%', overflowY: 'auto', marginTop: '-10px' }}>
-              {tech?.map((tStack, idx) => (
-                <span className="list__style-none tag" key={idx}>
-                  {tStack}
-                </span>
-              ))}
-            </div>
+        <div className="flex__column">
+          <h3>Platform Technologies</h3>
+          <div className="flex mr-1" style={{ width: '100%', overflowY: 'auto', marginTop: '-10px' }}>
+            {tech?.map((tStack, idx) => (
+              <span className="list__style-none tag" key={idx}>
+                {tStack}
+              </span>
+            ))}
           </div>
         </div>
         <div className="flex__column">
@@ -28,10 +26,10 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
         </div>
 
         <div className="flex__column">
-          <h3 className="align__center">
+          <div className="align__center">
             <World size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Website</h3>
-          </h3>
-          <div style={{ marginTop: '-30px' }}>
+          </div>
+          <div style={{ marginTop: '-10px', paddingBottom: '3rem' }}>
             <a target="_blank" href={hrefLink}>
               {hrefLink}
             </a>

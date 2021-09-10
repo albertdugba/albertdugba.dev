@@ -18,3 +18,4 @@ export { default as I } from './i';
 export { default as ChevronDown } from './chevron-down';
 export { default as Circle } from './circle';
 export { default as Rect } from './rect';
+export { default as ChevronBack } from './chevron-back';
