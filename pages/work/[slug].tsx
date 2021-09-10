@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { GraphQLClient } from 'graphql-request';
 import { FunctionComponent } from 'react';
 import { IWorkDetailsProps } from 'src/lib/interface';
-import { WorkDetails } from 'src/components/pages/works';
+import { WorkDetails } from '@components/pages/works';
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
   return (

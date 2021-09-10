@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
-import { Backdrop } from '../common/backdrop/Backdrop';
+import { Backdrop, AnimatedBackdrop } from '../common/backdrop/Backdrop';
 import { IconLinks } from '../common/link/IconLinks';
 import { AnimatePresence } from 'framer-motion';
 import { motion, AnimateSharedLayout } from 'framer-motion';
@@ -89,9 +89,12 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
               width: '100%',
             }}
           />
+
+          <AnimatedBackdrop variants={bgVariants} />
         </motion.div>
       </AnimateSharedLayout>
-      <motion.div className="layout" variants={bgVariants}>
+
+      <motion.div className="layout">
         <div className=" container justify__between">
           {toggleMenu ? (
             <Icon.Times
@@ -200,7 +203,7 @@ const Wrapper = styled(motion.section)`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.84);
+    /* background: rgba(0, 0, 0, 0.84); */
     color: #fff;
 
     .menu__bar {
