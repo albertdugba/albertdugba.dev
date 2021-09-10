@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import LinkedIn from '@icons/linkedin';
 import { NavLink, SocialLinks } from '../common/link';
 import { Tag } from '../common/tag/Tag';
 import * as Icon from '@icons/index';
@@ -47,7 +46,7 @@ const Landing = () => {
           <SocialLinks link="https://github.com/albertdugba" component={<Icon.Github size={25} color="#c9bad6" />} />
           <SocialLinks
             link="https://www.linkedin.com/in/albertdugba/"
-            component={<LinkedIn size={23} color="#c9bad6" />}
+            component={<Icon.Linkedin size={23} color="#c9bad6" />}
           />
           <SocialLinks link="https://twitter.com/Albert_Dugba" component={<Icon.Twitter size={25} color="#c9bad6" />} />
           <SocialLinks link="https://medium.com/@albert.dugba" component={<Icon.Medium size={25} color="#c9bad6" />} />
