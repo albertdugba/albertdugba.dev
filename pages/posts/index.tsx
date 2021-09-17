@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import { GraphQLClient } from 'graphql-request';
-import { CardsCarousel } from 'src/components/common/carousel';
-import { Layout } from 'src/components/layout/layout';
+import { Layout } from '@components/layout/layout';
+import { CardsCarousel } from '@components/common/carousel';
+
 
 
 interface Props {

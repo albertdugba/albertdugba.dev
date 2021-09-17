@@ -1,6 +1,7 @@
+import PostDetails from '@components/pages/posts/PostDetails';
 import { GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
-import PostDetails from 'src/components/pages/posts/PostDetails';
+
 
 const Post = ({ post }: any) => {
   return (
