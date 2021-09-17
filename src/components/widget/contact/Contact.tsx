@@ -5,7 +5,6 @@ import Times from '@icons/times';
 import { motion } from 'framer-motion';
 import { contactContainer, contactItem } from 'src/components/animation/contactWidget';
 
-
 interface CloseProps {
   handleClose: (e: any) => void;
 }

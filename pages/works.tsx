@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
-import { Layout } from '@components/layout';
+import { Layout } from '@components/layout/layout';
 import { IProjectProps } from 'src/lib/interface';
 import { CardsCarousel } from '@components/common/carousel';
 
@@ -52,9 +52,6 @@ const cardVariants = {
 
 const WorksPage: FunctionComponent<IProps> = ({ works }) => (
   <div>
-    <Head>
-      <title>My Works | Projects</title>
-    </Head>
     <Layout imageBackground="./tech-doodle.png">
       <CardsCarousel works={works} />
     </Layout>
