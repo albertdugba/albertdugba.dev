@@ -64,22 +64,28 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   .post__image {
-    width: 70%;
+    max-width: 100%;
     margin: auto;
 
     h1 {
       line-height: 1.5;
     }
 
-    @media (max-width: 758px) {
-      width: 100%;
+    @media (min-width: 758px) {
+      width: 75%;
     }
   }
 
   .post__content {
     padding: 1rem;
-    width: 93%;
+    width: 100%;
     margin: auto;
+
+    a {
+      color: var(--primaryColor);
+      text-decoration: none;
+      font-weight: 800;
+    }
 
     p code {
       font-weight: bold;
