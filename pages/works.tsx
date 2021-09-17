@@ -52,9 +52,6 @@ const cardVariants = {
 
 const WorksPage: FunctionComponent<IProps> = ({ works }) => (
   <div>
-    <Head>
-      <title>My Works | Projects</title>
-    </Head>
     <Layout imageBackground="./tech-doodle.png">
       <CardsCarousel works={works} />
     </Layout>

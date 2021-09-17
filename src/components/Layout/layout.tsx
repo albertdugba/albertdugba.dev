@@ -2,6 +2,7 @@ import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 import { GraphQLClient } from 'graphql-request';
 import { Backdrop, AnimatedBackdrop } from '../common/backdrop/Backdrop';
 import { IconLinks } from '../common/link/IconLinks';
@@ -73,101 +74,103 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
   };
 
   return (
-    <Wrapper initial="exit" animate="enter" exit="exit">
-      {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
-      <AnimateSharedLayout>
-        <motion.div initial="exit" animate="enter" exit="exit" className="background">
-          <motion.div
-            variants={imageVariants}
-            className="background__image"
-            style={{
-              backgroundImage: `url(${imageBackground})`,
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              height: '100vh',
-              width: '100%',
-            }}
-          />
-
-          <AnimatedBackdrop variants={bgVariants} />
-        </motion.div>
-      </AnimateSharedLayout>
-
-      <motion.div className="layout">
-        <div className=" container justify__between">
-          {toggleMenu ? (
-            <Icon.Times
-              size={35}
-              color="var(--secondaryColor)"
-              className="menu__bar"
-              onClick={() => setToggleMenu((preState) => !preState)}
+    <>
+      <Wrapper initial="exit" animate="enter" exit="exit">
+        {toggleMenu && <Backdrop onClick={() => setToggleMenu(false)} />}
+        <AnimateSharedLayout>
+          <motion.div initial="exit" animate="enter" exit="exit" className="background">
+            <motion.div
+              variants={imageVariants}
+              className="background__image"
+              style={{
+                backgroundImage: `url(${imageBackground})`,
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                height: '100vh',
+                width: '100%',
+              }}
             />
-          ) : (
-            <Icon.Menu
-              size={35}
-              color="var(--secondaryColor)"
-              className="menu__bar"
-              onClick={() => setToggleMenu((preState) => !preState)}
-            />
+
+            <AnimatedBackdrop variants={bgVariants} />
+          </motion.div>
+        </AnimateSharedLayout>
+
+        <motion.div className="layout">
+          <div className=" container justify__between">
+            {toggleMenu ? (
+              <Icon.Times
+                size={35}
+                color="var(--secondaryColor)"
+                className="menu__bar"
+                onClick={() => setToggleMenu((preState) => !preState)}
+              />
+            ) : (
+              <Icon.Menu
+                size={35}
+                color="var(--secondaryColor)"
+                className="menu__bar"
+                onClick={() => setToggleMenu((preState) => !preState)}
+              />
+            )}
+
+            <div className="menu__bar">
+              <AnimatePresence>{toggleMenu && <IconLinks />}</AnimatePresence>
+            </div>
+
+            <div className="flex social__container">
+              <SocialLinks
+                className="ml-1"
+                link="https://github.com/albertdugba"
+                component={<Icon.Github size={25} color="#e1e1e1" />}
+              />
+              <SocialLinks
+                className="ml-1"
+                link="https://www.linkedin.com/in/albertdugba/"
+                component={<Icon.Linkedin size={23} color="#e1e1e1" />}
+              />
+              <SocialLinks
+                className="ml-1"
+                link="https://twitter.com/Albert_Dugba"
+                component={<Icon.Twitter size={25} color="#e1e1e1" />}
+              />
+              <SocialLinks
+                className="ml-1"
+                link="https://medium.com/@albert.dugba"
+                component={<Icon.Medium size={25} color="#e1e1e1" />}
+              />
+            </div>
+
+            <Nav className="justify__between">
+              <li className="ml-1">
+                <NavLink href="/works">Works</NavLink>
+              </li>
+              <li className="ml-1">
+                <NavLink href="/posts" className="ml-1">
+                  Blog
+                </NavLink>
+              </li>
+              <li className="ml-1 cursor--pointer">
+                <Link href="/">
+                  <Image src="/albertdugba.jpg" width={45} height={45} className="round__border--radius" />
+                </Link>
+              </li>
+            </Nav>
+          </div>
+
+          {showContactWidget && (
+            <div className="container">
+              <ContactWidget handleClose={() => setShowContactWidget(false)} />
+            </div>
           )}
 
-          <div className="menu__bar">
-            <AnimatePresence>{toggleMenu && <IconLinks />}</AnimatePresence>
+          <div className="contact cursor--pointer" onClick={() => handleToggleContactWidget()}>
+            {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
           </div>
-
-          <div className="flex social__container">
-            <SocialLinks
-              className="ml-1"
-              link="https://github.com/albertdugba"
-              component={<Icon.Github size={25} color="#e1e1e1" />}
-            />
-            <SocialLinks
-              className="ml-1"
-              link="https://www.linkedin.com/in/albertdugba/"
-              component={<Icon.Linkedin size={23} color="#e1e1e1" />}
-            />
-            <SocialLinks
-              className="ml-1"
-              link="https://twitter.com/Albert_Dugba"
-              component={<Icon.Twitter size={25} color="#e1e1e1" />}
-            />
-            <SocialLinks
-              className="ml-1"
-              link="https://medium.com/@albert.dugba"
-              component={<Icon.Medium size={25} color="#e1e1e1" />}
-            />
-          </div>
-
-          <Nav className="justify__between">
-            <li className="ml-1">
-              <NavLink href="/works">Works</NavLink>
-            </li>
-            <li className="ml-1">
-              <NavLink href="/posts" className="ml-1">
-                Blog
-              </NavLink>
-            </li>
-            <li className="ml-1 cursor--pointer">
-              <Link href="/">
-                <Image src="/albertdugba.jpg" width={45} height={45} className="round__border--radius" />
-              </Link>
-            </li>
-          </Nav>
-        </div>
-
-        {showContactWidget && (
-          <div className="container">
-            <ContactWidget handleClose={() => setShowContactWidget(false)} />
-          </div>
-        )}
-
-        <div className="contact cursor--pointer" onClick={() => handleToggleContactWidget()}>
-          {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
-        </div>
-        <div>{children}</div>
-      </motion.div>
-    </Wrapper>
+          <div>{children}</div>
+        </motion.div>
+      </Wrapper>
+    </>
   );
 };
 
