@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
 import { IProjectProps } from '../src/lib/interface';
-import { Layout } from '../src/components/Layout/Layout';
+import Layout from '../src/components/Layout/Layout';
 import { CardsCarousel } from '../src/components/common/carousel';
 
 interface IProps {
