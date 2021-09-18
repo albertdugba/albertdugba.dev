@@ -1,9 +1,8 @@
 import { FunctionComponent } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
-import * as Icons from '../../../../public/icons';
+import * as Icons from '@icons/index';
 import { motion } from 'framer-motion';
-import { contactContainer, contactItem } from '../../animation/contactWidget';
 
 interface CloseProps {
   handleClose: (e: any) => void;
@@ -11,6 +10,24 @@ interface CloseProps {
 
 export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) => {
   const [state, handleSubmit] = useForm('meqvqaka');
+
+  const contactContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transform: `translateY(-0%)`,
+      transition: {
+        staggerChildren: 0.1,
+        damping: 300,
+        type: 'ease',
+      },
+    },
+  };
+
+  const contactItem = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
 
   return (
     <>

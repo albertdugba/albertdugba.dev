@@ -4,6 +4,7 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/coverage', '<rootDir>/dist'],
   moduleDirectories: ['<rootDir>/node_modules', '<rootDir>/src', '<rootDir>/pages'],
   moduleNameMapper: {
+    '@/(.*)': '<rootDir>/components/$1',
     '@pages/(.*)': '<rootDir>/pages/$1',
     '@icons/(.*)': '<rootDir>/public/icons/$1',
     '/^.+.(css|less|scss|sass)$/': 'identity-obj-proxy',

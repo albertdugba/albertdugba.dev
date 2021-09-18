@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import * as Icons from '../../../../public/icons';
+import * as Icons from '@icons/index';
 import { SocialLinks } from '.';
 
 export const IconLinks = () => {

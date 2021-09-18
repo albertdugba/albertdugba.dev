@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from '../../src/lib/interface';
+import { IconProps } from '@/lib/interface';
 
 const Dev: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg height={size} width={size} viewBox="0 0 512 512" xmlSpace="preserve" fill={color} {...rest}>

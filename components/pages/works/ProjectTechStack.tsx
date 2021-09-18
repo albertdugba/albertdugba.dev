@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import * as Icons from '../../../../public/icons';
-import { IProjectProps } from '../../../lib/interface';
+import * as Icons from '@icons/index';
+import { IProjectProps } from '@/lib/interface';
 
 export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefLink, github }) => {
   return (

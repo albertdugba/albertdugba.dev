@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from '../../src/lib/interface';
+import { IconProps } from '@/lib/interface';
 
 const Instagram: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg data-name="Layer 1" id="Layer_1" width={size} height={size} fill={color} viewBox="0 0 500 500" {...rest}>

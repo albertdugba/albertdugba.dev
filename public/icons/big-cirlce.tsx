@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from '../../src/lib/interface';
+import { IconProps } from '@/lib/interface';
 
 
 const BigCirle: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (

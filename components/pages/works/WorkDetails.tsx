@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { ProjectTechStack } from './ProjectTechStack';
 import { ProjectInfo } from './ProjectInfo';
-import * as Icons from '../../../../public/icons';
+import * as Icons from '@icons/index';
 import { IProjectProps } from '../../../lib/interface';
 import { ImageSlider } from '../../common/carousel';
 

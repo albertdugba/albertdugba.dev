@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from '../../src/lib/interface';
+import { IconProps } from '@/lib/interface';
 
 const ChevronBack: FunctionComponent<IconProps> = ({ size, color }) => (
   <svg
