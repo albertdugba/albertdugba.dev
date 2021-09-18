@@ -6,7 +6,7 @@ import { IProjectProps } from 'src/lib/interface';
 import { ProjectTechStack } from './ProjectTechStack';
 import { ProjectInfo } from './ProjectInfo';
 import * as Icons from '@icons/index';
-import { ImageSlider } from '@/common/carousel';
+import { ImageSlider } from 'src/components/common/carousel';
 
 export const WorkDetails: FunctionComponent<IProjectProps> = ({
   title,
