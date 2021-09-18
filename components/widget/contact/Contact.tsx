@@ -1,9 +1,8 @@
 import { FunctionComponent } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
-import Times from '@icons/times';
+import * as Icons from '@icons/index';
 import { motion } from 'framer-motion';
-import { contactContainer, contactItem } from 'src/components/animation/contactWidget';
 
 interface CloseProps {
   handleClose: (e: any) => void;
@@ -11,6 +10,24 @@ interface CloseProps {
 
 export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) => {
   const [state, handleSubmit] = useForm('meqvqaka');
+
+  const contactContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transform: `translateY(-0%)`,
+      transition: {
+        staggerChildren: 0.1,
+        damping: 300,
+        type: 'ease',
+      },
+    },
+  };
+
+  const contactItem = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
 
   return (
     <>
@@ -22,7 +39,7 @@ export const ContactWidget: FunctionComponent<CloseProps> = ({ handleClose }) =>
         className="contaner"
       >
         <div className="close__wrapper">
-          <Times className="close__button" size={30} color="var(--secondaryColor)" onClick={handleClose} />
+          <Icons.Times className="close__button" size={30} color="var(--secondaryColor)" onClick={handleClose} />
         </div>
         <motion.h4 variants={contactItem} className="form__title">
           Hi there <span role="img">👋 , lets talk</span>

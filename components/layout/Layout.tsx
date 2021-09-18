@@ -10,7 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { ContactWidget } from '../widget/contact/Contact';
-import * as Icon from '@icons/index';
+import * as Icon from '@icons/index'
 
 interface IProps {
   imageBackground: string;
@@ -41,7 +41,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
+const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showContactWidget, setShowContactWidget] = useState(false);
 
@@ -173,6 +173,8 @@ export const Layout: FunctionComponent<IProps> = ({ children, imageBackground })
     </>
   );
 };
+
+export default Layout;
 
 const Wrapper = styled(motion.section)`
   position: relative;
