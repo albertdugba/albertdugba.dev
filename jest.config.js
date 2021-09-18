@@ -5,7 +5,7 @@ module.exports = {
   moduleDirectories: ['<rootDir>/node_modules', '<rootDir>/src', '<rootDir>/pages'],
   moduleNameMapper: {
     '@pages/(.*)': '<rootDir>/pages/$1',
-    '@components/(.*)': '<rootDir>/src/components/$1',
+    '@/(.*)': '<rootDir>/src/components/$1',
     '@icons/(.*)': '<rootDir>/public/icons/$1',
     '/^.+.(css|less|scss|sass)$/': 'identity-obj-proxy',
   },
