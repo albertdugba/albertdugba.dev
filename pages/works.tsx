@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import { GraphQLClient } from 'graphql-request';
-import { IProjectProps } from 'src/lib/interface';
-import { CardsCarousel } from 'src/components/common/carousel';
-import { Layout } from '@/Layout/Layout';
+import { IProjectProps } from '../src/lib/interface';
+import { Layout } from '../src/components/Layout/Layout';
+import { CardsCarousel } from '../src/components/common/carousel';
 
 interface IProps {
   works: IProjectProps[];

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'src/lib/interface';
+import { IconProps } from '../../src/lib/interface';
 
 const GridLines: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg width={size} height={size} viewBox="0 0 404 311" fill="none" {...rest}>

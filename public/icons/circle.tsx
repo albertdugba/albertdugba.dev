@@ -1,5 +1,5 @@
-import { IconProps } from 'src/lib/interface';
 import { FunctionComponent } from 'react';
+import { IconProps } from '../../src/lib/interface';
 
 const Circle: FunctionComponent<IconProps> = (props) => (
   <svg width={404} height={311} viewBox="0 0 404 311" fill="none" {...props}>

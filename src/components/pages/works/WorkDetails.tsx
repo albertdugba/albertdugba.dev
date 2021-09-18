@@ -2,11 +2,11 @@ import { useState, useEffect, FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { IProjectProps } from 'src/lib/interface';
 import { ProjectTechStack } from './ProjectTechStack';
 import { ProjectInfo } from './ProjectInfo';
-import * as Icons from '@icons/index';
-import { ImageSlider } from 'src/components/common/carousel';
+import * as Icons from '../../../../public/icons';
+import { IProjectProps } from '../../../lib/interface';
+import { ImageSlider } from '../../common/carousel';
 
 export const WorkDetails: FunctionComponent<IProjectProps> = ({
   title,

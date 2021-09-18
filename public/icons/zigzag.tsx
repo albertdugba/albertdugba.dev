@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'src/lib/interface';
+import { IconProps } from '../../src/lib/interface';
 
 const ZigZag: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg id="Capa_1" width={size} height={size} fill={color} viewBox="0 0 402.85 402.851" xmlSpace="preserve" {...rest}>

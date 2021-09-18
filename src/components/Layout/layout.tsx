@@ -10,7 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { ContactWidget } from '../widget/contact/Contact';
-import * as Icon from '@icons/index';
+import * as Icon from '../../../public/icons';
 
 interface IProps {
   imageBackground: string;

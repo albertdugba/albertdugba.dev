@@ -1,8 +1,9 @@
+import { FunctionComponent } from 'react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import { FunctionComponent } from 'react';
-import { IProjectProps } from 'src/lib/interface';
+import { IProjectProps } from '../../../lib/interface';
+
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 

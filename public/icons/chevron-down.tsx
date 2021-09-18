@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'src/lib/interface';
 import { motion } from 'framer-motion';
+import { IconProps } from '../../src/lib/interface';
 
 const ChevronDown: FunctionComponent<IconProps> = ({ size, color }) => (
   <motion.svg

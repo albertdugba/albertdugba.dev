@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@pages/*":["pages/*"],
-      "@icons/*":["public/icons/*"],
-      "@lib/*":["src/lib/interface/index/*"]
-    },
     "target": "es5",
     "lib": [
       "dom",

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { IconProps } from 'src/lib/interface';
+import { IconProps } from '../../src/lib/interface';
 
 const LinkedIn: FunctionComponent<IconProps> = ({ size, color, ...rest }) => (
   <svg

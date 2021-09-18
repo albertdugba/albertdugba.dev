@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { Tag } from '../common/tag/Tag';
-import * as Icon from '@icons/index';
+import * as Icon from '../../../public/icons';
 
 const Landing = () => {
   return (

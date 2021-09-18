@@ -1,8 +1,7 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { IProjectProps } from 'src/lib/interface';
-import World from '@icons/world';
-import Github from '@icons/github';
+import * as Icons from '../../../../public/icons';
+import { IProjectProps } from '../../../lib/interface';
 
 export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefLink, github }) => {
   return (
@@ -27,7 +26,7 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
 
         <div className="flex__column">
           <div className="align__center">
-            <World size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Website</h3>
+            <Icons.World size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Website</h3>
           </div>
           <div style={{ marginTop: '-10px', paddingBottom: '3rem' }}>
             <a target="_blank" href={hrefLink}>
@@ -39,7 +38,7 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
         {github ? (
           <div className="flex__column pb-1">
             <div className="align__center">
-              <Github size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Github</h3>
+              <Icons.Github size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Github</h3>
             </div>
             <div style={{ marginTop: '-10px', paddingBottom: '4rem' }}>
               <a target="_blank" href={github}>
