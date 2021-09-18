@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@pages/*":["pages/*"],
-      "@components/*": ["components/*"],
+      "@/*": ["src/components/*"],
       "@icons/*":["public/icons/*"],
-      "@lib/*":["interface/index/*"]
+      "@lib/*":["src/lib/interface/index/*"]
     },
     "target": "es5",
     "lib": [
