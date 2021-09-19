@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -37,18 +38,39 @@ const components = {
 
 const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content, author, date, tags }) => {
   return (
-    <Wrapper>
-      <div className="container">
-        <div className="post__image">
-          <h1>{title}</h1>
-          <img src={coverImage.url} alt="Blog" />
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="robots" content="follow, index" />
+        <link href="/favicon.ico" rel="shortcut icon" />
+        <meta content={title} name="description" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={title} />
+        <meta property="og:description" content={title} />
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={coverImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@vercel" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={title} />
+        <meta name="twitter:image" content={coverImage} />
+      </Head>
+      <Wrapper>
+        <div className="container">
+          <div className="post__image">
+            <h1>{title}</h1>
+            <img src={coverImage.url} alt="Blog" />
+          </div>
         </div>
-      </div>
 
-      <div className="post__content">
-        <ReactMarkdown children={content} components={components} />
-      </div>
-    </Wrapper>
+        <div className="post__content">
+          <ReactMarkdown children={content} components={components} />
+        </div>
+      </Wrapper>
+    </>
   );
 };
 

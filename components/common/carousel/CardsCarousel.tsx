@@ -47,14 +47,14 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
                       </Card>
                     </>
                   ) : (
-                    <a target="_blank" style={{ textDecoration: 'none' }}>
-                      <Card>
+                    <Card>
+                      <a target="_blank" style={{ textDecoration: 'none' }}>
                         <span>{work?.tag}</span>
                         <div className="card__body">
                           {work.projectImage ? <img src={work.projectImage} /> : <h2>{work.title}</h2>}
                         </div>
-                      </Card>
-                    </a>
+                      </a>
+                    </Card>
                   )}
                 </SwiperSlide>
               ))
