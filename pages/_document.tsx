@@ -43,7 +43,10 @@ class MyDocument extends Document {
           {this.props.styles}
 
           <meta name="author" content="Albert Dugba" />
-          <meta name="keywords" content="Albert Dugba, albertdugba.dev frontend engineer. JavaScript, Africa" />
+          <meta
+            name="keywords"
+            content="Albert Dugba, albertdugba.dev,albert dugba, dugba, albertdev, frontend engineer. JavaScript, Africa"
+          />
           <meta property="og:url" content="https://www.albertdugba.dev/" />
           <meta property="og:locale" content="en-US" />
           <meta property="og:type" content="website" />
