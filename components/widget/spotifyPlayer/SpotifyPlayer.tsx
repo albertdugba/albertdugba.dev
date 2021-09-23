@@ -9,11 +9,21 @@ export const SpotifyPlayer = () => {
   return (
     <Container className="container">
       <Content className="justify__between">
-        <Icons.Spotify color="green" size={30} />{' '}
-        <div>
-          <div>{data?.artist}</div>
-          <div>{data?.title}</div>
+        <div className="spotify__icon">
+          <Icons.Spotify color="#1DB954" size={30} />{' '}
         </div>
+
+        <SpotifyData>
+          <PlayingStatus>{data?.isPlaying ? 'now playing' : 'not listening'}</PlayingStatus>
+          {!data?.isPlaying ? (
+            <h3>Not Playing</h3>
+          ) : (
+            <>
+              <div>{data?.artist}</div>
+              <div>{data?.title.length > 35 ? data?.title.substring(0, 20) : data?.title}</div>
+            </>
+          )}
+        </SpotifyData>
       </Content>
     </Container>
   );
@@ -21,34 +31,67 @@ export const SpotifyPlayer = () => {
 
 const Content = styled.div`
   width: 100%;
+`;
 
-  /* gabipa1504@soulsuns.com */
+const PlayingStatus = styled.span`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 30%;
+  border-top-right-radius: 8px;
+  background: #1db954;
+  padding-left: inherit;
+  margin-left: inherit;
+  color: #fff;
+  text-transform: uppercase;
+`;
+
+const SpotifyData = styled.div`
+  position: relative;
+  font-size: 0.75rem;
+  background: #ffff;
+  width: 230px;
+  border-radius: 8px;
+  height: 50px;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
+  color: #000;
+  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: 601px) {
+    width: 90%;
+  }
 `;
 
 const Container = styled.div`
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 40px;
   z-index: 3000;
-  background: #ffff;
-  color: var(--secondaryColor);
   padding: 1rem;
   border-radius: 9px;
-  height: 50px;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
 
   @media (max-width: 701px) {
-    bottom: 17px;
+    bottom: 10px;
     left: 15px;
     width: 100%;
   }
 
-  div {
-    font-size: 0.6rem;
+  .spotify__icon {
+    background: #ffff;
+    height: 50px;
+    width: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spotify__data {
   }
 `;
 
