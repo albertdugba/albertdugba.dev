@@ -2,17 +2,13 @@ import styled from 'styled-components';
 import { ReactNode } from 'react';
 
 export const Tag = ({ children }: { children: ReactNode }) => {
-  return ( 
+  return (
     <Wrapper>
       <div>
         <span>{children}</span>
       </div>
     </Wrapper>
   );
-};
-
-type WordProps = {
-  size: string;
 };
 
 const Wrapper = styled.div`

@@ -18,7 +18,8 @@ interface ILink {
 const LinkWrapper = styled.a<ILink>`
   position: relative;
   cursor: pointer;
-  color: ${(props) => props.linkColor};
+  color: var(--primaryColor);
+  font-weight: bolder;
 
   &:before {
     content: '';
@@ -28,12 +29,12 @@ const LinkWrapper = styled.a<ILink>`
     bottom: 0;
     margin: -1px 0;
     background-color: #926e92;
-    visibility: hidden;
+    visibility: visible;
     transform: scaleX(0);
     transition: all 0.4s ease-in-out 0s;
   }
   &:hover:before {
     visibility: visible;
     transform: scaleX(1);
-  }
+  } 
 `;
