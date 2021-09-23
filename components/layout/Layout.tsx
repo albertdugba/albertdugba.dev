@@ -10,7 +10,9 @@ import { AnimatePresence } from 'framer-motion';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { ContactWidget } from '../widget/contact/Contact';
-import * as Icon from '@icons/index'
+import * as Icon from '@icons/index';
+import useSWR from 'swr';
+import { SpotifyPlayer } from '@/widget/spotifyPlayer/SpotifyPlayer';
 
 interface IProps {
   imageBackground: string;
@@ -44,6 +46,8 @@ export const getStaticProps = async () => {
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showContactWidget, setShowContactWidget] = useState(false);
+
+ 
 
   const handleToggleContactWidget = () => {
     setShowContactWidget((prevState) => !prevState);
@@ -157,6 +161,9 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               </li>
             </Nav>
           </div>
+
+          <div className="justify__between"></div>
+          <SpotifyPlayer />
 
           {showContactWidget && (
             <div className="container">

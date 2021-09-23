@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { Tag } from '../common/tag/Tag';
-import * as Icon from '@icons/index'
+import * as Icon from '@icons/index';
 
 const Landing = () => {
   return (
@@ -35,12 +35,14 @@ const Landing = () => {
             engineer, I thrive to work with the right tools to deliver fast, performant and accessiblity from the ground
             up with great user experience.
           </p>
-          <p>
-            I work with technologies like <Tag>react</Tag>,<Tag>redux</Tag>,<Tag>typescript</Tag>, <Tag>graphQL</Tag>
-          </p>
-          <p>
-            Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
-          </p>
+          <div>
+            <p>
+              I work with technologies like react,redux,typescript,graphQL
+            </p>
+            <p>
+              Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
+            </p>
+          </div>
         </motion.div>
         <Social>
           <SocialLinks link="https://github.com/albertdugba" component={<Icon.Github size={25} color="#c9bad6" />} />

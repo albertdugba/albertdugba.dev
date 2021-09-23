@@ -138,7 +138,7 @@ const Card = styled(motion.div)`
   @media (max-width: 701px) {
     height: 250px;
     width: 350px;
-    margin-top: 50px;
+    margin-top: 40px;
     h1 {
       font-size: 1rem;
     }
@@ -147,7 +147,7 @@ const Card = styled(motion.div)`
   @media (max-width: 601px) {
     height: 320px;
     width: 250px;
-    margin-top: 50px;
+    margin-top: 40px;
     h1 {
       font-size: 1rem;
     }

@@ -8,7 +8,7 @@ interface IProps {
   works: IProjectProps[];
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
 
   const { works } = await graphcms.request(`
