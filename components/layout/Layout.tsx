@@ -47,8 +47,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showContactWidget, setShowContactWidget] = useState(false);
 
- 
-
   const handleToggleContactWidget = () => {
     setShowContactWidget((prevState) => !prevState);
     new Audio('./pop.wav').play();
@@ -205,7 +203,7 @@ const Wrapper = styled(motion.section)`
     box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
 
     @media (max-width: 701px) {
-      bottom: 80px;
+      bottom: 90px;
     }
   }
 
