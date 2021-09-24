@@ -8,46 +8,31 @@ export const SpotifyPlayer = () => {
 
   return (
     <Container className="container">
-      <Content className="justify__between">
+      <div className="justify__between">
         <div className="spotify__icon">
           <Icons.Spotify color="#1DB954" size={30} />{' '}
         </div>
 
-        <SpotifyData>
-          <PlayingStatus>{data?.isPlaying ? 'now playing' : 'not listening'}</PlayingStatus>
+        <SpotifyData isPlaying={data?.isPlaying}>
           {!data?.isPlaying ? (
             <h3>Not Playing</h3>
           ) : (
-            <>
+            <a target="_blank" href={data?.songUrl}>
               <div>{data?.artist}</div>
               <div>{data?.title.length > 35 ? data?.title.substring(0, 20) : data?.title}</div>
-            </>
+            </a>
           )}
         </SpotifyData>
-      </Content>
+      </div>
     </Container>
   );
 };
 
-const Content = styled.div`
-  width: 100%;
-`;
+interface IPlaying {
+  isPlaying: boolean;
+}
 
-const PlayingStatus = styled.span`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 30%;
-  border-top-right-radius: 8px;
-  background: #1db954;
-  padding-left: inherit;
-  margin-left: inherit;
-  color: #fff;
-  text-transform: uppercase;
-`;
-
-const SpotifyData = styled.div`
+const SpotifyData = styled.div<IPlaying>`
   position: relative;
   font-size: 0.75rem;
   background: #ffff;
@@ -65,6 +50,22 @@ const SpotifyData = styled.div`
   @media (max-width: 601px) {
     width: 90%;
   }
+
+  &:before {
+    position: absolute;
+    content: '${(props) => (props.isPlaying ? 'listening now' : 'not playing')}';
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 28%;
+    border-top-right-radius: 8px;
+    background: #1db954;
+    opacity: 0.8;
+    padding-left: inherit;
+    margin-left: inherit;
+    color: #fff;
+    text-transform: uppercase;
+  }
 `;
 
 const Container = styled.div`
@@ -78,7 +79,12 @@ const Container = styled.div`
   @media (max-width: 701px) {
     bottom: 10px;
     left: 15px;
-    width: 100%;
+    width: 75%;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
   }
 
   .spotify__icon {
@@ -89,10 +95,9 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  }
 
-  .spotify__data {
+    @media (max-width: 701px) {
+      width: 60px;
+    }
   }
 `;
-
-const PlayingWaves = styled.div``;
