@@ -160,18 +160,20 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             </Nav>
           </div>
 
-          <div className="justify__between"></div>
-          <SpotifyPlayer />
+          <div className="justify__between">
+            <SpotifyPlayer />
 
-          {showContactWidget && (
-            <div className="container">
-              <ContactWidget handleClose={() => setShowContactWidget(false)} />
+            {showContactWidget && (
+              <div className="container">
+                <ContactWidget handleClose={() => setShowContactWidget(false)} />
+              </div>
+            )}
+
+            <div className="contact cursor--pointer" onClick={() => handleToggleContactWidget()}>
+              {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
             </div>
-          )}
-
-          <div className="contact cursor--pointer" onClick={() => handleToggleContactWidget()}>
-            {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
           </div>
+
           <div>{children}</div>
         </motion.div>
       </Wrapper>
