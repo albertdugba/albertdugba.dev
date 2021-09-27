@@ -1,9 +1,8 @@
 import querystring from 'querystring';
 
-const client_id = 'ab8ac3d55d8347d19ef6e2a83cf518fb';
-const client_secret = '515029fd9a6847a8ac1c6d52960ebd57';
-const refresh_token =
-  'AQA2mkqu9S52z6u-sTKyqVqbrrVwGCXbkk4l30uElK-2XjgQlFxiXWn_oL3Ltnydtui7iLbCZKCLf-tKSf8l8BcxqoxeFFvZ-dY03uVSMZGypGzgHY36djk9BfO8yRDN6dI';
+const client_id = process.env.SPOTIFY_CLIENT_KEYS;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;

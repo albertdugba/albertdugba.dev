@@ -49,14 +49,14 @@ const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content,
         <meta content={title} name="description" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={title} />
-        <meta property="og:description" content={title} />
+        <meta property="og:description" content={content} />
         <meta property="og:title" content={title} />
-        <meta property="og:image" content={coverImage} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@vercel" />
+        <meta property="og:image" content={coverImage.url} />
+        <meta name="twitter:card" content={coverImage.url} />
+        <meta name="twitter:site" content="@Albert_Dugba" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={title} />
-        <meta name="twitter:image" content={coverImage} />
+        <meta name="twitter:image" content={coverImage.url} />
       </Head>
       <Wrapper>
         <div className="container">

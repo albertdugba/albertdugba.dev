@@ -192,7 +192,7 @@ const Wrapper = styled(motion.section)`
   .contact {
     position: absolute;
     bottom: 20px;
-    right: 40px;
+    right: 35px;
     z-index: 3000;
     background: var(--secondaryColor);
     padding: 1rem;

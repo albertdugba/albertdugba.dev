@@ -23,7 +23,7 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
 };
 
 export const getServerSideProps = async () => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
+  const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_API}`);
 
   const { posts } = await graphcms.request(
     `
