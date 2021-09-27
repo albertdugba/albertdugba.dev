@@ -1,4 +1,7 @@
 import querystring from 'querystring';
+import { GraphQLClient } from 'graphql-request';
+
+// Spotify Related Service
 
 const client_id = process.env.SPOTIFY_CLIENT_KEYS;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -44,3 +47,6 @@ export const getTopTracks = async () => {
     },
   });
 };
+
+// Graphcms
+export const graphcmsAPi = new GraphQLClient(`${process.env.GRAPHCMS_API}`);

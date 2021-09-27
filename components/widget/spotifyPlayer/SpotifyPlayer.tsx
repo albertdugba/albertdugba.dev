@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import styled from 'styled-components';
 import * as Icons from '@icons/index';
+import { truncateTrack } from '@/lib/utils';
 
 export const SpotifyPlayer = () => {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -17,9 +18,9 @@ export const SpotifyPlayer = () => {
           {!data?.isPlaying ? (
             <h3>Not Playing</h3>
           ) : (
-            <a target="_blank" href={data?.songUrl}>
-              <div>{data?.artist}</div>
-              <div>{data?.title.length > 35 ? data?.title.substring(0, 20) : data?.title}</div>
+            <a style={{ marginTop: '6px' }} target="_blank" href={data?.songUrl}>
+              <div>{truncateTrack(data?.artist, 25)}</div>
+              <div>{truncateTrack(data?.title, 35)}</div>
             </a>
           )}
         </SpotifyData>
@@ -60,10 +61,11 @@ const SpotifyData = styled.div<IPlaying>`
     height: 28%;
     border-top-right-radius: 8px;
     background: #1db954;
-    opacity: 0.8;
+    opacity: 0.9;
     padding-left: inherit;
     margin-left: inherit;
     color: #fff;
+    font-size: 0.7rem;
     text-transform: uppercase;
   }
 `;
@@ -77,7 +79,7 @@ const Container = styled.div`
   border-radius: 9px;
 
   @media (max-width: 701px) {
-    bottom: 75px;
+    bottom: 30px;
     left: 10px;
     width: 75%;
   }

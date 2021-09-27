@@ -1,4 +1,4 @@
-import { getNowPlaying } from '@/lib/spotify';
+import { getNowPlaying } from '@/lib/service';
 import { NextApiResponse, NextApiRequest } from 'next';
 
 export default async (_: NextApiRequest, res: NextApiResponse) => {

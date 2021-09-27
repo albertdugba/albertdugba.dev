@@ -20,3 +20,4 @@ export { default as Circle } from './circle';
 export { default as Rect } from './rect';
 export { default as ChevronBack } from './chevron-back';
 export { default as Spotify } from './spotify';
+export { default as CV } from './cv';

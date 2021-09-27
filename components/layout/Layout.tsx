@@ -2,7 +2,6 @@ import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head';
 import { GraphQLClient } from 'graphql-request';
 import { Backdrop, AnimatedBackdrop } from '../common/backdrop/Backdrop';
 import { IconLinks } from '../common/link/IconLinks';
@@ -11,7 +10,6 @@ import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { ContactWidget } from '../widget/contact/Contact';
 import * as Icon from '@icons/index';
-import useSWR from 'swr';
 import { SpotifyPlayer } from '@/widget/spotifyPlayer/SpotifyPlayer';
 
 interface IProps {
@@ -139,7 +137,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               <SocialLinks
                 className="ml-1"
                 link="https://medium.com/@albert.dugba"
-                component={<Icon.Medium size={25} color="#e1e1e1" />}
+                component={<Icon.CV size={25} color="#e1e1e1" />}
               />
             </div>
 
@@ -154,7 +152,13 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               </li>
               <li className="ml-1 cursor--pointer">
                 <Link href="/">
-                  <Image src="/albertdugba.jpg" width={45} height={45} className="round__border--radius" />
+                  <Image
+                    src="/albertdugba.jpg"
+                    width={45}
+                    height={45}
+                    className="round__border--radius"
+                    alt="Albert Dugba Profile"
+                  />
                 </Link>
               </li>
             </Nav>
@@ -205,7 +209,7 @@ const Wrapper = styled(motion.section)`
     box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
 
     @media (max-width: 701px) {
-      bottom: 90px;
+      bottom: 40px;
     }
   }
 
