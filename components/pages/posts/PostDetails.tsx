@@ -4,18 +4,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-
-interface PostProps {
-  coverImage: any;
-  title: string;
-  content: any;
-  tags: string[];
-  date: any;
-  author: {
-    name: string;
-    id: string;
-  };
-}
+import { PostsProps } from '@/lib/interface';
 
 const components = {
   code({ node, inline, className, children, ...props }: any) {
@@ -36,7 +25,16 @@ const components = {
   },
 };
 
-const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content, author, date, tags }) => {
+const PostDetails: FunctionComponent<PostsProps> = ({
+  coverImage,
+  title,
+  content,
+  postDescription,
+  author,
+  date,
+  tags,
+}) => {
+  console.log(postDescription);
   return (
     <>
       <Head>
@@ -48,8 +46,8 @@ const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content,
         <link href="/favicon.ico" rel="shortcut icon" />
         <meta content={title} name="description" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={title} />
-        <meta property="og:description" content={content} />
+        <meta property="og:site_name" content="albertdugba.dev" />
+        <meta property="og:description" content={postDescription} />
         <meta property="og:title" content={title} />
         <meta property="og:image" content={coverImage.url} />
         <meta name="twitter:card" content={coverImage.url} />
@@ -61,6 +59,7 @@ const PostDetails: FunctionComponent<PostProps> = ({ coverImage, title, content,
       <Wrapper>
         <div className="container">
           <div className="post__image">
+            <button className="mt-1">Back to posts</button>
             <h1>{title}</h1>
             <img src={coverImage.url} alt="Blog" />
           </div>

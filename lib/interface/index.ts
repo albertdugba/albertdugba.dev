@@ -5,7 +5,6 @@ export interface IconProps {
   color: string;
   className?: string;
   onClick?: React.MouseEventHandler<SVGElement>;
-  // handleClose?: React.MouseEventHandler<SVGElement>;
 }
 
 export interface ISocialLinksProps {
@@ -34,6 +33,7 @@ export interface IProjectProps {
   challenges?: string;
   internalRoute?: boolean;
   tag?: string;
+  involvement?: string;
 }
 
 export interface IWorkDetailsProps {
@@ -45,4 +45,23 @@ export interface ILinkProps {
   className?: string;
   children: React.ReactNode;
   as?: string;
+}
+
+// Posts
+export interface PostsProps {
+  coverImage: any;
+  title: string;
+  content: any;
+  tags: string[];
+  date: any;
+  slug: string;
+  postDescription?: string;
+  author: {
+    name: string;
+    id: string;
+  };
+}
+
+export interface PostProps {
+  post: PostsProps[];
 }

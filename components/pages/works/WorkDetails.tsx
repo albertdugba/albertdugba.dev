@@ -16,6 +16,7 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
   slug,
   companyInfo,
   jobDescription,
+  involvement,
   features,
   challenges,
   tech,
@@ -74,7 +75,7 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
       </div>
 
       <Container>
-        <div className="work__carousel mr-1">
+        <div className="container mr-1">
           <ImageSlider projectImages={projectImages} />
         </div>
 
@@ -87,7 +88,7 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
             features={features}
           />
           <div className="line__break"></div>
-          <ProjectTechStack github={github} hrefLink={hrefLink} tech={tech} />
+          <ProjectTechStack github={github} hrefLink={hrefLink} tech={tech} involvement={involvement} />
         </div>
       </Container>
     </section>

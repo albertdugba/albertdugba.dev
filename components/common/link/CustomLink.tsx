@@ -36,5 +36,5 @@ const LinkWrapper = styled.a<ILink>`
   &:hover:before {
     visibility: visible;
     transform: scaleX(1);
-  } 
+  }
 `;

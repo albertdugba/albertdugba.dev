@@ -1,8 +1,11 @@
 import Head from 'next/head';
-import { GraphQLClient } from 'graphql-request';
+import dynamic from 'next/dynamic';
 import { FunctionComponent } from 'react';
 import { IWorkDetailsProps } from '@/lib/interface';
-import { WorkDetails } from '@/pages/works';
+import { graphcmsAPi } from '@/lib/service';
+
+// lazy
+const WorkDetails = dynamic(() => import('@/pages/works').then((component: any) => component.WorkDetails));
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
   return (
@@ -18,9 +21,7 @@ const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_API}`);
-
-  const { works } = await graphcms.request(
+  const { works } = await graphcmsAPi.request(
     `
   query WorkDetailsQuery($slug: String!) {
     works(where: {slug: $slug}) {
@@ -30,6 +31,7 @@ export const getStaticProps = async ({ params }: any) => {
       linkContent
       hrefLink
       jobDescription
+      involvement
       slug
       companyInfo
       features
@@ -52,9 +54,7 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 export const getStaticPaths = async () => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
-
-  const { works } = await graphcms.request(`
+  const { works } = await graphcmsAPi.request(`
   {
     works {
       title

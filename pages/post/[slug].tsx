@@ -1,6 +1,8 @@
-import { GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
-import PostDetails from '@/pages/posts/PostDetails';
+import dynamic from 'next/dynamic';
+import { graphcmsAPi } from '@/lib/service';
+
+const PostDetails = dynamic(() => import('@/pages/posts/PostDetails').then((component: any) => component.PostDetails));
 
 const Post = ({ post }: any) => {
   return (
@@ -14,9 +16,7 @@ const Post = ({ post }: any) => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
-
-  const { post } = await graphcms.request(
+  const { post } = await graphcmsAPi.request(
     `
     query Post($slug: String!) {
       post(where: { slug: $slug }) {
@@ -49,9 +49,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export const getStaticPaths = async () => {
-  const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_API}`);
-
-  const { posts } = await graphcms.request(
+  const { posts } = await graphcmsAPi.request(
     `
     {
       posts {

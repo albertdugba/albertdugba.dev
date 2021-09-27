@@ -76,6 +76,7 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
 
 const Wrapper = styled.div`
   margin-top: 30px;
+
   @media (max-width: 701px) {
     margin-top: 50px;
   }
@@ -99,7 +100,8 @@ const Card = styled(motion.div)`
 
   .link {
     opacity: 0;
-    transition: background 0.4s ease;
+    height: 0%;
+    transition: all 0.4s ease;
   }
 
   &:hover .link,
@@ -108,7 +110,7 @@ const Card = styled(motion.div)`
     top: 100px;
     left: 0;
     right: 0;
-    height: 100%;
+    height: 40%;
     width: 100%;
     background: #fff;
     display: flex;

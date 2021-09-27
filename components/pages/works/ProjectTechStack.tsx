@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as Icons from '@icons/index';
 import { IProjectProps } from '@/lib/interface';
 
-export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefLink, github }) => {
+export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefLink, github, involvement }) => {
   return (
     <Wrapper>
       <div>
@@ -20,7 +20,7 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
         <div className="flex__column">
           <h3>Project Involvement</h3>
           <div className="tag" style={{ color: '#fff', fontWeight: 'bold', marginTop: '-8px', width: '16%' }}>
-            Major
+            {involvement}
           </div>
         </div>
 
