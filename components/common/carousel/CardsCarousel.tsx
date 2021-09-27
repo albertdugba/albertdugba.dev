@@ -40,8 +40,9 @@ export const CardsCarousel: FunctionComponent<ICardProps> = ({ works, posts }) =
                       <Card>
                         <span>{work.tag}</span>
                         <div className="card__body">
+                          {work.projectImage ? <img src={work.projectImage} /> : <h1>{work.title}</h1>}
                           <Link href="/work/[slug]" as={`/work/${work.slug}`}>
-                            {work.projectImage ? <img src={work.projectImage} /> : <h1>{work.title}</h1>}
+                            <h1 className="link">View Project</h1>
                           </Link>
                         </div>
                       </Card>
@@ -95,6 +96,25 @@ const Card = styled(motion.div)`
   position: relative;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
+
+  .link {
+    opacity: 0;
+    transition: background 0.4s ease;
+  }
+
+  &:hover .link,
+  .link h1 {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+  }
 
   .open--link {
     opacity: 0;

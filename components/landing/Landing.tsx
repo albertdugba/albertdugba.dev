@@ -37,8 +37,10 @@ const Landing = () => {
           </p>
           <div>
             <p>
-              I work with technologies like react,redux,typescript,graphQL
+              I work with technologies like react,redux,typescript and graphQL.Ocassionally, I do backend with nodejs
+              and mongodb
             </p>
+
             <p>
               Kindly check out my <NavLink href="/works">works</NavLink> and <NavLink href="/posts">articles</NavLink>
             </p>

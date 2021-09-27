@@ -6,7 +6,7 @@ const Post = ({ post }: any) => {
   return (
     <>
       <Head>
-        <title>Albert Dugba Post - {post.slug}</title>
+        <title>Albert's Blog - {post.slug}</title>
       </Head>
       <PostDetails {...post} />
     </>
@@ -49,7 +49,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export const getStaticPaths = async () => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
+  const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_API}`);
 
   const { posts } = await graphcms.request(
     `

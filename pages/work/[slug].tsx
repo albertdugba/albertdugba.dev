@@ -18,7 +18,7 @@ const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
+  const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_API}`);
 
   const { works } = await graphcms.request(
     `

@@ -77,8 +77,8 @@ const Container = styled.div`
   border-radius: 9px;
 
   @media (max-width: 701px) {
-    bottom: 10px;
-    left: 15px;
+    bottom: 75px;
+    left: 10px;
     width: 75%;
   }
 
