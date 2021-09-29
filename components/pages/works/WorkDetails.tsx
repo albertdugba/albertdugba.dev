@@ -50,7 +50,7 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
             <div className="flex align__center nav__container justify__between">
               <div className="align__center cursor--pointer">
                 <div onClick={() => router.back()}>
-                  <Icons.ChevronBack size={30} color="var(--secondaryColor)" />
+                  <Icons.ChevronBack size={25} color="var(--secondaryColor)" />
                 </div>
                 <motion.img
                   initial={{ opacity: 0 }}
@@ -75,7 +75,7 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
       </div>
 
       <Container>
-        <div className="container mr-1">
+        <div className="container">
           <ImageSlider projectImages={projectImages} />
         </div>
 

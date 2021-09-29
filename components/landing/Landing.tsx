@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import { SocialLinks } from '../common/link';
 import * as Icon from '@icons/index';
 
@@ -12,9 +12,10 @@ const Landing = () => {
         <title>Albert Dugba</title>
       </Head>
       <Wrapper>
-        <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-5%' }}>
+        <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-1%' }}>
           <img
             src="./albertdugba.jpg"
+            alt="Profile Picture"
             style={{
               width: '150px',
               height: '150px',
@@ -59,18 +60,24 @@ const Landing = () => {
             </div>
           </motion.div>
           <Social>
-            <SocialLinks link="https://github.com/albertdugba" component={<Icon.Github size={25} color="#c9bad6" />} />
-            <SocialLinks
-              link="https://www.linkedin.com/in/albertdugba/"
-              component={<Icon.Linkedin size={23} color="#c9bad6" />}
-            />
-            <SocialLinks
-              link="https://twitter.com/Albert_Dugba"
-              component={<Icon.Twitter size={25} color="#c9bad6" />}
-            />
             <SocialLinks
               link="https://medium.com/@albert.dugba"
-              component={<Icon.Medium size={25} color="#c9bad6" />}
+              component={<Icon.CV size={29} color="var(--secondaryColor)" />}
+            />
+            <SocialLinks
+              className="ml-1"
+              link="https://github.com/albertdugba"
+              component={<Icon.Github size={29} color="var(--secondaryColor)" />}
+            />
+            <SocialLinks
+              className="ml-1"
+              link="https://www.linkedin.com/in/albertdugba/"
+              component={<Icon.Linkedin size={29} color="var(--secondaryColor)" />}
+            />
+            <SocialLinks
+              className="ml-1"
+              link="https://twitter.com/Albert_Dugba"
+              component={<Icon.Twitter size={29} color="var(--secondaryColor)" />}
             />
           </Social>
         </motion.div>
@@ -102,7 +109,7 @@ const Social = styled.div`
   margin-top: 10px;
   width: 100%;
 
-  svg:hover {
+  svg :hover {
     fill: var(--primaryColor);
   }
 `;
@@ -138,6 +145,7 @@ const Wrapper = styled(motion.div)`
       height: 7px;
       width: 50%;
       background: #512c70;
+      opacity: 0.8;
       bottom: 2px;
       left: 0;
       transition: all 0.3s ease-in-out;

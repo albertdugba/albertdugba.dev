@@ -1,9 +1,7 @@
+import { Loader } from '@/common/loader/loader';
+
 const ViewAllPosts = () => {
-  return (
-    <div className="container">
-      <h1>View All Posts</h1>
-    </div>
-  );
+  return <Loader />;
 };
 
 export default ViewAllPosts;

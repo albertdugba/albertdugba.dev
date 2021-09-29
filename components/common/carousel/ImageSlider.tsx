@@ -15,7 +15,7 @@ export const ImageSlider: FunctionComponent<IProjectProps> = ({ projectImages })
             <SwiperSlide key={idx}>
               <img
                 style={{
-                  width: '80%',
+                  width: '100%',
                   height: '100%',
                 }}
                 key={idx}

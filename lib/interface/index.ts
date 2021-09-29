@@ -59,6 +59,9 @@ export interface PostsProps {
   author: {
     name: string;
     id: string;
+    picture: {
+      url: string;
+    };
   };
 }
 
