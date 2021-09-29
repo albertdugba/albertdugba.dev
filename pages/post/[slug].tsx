@@ -2,7 +2,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { graphcmsAPi } from '@/lib/service';
 
-const PostDetails = dynamic(() => import('@/pages/posts/PostDetails').then((component: any) => component.PostDetails));
+const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'));
 
 const Post = ({ post }: any) => {
   return (

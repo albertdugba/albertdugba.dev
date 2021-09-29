@@ -3,8 +3,9 @@ import dynamic from 'next/dynamic';
 import { graphcmsAPi } from '@/lib/service';
 import { CardsCarousel } from '@/common/carousel';
 import { IProjectProps } from '@/lib/interface';
+import { Loader } from '@/common/loader/loader';
 
-const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <h1>loading</h1> });
+const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
 
 interface IProps {
   works: IProjectProps[];

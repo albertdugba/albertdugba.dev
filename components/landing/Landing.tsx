@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { SocialLinks } from '../common/link';
 import * as Icon from '@icons/index';
+import { Loader } from '@/common/loader/loader';
 
 const Landing = () => {
   return (

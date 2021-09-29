@@ -4,9 +4,10 @@ import Head from 'next/head';
 import { CardsCarousel } from '@/common/carousel';
 import { graphcmsAPi } from '@/lib/service';
 import { PostProps } from '@/lib/interface';
+import { Loader } from '@/common/loader/loader';
 
 // dynamic imports
-const Layout = dynamic(() => import('@/layout/Layout'));
+const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
 
 interface Props {
   posts: PostProps[];

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { darcula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { PostsProps } from '@/lib/interface';
 
 const components = {
@@ -11,7 +11,7 @@ const components = {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
-        style={materialDark}
+        style={darcula}
         language={match[1]}
         PreTag="div"
         children={String(children).replace(/\n$/, '')}
@@ -34,7 +34,6 @@ const PostDetails: FunctionComponent<PostsProps> = ({
   date,
   tags,
 }) => {
-  console.log(postDescription);
   return (
     <>
       <Head>
