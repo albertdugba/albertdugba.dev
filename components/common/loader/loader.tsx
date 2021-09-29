@@ -1,12 +1,13 @@
 import styled, { keyframes } from 'styled-components';
+import Image from 'next/image';
 
 export const Loader = () => {
   return (
-    <LoaderContainer>
+    <LoaderContainer aria-label="loading Screen">
       <LoaderInner>
-        <img src="/albertdugba.jpg" width={40} height={40} />
+        <Image src="/albertdugba.jpg" width={200} height={200} alt="Loading Screen" />
       </LoaderInner>
-      <h2>loading...</h2>
+      <h1>Loading...</h1>
     </LoaderContainer>
   );
 };
@@ -27,7 +28,7 @@ const LoaderContainer = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  h2 {
+  h1 {
     color: var(--secondaryColor);
     margin-top: 2rem;
   }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import * as Icons from '@icons/index';
 import { SocialLinks } from '.';
+import * as Icons from '@icons/index';
 
 export const IconLinks = () => {
   return (
@@ -12,22 +12,25 @@ export const IconLinks = () => {
         animate={{ opacity: 1, height: '49px' }}
         exit={{ opacity: 0 }}
       >
-        <SocialLinks link="https://github.com/albertdugba" component={<Icons.Github size={25} color="#c9bad6" />} />
-
+        <SocialLinks
+          className="ml-1"
+          link="https://medium.com/@albert.dugba"
+          component={<Icons.CV size={29} color="#e1e1e1" />}
+        />
+        <SocialLinks
+          className="ml-1"
+          link="https://github.com/albertdugba"
+          component={<Icons.Github size={29} color="#e1e1e1" />}
+        />
         <SocialLinks
           className="ml-1"
           link="https://www.linkedin.com/in/albertdugba/"
-          component={<Icons.Linkedin size={23} color="#c9bad6" />}
+          component={<Icons.Linkedin size={29} color="#e1e1e1" />}
         />
         <SocialLinks
           className="ml-1"
           link="https://twitter.com/Albert_Dugba"
-          component={<Icons.Twitter size={25} color="#c9bad6" />}
-        />
-        <SocialLinks
-          className="ml-1"
-          link="https://medium.com/@albert.dugba"
-          component={<Icons.Medium size={29} color="#c9bad6" />}
+          component={<Icons.Twitter size={29} color="#e1e1e1" />}
         />
       </Wrapper>
     </>

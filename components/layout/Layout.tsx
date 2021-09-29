@@ -119,6 +119,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             </div>
 
             <div className="flex social__container">
+              <SocialLinks link="https://medium.com/@albert.dugba" component={<Icon.CV size={25} color="#e1e1e1" />} />
               <SocialLinks
                 className="ml-1"
                 link="https://github.com/albertdugba"
@@ -127,17 +128,12 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               <SocialLinks
                 className="ml-1"
                 link="https://www.linkedin.com/in/albertdugba/"
-                component={<Icon.Linkedin size={23} color="#e1e1e1" />}
+                component={<Icon.Linkedin size={25} color="#e1e1e1" />}
               />
               <SocialLinks
                 className="ml-1"
                 link="https://twitter.com/Albert_Dugba"
                 component={<Icon.Twitter size={25} color="#e1e1e1" />}
-              />
-              <SocialLinks
-                className="ml-1"
-                link="https://medium.com/@albert.dugba"
-                component={<Icon.CV size={25} color="#e1e1e1" />}
               />
             </div>
 

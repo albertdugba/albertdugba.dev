@@ -25,15 +25,18 @@ export const getStaticProps = async ({ params }: any) => {
         content
         slug
         tags
+        date
         coverImage {
           id
           url
         }
         author {
-          id
           name
+          picture{
+            url
+          }
         }
-        date
+      
       }
     }
   `,
