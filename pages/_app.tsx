@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import './slider.scss';
 import '../styles/app.scss';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
