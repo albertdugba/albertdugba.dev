@@ -21,10 +21,6 @@ export const Slide = (props: any) => {
     event.target.style.opacity = 1;
   };
 
-  const { internalRoute, projectImage, title } = props.slide;
-
-  console.log(props.slide);
-
   const current = props.current;
   let classNames = 'slide';
 
@@ -32,6 +28,8 @@ export const Slide = (props: any) => {
   else if (current - 1 === props.index) classNames += ' slide--previous';
   else if (current + 1 === props.index) classNames += ' slide--next';
   else if (current + 1) classNames += ' slide--next';
+
+  const { internalRoute, tag, projectImage, title } = props.slide;
 
   return (
     <li
@@ -41,14 +39,24 @@ export const Slide = (props: any) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="slide__image-wrapper">
-        <img className="slide__image" alt={title} src={projectImage} onLoad={imageLoaded} />
+      <div className="slide__image-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {projectImage ? (
+          <img
+            style={{ maxWidth: '200px' }}
+            className="slide__image"
+            alt={title}
+            src={projectImage}
+            onLoad={imageLoaded}
+          />
+        ) : (
+          <h1>{title}</h1>
+        )}
       </div>
 
-      <article className="slide__content">
-        <h2 className="slide__headline">{title}</h2>
+      <h2 className="slide__headline">{tag}</h2>
+      {/* <article className="slide__content">
         <button className="slide__action btn">View</button>
-      </article>
+      </article> */}
     </li>
   );
 };

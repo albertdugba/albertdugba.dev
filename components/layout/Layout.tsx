@@ -173,8 +173,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
             </div>
           </div>
-
-          {/* <div classsName="timeline">Hello</div> */}
           <div>{children}</div>
         </motion.div>
       </Wrapper>
