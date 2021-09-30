@@ -46,7 +46,6 @@ const PostDetails: FunctionComponent<PostsProps> = ({
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="robots" content="follow, index" />
         <link href="/favicon.ico" rel="shortcut icon" />
-        <meta content={title} name="description" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="albertdugba.dev" />
         <meta property="og:description" content={postDescription} />
@@ -71,10 +70,10 @@ const PostDetails: FunctionComponent<PostsProps> = ({
               <img src={author.picture?.url} alt={author?.name} />
               <div className="flex__column post__author--meta">
                 <div>
-                  <span>{author?.name}</span>
+                  <span className="post__author--name">{author?.name}</span>
 
                   <a target="_blank" href="https://twitter.com/Albert_Dugba">
-                    <span className="follow__button" style={{ marginLeft: '0.4rem' }}>
+                    <span className="follow__link" style={{ marginLeft: '0.4rem' }}>
                       Follow
                     </span>
                   </a>
@@ -124,7 +123,7 @@ const Wrapper = styled.div`
         text-decoration: none;
       }
 
-      .follow__button {
+      .follow__link {
         padding: 0.2rem 0.45rem;
         border-radius: 20px;
         height: 20px;
@@ -133,6 +132,12 @@ const Wrapper = styled.div`
         color: #fff;
         cursor: pointer;
       }
+    }
+
+    &--name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0px;
     }
   }
 
