@@ -22,14 +22,14 @@ const pulse = keyframes`
 const LoaderContainer = styled.div`
   height: 100vh;
   width: 100%;
-  background: var(--black300);
+  background: var(--purple);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
   h1 {
-    color: var(--secondaryColor);
+    color: var(--white);
     margin-top: 2rem;
   }
 `;

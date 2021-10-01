@@ -1,11 +1,19 @@
 :root {
   // colors
-  --purple: rgb(106, 77, 129);
+  --purple: rgb(3, 17, 44);
+  // --purple: rgb(106, 77, 129);
   --white: #fff;
   --black: #000;
   --purple100: #c9bad6;
   --purple200: #360a5c;
   --black300: #030516;
+
+  --x: 0;
+  --y: 0;
+  --d: 50;
+
+  --slide-size: 70vmin;
+  --slide-margin: 4vmin;
 
   // color intentions
   --secondaryColor: var(--purple);

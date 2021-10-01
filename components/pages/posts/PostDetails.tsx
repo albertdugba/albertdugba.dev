@@ -4,9 +4,12 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { PostsProps } from '@/lib/interface';
+import { duotoneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ArrowLeft from '@icons/arrow-left';
+import { useRouter } from 'next/router';
+import { Loader } from '@/common/loader/loader';
+
 // duotoneSpace
 
 const components = {
@@ -14,7 +17,7 @@ const components = {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
-        style={materialDark}
+        style={duotoneDark}
         language={match[1]}
         PreTag="div"
         children={String(children).replace(/\n$/, '')}
@@ -37,6 +40,8 @@ const PostDetails: FunctionComponent<PostsProps> = ({
   date,
   tags,
 }) => {
+  const router = useRouter();
+  console.log(router.isFallback);
   return (
     <>
       <Head>
@@ -54,7 +59,7 @@ const PostDetails: FunctionComponent<PostsProps> = ({
         <meta name="twitter:card" content={coverImage.url} />
         <meta name="twitter:site" content="@Albert_Dugba" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={title} />
+        <meta name="twitter:description" content={postDescription} />
         <meta name="twitter:image" content={coverImage.url} />
       </Head>
       <Wrapper>

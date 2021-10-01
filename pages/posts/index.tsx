@@ -5,6 +5,7 @@ import { CardsCarousel } from '@/common/carousel';
 import { graphcmsAPi } from '@/lib/service';
 import { PostProps } from '@/lib/interface';
 import { Loader } from '@/common/loader/loader';
+import { Slider } from '@/common/slider/Slider';
 
 // dynamic imports
 const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
@@ -19,8 +20,8 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
       <Head>
         <title>My Articles</title>
       </Head>
-      <Layout imageBackground="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80">
-        <CardsCarousel posts={posts} />
+      <Layout imageBackground="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?cs=srgb&dl=pexels-josh-sorenson-1714208.jpg&fm=jpg">
+        <Slider slides={posts} />
       </Layout>
     </>
   );

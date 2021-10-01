@@ -31,7 +31,7 @@ class MyDocument extends Document {
           {this.props.styles}
           <meta charSet="utf-8" />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-          <meta content="width=device-width, initial-scale=1" name="viewport" />
+          {/* <meta content="width=device-width, initial-scale=1" name="viewport" /> */}
           <meta name="robots" content="follow, index" />
           <link href="/favicon.ico" rel="shortcut icon" />
           <meta name="twitter:site" content="@Albert_Dugba" />

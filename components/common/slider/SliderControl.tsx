@@ -1,7 +1,8 @@
+import React from 'react';
 interface ISliderControl {
   type: string;
   title: string;
-  handleClick: () => void;
+  handleClick?: any;
 }
 
 export const SliderControl = ({ type, title, handleClick }: ISliderControl) => {
