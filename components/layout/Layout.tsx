@@ -173,7 +173,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
             </div>
           </div>
-
           <div>{children}</div>
         </motion.div>
       </Wrapper>
@@ -188,6 +187,12 @@ const Wrapper = styled(motion.section)`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+
+  .timeline {
+    height: 70vh;
+    width: 50px;
+    background: red;
+  }
 
   .contact {
     position: absolute;

@@ -12,11 +12,7 @@ export const IconLinks = () => {
         animate={{ opacity: 1, height: '49px' }}
         exit={{ opacity: 0 }}
       >
-        <SocialLinks
-          className="ml-1"
-          link="https://medium.com/@albert.dugba"
-          component={<Icons.CV size={29} color="#e1e1e1" />}
-        />
+        <SocialLinks link="https://medium.com/@albert.dugba" component={<Icons.CV size={29} color="#e1e1e1" />} />
         <SocialLinks
           className="ml-1"
           link="https://github.com/albertdugba"
@@ -52,8 +48,8 @@ const Wrapper = styled(motion.div)`
     z-index: 200;
     background: var(--secondaryColor);
     border-radius: 8px;
-    padding: 0.45rem;
-    height: 49px;
+    padding: 0.55rem;
+    height: 52px;
     width: 100%;
     position: absolute;
     top: 10%;
@@ -64,9 +60,9 @@ const Wrapper = styled(motion.div)`
     &:before {
       content: '';
       position: absolute;
-      top: -5px;
+      top: -8px;
       width: 20px;
-      height: 20px;
+      height: 15px;
       background: var(--secondaryColor);
       transform: rotate(45deg);
     }

@@ -4,9 +4,12 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { PostsProps } from '@/lib/interface';
+import { duotoneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ArrowLeft from '@icons/arrow-left';
+import { useRouter } from 'next/router';
+import { Loader } from '@/common/loader/loader';
+
 // duotoneSpace
 
 const components = {
@@ -14,7 +17,7 @@ const components = {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
-        style={materialDark}
+        style={duotoneDark}
         language={match[1]}
         PreTag="div"
         children={String(children).replace(/\n$/, '')}
@@ -37,6 +40,8 @@ const PostDetails: FunctionComponent<PostsProps> = ({
   date,
   tags,
 }) => {
+  const router = useRouter();
+  console.log(router.isFallback);
   return (
     <>
       <Head>
@@ -46,7 +51,6 @@ const PostDetails: FunctionComponent<PostsProps> = ({
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="robots" content="follow, index" />
         <link href="/favicon.ico" rel="shortcut icon" />
-        <meta content={title} name="description" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="albertdugba.dev" />
         <meta property="og:description" content={postDescription} />
@@ -55,7 +59,7 @@ const PostDetails: FunctionComponent<PostsProps> = ({
         <meta name="twitter:card" content={coverImage.url} />
         <meta name="twitter:site" content="@Albert_Dugba" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={title} />
+        <meta name="twitter:description" content={postDescription} />
         <meta name="twitter:image" content={coverImage.url} />
       </Head>
       <Wrapper>
@@ -71,10 +75,10 @@ const PostDetails: FunctionComponent<PostsProps> = ({
               <img src={author.picture?.url} alt={author?.name} />
               <div className="flex__column post__author--meta">
                 <div>
-                  <span>{author?.name}</span>
+                  <span className="post__author--name">{author?.name}</span>
 
                   <a target="_blank" href="https://twitter.com/Albert_Dugba">
-                    <span className="follow__button" style={{ marginLeft: '0.4rem' }}>
+                    <span className="follow__link" style={{ marginLeft: '0.4rem' }}>
                       Follow
                     </span>
                   </a>
@@ -124,7 +128,7 @@ const Wrapper = styled.div`
         text-decoration: none;
       }
 
-      .follow__button {
+      .follow__link {
         padding: 0.2rem 0.45rem;
         border-radius: 20px;
         height: 20px;
@@ -133,6 +137,12 @@ const Wrapper = styled.div`
         color: #fff;
         cursor: pointer;
       }
+    }
+
+    &--name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0px;
     }
   }
 

@@ -1,10 +1,17 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { graphcmsAPi } from '@/lib/service';
+import { useRouter } from 'next/router';
+import { Loader } from '@/common/loader/loader';
 
 const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'));
 
 const Post = ({ post }: any) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loader />;
+  }
   return (
     <>
       <Head>
@@ -79,7 +86,7 @@ export const getStaticPaths = async () => {
     paths: posts.map(({ slug }: any) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: true,
   };
 };
 

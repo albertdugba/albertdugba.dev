@@ -5,7 +5,7 @@ export const Loader = () => {
   return (
     <LoaderContainer aria-label="loading Screen">
       <LoaderInner>
-        <Image src="/albertdugba.jpg" width={200} height={200} alt="Loading Screen" />
+        <Image src="/albertdugba.jpg" width={100} height={100} alt="Loading Screen" />
       </LoaderInner>
       <h1>Loading...</h1>
     </LoaderContainer>
@@ -22,22 +22,22 @@ const pulse = keyframes`
 const LoaderContainer = styled.div`
   height: 100vh;
   width: 100%;
-  background: var(--black300);
+  background: var(--purple);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
   h1 {
-    color: var(--secondaryColor);
+    color: var(--white);
     margin-top: 2rem;
   }
 `;
 
 const LoaderInner = styled.div`
-  height: 200px;
+  height: 100px;
   position: relative;
-  width: 200px;
+  width: 100px;
   display: flex;
   align-items: center;
 
