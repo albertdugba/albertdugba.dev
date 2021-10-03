@@ -1,10 +1,11 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { graphcmsAPi } from '@/lib/service';
 import { IProjectProps } from '@/lib/interface';
 import { Loader } from '@/common/loader/loader';
 import { Slider } from '@/common/slider/Slider';
+import { graphcmsAPi } from '@/lib/service';
+import { allWorksQuery } from '@/lib/graphql-queries';
 
 const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
 
@@ -24,21 +25,7 @@ const WorksPage: FunctionComponent<IProps> = ({ works }) => (
 );
 
 export const getServerSideProps = async () => {
-  const { works } = await graphcmsAPi.request(`
-  query Works() {
-    works{
-      title
-      linkContent
-      projectImage
-      projectImages
-      hrefLink
-      features
-      slug
-      tag
-      internalRoute
-    }
-  }
-  `);
+  const { works } = await graphcmsAPi.request(allWorksQuery);
 
   return {
     props: {

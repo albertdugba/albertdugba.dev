@@ -83,4 +83,20 @@ const SlideImageWrapper = styled.div`
   }
 `;
 
-export { SliderContainer, SliderWrapper, SliderControls, SlideImageWrapper };
+const SliderHeadline = styled.span`
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  padding: 0.1rem 0.9rem;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+  z-index: 100;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+`;
+
+export { SliderContainer, SliderWrapper, SliderControls, SlideImageWrapper, SliderHeadline };

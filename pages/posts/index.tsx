@@ -6,6 +6,7 @@ import { graphcmsAPi } from '@/lib/service';
 import { PostProps } from '@/lib/interface';
 import { Loader } from '@/common/loader/loader';
 import { Slider } from '@/common/slider/Slider';
+import { allPostsQuery } from '@/lib/graphql-queries';
 
 // dynamic imports
 const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
@@ -28,28 +29,7 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
 };
 
 export const getServerSideProps = async () => {
-  const { posts } = await graphcmsAPi.request(
-    `
-    {
-      posts {
-        id
-        title
-        content
-        slug
-        tags
-        coverImage {
-          id
-          url
-        }
-        author {
-          id
-          name
-        }
-        date
-      }
-    }
-  `
-  );
+  const { posts } = await graphcmsAPi.request(allPostsQuery);
 
   return {
     props: { posts },

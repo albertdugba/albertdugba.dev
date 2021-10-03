@@ -22,7 +22,7 @@ const pulse = keyframes`
 const LoaderContainer = styled.div`
   height: 100vh;
   width: 100%;
-  background: var(--purple);
+  background: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;

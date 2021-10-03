@@ -83,7 +83,7 @@ const Landing = () => {
         </motion.div>
 
         <div className="circle">
-          <Icon.CircleOutline size={80} color="#dfd3d6" />
+          <Icon.CircleOutline size={80} color="var(--colorWhite)" />
         </div>
 
         <div className="triange">
@@ -91,11 +91,11 @@ const Landing = () => {
         </div>
 
         <div className="fing">
-          <Icon.Fing color="#2B0A4B'" size={200} />
+          <Icon.Fing color="var(--primaryColor)" size={200} />
         </div>
 
         <div className="b-circle">
-          <Icon.BigCircle size={90} color="#c9bad6" />
+          <Icon.BigCircle size={90} color="var(--secondaryColor)" />
         </div>
       </Wrapper>
     </>
@@ -120,7 +120,7 @@ const Wrapper = styled(motion.div)`
   justify-content: center;
   min-height: 100vh;
   background: rgb(2, 0, 36);
-  background: #f1e0e3;
+  background: #e4e6eb;
   position: relative;
   overflow: hidden;
   font-size: 0.95rem;
@@ -144,7 +144,7 @@ const Wrapper = styled(motion.div)`
       content: '';
       height: 7px;
       width: 50%;
-      background: #512c70;
+      background: var(--primaryColor);
       opacity: 0.8;
       bottom: 2px;
       left: 0;

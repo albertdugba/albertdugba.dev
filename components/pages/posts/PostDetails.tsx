@@ -86,7 +86,7 @@ const PostDetails: FunctionComponent<PostsProps> = ({
                 <span>{date}</span>
               </div>
             </div>
-            <img src={coverImage.url} alt="Blog" />
+            <img className="post__coverImage" src={coverImage.url} alt="Blog" />
           </div>
         </div>
 
@@ -144,6 +144,10 @@ const Wrapper = styled.div`
       font-weight: 500;
       letter-spacing: 0px;
     }
+  }
+
+  .post__coverImage {
+    width: 100%;
   }
 
   .post__image {

@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { graphcmsAPi } from '@/lib/service';
 import { useRouter } from 'next/router';
 import { Loader } from '@/common/loader/loader';
+import { singlePostQuery } from '@/lib/graphql-queries';
 
 const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'));
 
@@ -23,33 +24,7 @@ const Post = ({ post }: any) => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const { post } = await graphcmsAPi.request(
-    `
-    query Post($slug: String!) {
-      post(where: { slug: $slug }) {
-        id
-        title
-        content
-        slug
-        tags
-        date
-        coverImage {
-          id
-          url
-        }
-        author {
-          name
-          picture{
-            url
-          }
-        }
-      
-      }
-    }
-  `,
-
-    { slug: params.slug }
-  );
+  const { post } = await graphcmsAPi.request(singlePostQuery, { slug: params.slug });
 
   return {
     props: {
@@ -63,20 +38,7 @@ export const getStaticPaths = async () => {
     `
     {
       posts {
-        id
-        title
-        content
         slug
-        tags
-        coverImage {
-          id
-          url
-        }
-        author {
-          id
-          name
-        }
-        date
       }
     }
   `

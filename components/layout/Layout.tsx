@@ -2,44 +2,29 @@ import { useState, FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GraphQLClient } from 'graphql-request';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 import { Backdrop, AnimatedBackdrop } from '../common/backdrop/Backdrop';
 import { IconLinks } from '../common/link/IconLinks';
 import { AnimatePresence } from 'framer-motion';
-import { motion, AnimateSharedLayout } from 'framer-motion';
 import { NavLink, SocialLinks } from '../common/link';
 import { ContactWidget } from '../widget/contact/Contact';
-import * as Icon from '@icons/index';
 import { SpotifyPlayer } from '@/widget/spotifyPlayer/SpotifyPlayer';
+import * as Icon from '@icons/index';
 
 interface IProps {
   imageBackground: string;
   children: ReactNode;
 }
 
-export const getStaticProps = async () => {
-  const graphcms = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/ckovyil8d2u6801xq3snb4dss/master');
+// export const getStaticProps = async () => {
+//   const { works } = await graphcmsAPi.request(worksApiData);
 
-  const { works } = await graphcms.request(`
-  query Works() {
-    works{
-      title
-      linkContent
-      projectImage
-      projectImages
-      hrefLink
-      slug
-      tag
-    }
-  }
-  `);
-
-  return {
-    props: {
-      works,
-    },
-  };
-};
+//   return {
+//     props: {
+//       works,
+//     },
+//   };
+// };
 
 const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -101,14 +86,14 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             {toggleMenu ? (
               <Icon.Times
                 size={35}
-                color="var(--secondaryColor)"
+                color="var(--white)"
                 className="menu__bar"
                 onClick={() => setToggleMenu((preState) => !preState)}
               />
             ) : (
               <Icon.Menu
                 size={35}
-                color="var(--secondaryColor)"
+                color="var(--white)"
                 className="menu__bar"
                 onClick={() => setToggleMenu((preState) => !preState)}
               />
@@ -119,21 +104,24 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             </div>
 
             <div className="flex social__container">
-              <SocialLinks link="https://medium.com/@albert.dugba" component={<Icon.CV size={25} color="#e1e1e1" />} />
+              <SocialLinks
+                link="https://medium.com/@albert.dugba"
+                component={<Icon.CV size={25} color="var(--white)" />}
+              />
               <SocialLinks
                 className="ml-1"
                 link="https://github.com/albertdugba"
-                component={<Icon.Github size={25} color="#e1e1e1" />}
+                component={<Icon.Github size={25} color="var(--white)" />}
               />
               <SocialLinks
                 className="ml-1"
                 link="https://www.linkedin.com/in/albertdugba/"
-                component={<Icon.Linkedin size={25} color="#e1e1e1" />}
+                component={<Icon.Linkedin size={25} color="var(--white)" />}
               />
               <SocialLinks
                 className="ml-1"
                 link="https://twitter.com/Albert_Dugba"
-                component={<Icon.Twitter size={25} color="#e1e1e1" />}
+                component={<Icon.Twitter size={25} color="var(--white)" />}
               />
             </div>
 

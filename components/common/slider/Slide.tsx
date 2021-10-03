@@ -2,7 +2,7 @@ import React, { FunctionComponent, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { SlideImageWrapper } from './styled';
+import { SliderHeadline } from './styled';
 
 interface ISlideProps {
   slide: any;
@@ -69,13 +69,13 @@ export const Slide: FunctionComponent<ISlideProps> = (props) => {
                       src={projectImage}
                       onLoad={imageLoaded}
                     />
-                    <h2 className="slide__headline">{tag}</h2>
+                    <SliderHeadline>{tag}</SliderHeadline>
                   </a>
                 </Link>
               </div>
             ) : (
               <div style={{ zIndex: 2000 }}>
-                <h2 className="slide__headline">{tag}</h2>
+                <SliderHeadline>{tag}</SliderHeadline>
 
                 <a style={{ textDecoration: 'none', color: '#fff' }} target="_blank" href={hrefLink}>
                   <h1>{title}</h1>

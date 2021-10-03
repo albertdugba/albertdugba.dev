@@ -1,13 +1,20 @@
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
 import { FunctionComponent } from 'react';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import { Loader } from '@/common/loader/loader';
 import { IWorkDetailsProps } from '@/lib/interface';
 import { graphcmsAPi } from '@/lib/service';
+import { allWorksQuery, singleWorkQuery } from '@/lib/graphql-queries';
 
 // lazy
 const WorkDetails = dynamic(() => import('@/pages/works').then((component: any) => component.WorkDetails));
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
+  const router = useRouter();
+
+  if (router.isFallback) return <Loader />;
+
   return (
     <>
       <Head>
@@ -21,59 +28,25 @@ const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const { works } = await graphcmsAPi.request(
-    `
-  query WorkDetailsQuery($slug: String!) {
-    works(where: {slug: $slug}) {
-      title
-      projectImage
-      projectImages
-      linkContent
-      hrefLink
-      jobDescription
-      involvement
-      slug
-      companyInfo
-      features
-      challenges
-      tag
-      tech
-      github
-    }
-  }
-  `,
-    {
-      slug: params.slug,
-    }
-  );
+  const { works } = await graphcmsAPi.request(singleWorkQuery, {
+    slug: params.slug,
+  });
 
   return {
     props: {
       works,
     },
+    revalidate: 1,
   };
 };
 export const getStaticPaths = async () => {
-  const { works } = await graphcmsAPi.request(`
-  {
-    works {
-      title
-      linkContent
-      projectImage
-      projectImages
-      hrefLink
-      slug
-      companyInfo
-      tag
-    }
-  }
-`);
+  const { works } = await graphcmsAPi.request(allWorksQuery);
 
   const paths = works.map(({ slug }: any) => ({ params: { slug } }));
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
