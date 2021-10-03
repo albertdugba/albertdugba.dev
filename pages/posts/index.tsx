@@ -1,11 +1,10 @@
 import { FunctionComponent } from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { CardsCarousel } from '@/common/carousel';
-import { graphcmsAPi } from '@/lib/service';
-import { PostProps } from '@/lib/interface';
 import { Loader } from '@/common/loader/loader';
 import { Slider } from '@/common/slider/Slider';
+import { graphcmsAPi } from '@/lib/service';
+import { PostProps } from '@/lib/interface';
 import { allPostsQuery } from '@/lib/graphql-queries';
 
 // dynamic imports

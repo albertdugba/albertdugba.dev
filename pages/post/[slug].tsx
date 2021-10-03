@@ -16,7 +16,7 @@ const Post = ({ post }: any) => {
   return (
     <>
       <Head>
-        <title>Albert's Blog - {post.slug}</title>
+        <title>My Blog - {post.slug}</title>
       </Head>
       <PostDetails {...post} />
     </>

@@ -8,7 +8,6 @@ import { PostsProps } from '@/lib/interface';
 import { duotoneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ArrowLeft from '@icons/arrow-left';
 import { useRouter } from 'next/router';
-import { Loader } from '@/common/loader/loader';
 
 // duotoneSpace
 

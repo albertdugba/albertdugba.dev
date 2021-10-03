@@ -7,7 +7,7 @@ import { IWorkDetailsProps } from '@/lib/interface';
 import { graphcmsAPi } from '@/lib/service';
 import { allWorksQuery, singleWorkQuery } from '@/lib/graphql-queries';
 
-// lazy
+// lazy loading
 const WorkDetails = dynamic(() => import('@/pages/works').then((component: any) => component.WorkDetails));
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {

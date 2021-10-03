@@ -3,6 +3,10 @@
 @import 'utilities';
 @import 'slider';
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -11,15 +15,11 @@ body {
   scroll-behavior: smooth;
   line-height: 23px;
   letter-spacing: 0.7px;
-  color: #170527dd;
+  color: #010b13dd;
 }
 
 pre {
   border-radius: 20px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 button {
@@ -31,7 +31,7 @@ button {
   cursor: pointer;
   font-family: inherit;
   text-transform: uppercase;
-  background-color: var(--secondaryColor);
+  background-color: var(--primaryColor);
   color: #fff;
   padding: 0.6rem 1.2rem;
   height: 40px;
