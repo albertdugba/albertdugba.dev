@@ -27,10 +27,10 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
 
         <div className="flex__column">
           <div className="align__center">
-            <Icons.World size={20} color="var(--secondaryColor)" /> <h3 className="ml-1">Website</h3>
+            <Icons.World size={20} color="var(--secondaryColor)" /> <h3 style={{ marginLeft: '0.4rem' }}>Website</h3>
           </div>
           <div style={{ marginTop: '-10px', paddingBottom: '3rem' }}>
-            <a target="_blank" href={hrefLink}>
+            <a target="_blank" href={hrefLink} style={{ color: 'var(--primaryColor)', textDecoration: 'none' }}>
               {hrefLink}
             </a>
           </div>

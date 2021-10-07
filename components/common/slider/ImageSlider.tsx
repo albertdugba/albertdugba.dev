@@ -27,7 +27,7 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primaryColor);
+  background-color: var(--secondaryColor);
 
   .slider--image {
     width: 100vw;
@@ -36,5 +36,6 @@ const ImageContainer = styled.div`
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 7px;
+    box-shadow: 0 3px 90px rgba(0, 0, 0, 0.8);
   }
 `;
