@@ -1,4 +1,4 @@
-import { useRef, FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { IProjectProps } from '@/lib/interface';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -31,11 +31,14 @@ const ImageContainer = styled.div`
 
   .slider--image {
     width: 100vw;
-    max-width: 90%;
+    max-width: 85%;
     height: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 3rem;
     border-radius: 7px;
     box-shadow: 0 3px 90px rgba(0, 0, 0, 0.8);
+
+    @media (max-width: 701px) {
+      margin: 0px;
+    }
   }
 `;
