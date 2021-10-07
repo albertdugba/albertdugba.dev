@@ -74,12 +74,10 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
           </ShowNavbar>
         )}
       </div>
-
+      <div>
+        <ImageSlider projectImages={projectImages} />
+      </div>
       <Container>
-        <div className="container">
-          <ImageSlider projectImages={projectImages} />
-        </div>
-
         <div>
           <ProjectInfo
             title={title}

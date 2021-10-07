@@ -36,7 +36,7 @@ export const ProjectInfo: FunctionComponent<IProjectProps> = ({
 
 const Wrapper = styled.div`
   .project__overview {
-    background: #ece8f0c6;
+    background: #ddecf5c5;
     padding: 1rem;
     border-radius: 5px;
   }

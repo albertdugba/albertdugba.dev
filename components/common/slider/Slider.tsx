@@ -43,10 +43,12 @@ export const Slider: FunctionComponent<ISlidesProps> = ({ slides }) => {
         ))}
       </SliderWrapper>
 
-      <div className="slider__controls">
-        <SliderControl type="previous" title="Go to previous slide" handleClick={handlePreviousClick} />
-        <SliderControl type="next" title="Go to next slide" handleClick={handleNextClick} />
-      </div>
+      {slides?.length > 2 ? (
+        <div className="slider__controls">
+          <SliderControl type="previous" title="Go to previous slide" handleClick={handlePreviousClick} />
+          <SliderControl type="next" title="Go to next slide" handleClick={handleNextClick} />
+        </div>
+      ) : null}
     </SliderContainer>
   );
 };

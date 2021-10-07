@@ -112,7 +112,7 @@
 .slide__image-wrapper {
   background-color: var(--black);
   border-radius: 4%;
-  height: 110%;
+  height: 100%;
   left: 0%;
   overflow: hidden;
   position: absolute;
@@ -135,7 +135,7 @@
     box-shadow: inset 30px 100px -120px var(--primaryColor), inset 0px -10px 50px -450px var(--primaryColor);
   }
 
-  @media (min-width: 801px) {
+  @media (min-width: 701px) {
     height: 55vh;
     // margin-top: 5px;
   }
