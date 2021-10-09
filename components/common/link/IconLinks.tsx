@@ -12,18 +12,25 @@ export const IconLinks = () => {
         animate={{ opacity: 1, height: '49px' }}
         exit={{ opacity: 0 }}
       >
-        <SocialLinks link="https://medium.com/@albert.dugba" component={<Icons.CV size={29} color="#e1e1e1" />} />
         <SocialLinks
+          arialLabel="CV"
+          link="https://medium.com/@albert.dugba"
+          component={<Icons.CV size={29} color="#e1e1e1" />}
+        />
+        <SocialLinks
+          arialLabel="Github"
           className="ml-1"
           link="https://github.com/albertdugba"
           component={<Icons.Github size={29} color="#e1e1e1" />}
         />
         <SocialLinks
+          arialLabel="Linkedin"
           className="ml-1"
           link="https://www.linkedin.com/in/albertdugba/"
           component={<Icons.Linkedin size={29} color="#e1e1e1" />}
         />
         <SocialLinks
+          arialLabel="Twitter"
           className="ml-1"
           link="https://twitter.com/Albert_Dugba"
           component={<Icons.Twitter size={29} color="#e1e1e1" />}
