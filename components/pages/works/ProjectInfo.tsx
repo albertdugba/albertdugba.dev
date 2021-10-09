@@ -41,6 +41,14 @@ const Wrapper = styled.div`
     border-radius: 5px;
   }
 
+  h1 {
+    font-size: 2.8rem;
+
+    @media (max-width: 801px) {
+      font-size: 2rem;
+    }
+  }
+
   .project__contribution {
   }
 `;

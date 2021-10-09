@@ -11,6 +11,7 @@ export interface ISocialLinksProps {
   link: string;
   component?: any;
   className?: string;
+  arialLabel: string;
 }
 
 export interface ICardProps {

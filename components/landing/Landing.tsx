@@ -10,6 +10,7 @@ const Landing = () => {
     <>
       <Head>
         <title>Albert Dugba</title>
+        <meta name="albertdugba.dev" content="Portfolio / Blog Website" />
       </Head>
       <Wrapper>
         <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-1%' }}>
@@ -61,20 +62,24 @@ const Landing = () => {
           </motion.div>
           <Social>
             <SocialLinks
+              arialLabel="CV"
               link="https://medium.com/@albert.dugba"
               component={<Icon.CV size={29} color="var(--secondaryColor)" />}
             />
             <SocialLinks
+              arialLabel="Github"
               className="ml-1"
               link="https://github.com/albertdugba"
               component={<Icon.Github size={29} color="var(--secondaryColor)" />}
             />
             <SocialLinks
+              arialLabel="Linkedin"
               className="ml-1"
               link="https://www.linkedin.com/in/albertdugba/"
               component={<Icon.Linkedin size={29} color="var(--secondaryColor)" />}
             />
             <SocialLinks
+              arialLabel="Twitter"
               className="ml-1"
               link="https://twitter.com/Albert_Dugba"
               component={<Icon.Twitter size={29} color="var(--secondaryColor)" />}
@@ -129,8 +134,8 @@ const Wrapper = styled(motion.div)`
     display: inline-block;
     color: var(--secondaryColor);
     text-decoration: none;
-    font-weight: bolder;
-    font-size: 1.125rem !important;
+    font-weight: 800;
+    font-size: 1rem !important;
     position: relative;
 
     &:hover:after {
@@ -162,7 +167,7 @@ const Wrapper = styled(motion.div)`
     position: absolute;
     bottom: -30px;
     left: 0;
-    transform: rotateX(180deg);
+    transform: rotateX(-40);
   }
 
   .fing {

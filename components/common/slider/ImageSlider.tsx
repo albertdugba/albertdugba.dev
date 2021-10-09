@@ -27,17 +27,19 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondaryColor);
+  background-color: #e1e1e1;
 
   .slider--image {
     width: 100vw;
-    max-width: 85%;
+    max-width: 70%;
     height: auto;
-    margin-left: 3rem;
+    display: block;
+    margin: auto;
     border-radius: 7px;
-    box-shadow: 0 3px 90px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
 
     @media (max-width: 701px) {
+      max-width: 82%;
       margin: 0px;
     }
   }

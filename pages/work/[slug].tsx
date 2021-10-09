@@ -19,6 +19,7 @@ const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
     <>
       <Head>
         <title>Project - {works[0].slug}</title>
+        <meta name={works[0].title} content={works[0].slug} />
       </Head>
       {works.map((work: any) => (
         <WorkDetails key={work.slug} {...work} />

@@ -17,6 +17,7 @@ const WorksPage: FunctionComponent<IProps> = ({ works }) => (
   <>
     <Head>
       <title>My Works</title>
+      <meta name="My Works" content="Some selected projects I have worked on" />
     </Head>
     <Layout imageBackground="./tech-doodle.png">
       <Slider slides={works} />

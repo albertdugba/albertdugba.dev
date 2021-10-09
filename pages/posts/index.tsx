@@ -19,8 +19,10 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
     <>
       <Head>
         <title>My Articles</title>
+        <meta name="Blog Posts" content="Featured Blog posts" />
       </Head>
-      <Layout imageBackground="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?cs=srgb&dl=pexels-josh-sorenson-1714208.jpg&fm=jpg">
+
+      <Layout imageBackground="./blog-bg.jpg">
         <Slider slides={posts} />
       </Layout>
     </>

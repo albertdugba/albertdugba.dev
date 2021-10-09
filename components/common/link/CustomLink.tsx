@@ -28,7 +28,7 @@ const LinkWrapper = styled.a<ILink>`
     height: 2px;
     bottom: 0;
     margin: -1px 0;
-    background-color: #926e92;
+    background-color: var(--colorWhite);
     visibility: visible;
     transform: scaleX(0);
     transition: all 0.4s ease-in-out 0s;

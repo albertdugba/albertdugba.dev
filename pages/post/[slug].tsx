@@ -16,7 +16,23 @@ const Post = ({ post }: any) => {
   return (
     <>
       <Head>
-        <title>My Blog - {post.slug}</title>
+        <title>{post.title}</title>
+        <meta charSet="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="robots" content="follow, index" />
+        <link href="/favicon.ico" rel="shortcut icon" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="albertdugba.dev" />
+        <meta property="og:description" content={post.postDescription} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:image" content={post.coverImage.url} />
+        <meta name="twitter:card" content={post.coverImage.url} />
+        <meta name="twitter:site" content="@Albert_Dugba" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.postDescription} />
+        <meta name="twitter:image" content={post.coverImage.url} />
+        <meta name="Blog Posts" content="Featured articles" />
       </Head>
       <PostDetails {...post} />
     </>

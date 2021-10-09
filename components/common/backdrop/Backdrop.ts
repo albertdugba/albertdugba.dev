@@ -20,5 +20,5 @@ export const AnimatedBackdrop = styled(motion.div)`
   right: 0;
   height: 100vh;
   width: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.83);
 `;

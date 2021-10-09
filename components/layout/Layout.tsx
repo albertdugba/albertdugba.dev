@@ -66,7 +66,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           <motion.div initial="exit" animate="enter" exit="exit" className="background">
             <motion.div
               variants={imageVariants}
-              className="background__image"
+              // className="background__image"
               style={{
                 backgroundImage: `url(${imageBackground})`,
                 backgroundPosition: 'center',
@@ -105,20 +105,24 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
 
             <div className="flex social__container">
               <SocialLinks
+                arialLabel="CV"
                 link="https://medium.com/@albert.dugba"
                 component={<Icon.CV size={25} color="var(--white)" />}
               />
               <SocialLinks
+                arialLabel="Github"
                 className="ml-1"
                 link="https://github.com/albertdugba"
                 component={<Icon.Github size={25} color="var(--white)" />}
               />
               <SocialLinks
+                arialLabel="Linkedin"
                 className="ml-1"
                 link="https://www.linkedin.com/in/albertdugba/"
                 component={<Icon.Linkedin size={25} color="var(--white)" />}
               />
               <SocialLinks
+                arialLabel="Twitter"
                 className="ml-1"
                 link="https://twitter.com/Albert_Dugba"
                 component={<Icon.Twitter size={25} color="var(--white)" />}
@@ -136,13 +140,15 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               </li>
               <li className="ml-1 cursor--pointer">
                 <Link href="/">
-                  <Image
-                    src="/albertdugba.jpg"
-                    width={45}
-                    height={45}
-                    className="round__border--radius"
-                    alt="Albert Dugba Profile"
-                  />
+                  <a href="/">
+                    <Image
+                      src="/albertdugba.jpg"
+                      width={45}
+                      height={45}
+                      className="round__border--radius"
+                      alt="Albert Dugba Profile"
+                    />
+                  </a>
                 </Link>
               </li>
             </Nav>
@@ -175,12 +181,6 @@ const Wrapper = styled(motion.section)`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-
-  .timeline {
-    height: 70vh;
-    width: 50px;
-    background: red;
-  }
 
   .contact {
     position: absolute;

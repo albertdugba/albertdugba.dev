@@ -42,7 +42,7 @@ export const Slide: FunctionComponent<ISlideProps> = (props) => {
   else if (current + 1 === props.index) classNames += ' slide--next';
   else if (current + 1) classNames += ' slide--next';
 
-  const { internalRoute, tag, projectImage, title, tags, slug, hrefLink, coverImage, date } = props.slide;
+  const { internalRoute, tag, projectImage, title, tags, slug, hrefLink, coverImage } = props.slide;
 
   return (
     <>
@@ -61,9 +61,9 @@ export const Slide: FunctionComponent<ISlideProps> = (props) => {
             {internalRoute ? (
               <div style={{ zIndex: 20000 }}>
                 <Link href="/work/[slug]" as={`/work/${slug}`}>
-                  <a href={hrefLink}>
+                  <a rel="noopener" href={hrefLink}>
                     <img
-                      style={{ maxWidth: '200px' }}
+                      style={{ maxWidth: '200px', height: 'auto' }}
                       className="slide__image"
                       alt={title}
                       src={projectImage}
@@ -92,13 +92,22 @@ export const Slide: FunctionComponent<ISlideProps> = (props) => {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="slide__image-wrapper" style={{ backgroundImage: `url(${coverImage.url})` }}>
+          <div
+            className="slide__image-wrapper bg-image"
+            style={{
+              backgroundImage: `url(${coverImage.url})`,
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              width: '100%',
+            }}
+          >
             <CardInfo>
               <Link href="/post/[slug]" as={`/post/${slug}`}>
                 <a>
                   <h2>{title}</h2>
-                  {tags?.map((tag: string) => (
-                    <span>#{tag}</span>
+                  {tags?.map((tag: string, idx: number) => (
+                    <span key={idx}>#{tag}</span>
                   ))}
                 </a>
               </Link>

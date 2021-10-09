@@ -30,37 +30,9 @@ const components = {
   },
 };
 
-const PostDetails: FunctionComponent<PostsProps> = ({
-  coverImage,
-  title,
-  content,
-  postDescription,
-  author,
-  date,
-  tags,
-}) => {
-  const router = useRouter();
-  console.log(router.isFallback);
+const PostDetails: FunctionComponent<PostsProps> = ({ coverImage, title, content, author, date, tags }) => {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta name="robots" content="follow, index" />
-        <link href="/favicon.ico" rel="shortcut icon" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="albertdugba.dev" />
-        <meta property="og:description" content={postDescription} />
-        <meta property="og:title" content={title} />
-        <meta property="og:image" content={coverImage.url} />
-        <meta name="twitter:card" content={coverImage.url} />
-        <meta name="twitter:site" content="@Albert_Dugba" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={postDescription} />
-        <meta name="twitter:image" content={coverImage.url} />
-      </Head>
       <Wrapper>
         <div className="container">
           <div className="post__image">
@@ -91,6 +63,11 @@ const PostDetails: FunctionComponent<PostsProps> = ({
 
         <div className="post__content">
           <ReactMarkdown children={content} components={components} />
+          {tags.map((tag) => (
+            <span className="tag" key={tag}>
+              #{tag}
+            </span>
+          ))}
         </div>
       </Wrapper>
     </>
@@ -112,6 +89,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+
     img {
       height: 45px;
       width: 45px;
@@ -146,7 +124,8 @@ const Wrapper = styled.div`
   }
 
   .post__coverImage {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .post__image {
@@ -156,6 +135,7 @@ const Wrapper = styled.div`
     .post__title {
       line-height: 1.5;
       font-size: 1.7rem;
+      font-weight: 700;
 
       @media (min-width: 801px) {
         font-size: 2.5rem;
@@ -171,16 +151,59 @@ const Wrapper = styled.div`
     padding: 1rem;
     width: 100%;
     margin: auto;
+    padding-bottom: 3rem;
+
+    h2 {
+      font-size: 1.8rem;
+      line-height: 1.4;
+    }
+
+    .tag {
+      background: var(--primaryColor);
+      color: #fff;
+      border-radius: 7px;
+      padding: 0.3rem 0.4rem;
+      margin-right: 1rem;
+      font-size: 0.85rem;
+    }
 
     a {
-      color: var(--primaryColor);
+      display: inline-block;
+      color: var(--secondaryColor);
       text-decoration: none;
-      font-weight: 800;
+      font-weight: bolder;
+      /* font-size: 1.125rem !important; */
+      position: relative;
+
+      &:hover:after {
+        left: 0;
+        height: 7px;
+        width: 100%;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        height: 7px;
+        width: 50%;
+        background: var(--primaryColor);
+        opacity: 0.8;
+        bottom: 2px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+      }
     }
 
     p code {
       font-weight: bold;
       font-size: 1rem;
+    }
+
+    p img {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
     }
 
     div {
@@ -189,6 +212,11 @@ const Wrapper = styled.div`
 
     @media (min-width: 801px) {
       max-width: 70%;
+
+      h1 {
+        font-size: 1.2rem;
+        line-height: 1.2;
+      }
     }
   }
 `;

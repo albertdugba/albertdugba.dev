@@ -63,7 +63,7 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
               </div>
               <ul>
                 <li style={{ listStyle: 'none' }}>
-                  <a target="_blank" href={hrefLink}>
+                  <a rel="noopener" target="_blank" href={hrefLink}>
                     <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                       Visit site
                     </motion.button>
@@ -74,22 +74,19 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
           </ShowNavbar>
         )}
       </div>
-      <div>
-        <ImageSlider projectImages={projectImages} />
-      </div>
-      <Container>
-        <div>
-          <ProjectInfo
-            title={title}
-            jobDescription={jobDescription}
-            companyInfo={companyInfo}
-            challenges={challenges}
-            features={features}
-          />
-          <div className="line__break"></div>
-          <ProjectTechStack github={github} hrefLink={hrefLink} tech={tech} involvement={involvement} />
-        </div>
-      </Container>
+
+      <ImageSlider projectImages={projectImages} />
+      <InfoContainer className="container">
+        <ProjectInfo
+          title={title}
+          jobDescription={jobDescription}
+          companyInfo={companyInfo}
+          challenges={challenges}
+          features={features}
+        />
+        <div className="line__break"></div>
+        <ProjectTechStack github={github} hrefLink={hrefLink} tech={tech} involvement={involvement} />
+      </InfoContainer>
     </section>
   );
 };
@@ -105,18 +102,22 @@ const ShowNavbar = styled(motion.section)`
   box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
 
   .nav__container {
-    max-width: 85%;
+    max-width: 90%;
     margin: auto;
   }
 `;
 
-const Container = styled(motion.div)`
-  max-width: 85%;
+const InfoContainer = styled(motion.div)`
+  padding: 2rem;
+  max-width: 90%;
   margin: auto;
   display: flex;
   height: 100vh;
-  width: 100%;
   flex-direction: column;
+
+  @media (max-width: 801px) {
+    max-width: 100%;
+  }
 
   .wordDetails span {
     font-size: 1.2rem;

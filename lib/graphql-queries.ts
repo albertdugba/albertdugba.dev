@@ -66,6 +66,7 @@ query Post($slug: String!) {
       slug
       tags
       date
+      postDescription
       coverImage {
         id
         url

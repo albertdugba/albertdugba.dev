@@ -38,7 +38,7 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="@Albert_Dugba" />
           <meta name="author" content="Albert Dugba" />
           <meta
-            name="keywords"
+            name="albertdugba.dev"
             property="og:description"
             content="Albert Dugba, albertdugba.dev, albert dugba, dugba, albertdev, frontend engineer, software, UI Engineer, JavaScript, Ghana"
           />
