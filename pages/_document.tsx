@@ -31,24 +31,27 @@ class MyDocument extends Document {
           {this.props.styles}
           <meta charSet="utf-8" />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-          {/* <meta content="width=device-width, initial-scale=1" name="viewport" /> */}
           <meta name="robots" content="follow, index" />
           <link href="/favicon.ico" rel="shortcut icon" />
+          <meta name="description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+
+          <meta itemProp="name" content="Albert Dugba - Software Engineer" />
+          <meta itemProp="description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+          <meta itemProp="image" content="https://albertdugba.dev/albertdugba.jpg" />
+
+          <meta property="og:url" content="https://albertdugba.dev" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Albert Dugba - Software Engineer" />
+          <meta property="og:description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+          <meta property="og:image" content="https://albertdugba.dev/albertdugba.jpg" />
+
+          <meta name="twitter:card" content="https://albertdugba.dev/albertdugba.jpg" />
+          <meta name="twitter:title" content="Albert Dugba - Frontend Engineer" />
+          <meta name="twitter:description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
           <meta name="twitter:site" content="@Albert_Dugba" />
           <meta name="twitter:title" content="@Albert_Dugba" />
           <meta name="author" content="Albert Dugba" />
-          <meta
-            name="albertdugba.dev"
-            property="og:description"
-            content="Albert Dugba, albertdugba.dev, albert dugba, dugba, albertdev, frontend engineer, software, UI Engineer, JavaScript, Ghana"
-          />
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="albertdugba.dev" />
-          <meta property="og:url" content="https://albertdugba.dev/" />
-          <meta property="og:locale" content="en-US" />
-          <meta property="og:type" content="website" />
-          <meta property="og:description" content="Hi, I&#x27;m Albert Dugba, Software Engineer." />
-          <meta name="twitter:site" content="@Albert_Dugba" />
+
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`} />
 
           <script

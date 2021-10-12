@@ -142,7 +142,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
                 <Link href="/">
                   <a href="/">
                     <Image
-                      src="/albertdugba.jpg"
+                      src="/albertdugba.webp"
                       width={45}
                       height={45}
                       className="round__border--radius"

@@ -9,13 +9,35 @@ const Landing = () => {
   return (
     <>
       <Head>
-        <title>Albert Dugba</title>
-        <meta name="albertdugba.dev" content="Portfolio / Blog Website" />
+        <title>Albert Dugba - Software Engineer</title>
+        <meta charSet="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta name="robots" content="follow, index" />
+        <link href="/favicon.ico" rel="shortcut icon" />
+        <meta name="description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+
+        <meta itemProp="name" content="Albert Dugba - Software Engineer" />
+        <meta itemProp="description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+        <meta itemProp="image" content="https://albertdugba.dev/albertdugba.jpg" />
+
+        <meta property="og:url" content="https://albertdugba.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Albert Dugba - Software Engineer" />
+        <meta property="og:description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+        <meta property="og:image" content="https://albertdugba.dev/albertdugba.jpg" />
+
+        <meta name="twitter:card" content="https://albertdugba.dev/albertdugba.jpg" />
+        <meta name="twitter:title" content="Albert Dugba - Frontend Engineer" />
+        <meta name="twitter:description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
+        <meta name="twitter:site" content="@Albert_Dugba" />
+        <meta name="twitter:title" content="@Albert_Dugba" />
+        <meta name="author" content="Albert Dugba" />
+        <meta name="albertdugba.dev" content="Portfolio website | Blog " />
       </Head>
       <Wrapper>
         <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-1%' }}>
           <img
-            src="./albertdugba.jpg"
+            src="./albertdugba.webp"
             alt="Profile Picture"
             style={{
               width: '150px',
@@ -44,7 +66,7 @@ const Landing = () => {
             </p>
             <div>
               <p>
-                I work with technologies like react,redux,typescript and graphQL.Ocassionally, I do backend with nodejs
+                I work with technologies like react,redux,typescript and graphQL. Ocassionally, I do backend with nodejs
                 and mongodb
               </p>
 

@@ -22,7 +22,7 @@ const AllPosts: FunctionComponent<Props> = ({ posts }) => {
         <meta name="Blog Posts" content="Featured Blog posts" />
       </Head>
 
-      <Layout imageBackground="./blog-bg.jpg">
+      <Layout imageBackground="./blog-bg.webp">
         <Slider slides={posts} />
       </Layout>
     </>

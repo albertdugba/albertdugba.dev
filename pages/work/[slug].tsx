@@ -8,7 +8,7 @@ import { graphcmsAPi } from '@/lib/service';
 import { allWorksQuery, singleWorkQuery } from '@/lib/graphql-queries';
 
 // lazy loading
-const WorkDetails = dynamic(() => import('@/pages/works').then((component: any) => component.WorkDetails));
+const WorkDetails = dynamic(() => import('@/pages/works/WorkDetails'), { loading: () => <Loader /> });
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
   const router = useRouter();

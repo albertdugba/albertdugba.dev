@@ -5,7 +5,7 @@ export const Loader = () => {
   return (
     <LoaderContainer aria-label="loading Screen">
       <LoaderInner>
-        <Image src="/albertdugba.jpg" width={100} height={100} alt="Loading Screen" />
+        <Image src="/albertdugba.webp" width={100} height={100} alt="Loading Screen" />
       </LoaderInner>
       <h1>Loading...</h1>
     </LoaderContainer>

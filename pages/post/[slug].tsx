@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { Loader } from '@/common/loader/loader';
 import { singlePostQuery } from '@/lib/graphql-queries';
 
-const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'));
+const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'), { loading: () => <Loader /> });
 
 const Post = ({ post }: any) => {
   const router = useRouter();

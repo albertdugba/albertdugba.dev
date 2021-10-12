@@ -7,7 +7,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { PostsProps } from '@/lib/interface';
 import { duotoneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ArrowLeft from '@icons/arrow-left';
-import { useRouter } from 'next/router';
 
 // duotoneSpace
 
@@ -133,6 +132,9 @@ const Wrapper = styled.div`
     margin: auto;
 
     .post__title {
+      font-family: 'Product Sans Bold';
+      font-style: normal;
+      font-weight: normal;
       line-height: 1.5;
       font-size: 1.7rem;
       font-weight: 700;
@@ -156,6 +158,10 @@ const Wrapper = styled.div`
     h2 {
       font-size: 1.8rem;
       line-height: 1.4;
+
+      @media (max-width: 701px) {
+        font-size: 1.45rem;
+      }
     }
 
     .tag {

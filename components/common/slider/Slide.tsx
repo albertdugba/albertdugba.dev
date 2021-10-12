@@ -134,6 +134,7 @@ const CardInfo = styled.div`
     display: block;
     text-decoration: none;
     color: #fff;
+    line-height: 1.5;
   }
 
   span {

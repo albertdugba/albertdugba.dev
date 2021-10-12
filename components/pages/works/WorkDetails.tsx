@@ -9,7 +9,7 @@ import { IProjectProps } from '../../../lib/interface';
 import { ImageSlider } from '@/common/slider/ImageSlider';
 import * as Icons from '@icons/index';
 
-export const WorkDetails: FunctionComponent<IProjectProps> = ({
+const WorkDetails: FunctionComponent<IProjectProps> = ({
   title,
   hrefLink,
   projectImages,
@@ -90,6 +90,8 @@ export const WorkDetails: FunctionComponent<IProjectProps> = ({
     </section>
   );
 };
+
+export default WorkDetails;
 
 /**
  * @styles
