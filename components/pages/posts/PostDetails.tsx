@@ -47,7 +47,7 @@ const PostDetails: FunctionComponent<PostsProps> = ({ coverImage, title, content
                 <div>
                   <span className="post__author--name">{author?.name}</span>
 
-                  <a target="_blank" href="https://twitter.com/Albert_Dugba">
+                  <a target="_blank" rel="noopener" aria-label="Follow-me link" href="https://twitter.com/Albert_Dugba">
                     <span className="follow__link" style={{ marginLeft: '0.4rem' }}>
                       Follow
                     </span>
@@ -56,7 +56,9 @@ const PostDetails: FunctionComponent<PostsProps> = ({ coverImage, title, content
                 <span>{date}</span>
               </div>
             </div>
-            <img className="post__coverImage" src={coverImage.url} alt="Blog" />
+            <div className="post__coverImage">
+              <img src={coverImage.url} alt="Blog" />
+            </div>
           </div>
         </div>
 
@@ -128,7 +130,10 @@ const Wrapper = styled.div`
   }
 
   .post__image {
-    max-width: 100%;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
     margin: auto;
 
     .post__title {
@@ -178,19 +183,18 @@ const Wrapper = styled.div`
       color: var(--secondaryColor);
       text-decoration: none;
       font-weight: bolder;
-      /* font-size: 1.125rem !important; */
       position: relative;
 
       &:hover:after {
         left: 0;
-        height: 7px;
+        height: 5px;
         width: 100%;
       }
 
       &:after {
         position: absolute;
         content: '';
-        height: 7px;
+        height: 5px;
         width: 50%;
         background: var(--primaryColor);
         opacity: 0.8;

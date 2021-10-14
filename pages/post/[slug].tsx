@@ -5,13 +5,15 @@ import { useRouter } from 'next/router';
 import { Loader } from '@/common/loader/loader';
 import { singlePostQuery } from '@/lib/graphql-queries';
 
-const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'), { loading: () => <Loader /> });
+const PostDetails = dynamic(() => import('@/pages/posts/PostDetails'), {
+  loading: () => <Loader title="Loading Post Page" />,
+});
 
 const Post = ({ post }: any) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <Loader />;
+    return <Loader title="Loading Post Page" />;
   }
   return (
     <>

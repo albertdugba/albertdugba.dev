@@ -6,6 +6,24 @@ import { SocialLinks } from '../common/link';
 import * as Icon from '@icons/index';
 
 const Landing = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transform: `translateY(-5%)`,
+      transition: {
+        staggerChildren: 0.1,
+        damping: 300,
+        type: 'tween',
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <>
       <Head>
@@ -18,15 +36,15 @@ const Landing = () => {
 
         <meta itemProp="name" content="Albert Dugba - Software Engineer" />
         <meta itemProp="description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
-        <meta itemProp="image" content="https://albertdugba.dev/albertdugba.jpg" />
+        <meta itemProp="image" content="https://albertdugba.dev/albertdugba.webp" />
 
         <meta property="og:url" content="https://albertdugba.dev" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Albert Dugba - Software Engineer" />
         <meta property="og:description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
-        <meta property="og:image" content="https://albertdugba.dev/albertdugba.jpg" />
+        <meta property="og:image" content="https://albertdugba.dev/albertdugba.webp" />
 
-        <meta name="twitter:card" content="https://albertdugba.dev/albertdugba.jpg" />
+        <meta name="twitter:card" content="https://albertdugba.dev/albertdugba.webp" />
         <meta name="twitter:title" content="Albert Dugba - Frontend Engineer" />
         <meta name="twitter:description" content="Hi, I'm Albert Dugba, a Frontend Engineer." />
         <meta name="twitter:site" content="@Albert_Dugba" />
@@ -35,8 +53,8 @@ const Landing = () => {
         <meta name="albertdugba.dev" content="Portfolio website | Blog " />
       </Head>
       <Wrapper>
-        <motion.div className="profile" initial={{ y: '20%' }} animate={{ y: '-1%' }}>
-          <img
+        <motion.div className="profile" initial={{ y: '50%' }} animate={{ y: '0%' }} transition={{ damping: 40 }}>
+          <motion.img
             src="./albertdugba.webp"
             alt="Profile Picture"
             style={{
@@ -46,8 +64,9 @@ const Landing = () => {
               border: '2px solid var(--secondaryColor)',
             }}
           />
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <div
+          <motion.div variants={container} initial="hidden" animate="show">
+            <motion.div
+              variants={item}
               className="text__center"
               style={{
                 display: 'flex',
@@ -56,21 +75,23 @@ const Landing = () => {
                 marginTop: '50px',
               }}
             >
-              <h3>Hi</h3> {'  '}
-              <span role="img">👋</span>
-            </div>
-            <p>
-              I'm <strong>Albert Dugba</strong>, self taught software engineer with 2+ years of experience. As a UI
-              engineer, I thrive to work with the right tools to deliver fast, performant and accessiblity from the
-              ground up with great user experience.
-            </p>
+              <motion.h3 variants={item}>Hi</motion.h3> {'  '}
+              <motion.span variants={item} role="img">
+                👋
+              </motion.span>
+            </motion.div>
+            <motion.p variants={item}>
+              I'm <strong>Albert Dugba</strong>, self taught software engineer with <strong>2+ </strong>years of
+              experience. As a UI engineer, I thrive to work with the right tools to deliver fast, performant and
+              accessiblity from the ground up with great user experience.
+            </motion.p>
             <div>
-              <p>
+              <motion.p variants={item}>
                 I work with technologies like react,redux,typescript and graphQL. Ocassionally, I do backend with nodejs
                 and mongodb
-              </p>
+              </motion.p>
 
-              <p>
+              <motion.p variants={item}>
                 Kindly check out my{' '}
                 <Link href="/works">
                   <a>works</a>
@@ -79,13 +100,13 @@ const Landing = () => {
                 <Link href="/posts">
                   <a>articles.</a>
                 </Link>
-              </p>
+              </motion.p>
             </div>
           </motion.div>
           <Social>
             <SocialLinks
               arialLabel="CV"
-              link="https://medium.com/@albert.dugba"
+              link="https://drive.google.com/file/d/1xmFQ7sIt2POujhfPrehHRhRqS-TjZz8T/view?usp=sharing"
               component={<Icon.CV size={29} color="var(--secondaryColor)" />}
             />
             <SocialLinks
@@ -146,7 +167,6 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: rgb(2, 0, 36);
   background: #e4e6eb;
   position: relative;
   overflow: hidden;
@@ -162,14 +182,14 @@ const Wrapper = styled(motion.div)`
 
     &:hover:after {
       left: 0;
-      height: 7px;
+      height: 5px;
       width: 100%;
     }
 
     &:after {
       position: absolute;
       content: '';
-      height: 7px;
+      height: 5px;
       width: 50%;
       background: var(--primaryColor);
       opacity: 0.8;
@@ -215,7 +235,6 @@ const Wrapper = styled(motion.div)`
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 90%;
-    height: 70%;
     background: #fff;
     border-radius: 25px;
     display: flex;

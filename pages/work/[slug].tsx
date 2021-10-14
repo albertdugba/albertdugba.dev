@@ -8,12 +8,14 @@ import { graphcmsAPi } from '@/lib/service';
 import { allWorksQuery, singleWorkQuery } from '@/lib/graphql-queries';
 
 // lazy loading
-const WorkDetails = dynamic(() => import('@/pages/works/WorkDetails'), { loading: () => <Loader /> });
+const WorkDetails = dynamic(() => import('@/pages/works/WorkDetails'), {
+  loading: () => <Loader title="Loading Project Page..." />,
+});
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
   const router = useRouter();
 
-  if (router.isFallback) return <Loader />;
+  if (router.isFallback) return <Loader title="Loading Project Page..." />;
 
   return (
     <>

@@ -7,7 +7,7 @@ import { Slider } from '@/common/slider/Slider';
 import { graphcmsAPi } from '@/lib/service';
 import { allWorksQuery } from '@/lib/graphql-queries';
 
-const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
+const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader title="Loading Projects..." /> });
 
 interface IProps {
   works: IProjectProps[];
