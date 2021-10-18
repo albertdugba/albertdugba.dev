@@ -3,7 +3,7 @@ import { Slider } from '@/common/slider/Slider';
 import styled from 'styled-components';
 
 const ViewAllPosts = () => {
-  return <Loader title="Loading page..." />;
+  return <Loader />;
 };
 
 export default ViewAllPosts;
