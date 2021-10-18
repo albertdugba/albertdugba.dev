@@ -66,7 +66,6 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
           <motion.div initial="exit" animate="enter" exit="exit" className="background">
             <motion.div
               variants={imageVariants}
-              // className="background__image"
               style={{
                 backgroundImage: `url(${imageBackground})`,
                 backgroundPosition: 'center',
@@ -106,7 +105,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             <div className="flex social__container">
               <SocialLinks
                 arialLabel="CV"
-                link="https://medium.com/@albert.dugba"
+                link="https://drive.google.com/file/d/1bSv7GDcPGPSPx7lgLhj5C0GsdmlcxXz-/view?usp=sharing"
                 component={<Icon.CV size={25} color="var(--white)" />}
               />
               <SocialLinks
@@ -167,6 +166,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
               {showContactWidget ? <Icon.ChevronDown size={205} color="#fff" /> : <Icon.Chat size={45} color="#fff" />}
             </div>
           </div>
+
           <div>{children}</div>
         </motion.div>
       </Wrapper>

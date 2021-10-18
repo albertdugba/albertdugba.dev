@@ -8,7 +8,7 @@ import { PostProps } from '@/lib/interface';
 import { allPostsQuery } from '@/lib/graphql-queries';
 
 // dynamic imports
-const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader title="Loading Posts" /> });
+const Layout = dynamic(() => import('@/layout/Layout'), { loading: () => <Loader /> });
 
 interface Props {
   posts: PostProps[];

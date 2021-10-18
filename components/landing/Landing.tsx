@@ -55,6 +55,8 @@ const Landing = () => {
       <Wrapper>
         <motion.div className="profile" initial={{ y: '50%' }} animate={{ y: '0%' }} transition={{ damping: 40 }}>
           <motion.img
+            initial={{ y: '-100px' }}
+            animate={{ y: '0%' }}
             src="./albertdugba.webp"
             alt="Profile Picture"
             style={{
@@ -106,7 +108,7 @@ const Landing = () => {
           <Social>
             <SocialLinks
               arialLabel="CV"
-              link="https://drive.google.com/file/d/1xmFQ7sIt2POujhfPrehHRhRqS-TjZz8T/view?usp=sharing"
+              link="https://drive.google.com/file/d/1bSv7GDcPGPSPx7lgLhj5C0GsdmlcxXz-/view?usp=sharing"
               component={<Icon.CV size={29} color="var(--secondaryColor)" />}
             />
             <SocialLinks

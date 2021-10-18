@@ -9,13 +9,13 @@ import { allWorksQuery, singleWorkQuery } from '@/lib/graphql-queries';
 
 // lazy loading
 const WorkDetails = dynamic(() => import('@/pages/works/WorkDetails'), {
-  loading: () => <Loader title="Loading Project Page..." />,
+  loading: () => <Loader />,
 });
 
 const Work: FunctionComponent<IWorkDetailsProps> = ({ works }) => {
   const router = useRouter();
 
-  if (router.isFallback) return <Loader title="Loading Project Page..." />;
+  if (router.isFallback) return <Loader />;
 
   return (
     <>

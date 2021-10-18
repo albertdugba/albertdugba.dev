@@ -1,13 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 
-export const Loader = ({ title }: { title: string }) => {
+export const Loader = () => {
   return (
     <LoaderContainer aria-label="loading Screen">
       <LoaderInner>
         <Image src="/albertdugba.webp" width={100} height={100} alt="Loading Screen" />
       </LoaderInner>
-      <h1>{title}</h1>
+      <h1>loading...</h1>
     </LoaderContainer>
   );
 };
