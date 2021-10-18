@@ -56,6 +56,33 @@ export const ProjectTechStack: FunctionComponent<IProjectProps> = ({ tech, hrefL
 const Wrapper = styled.div`
   border-radius: 5px;
 
+  a {
+    display: inline-block;
+    color: var(--secondaryColor);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem !important;
+    position: relative;
+
+    &:hover:after {
+      left: 0;
+      height: 4px;
+      width: 100%;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: 4px;
+      width: 50%;
+      background: var(--primaryColor);
+      opacity: 0.8;
+      bottom: 2px;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
   .tag {
     background: var(--secondaryColor);
     border-radius: 5px;

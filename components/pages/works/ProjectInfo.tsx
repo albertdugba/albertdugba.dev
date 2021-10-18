@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-
 import { IProjectProps } from '@/lib/interface';
 
 export const ProjectInfo: FunctionComponent<IProjectProps> = ({

@@ -136,8 +136,8 @@ const Landing = () => {
           <Icon.CircleOutline size={80} color="var(--colorWhite)" />
         </div>
 
-        <div className="triange">
-          <Icon.Triangle color="var(--secondaryColor)" size={120} />
+        <div className="zigzag">
+          <Icon.ZigZag color="var(--secondaryColor)" size={70} />
         </div>
 
         <div className="fing">
@@ -207,11 +207,11 @@ const Wrapper = styled(motion.div)`
     right: 0;
   }
 
-  .triange {
+  .zigzag {
     position: absolute;
-    bottom: -30px;
-    left: 0;
-    transform: rotateX(-40);
+    bottom: -20px;
+    left: 10px;
+    transform: rotate(-95);
   }
 
   .fing {

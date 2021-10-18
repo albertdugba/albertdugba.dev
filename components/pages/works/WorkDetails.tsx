@@ -2,7 +2,6 @@ import { useState, useEffect, FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
 import { ProjectTechStack } from './ProjectTechStack';
 import { ProjectInfo } from './ProjectInfo';
 import { IProjectProps } from '../../../lib/interface';
@@ -76,6 +75,12 @@ const WorkDetails: FunctionComponent<IProjectProps> = ({
       </div>
 
       <ImageSlider projectImages={projectImages} />
+      <div
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        className="hide-on-mobile container mt-1"
+      >
+        <Icons.Triangle size={40} color="var(--primaryColor)" />
+      </div>
       <InfoContainer className="container">
         <ProjectInfo
           title={title}
