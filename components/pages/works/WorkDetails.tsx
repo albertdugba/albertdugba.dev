@@ -79,7 +79,7 @@ const WorkDetails: FunctionComponent<IProjectProps> = ({
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         className="hide-on-mobile container mt-1"
       >
-        <Icons.Triangle size={40} color="var(--primaryColor)" />
+        <Icons.Triangle size={25} color="var(--primaryColor)" />
       </div>
       <InfoContainer className="container">
         <ProjectInfo

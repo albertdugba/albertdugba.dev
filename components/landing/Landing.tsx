@@ -131,22 +131,6 @@ const Landing = () => {
             />
           </Social>
         </motion.div>
-
-        <div className="circle">
-          <Icon.CircleOutline size={80} color="var(--colorWhite)" />
-        </div>
-
-        <div className="zigzag">
-          <Icon.ZigZag color="var(--secondaryColor)" size={70} />
-        </div>
-
-        <div className="fing">
-          <Icon.Fing color="var(--primaryColor)" size={200} />
-        </div>
-
-        <div className="b-circle">
-          <Icon.BigCircle size={90} color="var(--secondaryColor)" />
-        </div>
       </Wrapper>
     </>
   );
@@ -201,41 +185,9 @@ const Wrapper = styled(motion.div)`
     }
   }
 
-  .circle {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  .zigzag {
-    position: absolute;
-    bottom: -20px;
-    left: 10px;
-    transform: rotate(-95);
-  }
-
-  .fing {
-    position: absolute;
-    top: -60px;
-    left: 0%;
-    transform: rotate(-180deg);
-
-    @media (max-width: 601px) {
-      left: -20%;
-      top: -90px;
-      transform: rotate(-180deg);
-    }
-  }
-
-  .b-circle {
-    position: absolute;
-    bottom: -40px;
-    right: 0;
-  }
-
   .profile {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    width: 100%;
+    /* width: 100%; */
     max-width: 90%;
     background: #fff;
     border-radius: 25px;
@@ -263,7 +215,7 @@ const Wrapper = styled(motion.div)`
     }
 
     @media (min-width: 801px) {
-      max-width: 45%;
+      max-width: 580px;
     }
   }
 `;
