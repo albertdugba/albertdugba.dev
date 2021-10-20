@@ -85,7 +85,7 @@ const Landing = () => {
             <motion.p variants={item}>
               I'm <strong>Albert Dugba</strong>, self taught software engineer with <strong>2+ </strong>years of
               experience. As a UI engineer, I thrive to work with the right tools to deliver fast, performant and
-              accessiblity from the ground up with great user experience.
+              accessible user interfaces from the ground up.
             </motion.p>
             <div>
               <motion.p variants={item}>
