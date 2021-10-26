@@ -10,7 +10,12 @@ const About = () => {
   return (
     <Layout imageBackground="./tech-doodle.png">
       <Container className="container">
-        <h1>About me</h1>
+        <div className="container">
+          <h1>About me</h1>
+          <div>
+            <p>Hi, thank you for taking for taking the time to know more about me.</p>
+          </div>
+        </div>
       </Container>
     </Layout>
   );
@@ -21,14 +26,7 @@ export default About;
 const Container = styled.div`
   height: 60vh;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--primaryColor);
   border-radius: 13px;
-  opacity: 0.4;
-  backdrop-filter: blur(2px);
-
-  h1 {
-    font-size: 2rem;
-    color: #000;
-    padding: 1rem;
-  }
+  color: #fff;
 `;
