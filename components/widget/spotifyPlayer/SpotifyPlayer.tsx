@@ -47,6 +47,7 @@ const SpotifyData = styled.div<IPlaying>`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0 20px 49px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 601px) {
     width: 90%;
@@ -97,6 +98,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 20px 49px rgba(0, 0, 0, 0.3);
 
     @media (max-width: 701px) {
       width: 60px;

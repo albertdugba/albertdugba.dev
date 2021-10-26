@@ -85,6 +85,10 @@ const FormContainer = styled(motion.form)`
   border-radius: 10px;
   font-family: inherit;
 
+  @media (max-width: 801px) {
+    border-radius: 4px;
+  }
+
   .form__alert {
     position: absolute;
     top: 0;

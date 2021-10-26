@@ -93,29 +93,34 @@ const Landing = () => {
                 and mongodb
               </motion.p>
 
-              <motion.p variants={item}>
-                Kindly check out my{' '}
-                <Link href="/works">
-                  <a>works</a>
-                </Link>{' '}
-                and{' '}
-                <Link href="/posts">
-                  <a>articles.</a>
-                </Link>
-              </motion.p>
+              <motion.div>
+                <motion.p variants={item}>
+                  Kindly check out my{' '}
+                  <Link href="/works">
+                    <a>works</a>
+                  </Link>{' '}
+                  and{' '}
+                  <Link href="/posts">
+                    <a>articles.</a>
+                  </Link>
+                  <motion.p variants={item}>
+                    <Link href="/about">See more</Link> about me
+                  </motion.p>
+                </motion.p>
+              </motion.div>
             </div>
           </motion.div>
           <Social>
             <SocialLinks
+              arialLabel="Github"
+              link="https://github.com/albertdugba"
+              component={<Icon.Github size={29} color="var(--secondaryColor)" />}
+            />
+
+            <SocialLinks
               arialLabel="CV"
               link="https://drive.google.com/file/d/1bSv7GDcPGPSPx7lgLhj5C0GsdmlcxXz-/view?usp=sharing"
               component={<Icon.CV size={29} color="var(--secondaryColor)" />}
-            />
-            <SocialLinks
-              arialLabel="Github"
-              className="ml-1"
-              link="https://github.com/albertdugba"
-              component={<Icon.Github size={29} color="var(--secondaryColor)" />}
             />
             <SocialLinks
               arialLabel="Linkedin"
@@ -168,14 +173,14 @@ const Wrapper = styled(motion.div)`
 
     &:hover:after {
       left: 0;
-      height: 5px;
+      height: 4px;
       width: 100%;
     }
 
     &:after {
       position: absolute;
       content: '';
-      height: 5px;
+      height: 4px;
       width: 50%;
       background: var(--primaryColor);
       opacity: 0.8;
@@ -187,7 +192,6 @@ const Wrapper = styled(motion.div)`
 
   .profile {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    /* width: 100%; */
     max-width: 90%;
     background: #fff;
     border-radius: 25px;

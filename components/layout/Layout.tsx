@@ -167,7 +167,7 @@ const Layout: FunctionComponent<IProps> = ({ children, imageBackground }) => {
             </div>
           </div>
 
-          <div>{children}</div>
+          <>{children}</>
         </motion.div>
       </Wrapper>
     </>
@@ -195,7 +195,7 @@ const Wrapper = styled(motion.section)`
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 20px 49px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 49px rgba(0, 0, 0, 0.3);
 
     @media (max-width: 701px) {
       bottom: 40px;
