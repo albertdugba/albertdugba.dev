@@ -103,9 +103,9 @@ const Landing = () => {
                   <Link href="/posts">
                     <a>articles.</a>
                   </Link>
-                  <motion.p variants={item}>
+                  {/* <motion.p variants={item}>
                     <Link href="/about">See more</Link> about me
-                  </motion.p>
+                  </motion.p> */}
                 </motion.p>
               </motion.div>
             </div>
