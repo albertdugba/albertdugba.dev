@@ -49,4 +49,4 @@ export const getTopTracks = async () => {
 };
 
 // Graphcms
-export const graphcmsAPi = new GraphQLClient(`${process.env.GRAPHCMS_API}`);
+export const graphcmsAPi = new GraphQLClient(`${process.env.GRAPHCMS_API ?? ''}`) ?? '';

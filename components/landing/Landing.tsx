@@ -83,7 +83,7 @@ const Landing = () => {
               </motion.span>
             </motion.div>
             <motion.p variants={item}>
-              I'm <strong>Albert Dugba</strong>, self taught software engineer with <strong>2+ </strong>years of
+              I'm <strong>Albert Dugba</strong>, self taught software engineer with <strong>3+ </strong>years of
               experience. As a UI engineer, I thrive to work with the right tools to deliver fast, performant and
               accessible user interfaces from the ground up.
             </motion.p>
@@ -103,9 +103,6 @@ const Landing = () => {
                   <Link href="/posts">
                     <a>articles.</a>
                   </Link>
-                  {/* <motion.p variants={item}>
-                    <Link href="/about">See more</Link> about me
-                  </motion.p> */}
                 </motion.p>
               </motion.div>
             </div>
@@ -117,11 +114,6 @@ const Landing = () => {
               component={<Icon.Github size={29} color="var(--secondaryColor)" />}
             />
 
-            <SocialLinks
-              arialLabel="CV"
-              link="https://drive.google.com/file/d/1bSv7GDcPGPSPx7lgLhj5C0GsdmlcxXz-/view?usp=sharing"
-              component={<Icon.CV size={29} color="var(--secondaryColor)" />}
-            />
             <SocialLinks
               arialLabel="Linkedin"
               className="ml-1"
@@ -147,10 +139,6 @@ const Social = styled.div`
   justify-content: space-evenly;
   margin-top: 10px;
   width: 100%;
-
-  svg :hover {
-    fill: var(--primaryColor);
-  }
 `;
 
 const Wrapper = styled(motion.div)`
@@ -158,10 +146,19 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #e4e6eb;
   position: relative;
   overflow: hidden;
   font-size: 0.95rem;
+  background: url('/landing-background.png') center center / cover no-repeat;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  background-image: url('./landing-background.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--black100);
+  margin: 0;
+  padding: 0;
 
   p a {
     display: inline-block;
@@ -193,7 +190,8 @@ const Wrapper = styled(motion.div)`
   .profile {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     max-width: 90%;
-    background: #fff;
+    background: var(--black100);
+    color: gray;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
