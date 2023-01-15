@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* colors as colors */
+  --white: #fff;
+  --black: #000;
+  --blue: rgb(49, 49, 179);
+
+  /* colors as intents */
+  --primaryColor: var(--blue);
+}
+
+body {
+  /* background-color: var(--primaryColor); */
+}
