@@ -1,18 +1,24 @@
-import Image from "next/image";
-
 export const HomePage = () => {
   return (
-    <div className='flex items-center justify-between w-screen h-screen'>
-      <div className='rounded-xl bg-primary text-white p-6 w-[50%] mx-auto'>
-        <h1>
-          Im Albert Dugba, self taught software engineer with 3+ years of
-          experience. As a UI engineer, I thrive to work with the right tools to
-          deliver fast, performant and accessible user interfaces from the
-          ground up. I work with technologies like react,redux,typescript and
-          graphQL.
-        </h1>
+    <div className='relative'>
+      <div className='flex items-center justify-between w-screen h-screen bg'>
+        <div className='text-primary p-6 lg:w-[650px] w-[90%] mx-auto absolute inset-x-0  md:w-2/5 z-20  -mt-10 '>
+          <div className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl p-8 rounded-lg'>
+            <h1 className='flex items-center justify-center h-full w-full'>
+              I am a frontend engineer with 4 years of experience building
+              advanced web applications using React and TypeScript. My expertise
+              lies in the web3, social, and health industries. I am experienced
+              in working in fast-paced startup environments and able to adapt
+              quickly to new technologies and processes.
+            </h1>
 
-        <h1 className='bg-primary'>asdf</h1>
+            <p>Learn more about me, my works and my articles</p>
+          </div>
+          {/* <p>featured blog</p>
+          <div className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl p-8 rounded-lg mt-8'>
+            <h1>Come back</h1>
+          </div> */}
+        </div>
       </div>
     </div>
   );

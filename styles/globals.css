@@ -5,13 +5,25 @@
 :root {
   /* colors as colors */
   --white: #fff;
-  --black: #000;
-  --blue: rgb(49, 49, 179);
+  --black100: #000;
+  --black200: rgb(40, 39, 39);
 
   /* colors as intents */
-  --primaryColor: var(--blue);
+  --primaryColor: var(--black200);
 }
 
-body {
-  /* background-color: var(--primaryColor); */
+.bg {
+  background-color: #fff;
+}
+
+.bg:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../public/assets/bg.png") no-repeat center center/cover
+    rgba(15, 8, 15, 0.82);
 }
