@@ -1,9 +1,10 @@
 {
-  "baseUrl": "src",
-  "paths": {
-    "~/components/*": ["/src/components/*"]
-  },
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/components/*": ["src/components/*"],
+      "~/*": ["src/service/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -19,6 +20,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src"],
   "exclude": ["node_modules"]
 }
