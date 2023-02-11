@@ -1,12 +1,9 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
   images: {
-    domains: ['origohealth.net'],
-  },
-  webpack: function (config) {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: 'raw-loader',
-    });
-    return config;
+    domains: ["media.graphassets.com"],
   },
 };
+
+module.exports = nextConfig;

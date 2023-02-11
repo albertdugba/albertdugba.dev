@@ -1,0 +1,120 @@
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { isMobile } from "react-device-detect";
+
+import profileImage from "../../../public/assets/albertdugba.webp";
+import { aboutContent } from "src/mocks/profile";
+
+export const HomePage = () => {
+  const [isExpanded, setExpanded] = useState(true);
+  const LIMIT = 100;
+
+  useEffect(() => {
+    if (isMobile) {
+      setExpanded(false);
+    }
+  }, []);
+
+  return (
+    <div className='relative'>
+      <div className='flex items-center justify-between w-screen h-screen bg'>
+        <motion.div className='text-primary p-3 lg:w-[650px] w-full mx-auto absolute inset-x-0  md:w-3/5 z-20  -mt-10 '>
+          <AnimatePresence presenceAffectsLayout>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              layout
+              className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl p-8 rounded-lg'
+            >
+              <div className='flex items-center justify-center lg:-mt-28 md:-mt-20 sm:-mt-16 -mt-16 my-6 transition-all relative rounded-md'>
+                <div className='-rotate-12 hover:rotate-0 transition-all'>
+                  <Image
+                    src={profileImage}
+                    height={200}
+                    width={120}
+                    alt='Albert Dugba'
+                    className='rounded-lg shadow-lg'
+                  />
+                </div>
+              </div>
+
+              <p className='text-base leading-relaxed'>
+                {aboutContent.substring(
+                  0,
+                  isExpanded ? aboutContent.length : LIMIT
+                )}
+                {aboutContent.length > LIMIT && (
+                  <>
+                    {isMobile ? (
+                      <a
+                        href='#'
+                        className='text-blue-500'
+                        onClick={() => setExpanded(!isExpanded)}
+                      >
+                        {isExpanded ? "Read Less" : "...Read More"}
+                      </a>
+                    ) : null}
+                  </>
+                )}
+              </p>
+
+              <p className='mt-3 text-base'>
+                You can shoot me an{" "}
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  className='underline text-purple-700'
+                  href='mailto: albert.dugba@gmail.com'
+                >
+                  email {"   "}
+                </a>
+                or checkout my{" "}
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  className='underline text-purple-700'
+                  href='https://github.com/albertdugba'
+                >
+                  github{" "}
+                </a>{" "}
+                or{" "}
+                <a
+                  target='_blank'
+                  rel='noreferrer'
+                  className='underline text-purple-700'
+                  href='https://www.linkedin.com/in/albertdugba'
+                >
+                  linkedin
+                </a>{" "}
+                profile
+              </p>
+
+              <h1 className='mt-10 font-bold'>Stacks</h1>
+              <ul className='flex items-center gap-3 flex-wrap'>
+                {stacks.map((stack, idx) => (
+                  <li
+                    className='px-2 py-0.5 bg-purple-800 text-purple-300 my-0 w-fit text-sm rounded-md'
+                    key={idx}
+                  >
+                    {stack}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+const stacks = [
+  "Nextjs",
+  "Typescript",
+  "JavaScript",
+  "GraphQL",
+  "Redux",
+  "React Query",
+  "Storybook",
+];
