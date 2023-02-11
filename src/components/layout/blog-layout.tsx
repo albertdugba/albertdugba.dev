@@ -9,11 +9,36 @@ export const BlogLayout: FC<BlogLayoutProps> = ({ children, title }) => {
   return (
     <>
       <div className='tech-bg'>
-        <div className='flex items-center justify-center h-full text-3xl'>
-          {title}
+        <div className='flex flex-col items-center justify-center h-full'>
+          <h1 className='text-white text-4xl'>{title}</h1>
+          <nav className=''>
+            <ul className='flex items-center gap-3 justify-between'>
+              {navLinks.map((link) => (
+                <li key={link.url} className='py-2 text-white'>
+                  {link.title}
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
+
         <main>{children}</main>
       </div>
     </>
   );
 };
+
+const navLinks = [
+  {
+    title: "About me",
+    url: "/about",
+  },
+  {
+    title: "Works",
+    url: "/works",
+  },
+  {
+    title: "Blog",
+    url: "/blogs",
+  },
+];
