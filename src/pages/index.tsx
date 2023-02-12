@@ -1,5 +1,11 @@
 import Head from "next/head";
-import { HomePage } from "../components/home";
+import dynamic from "next/dynamic";
+import { PageLoader } from "~/components/loader";
+
+const HomePage = dynamic(
+  () => import("~/components/home/index").then((comp) => comp.HomePage),
+  { ssr: false, loading: () => <PageLoader /> }
+);
 
 export default function Home() {
   return (
@@ -11,6 +17,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
+        {/* <PageLoader /> */}
         <HomePage />
       </main>
     </>
