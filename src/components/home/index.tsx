@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { forwardRef, useEffect, useState } from "react";
+import Image, { ImageProps } from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { isMobile } from "react-device-detect";
 
@@ -8,7 +8,7 @@ import { aboutContent } from "src/mocks/profile";
 
 export const HomePage = () => {
   const [isExpanded, setExpanded] = useState(true);
-  const LIMIT = 100;
+  const LIMIT = 150;
 
   useEffect(() => {
     if (isMobile) {
@@ -16,27 +16,58 @@ export const HomePage = () => {
     }
   }, []);
 
+  const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
+    function ExoticImageWrapper(props, ref) {
+      return <Image {...props} ref={ref} alt='' />;
+    }
+  );
+
+  const MotionImage = motion(ExoticImage);
+
+  const animateImageCard = {
+    cardVariant: {
+      inactive: {
+        rotate: "24deg",
+        backgroundColor: "#fff",
+      },
+      active: {
+        rotate: "-12deg",
+        backgroundColor: "#dbb4e0",
+      },
+    },
+  };
+
   return (
     <div className='relative'>
       <div className='flex items-center justify-between w-screen h-screen bg'>
-        <motion.div className='text-primary p-3 lg:w-[650px] w-full mx-auto absolute inset-x-0  md:w-3/5 z-20  -mt-10 '>
+        <motion.div className='text-primary p-3 lg:w-[650px] w-full mx-auto absolute inset-x-0  md:w-3/5 z-20'>
           <AnimatePresence presenceAffectsLayout>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
               layout
-              className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl p-8 rounded-lg'
+              className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl lg:p-8 p-4 rounded-lg'
             >
               <div className='flex items-center justify-center lg:-mt-28 md:-mt-20 sm:-mt-16 -mt-16 my-6 transition-all relative rounded-md'>
-                <div className='-rotate-12 hover:rotate-0 transition-all'>
-                  <Image
+                <motion.div
+                  initial={{
+                    rotate: "24deg",
+                    backgroundColor: "#fff",
+                  }}
+                  animate={{
+                    rotate: "-12deg",
+                    backgroundColor: "#dbb4e0",
+                  }}
+                  className='-rotate-12 relative h-36 w-36  transition-all rounded-md shadow-xl'
+                >
+                  <MotionImage
+                    initial={{ rotate: "-24deg" }}
+                    animate={{ rotate: "12deg" }}
+                    transition={{ duration: 0.5, type: "spring" }}
                     src={profileImage}
-                    height={200}
-                    width={120}
+                    fill
                     alt='Albert Dugba'
-                    className='rounded-lg shadow-lg'
+                    className='rounded-lg shadow-lg z-[999] rotate12 absolute overflow-hidden'
                   />
-                </div>
+                </motion.div>
               </div>
 
               <p className='text-base leading-relaxed'>
