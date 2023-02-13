@@ -18,9 +18,9 @@ interface BlogsProps {
 const Blogs = ({ posts }: BlogsProps) => {
   return (
     <BlogLayout title='Blog'>
-      <div className='p-3 lg:block lg:max-w-6xl w-11/12 mx-auto -mt-20 z-[99999999999999] h-[390px] text-center justify-center flex flex-col bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] rounded-md shadow-lg'>
+      {/* <div className='p-3 lg:block lg:max-w-6xl w-11/12 mx-auto -mt-20 z-[99999999999999] h-[390px] text-center justify-center flex flex-col bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] rounded-md shadow-lg'>
         Featured Blog Post
-      </div>
+      </div> */}
 
       <ul className='flex pb-20 lg:flex-row md:flex-row flex-col gap-8 mt-6 lg:max-w-6xl w-11/12 mx-auto'>
         {posts?.posts.map((post) => (

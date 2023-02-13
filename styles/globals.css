@@ -28,14 +28,28 @@
     rgba(15, 8, 15, 0.82);
 }
 
-.tech-bg {
-  background-image: url("../public/assets/tech.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 80%;
-  position: relative;
-  z-index: 10;
-  height: 400px;
+@media (min-width: 801px) {
+  .tech-bg {
+    background-image: url("../public/assets/tech.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+    position: relative;
+    z-index: 10;
+    height: 400px;
+  }
+}
+
+@media (max-width: 801px) {
+  .tech-bg {
+    background-image: url("../public/assets/tech.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+    position: relative;
+    z-index: 10;
+    height: 200px;
+  }
 }
 
 .tech-bg::before {
