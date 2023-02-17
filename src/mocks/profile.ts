@@ -1,4 +1,4 @@
-export const aboutContent = `With 3+ years of experience as a frontend engineer, I bring a wealth
+export const aboutContent = `With 4 years of experience as a frontend engineer, I bring a wealth
 of expertise and knowledge to the table, with a focus on building
 advanced web applications using React and TypeScript. With a
 strong background in the domains of web3, social, education and
