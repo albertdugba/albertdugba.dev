@@ -44,6 +44,18 @@ export const HomePage = () => {
           <AnimatePresence presenceAffectsLayout>
             <motion.div
               layout
+              initial={{
+                height: 0,
+                opacity: 0,
+              }}
+              animate={{
+                height: "auto",
+                opacity: 1,
+              }}
+              exit={{
+                height: 0,
+                opacity: 0,
+              }}
               className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl lg:p-8 p-4 rounded-lg'
             >
               <div className='flex items-center justify-center lg:-mt-28 md:-mt-20 sm:-mt-16 -mt-16 my-6 transition-all relative rounded-md'>
