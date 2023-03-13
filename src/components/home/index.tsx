@@ -43,7 +43,7 @@ export const HomePage = () => {
   return (
     <div className='relative'>
       <div className='flex items-center justify-between w-screen h-screen bg'>
-        <motion.div className='text-primary p-3 lg:w-[650px] w-full mx-auto absolute inset-x-0  md:w-3/5 z-20'>
+        <motion.div className='p-3 lg:w-[650px] w-full mx-auto absolute inset-x-0  md:w-3/5 z-20'>
           <AnimatePresence presenceAffectsLayout>
             <motion.div
               layout
@@ -93,7 +93,7 @@ export const HomePage = () => {
                 )}
               </p>
 
-              <p className='mt-3 text-base'>
+              {/* <p className='mt-3 text-base'>
                 You can learn more
                 <a
                   target='_blank'
@@ -112,7 +112,7 @@ export const HomePage = () => {
                 >
                   my experience{" "}
                 </a>
-              </p>
+              </p> */}
 
               <div className='flex flex-col space-y-3 items-center justify-center'>
                 <h1 className='mt-10 font-bold'>Connect with me on:</h1>
