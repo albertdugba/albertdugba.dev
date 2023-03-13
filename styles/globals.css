@@ -7,11 +7,14 @@
   --white: #fff;
   --black100: #000;
   --black200: rgb(40, 39, 39);
-  --active-color: #f1f1f1;
+  --greenColor: #1ed760;
+  --pinkColor: #7b0dc0;
+  --redColor: #c52348;
   --border-radius: 3px;
 
   /* colors as intents */
-  --primaryColor: var(--black200);
+  --primaryColor: var(--pinkColor);
+  --active-color: #f1f1f1;
 }
 
 .bg {

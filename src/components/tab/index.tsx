@@ -28,7 +28,7 @@ export const TabComponent: FC<TabProps> = ({ defaultIndex = 0 }) => {
 
   useEffect(() => {
     const tabFromHash = tabs.findIndex(
-      (tab) => `#${tab.id}` === window.location.hash
+      (tab) => `#tab?=${tab.id}` === window.location.hash
     );
     setActiveIndex(tabFromHash !== -1 ? tabFromHash : defaultIndex);
   }, [defaultIndex]);
@@ -47,7 +47,7 @@ export const TabComponent: FC<TabProps> = ({ defaultIndex = 0 }) => {
               <motion.li role='presentation'>
                 <a
                   className='w-full flex items-center justify-center text-center'
-                  href={`#${tab.id}`}
+                  href={`#tab?=${tab.id}`}
                   onClick={() => handleClickTab(idx)}
                 >
                   {tab.icon}
@@ -79,21 +79,21 @@ const tabs = [
     title: "Me",
     id: "me",
     icon: <InfoIcon />,
-    color: "#7B0DC0",
+    color: "var(--primaryColor)",
     component: <Me />,
   },
   {
     title: "My Reads",
     id: "books",
     icon: <BookIcon />,
-    color: "#C52348",
+    color: "var(--redColor)",
     component: <MyReads />,
   },
   {
     title: "My Playlists",
     id: "playlists",
     icon: <SpotifyIcon />,
-    color: "#1ed760",
+    color: "var(--greenColor)",
     component: <SpotifyPlayLists />,
   },
 ];

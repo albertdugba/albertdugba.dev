@@ -26,8 +26,10 @@ export const Me = () => {
       </p>
 
       <p className='mt-2'>
-        Currently, I work at <strong>Montech Studio Inc</strong> as a Frontend
-        Developer to create variety of products with great user experiences.
+        Currently, I work at{" "}
+        <strong className='text-primary'>Montech Studio Inc</strong> as a
+        Frontend Developer to create variety of products with great user
+        experiences.
       </p>
       <p className='mt-2'>
         Before now, I worked as a contractor to work on application(a text
@@ -36,15 +38,16 @@ export const Me = () => {
       </p>
       <p className='mt-2'>
         Prior to doing freelance work, I was part of a team of 2 frontend
-        engineers at <strong>OrigoHealth</strong>, a health startup to help
-        connect doctors and patients and provide provide healthcare services.
+        engineers at <strong className='text-green'>OrigoHealth</strong>, a
+        health startup to help connect doctors and patients and provide provide
+        healthcare services.
       </p>
 
       <div className='mt-4'>
         <h1>Here are a few technologies I’ve been working with recently:</h1>
         <div className='flex w-full gap-10 mt-2'>
           <ul className='space-y-1'>
-            <strong>Core Technologies</strong>
+            <strong className='text-primary'>Core Technologies</strong>
             {stacks.map((stack, index) => (
               <li key={index} className='flex gap-1.5 items-center'>
                 <CheckIcon />
@@ -54,7 +57,7 @@ export const Me = () => {
           </ul>
 
           <ul>
-            <strong>Others</strong>
+            <strong className='text-primary'>Others</strong>
             {otherStacks.map((stack, index) => (
               <li key={index} className='flex gap-1.5 items-center'>
                 <CheckIcon />
