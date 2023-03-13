@@ -33,19 +33,22 @@ export const HamburgerMenuButton = ({ setIsOpen, isOpen }: Props) => {
   };
 
   return (
-    <button onClick={handleClick}>
-      <svg width='30' height='30' viewBox='0 0 24 24'>
+    <button onClick={handleClick} className='z-[9999]'>
+      <svg width='2.2rem' height='2.2rem' viewBox='0 0 24 24'>
         <motion.path
           {...path01Variants.closed}
           animate={path01Controls}
           transition={{ duration: 0.2 }}
-          stroke='#74087e'
+          stroke='#be7ce2'
+          strokeWidth={1.3}
         />
+
         <motion.path
           {...path02Variants.closed}
           animate={path02Controls}
           transition={{ duration: 0.2 }}
-          stroke='#74087e'
+          stroke='#be7ce2'
+          strokeWidth={1.3}
         />
       </svg>
     </button>

@@ -1,34 +1,39 @@
 import { FC, ReactNode, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { HamburgerMenuButton } from "../ui/button/hamburger";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+
+import { HamburgerMenuButton } from "../ui/button/hamburger";
 import { GithubIcon } from "src/icons/github";
 import { TwitterIcon } from "src/icons/twitter";
 import { LinkedInIcon } from "src/icons/linkedin";
+import { Logo } from "~/icons/logo";
+import { isMobile } from "react-device-detect";
 
 interface BlogLayoutProps {
   children: ReactNode;
   title: string;
+  isStickeyHeader?: boolean;
 }
 
-interface SidebarProps {
-  isOpen: boolean;
-  routes: {
-    title: string;
-    url: string;
-  }[];
-}
-
-export const BlogLayout: FC<BlogLayoutProps> = ({ children, title }) => {
+export const BlogLayout: FC<BlogLayoutProps> = ({
+  children,
+  title,
+  isStickeyHeader,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(isMobile);
   return (
     <>
       <div className='tech-bg relative'>
-        <div>
-          <div className='fixed top-10 lg:left-20 left-10 z-[21]'>Albert.D</div>
-          <div className='fixed top-10 lg:right-20 right-10 z-[21]'>
-            <HamburgerMenuButton setIsOpen={setIsOpen} isOpen={isOpen} />
+        <div className='max-w-7xl mx-auto flex justify-between'>
+          <div className='flex items-center justify-between z-[999]'>
+            <div className='fixed lg:left-24 top-8 left-4'>
+              <Logo />
+            </div>
+            <div className='fixed top-8 lg:right-24 right-4'>
+              <HamburgerMenuButton setIsOpen={setIsOpen} isOpen={isOpen} />
+            </div>
           </div>
 
           <AnimatePresence>
@@ -50,7 +55,7 @@ export const BlogLayout: FC<BlogLayoutProps> = ({ children, title }) => {
                   transformOrigin: "top right 148px",
                 }}
                 transition={{ duration: 0.3 }}
-                className='py-7 px-10 bg-white lg:w-[320px] fixed lg:top-4 lg:rounded-md  lg:right-12 w-full lg:h-fit h-full z-20 border overflow-hidden'
+                className={`fixed py-7 px-10 bg-white lg:w-[320px] lg:top-4 top-0 lg:rounded-md  lg:right-12 right-0 w-full lg:h-fit h-full z-20 border overflow-hidden`}
               >
                 <motion.ul className='lg:mt-2 mt-20'>
                   {navLinks.map((route) => (
@@ -85,12 +90,13 @@ export const BlogLayout: FC<BlogLayoutProps> = ({ children, title }) => {
             )}
           </AnimatePresence>
         </div>
+
         <div className='flex flex-col items-center justify-center h-full'>
-          <h1 className='text-white lg:text-6xl text-3xl'>
-            <code className='flex items-center gap-3'>
-              <span className='text-gray-300 mr-1'>/</span>
+          <h1 className='text-white lg:text-6xl text-3xl lg:block hidden'>
+            <div className='flex items-center'>
+              <span className='text-gray-300'>/</span>
               {title}
-            </code>
+            </div>
           </h1>
         </div>
 
@@ -117,11 +123,11 @@ const socials = [
 
 const navLinks = [
   {
-    title: "About Me",
+    title: "About",
     url: "/about",
   },
   {
-    title: "Works",
+    title: "Experience",
     url: "/works",
   },
   {

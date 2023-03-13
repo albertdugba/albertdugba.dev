@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
+
 import { apolloClient } from "~/index";
 import { SINGLE_POST } from "~/queries/posts";
 import { Post } from "~/types/post";
@@ -8,22 +9,24 @@ interface PostProps {
   post: InferGetServerSidePropsType<typeof getServerSideProps>;
 }
 const BlogPage = ({ post }: PostProps) => {
+  const { content, coverImage, postDescription, publishedAt, title, tags } =
+    post.post;
+
+  const bgImage = {
+    background: `linear-gradient(to bottom,rgba(126, 4, 153, 0.5), rgba(51, 27, 51, 0.5)),
+      url("${
+        (coverImage.url && coverImage.url !== "") || coverImage.url !== null
+          ? coverImage.url
+          : "/blog-banner.jpeg"
+      }") no-repeat center center/cover`,
+    width: "100vw",
+    height: "55vh",
+  };
   return (
     <>
-      <div
-        className={`bg-center bg-no-repeat bg-cover h-[90vh] relative bg-gradient-to-r from-white to-black, bg-gradient-to-l from-white to-black, bg-gradient-to-b from-white to-black`}
-      >
-        <div className='max-w-4xl mx-auto h-full'>
-          <div className='flex flex-col w-full h-full'>
-            <h1 className='text-white lg:text-[50px] text-[30px]'>
-              {post.post.title}
-            </h1>
-          </div>
-        </div>
-        <div className='bg-gradient-to-r from-white to-black, bg-gradient-to-l from-white to-black, bg-gradient-to-b from-white to-black'>
-          <p className='bg-white -mt-40 max-w-4xl mx-auto rounded-lg border lg:p-10 p-6 leading-6 overflow-scroll'>
-            {post.post.content}
-          </p>
+      <div style={bgImage} className='relative'>
+        <div className='max-w-6xl mx-auto p-10 -mt-0'>
+          <h1 className='lg:text-6xl text-2xl text-black'>{title}</h1>
         </div>
       </div>
     </>

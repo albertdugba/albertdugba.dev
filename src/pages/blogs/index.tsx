@@ -21,8 +21,8 @@ const Blogs = ({ posts }: BlogsProps) => {
       {/* <div className='p-3 lg:block lg:max-w-6xl w-11/12 mx-auto -mt-20 z-[99999999999999] h-[390px] text-center justify-center flex flex-col bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] rounded-md shadow-lg'>
         Featured Blog Post
       </div> */}
-
-      <ul className='flex pb-20 lg:flex-row md:flex-row flex-col gap-8 mt-6 lg:max-w-6xl w-11/12 mx-auto'>
+      {/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 */}
+      <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-10 mt-20 lg:max-w-6xl w-11/12 mx-auto'>
         {posts?.posts.map((post) => (
           <BlogCard
             key={post.id}
