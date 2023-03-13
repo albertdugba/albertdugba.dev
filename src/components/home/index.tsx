@@ -5,6 +5,9 @@ import { isMobile } from "react-device-detect";
 
 import profileImage from "../../../public/assets/albertdugba.webp";
 import { aboutContent } from "src/mocks/profile";
+import { GithubIcon } from "src/icons/github";
+import { LinkedInIcon } from "src/icons/linkedin";
+import { TwitterIcon } from "src/icons/twitter";
 
 export const HomePage = () => {
   const [isExpanded, setExpanded] = useState(true);
@@ -44,18 +47,6 @@ export const HomePage = () => {
           <AnimatePresence presenceAffectsLayout>
             <motion.div
               layout
-              initial={{
-                height: 0,
-                opacity: 0,
-              }}
-              animate={{
-                height: "auto",
-                opacity: 1,
-              }}
-              exit={{
-                height: 0,
-                opacity: 0,
-              }}
               className='bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] shadow-xl lg:p-8 p-4 rounded-lg'
             >
               <div className='flex items-center justify-center lg:-mt-28 md:-mt-20 sm:-mt-16 -mt-16 my-6 transition-all relative rounded-md'>
@@ -103,47 +94,34 @@ export const HomePage = () => {
               </p>
 
               <p className='mt-3 text-base'>
-                You can shoot me an{" "}
+                You can learn more
                 <a
                   target='_blank'
                   rel='noreferrer'
                   className='underline text-purple-700'
                   href='mailto: albert.dugba@gmail.com'
                 >
-                  email {"   "}
+                  about me {"   "}
                 </a>
-                or checkout my{" "}
+                my blogs{" "}
                 <a
                   target='_blank'
                   rel='noreferrer'
                   className='underline text-purple-700'
                   href='https://github.com/albertdugba'
                 >
-                  github{" "}
-                </a>{" "}
-                or{" "}
-                <a
-                  target='_blank'
-                  rel='noreferrer'
-                  className='underline text-purple-700'
-                  href='https://www.linkedin.com/in/albertdugba'
-                >
-                  linkedin
-                </a>{" "}
-                profile
+                  my experience{" "}
+                </a>
               </p>
 
-              <h1 className='mt-10 font-bold'>Stacks</h1>
-              <ul className='flex items-center gap-3 flex-wrap'>
-                {stacks.map((stack, idx) => (
-                  <li
-                    className='px-2 py-0.5 bg-purple-800 text-purple-300 my-0 w-fit text-sm rounded-md'
-                    key={idx}
-                  >
-                    {stack}
-                  </li>
-                ))}
-              </ul>
+              <div className='flex flex-col space-y-3 items-center justify-center'>
+                <h1 className='mt-10 font-bold'>Connect with me on:</h1>
+                <ul className='flex items-center gap-3 flex-wrap'>
+                  {socialLinks.map((link) => (
+                    <li key={link.url}>{link.icon}</li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           </AnimatePresence>
         </motion.div>
@@ -152,12 +130,17 @@ export const HomePage = () => {
   );
 };
 
-const stacks = [
-  "Nextjs",
-  "Typescript",
-  "JavaScript",
-  "GraphQL",
-  "Redux",
-  "React Query",
-  "Storybook",
+const socialLinks = [
+  {
+    url: "https://gitub.com/albertdugba",
+    icon: <GithubIcon />,
+  },
+  {
+    url: "https://linkedin.com/in/albertdugba",
+    icon: <LinkedInIcon />,
+  },
+  {
+    url: "https://twitter.com/albertdugba__",
+    icon: <TwitterIcon />,
+  },
 ];
