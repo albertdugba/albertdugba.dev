@@ -1,4 +1,4 @@
-interface ISpotifyResponse {
+export interface ISpotifyResponse {
   id: string;
   artist: string;
   songUrl: string;

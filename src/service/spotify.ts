@@ -1,4 +1,5 @@
 import querystring from "querystring";
+import { ISpotifyResponse } from "./types/spotify";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_KEYS;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
