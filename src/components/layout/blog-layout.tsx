@@ -92,7 +92,7 @@ export const BlogLayout: FC<BlogLayoutProps> = ({
         </div>
 
         <div className='flex flex-col items-center justify-center h-full'>
-          <h1 className='text-white lg:text-6xl text-3xl lg:block hidden'>
+          <h1 className='text-white lg:text-4xl text-3xl lg:block hidden'>
             <div className='flex items-center'>
               <span className='text-gray-300'>/</span>
               {title}
@@ -128,7 +128,7 @@ const navLinks = [
   },
   {
     title: "Experience",
-    url: "/works",
+    url: "/experience",
   },
   {
     title: "Blog",

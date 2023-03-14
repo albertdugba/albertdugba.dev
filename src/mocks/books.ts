@@ -1,12 +1,11 @@
-import JewishBiz from "../../public/assets/images/jewsish-wisdom.jpeg";
-import Character from "../../public/assets/images/power-of-charactor.jpeg";
-import FrontendUnicorn from "../../public/assets/images/frontend-unicon.webp";
-import EloquentJS from "../../public/assets/images/eloquent.png";
+import JewishBiz from "~/assets/images/jewsish-wisdom.jpeg";
+import Character from "~/assets/images/power-of-charactor.jpeg";
+import FrontendUnicorn from "~/assets/images/frontend-unicon.webp";
+import EloquentJS from "~/assets/images/eloquent.png";
 
 export const books = [
   {
-    title:
-      "Jewish Wisdom for Business Success: Lessons for the Torah and Other Ancient Texts",
+    title: "Jewish Wisdom for Business Success",
     author: "Levi Brackman and Sam Jaffe",
     link: "https://www.amazon.com/Jewish-Wisdom-Business-Success-Lessons/dp/179573969X",
     image: JewishBiz,
