@@ -3,10 +3,13 @@ import { FC, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import cn from "classnames";
 
+import { Me, MyReads, SpotifyPlayLists } from "./tab-content";
 import { SpotifyIcon } from "~/icons/spotify";
 import { InfoIcon } from "~/icons/info";
 import { BookIcon } from "~/icons/book";
-import { Me, MyReads, SpotifyPlayLists } from "./tab-content";
+import { SpotifyWidget } from "../widget";
+import { MoviesIcon } from "~/icons/movies";
+import { MyMovies } from "./tab-content/movies";
 
 interface TabProps {
   defaultIndex: number;
@@ -95,5 +98,12 @@ const tabs = [
     icon: <SpotifyIcon />,
     color: "var(--greenColor)",
     component: <SpotifyPlayLists />,
+  },
+  {
+    title: "My Movies",
+    id: "movies",
+    icon: <MoviesIcon />,
+    color: "var(--black200)",
+    component: <MyMovies />,
   },
 ];

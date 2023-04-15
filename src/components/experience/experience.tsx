@@ -1,10 +1,11 @@
 import { BlogLayout } from "../layout";
+import { ProgressIndicator } from "../timeline";
 
 export const MyExperience = () => {
   return (
-    <BlogLayout title='experience'>
-      <div className='max-w-7xl mx-auto mt-12'>
-        <h1>Hello Experience</h1>
+    <BlogLayout>
+      <div className='lg:max-w-7xl mx-auto mt-12'>
+        <ProgressIndicator />
       </div>
     </BlogLayout>
   );

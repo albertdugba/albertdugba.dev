@@ -1,5 +1,5 @@
 import querystring from "querystring";
-import { ISpotifyResponse } from "./types/spotify";
+import { IPlayingNow, ISpotifyResponse } from "./types/spotify";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_KEYS;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
@@ -50,4 +50,10 @@ export const getTopTracksQuery = async (): Promise<ISpotifyResponse[]> => {
   return await fetch("/api/top-tracks")
     .then((res) => res.json())
     .then((data) => data.tracks);
+};
+
+export const getPlayingNowQuery = async (): Promise<IPlayingNow> => {
+  return await fetch("/api/now-playing")
+    .then((res) => res.json())
+    .then((data) => data);
 };

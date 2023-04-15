@@ -5,3 +5,12 @@ export interface ISpotifyResponse {
   title: string;
   imageUrl: string;
 }
+
+export interface IPlayingNow {
+  album: string;
+  albumImageUrl: string;
+  artist: string;
+  isPlaying: boolean;
+  songUrl: string;
+  title: string;
+}

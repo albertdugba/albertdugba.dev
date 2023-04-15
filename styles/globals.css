@@ -10,11 +10,16 @@
   --greenColor: #1ed760;
   --pinkColor: #7b0dc0;
   --redColor: #c52348;
-  --border-radius: 3px;
+  --purpleColor: #8057d7;
+  --grayColor: #aaaaaa;
 
   /* colors as intents */
   --primaryColor: var(--pinkColor);
   --active-color: #f1f1f1;
+
+  /* units */
+  --borderRadius: 3px;
+  --spotifyArtistImage: "";
 }
 
 .bg {
@@ -81,8 +86,8 @@
   height: 100%;
   opacity: 0.2;
   position: absolute;
-  border-top-right-radius: var(--border-radius);
-  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--borderRadius);
+  border-top-left-radius: var(--borderRadius);
   background: none;
   transition: background 0.5s ease;
 }
@@ -122,10 +127,135 @@
   overflow: hidden;
   position: relative;
   text-decoration: none;
-  color: var(--black);
+  color: var(--black200);
 }
 .tab.active a svg,
 .tab.active a svg path {
   fill: var(--active-color);
   transition: fill 0.5s ease;
+}
+
+/* Progress */
+.progress-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  position: relative;
+}
+.progress-step .step-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: var(--white);
+  border-radius: 30%;
+  padding: 20px;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+  z-index: 1;
+  border-color: var(--grayColor);
+  color: var(--purpleColor);
+  transition: transform 0.5s ease 0.5s, background 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.progress-step.incomplete .step-number {
+  background: #7f3838;
+  border-color: var(--grayColor);
+  color: var(--black);
+}
+
+.progress-step.active .step-number {
+  background: var(--white);
+  border-color: var(--purpleColor);
+  color: var(--purpleColor);
+}
+
+.progress-step:not(:last-child):before,
+.progress-step:not(:last-child):after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  left: 45%;
+  top: 55px;
+  padding-bottom: 30px;
+}
+
+.progress-step:before {
+  height: 100%;
+  width: 100%;
+  background: var(--grayColor);
+}
+
+/* spotify disk */
+
+.spotify-disk {
+  display: inline-block;
+  width: 3rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0.3em 0.7em rgba(0, 0, 0, 0.25);
+  margin: 1em;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+.spotify-disk:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: url(https://res.cloudinary.com/amogl/image/upload/v1489850644/Codepen/Disks/shine.png)
+    center no-repeat;
+  background-size: cover;
+  mix-blend-mode: overlay;
+  border-radius: 50%;
+}
+.spotify-disk:after {
+  content: "";
+  padding: 0.2em;
+  background: white;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: inset 0 0.2em 0.2em rgba(0, 0, 0, 0.25);
+}
+.spotify-disk img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-animation: spin 3s infinite linear;
+  animation: spin 3s infinite linear;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
