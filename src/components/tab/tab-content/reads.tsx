@@ -4,7 +4,7 @@ import { books } from "src/mocks/books";
 export const MyReads = () => {
   return (
     <>
-      <h1 className='text-primary font-bold'>
+      <h1 className='text-primary text-base'>
         Currently , here is a list of all the books that Im reading
       </h1>
       {books.map((book) => (

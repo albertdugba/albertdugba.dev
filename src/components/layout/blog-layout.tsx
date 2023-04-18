@@ -1,30 +1,30 @@
 import { FC, ReactNode, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 import { HamburgerMenuButton } from "../ui/button/hamburger";
-import { GithubIcon } from "src/icons/github";
-import { TwitterIcon } from "src/icons/twitter";
-import { LinkedInIcon } from "src/icons/linkedin";
+import { GithubIcon } from "~/icons/github";
+import { TwitterIcon } from "~/icons/twitter";
+import { LinkedInIcon } from "~/icons/linkedin";
 import { Logo } from "~/icons/logo";
 import { isMobile } from "react-device-detect";
+import { SpotifyWidget } from "../widget";
 
 interface BlogLayoutProps {
   children: ReactNode;
-  title: string;
   isStickeyHeader?: boolean;
 }
 
 export const BlogLayout: FC<BlogLayoutProps> = ({
   children,
-  title,
   isStickeyHeader,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
-  console.log(isMobile);
   return (
-    <>
+    <div className='relative'>
       <div className='tech-bg relative'>
         <div className='max-w-7xl mx-auto flex justify-between'>
           <div className='flex items-center justify-between z-[999]'>
@@ -92,17 +92,18 @@ export const BlogLayout: FC<BlogLayoutProps> = ({
         </div>
 
         <div className='flex flex-col items-center justify-center h-full'>
-          <h1 className='text-white lg:text-6xl text-3xl lg:block hidden'>
+          <h1 className='text-white lg:text-4xl text-3xl lg:block hidden'>
             <div className='flex items-center'>
               <span className='text-gray-300'>/</span>
-              {title}
+              {router.pathname.slice(1)}
             </div>
           </h1>
         </div>
 
         <main>{children}</main>
+        <SpotifyWidget />
       </div>
-    </>
+    </div>
   );
 };
 
@@ -128,7 +129,7 @@ const navLinks = [
   },
   {
     title: "Experience",
-    url: "/works",
+    url: "/experience",
   },
   {
     title: "Blog",

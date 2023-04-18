@@ -8,6 +8,7 @@ import { aboutContent } from "src/mocks/profile";
 import { GithubIcon } from "src/icons/github";
 import { LinkedInIcon } from "src/icons/linkedin";
 import { TwitterIcon } from "src/icons/twitter";
+import { SpotifyWidget } from "../widget";
 
 export const HomePage = () => {
   const [isExpanded, setExpanded] = useState(true);
@@ -73,25 +74,7 @@ export const HomePage = () => {
                 </motion.div>
               </div>
 
-              <p className='text-base leading-relaxed'>
-                {aboutContent.substring(
-                  0,
-                  isExpanded ? aboutContent.length : LIMIT
-                )}
-                {aboutContent.length > LIMIT && (
-                  <>
-                    {isMobile ? (
-                      <a
-                        href='#'
-                        className='text-blue-500'
-                        onClick={() => setExpanded(!isExpanded)}
-                      >
-                        {isExpanded ? "Read Less" : "...Read More"}
-                      </a>
-                    ) : null}
-                  </>
-                )}
-              </p>
+              <p className='text-base leading-relaxed'>{aboutContent}</p>
 
               {/* <p className='mt-3 text-base'>
                 You can learn more
@@ -126,6 +109,7 @@ export const HomePage = () => {
           </AnimatePresence>
         </motion.div>
       </div>
+      <SpotifyWidget />
     </div>
   );
 };
