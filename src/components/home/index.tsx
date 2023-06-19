@@ -43,7 +43,7 @@ export const HomePage = () => {
 
   return (
     <div className='relative'>
-      <div className='flex items-center justify-between w-screen h-screen bg'>
+      <div className='flex items-center justify-between w-screen h-screen tech-bg'>
         <motion.div className='p-3 lg:w-[650px] w-full mx-auto absolute inset-x-0  md:w-3/5 z-20'>
           <AnimatePresence presenceAffectsLayout>
             <motion.div
@@ -96,6 +96,14 @@ export const HomePage = () => {
                   my experience{" "}
                 </a>
               </p> */}
+
+              <div className='text-primary'>
+                <p>
+                  Learn more about <strong>me</strong>,
+                  <strong>experiences</strong>,<strong>blog posts</strong> and{" "}
+                  <strong>portfolio</strong>
+                </p>
+              </div>
 
               <div className='flex flex-col space-y-3 items-center justify-center'>
                 <h1 className='mt-10 font-bold'>Connect with me on:</h1>

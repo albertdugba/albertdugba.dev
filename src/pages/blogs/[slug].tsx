@@ -20,13 +20,16 @@ const BlogPage = ({ post }: PostProps) => {
           : "/blog-banner.jpeg"
       }") no-repeat center center/cover`,
     width: "100vw",
-    height: "55vh",
+    height: "100vh",
   };
   return (
     <>
-      <div style={bgImage} className='relative'>
-        <div className='max-w-6xl mx-auto p-10 -mt-0'>
+      <div style={bgImage} className=' h-screen w-full'>
+        <div className='max-w-6xl p-10 -mt-0'>
           <h1 className='lg:text-6xl text-2xl text-black'>{title}</h1>
+          <section className='bg-white w-full rounded-md h-full my-10 p-10'>
+            {content}
+          </section>
         </div>
       </div>
     </>

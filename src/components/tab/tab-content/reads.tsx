@@ -3,7 +3,7 @@ import { books } from "src/mocks/books";
 
 export const MyReads = () => {
   return (
-    <>
+    <div className='w-full'>
       <h1 className='text-primary text-base'>
         Currently , here is a list of all the books that Im reading
       </h1>
@@ -31,6 +31,6 @@ export const MyReads = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };

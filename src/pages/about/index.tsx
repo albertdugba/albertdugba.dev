@@ -9,6 +9,7 @@ import { TwitterIcon } from "~/icons/twitter";
 import { TabComponent } from "~/components/tab";
 import { SpotifyWidget } from "~/components/widget";
 import profileImage from "../../../public/assets/albertdugba.webp";
+import { Layout } from "~/components/layout/layout";
 
 const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
   function ExoticImageWrapper(props, ref) {
@@ -20,8 +21,8 @@ const MotionImage = motion(ExoticImage);
 
 const About = () => {
   return (
-    <BlogLayout>
-      <div className='max-w-5xl mx-auto flex gap-10 p-8 lg:mt-10 -mt-20 bg-'>
+    <Layout>
+      <div className='max-w-6xl mx-auto flex gap-10 p-8 lg:mt-20 mt-10 min-h-screen'>
         <div className='transition-all relative rounded-md lg:block hidden'>
           <motion.div
             initial={{
@@ -56,7 +57,7 @@ const About = () => {
           <TabComponent defaultIndex={0} />
         </div>
       </div>
-    </BlogLayout>
+    </Layout>
   );
 };
 
