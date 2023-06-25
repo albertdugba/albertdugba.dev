@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
+import { Layout } from "~/components/layout";
 
 import { apolloClient } from "~/index";
 import { SINGLE_POST } from "~/queries/posts";
@@ -20,12 +21,12 @@ const BlogPage = ({ post }: PostProps) => {
           : "/blog-banner.jpeg"
       }") no-repeat center center/cover`,
     width: "100vw",
-    height: "100vh",
+    minHeight: "100vh",
   };
   return (
     <>
-      <div style={bgImage} className=' h-screen w-full'>
-        <div className='max-w-6xl p-10 -mt-0'>
+      <div style={bgImage} className='min-h-screen w-full'>
+        <div className='max-w-6xl p-10 -mt-0 mx-auto'>
           <h1 className='lg:text-6xl text-2xl text-black'>{title}</h1>
           <section className='bg-white w-full rounded-md h-full my-10 p-10'>
             {content}

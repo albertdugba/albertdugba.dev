@@ -1,13 +1,17 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Logo } from "~/icons/logo";
 import Link from "next/link";
+
+import { Logo } from "~/icons/logo";
 import { GithubIcon } from "~/icons/github";
+import { HamburgerMenuButton } from "../ui/button/hamburger";
+import { useRouter } from "next/router";
 
 interface LayoutProps {
   children: ReactNode;
 }
 export const Layout = ({ children }: LayoutProps) => {
+  const router = useRouter();
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [direction, setDirection] = useState<"up" | "down">(
     "up" as "up" | "down"
   );
@@ -29,6 +33,7 @@ export const Layout = ({ children }: LayoutProps) => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -50,26 +55,49 @@ export const Layout = ({ children }: LayoutProps) => {
       <header className='sticky top-10 bottom-0 left-0 right-0 z-50'>
         <nav
           style={headerStyles}
-          className={`bg-white flex w-full items-center justify-between max-w-6xl mx-auto rounded-md px-8`}
+          className={`bg-white flex py-2 h-20 items-center justify-between lg:max-w-6xl w-[90%] mx-auto rounded-md px-8`}
         >
-          <Logo />
+          <div>
+            <Link href='/' className='text-primary'>
+              AD
+            </Link>
+          </div>
 
           <ul className='flex items-center gap-8 justify-between'>
             {navLinks.map((link) => (
-              <li key={link.url}>
+              <li
+                className={`lg:block hidden  ${
+                  router.asPath === link.url ? "underline text-primary" : ""
+                }`}
+                key={link.url}
+              >
                 <Link href={link.url}>{link.title}</Link>
               </li>
             ))}
+
+            <div className='lg:hidden block'>
+              <HamburgerMenuButton
+                isOpen={isNavOpen}
+                setIsOpen={setIsNavOpen}
+              />
+            </div>
           </ul>
         </nav>
       </header>
 
-      {/* <div className='flex items-center justify-center mt-10'>
-        <h1 className='text-5xl mt-10'>My Profile</h1>
-      </div> */}
-      <div className='max-w-6xl mx-auto flex gap-10 p-8 lg:mt-20 mt-10 min-h-screen'>
-        {children}
+      {isNavOpen && (
+        <div className='absolute'>
+          <li>Hello01</li>
+          <li>Hello02</li>
+          <li>Hello03</li>
+        </div>
+      )}
+
+      <div className='flex items-center justify-center mt-[140px]'>
+        <h1 className='text-3xl capitalize'>My Profile</h1>
       </div>
+
+      <div className='max-w-6xl mx-auto relative'>{children}</div>
 
       <footer className='max-w-6xl mx-auto p-8'>
         <div className='border-b w-full my-6'></div>
@@ -81,20 +109,15 @@ export const Layout = ({ children }: LayoutProps) => {
 
 const navLinks = [
   {
-    title: "About",
-    url: "/about",
-  },
-
-  {
-    title: "Experience",
+    title: "My Experience",
     url: "/experience",
   },
   {
-    title: "Portfolio",
+    title: "My Portfolio",
     url: "/portfolio",
   },
   {
-    title: "Blog",
+    title: "My Blogs",
     url: "/blogs",
   },
 ];

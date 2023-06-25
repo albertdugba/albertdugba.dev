@@ -25,18 +25,33 @@ export const JOB_ROLES = {
 export const COMPANIES = [
   {
     title: "Montech Studios Inc",
+    role: "Frontend Developer",
+    description:
+      "Collaborate with designers to implement user-friendly, responsive and adaptable designs",
     id: "montech",
     card: MontechCard,
+    image: "/assets/images/montech.webp",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Firebase", "Redux"],
   },
   {
     title: "Origo Health",
     id: "origo",
+    role: "Frontend Developer",
+    description:
+      "Collaborate with designers to implement user-friendly, responsive and adaptable designs",
     card: OrigoHealth,
+    image: "/assets/images/origohealth.png",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Firebase", "Redux"],
   },
 
   {
     title: "Ytakenote",
     id: "ytakenote",
+    role: "Frontend Developer",
+    description:
+      "Collaborate with designers to implement user-friendly, responsive and adaptable designs",
     card: YtakeNoteCard,
+    image: "/assets/images/ytakenote.png",
+    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Firebase", "Redux"],
   },
 ];

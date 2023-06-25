@@ -16,7 +16,7 @@ export const FeaturedCard = ({
   return (
     <motion.div
       className={cn(
-        "lg:absolute lg:inset-0 fixed lg:w-full lg:h-full h-[300px] w-[90%] right-2 left-4 bottom-10 bg-gradient-to-br p-10 rounded-2xl transition-opacity",
+        "lg:absolute lg:inset-0 fixed lg:w-full lg:h-full h-[300px] w-[90%] right-2 left-4 bottom-20 bg-gradient-to-br p-10 rounded-2xl transition-opacity",
         gradient,
         state === id ? "opacity-100" : "opacity-0"
       )}

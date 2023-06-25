@@ -14,7 +14,7 @@
   --grayColor: #aaaaaa;
 
   /* colors as intents */
-  --primaryColor: var(--pinkColor);
+  --primaryColor: var(--purpleColor);
   --active-color: #f1f1f1;
 
   /* units */

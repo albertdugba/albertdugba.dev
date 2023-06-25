@@ -26,7 +26,7 @@ export const BlogCard: FC<CardProps> = (props) => {
         </Link>
       </div>
       <div className='px-6 py-4 mb-auto'>
-        <div className='mb-3'>
+        {/* <div className='mb-3'>
           <a
             href='#'
             className='text-xs text-indigo-600 transition duration-500 ease-in-out'
@@ -40,7 +40,7 @@ export const BlogCard: FC<CardProps> = (props) => {
           >
             Recipe
           </a>
-        </div>
+        </div> */}
         <Link
           href={`/blogs/${slug}`}
           className='font-medium text-lg  hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2'

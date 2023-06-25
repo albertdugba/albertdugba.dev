@@ -24,7 +24,7 @@ const Blogs = ({ posts }: BlogsProps) => {
         Featured Blog Post
       </div> */}
       {/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 */}
-      {/* <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-10 mt-20 lg:max-w-6xl w-11/12 mx-auto'>
+      <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-10 mt-20 lg:max-w-6xl w-11/12 mx-auto'>
         {posts?.posts.map((post) => (
           <BlogCard
             key={post.id}
@@ -35,7 +35,7 @@ const Blogs = ({ posts }: BlogsProps) => {
             imageUrl={post?.coverImage?.url}
           />
         ))}
-      </ul> */}
+      </ul>
     </Layout>
   );
 };
