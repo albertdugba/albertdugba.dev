@@ -41,7 +41,7 @@ export const COMPANIES = [
       "Collaborate with designers to implement user-friendly, responsive and adaptable designs",
     card: OrigoHealth,
     image: "/assets/images/origohealth.png",
-    technologies: ["Nextjs", "TypeScript", "TailwindCSS", "Firebase", "Redux"],
+    technologies: ["React", "React Query", "Bootstrap", "Auth0"],
   },
 
   {
