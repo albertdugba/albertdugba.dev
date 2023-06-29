@@ -1,8 +1,10 @@
-export const TwitterIcon = () => (
+import { IconSizeProps } from "src/types/global";
+
+export const TwitterIcon = ({ size = "1.5rem" }: IconSizeProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='1.5em'
-    height='1.5em'
+    width={size}
+    height={size}
     viewBox='0 0 24 24'
   >
     <path

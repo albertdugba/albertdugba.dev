@@ -1,23 +1,36 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-import { Logo } from "~/icons/logo";
 import { GithubIcon } from "~/icons/github";
 import { HamburgerMenuButton } from "../ui/button/hamburger";
-import { useRouter } from "next/router";
+import { MobileMenu } from "../mobile/mobileMenu";
+import { Logo } from "~/icons/logo";
 
 interface LayoutProps {
   children: ReactNode;
 }
+
+type Direction = "up" | "down" | "";
+
 export const Layout = ({ children }: LayoutProps) => {
   const router = useRouter();
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [direction, setDirection] = useState<"up" | "down">(
-    "up" as "up" | "down"
-  );
+  const [direction, setDirection] = useState<Direction>("");
 
   const prevScrollPosRef = useRef<any>(0);
   const navbarRef = useRef<any>(null);
+
+  const handleOpenNav = () => {
+    setIsNavOpen(true);
+    document.documentElement.style.overflow = "hidden";
+  };
+
+  const handleCloseNav = () => {
+    setIsNavOpen(false);
+    document.documentElement.style.overflow = "auto";
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,11 +52,19 @@ export const Layout = ({ children }: LayoutProps) => {
     };
   }, []);
 
-  const transform = direction === "up" ? "translateY(0%)" : "translateY(-200%)";
+  const transform =
+    direction === "up"
+      ? "translateY(0%)"
+      : direction === "down"
+      ? "translateY(-200%)"
+      : "translateY(-10%)";
 
   const headerStyles = {
-    boxShadow:
-      direction === "down" ? "none" : "0px 0px 20px 9px rgba(0, 0, 0, 0.045)",
+    boxShadow: isNavOpen
+      ? "unset"
+      : direction === "down"
+      ? "none"
+      : "0px 0px 20px 9px rgba(0, 0, 0, 0.045)",
     backdropFilter: direction === "down" ? "blur(6px)" : "blur(0px)",
     transform,
     transition: "400ms",
@@ -58,40 +79,36 @@ export const Layout = ({ children }: LayoutProps) => {
           className={`bg-white flex py-2 h-20 items-center justify-between lg:max-w-6xl w-[90%] mx-auto rounded-md px-8`}
         >
           <div>
-            <Link href='/' className='text-primary'>
+            <Link href='/' className='text-primary font-bold text-xl'>
               AD
             </Link>
           </div>
 
-          <ul className='flex items-center gap-8 justify-between'>
+          <ul className='flex items-center gap-8 justify-between z-[999] relative'>
             {navLinks.map((link) => (
-              <li
-                className={`lg:block hidden  ${
-                  router.asPath === link.url ? "underline text-primary" : ""
-                }`}
-                key={link.url}
-              >
+              <li className='lg:block hidden relative' key={link.url}>
                 <Link href={link.url}>{link.title}</Link>
+                {router.asPath === link.url && (
+                  <motion.div
+                    layoutId='custom-underline'
+                    className='Nav__link'
+                  />
+                )}
               </li>
             ))}
 
             <div className='lg:hidden block'>
               <HamburgerMenuButton
                 isOpen={isNavOpen}
-                setIsOpen={setIsNavOpen}
+                openNav={handleOpenNav}
+                closeNav={handleCloseNav}
               />
             </div>
           </ul>
         </nav>
       </header>
 
-      {isNavOpen && (
-        <div className='absolute'>
-          <li>Hello01</li>
-          <li>Hello02</li>
-          <li>Hello03</li>
-        </div>
-      )}
+      {isNavOpen && <MobileMenu navLinks={navLinks} />}
 
       <div className='flex items-center justify-center mt-[140px]'>
         <h1 className='text-3xl capitalize'>My Profile</h1>

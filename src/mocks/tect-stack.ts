@@ -6,6 +6,7 @@ export const stacks = [
   "Redux",
   "React Query",
   "Apollo GraphQL",
+  "Prisma",
   "Firebase",
   "TailwindCSS",
   "CSS-in-JS",

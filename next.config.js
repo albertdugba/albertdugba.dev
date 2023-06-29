@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["media.graphassets.com", "i.scdn.co"],
+    domains: ["media.graphassets.com", "i.scdn.co", "images.unsplash.com"],
   },
   env: {
     NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN:

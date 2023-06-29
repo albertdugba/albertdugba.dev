@@ -37,7 +37,7 @@ export const TabComponent: FC<TabProps> = ({ defaultIndex = 0 }) => {
   }, [defaultIndex]);
 
   return (
-    <div className='bg-white rounded-lg l]  mx-auto'>
+    <div className='bg-white rounded-lg mx-auto'>
       <AnimatePresence>
         <ul className='flex w-full rounded-md' role='tablist'>
           {tabs.map((tab, idx) => (
@@ -69,7 +69,7 @@ export const TabComponent: FC<TabProps> = ({ defaultIndex = 0 }) => {
             </div>
           ))}
         </ul>
-        <section className='py-4 px-6 rounded-md w-full'>
+        <section className='py-4 rounded-md w-full'>
           {tabs[activeIndex].component}
         </section>
       </AnimatePresence>
