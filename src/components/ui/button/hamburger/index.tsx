@@ -1,10 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
 
 interface Props {
-  setIsOpen: (value: boolean) => void;
+  openNav: (value: boolean) => void;
+  closeNav: (value: boolean) => void;
   isOpen: boolean;
 }
-export const HamburgerMenuButton = ({ setIsOpen, isOpen }: Props) => {
+export const HamburgerMenuButton = ({ openNav, closeNav, isOpen }: Props) => {
   const path01Controls = useAnimation();
   const path02Controls = useAnimation();
 
@@ -20,12 +21,14 @@ export const HamburgerMenuButton = ({ setIsOpen, isOpen }: Props) => {
   };
 
   const handleClick = async () => {
-    setIsOpen(!isOpen);
+    openNav(true);
     if (!isOpen) {
+      openNav(true);
       await path02Controls.start(path02Variants.moving);
       path01Controls.start(path01Variants.open);
       path02Controls.start(path02Variants.open);
     } else {
+      closeNav(true);
       path01Controls.start(path01Variants.closed);
       await path02Controls.start(path02Variants.moving);
       path02Controls.start(path02Variants.closed);
@@ -34,12 +37,12 @@ export const HamburgerMenuButton = ({ setIsOpen, isOpen }: Props) => {
 
   return (
     <button onClick={handleClick} className='z-[9999]'>
-      <svg width='2.2rem' height='2.2rem' viewBox='0 0 24 24'>
+      <svg width='1.9rem' height='1.9rem' viewBox='0 0 24 24'>
         <motion.path
           {...path01Variants.closed}
           animate={path01Controls}
           transition={{ duration: 0.2 }}
-          stroke='#be7ce2'
+          stroke='var(--primaryColor)'
           strokeWidth={1.3}
         />
 
@@ -47,7 +50,7 @@ export const HamburgerMenuButton = ({ setIsOpen, isOpen }: Props) => {
           {...path02Variants.closed}
           animate={path02Controls}
           transition={{ duration: 0.2 }}
-          stroke='#be7ce2'
+          stroke='var(--primaryColor)'
           strokeWidth={1.3}
         />
       </svg>

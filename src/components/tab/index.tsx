@@ -37,17 +37,17 @@ export const TabComponent: FC<TabProps> = ({ defaultIndex = 0 }) => {
   }, [defaultIndex]);
 
   return (
-    <div className='bg-white rounded-lg'>
+    <div className='bg-white rounded-lg mx-auto'>
       <AnimatePresence>
-        <ul className='flex w-full rounded-md -mt-6' role='tablist'>
+        <ul className='flex w-full rounded-md' role='tablist'>
           {tabs.map((tab, idx) => (
             <div
               key={tab.id}
-              className={cn("tab", {
+              className={cn("tab w-full", {
                 active: activeIndex === idx,
               })}
             >
-              <motion.li role='presentation'>
+              <motion.li role='presentation' className='w-full'>
                 <a
                   className='w-full flex items-center justify-center text-center'
                   href={`#tab?=${tab.id}`}
@@ -69,7 +69,7 @@ export const TabComponent: FC<TabProps> = ({ defaultIndex = 0 }) => {
             </div>
           ))}
         </ul>
-        <section className='py-4 px-3 rounded-md'>
+        <section className='py-4 rounded-md w-full'>
           {tabs[activeIndex].component}
         </section>
       </AnimatePresence>
