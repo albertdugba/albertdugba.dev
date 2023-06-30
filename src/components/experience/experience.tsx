@@ -17,7 +17,7 @@ export const MyExperience = () => {
 
   return (
     <Layout title='experiences'>
-      <div className='flex lg:flex-row flex-col w-full gap-20 items-start mt-10'>
+      <div className='flex lg:flex-row flex-col w-full gap-20 items-start mt-20'>
         <ul className='md:w-[60%] w-full'>
           {COMPANIES.map(
             (

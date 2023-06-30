@@ -21,7 +21,7 @@ const MotionImage = motion(ExoticImage);
 const About = () => {
   return (
     <Layout title='about'>
-      <div className='max-w-6xl mx-auto flex gap-10 p-8 lg:mt-20 mt-10 min-h-screen relative'>
+      <div className='max-w-6xl mx-auto flex gap-10 p-8  mt-10 min-h-screen relative'>
         <div className='transition-all relative rounded-md lg:block hidden'>
           <motion.div
             initial={{
