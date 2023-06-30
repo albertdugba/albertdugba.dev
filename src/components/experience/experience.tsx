@@ -56,6 +56,7 @@ export const MyExperience = () => {
                             })}
                           >
                             <span>{role}</span>
+                            <span>@</span>
                             <h1 className='text-base'>{title}</h1>
                             <LinkIcon />
                           </div>
@@ -68,12 +69,19 @@ export const MyExperience = () => {
                           })}
                         >
                           <span>{role}</span>
+                          <span>@</span>
                           <h1 className='text-base'>{title}</h1>
                           <LinkIcon />
                         </div>
                       )}
 
-                      <span className='text-sm lg:my-0 my-2'>{duration}</span>
+                      <span
+                        className={cn("text-sm lg:my-0 my-2", {
+                          "text-gray-500": selected !== i,
+                        })}
+                      >
+                        {duration}
+                      </span>
                     </div>
                     <div className='mt-3 flex flex-col'>
                       <span
