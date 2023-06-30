@@ -2,7 +2,6 @@ import { forwardRef } from "react";
 import Image, { ImageProps } from "next/image";
 import { motion } from "framer-motion";
 
-import { BlogLayout } from "~/components/layout";
 import { GithubIcon } from "~/icons/github";
 import { LinkedInIcon } from "~/icons/linkedin";
 import { TwitterIcon } from "~/icons/twitter";
@@ -21,7 +20,7 @@ const MotionImage = motion(ExoticImage);
 
 const About = () => {
   return (
-    <Layout title="about">
+    <Layout title='about'>
       <div className='max-w-6xl mx-auto flex gap-10 p-8 lg:mt-20 mt-10 min-h-screen relative'>
         <div className='transition-all relative rounded-md lg:block hidden'>
           <motion.div

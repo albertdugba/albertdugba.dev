@@ -8,7 +8,7 @@ import { BlogCard } from "~/components/card";
 import { Layout } from "~/components/layout";
 
 const BlogLayout = dynamic(
-  () => import("~/components/layout").then((comp) => comp.BlogLayout),
+  () => import("~/components/layout").then((comp) => comp.Layout),
   { ssr: false }
 );
 
@@ -19,7 +19,7 @@ interface BlogsProps {
 const Blogs = ({ posts }: BlogsProps) => {
   console.log(posts);
   return (
-    <Layout title="blogs">
+    <Layout title='blogs'>
       {/* <div className='p-3 lg:block lg:max-w-6xl w-11/12 mx-auto -mt-20 z-[99999999999999] h-[390px] text-center justify-center flex flex-col bg-gradient-to-r from-[#f5deed] to-[#f9f7f9] rounded-md shadow-lg'>
         Featured Blog Post
       </div> */}
