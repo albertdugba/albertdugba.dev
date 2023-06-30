@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Layout } from "~/components/layout";
-import Image from "next/image";
 
 const PortFoliio = () => {
   const [isExpanded, setIsExpanded] = useState(false);

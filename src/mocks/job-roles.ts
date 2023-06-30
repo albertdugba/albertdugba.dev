@@ -1,7 +1,7 @@
 export const COMPANIES = [
   {
     title: "Montech Studios Inc",
-    role: "Frontend Developer",
+    role: "Frontend Dev.",
     showLink: true,
     link: "https://montech.io",
     duration: "November 2021 - Present",
@@ -25,7 +25,7 @@ export const COMPANIES = [
     title: "Origo Health",
     id: "origo",
     showLink: true,
-    role: "Frontend Developer",
+    role: "Frontend Eng.",
     link: "https://origohealth.net",
     duration: "October 2020 - August 2021",
     description:
@@ -46,7 +46,7 @@ export const COMPANIES = [
     id: "ytakenote",
     showLink: false,
     link: "https://ytakenote.netlify.app",
-    role: "Frontend Developer",
+    role: "Frontend Eng.",
     duration: "Oct 2020 - Aug 2021",
     description:
       "Developed, maintained and shipped a note taking application for a client. One of the core features of the product was to enable students read, hightlight and take notes",

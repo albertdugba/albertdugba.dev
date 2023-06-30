@@ -17,7 +17,7 @@ export const MyExperience = () => {
 
   return (
     <Layout title='experiences'>
-      <div className='flex lg:flex-row flex-col w-full gap-20 items-start mt-10'>
+      <div className='flex lg:flex-row flex-col w-full gap-20 items-start mt-20'>
         <ul className='md:w-[60%] w-full'>
           {COMPANIES.map(
             (
@@ -56,6 +56,7 @@ export const MyExperience = () => {
                             })}
                           >
                             <span>{role}</span>
+                            <span>@</span>
                             <h1 className='text-base'>{title}</h1>
                             <LinkIcon />
                           </div>
@@ -68,12 +69,17 @@ export const MyExperience = () => {
                           })}
                         >
                           <span>{role}</span>
+                          <span>@</span>
                           <h1 className='text-base'>{title}</h1>
                           <LinkIcon />
                         </div>
                       )}
 
-                      <span className='lg:text-sm lg:my-0 my-2 text-xs'>
+                      <span
+                        className={cn("text-sm lg:my-0 my-2", {
+                          "text-gray-500": selected !== i,
+                        })}
+                      >
                         {duration}
                       </span>
                     </div>

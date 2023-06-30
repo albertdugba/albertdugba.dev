@@ -7,15 +7,25 @@ import { useRouter } from "next/router";
 
 export const MobileMenu = ({ navLinks }: { navLinks: INavLinkProps[] }) => {
   const router = useRouter();
+
+  const handleClickLink = (link: string) => {
+    document.documentElement.style.overflow = "auto";
+    router.push(link);
+  };
+
   return (
     <div className='fixed right-0 h-full w-full top-0 z-10 bg-white'>
       <div className='flex flex-col items-cer mt-40 w-[90%] mx-auto px-2'>
         {navLinks.map((link, index) => (
           <li
-            className='relative text-lg my-4 font-light text gap-10 text text-left list-none'
+            className='relative text-lg my-4 font-normal text gap-10 text text-left list-none'
             key={index}
           >
-            <Link href={link.url} className='relative'>
+            <Link
+              href={link.url}
+              onClick={() => handleClickLink(link.url)}
+              className='relative'
+            >
               {link.title}
               {router.asPath === link.url && <div className='Nav__link' />}
             </Link>
