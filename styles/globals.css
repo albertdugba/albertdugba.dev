@@ -393,7 +393,7 @@
     padding: 20px 2px;
     border-radius: var(--borderRadius);
     background-color: var(--white);
-    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.05);
     border-radius: var(--border-radius);
   }
 }
@@ -411,10 +411,10 @@
   left: 0;
   right: 0;
   z-index: -1;
-  transform: translate(8px, 8px);
+  transform: translate(5px, 5px);
   transition: transform 0.4s ease;
 }
 
 .Project__Card:hover:not(.expanded)::before {
-  transform: translate(10px, 10px);
+  transform: translate(7px, 7px);
 }

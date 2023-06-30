@@ -10,6 +10,8 @@ const PortFoliio = () => {
     const handleResize = () => {
       if (data.length === 1 && window.innerWidth >= 768) {
         document.documentElement.style.setProperty("--cardWidth", "80%");
+      } else if (window.innerWidth >= 1024) {
+        document.documentElement.style.setProperty("--cardWidth", "100%");
       } else {
         document.documentElement.style.setProperty("--cardWidth", "90%");
       }
@@ -23,11 +25,11 @@ const PortFoliio = () => {
   }, [data]);
 
   return (
-    <Layout>
-      <div className='w-full'>
+    <Layout title='projects'>
+      <div className='w-full mt-20'>
         <motion.div>
           <AnimatePresence initial={false}>
-            <div className='grid lg:grid-cols-2 grid-cols-1 lg:w-full w-[100%] gap-x-4'>
+            <div className='grid lg:grid-cols-2 grid-cols-1 lg:w-full w-full gap-x-4'>
               {data.map((item, index) => (
                 <CardContent key={index} data={item} />
               ))}
@@ -44,7 +46,7 @@ const CardContent = ({ data }: any) => {
   return (
     <motion.div
       exit='inactive'
-      className='Project__Card'
+      className='Project__Card cursor-pointer'
       animate='active'
       initial='inactive'
     >
@@ -61,9 +63,9 @@ const CardContent = ({ data }: any) => {
             </li>
           ))}
         </ul>
-        <button className='bg-primary py-2 text-sm rounded-[4px] text-white px-4 my-4'>
+        {/* <button className='bg-primary py-2 text-sm rounded-[4px] text-white px-4 my-4'>
           Learn more
-        </button>
+        </button> */}
       </motion.div>
     </motion.div>
   );

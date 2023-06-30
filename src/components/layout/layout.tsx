@@ -7,14 +7,17 @@ import { GithubIcon } from "~/icons/github";
 import { HamburgerMenuButton } from "../ui/button/hamburger";
 import { MobileMenu } from "../mobile/mobileMenu";
 import { Logo } from "~/icons/logo";
+import { LinkedInIcon } from "~/icons/linkedin";
+import { TwitterIcon } from "~/icons/twitter";
 
 interface LayoutProps {
   children: ReactNode;
+  title: string;
 }
 
 type Direction = "up" | "down" | "";
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children, title }: LayoutProps) => {
   const router = useRouter();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [direction, setDirection] = useState<Direction>("");
@@ -111,20 +114,38 @@ export const Layout = ({ children }: LayoutProps) => {
       {isNavOpen && <MobileMenu navLinks={navLinks} />}
 
       <div className='flex items-center justify-center mt-[140px]'>
-        <h1 className='text-3xl capitalize'>My Profile</h1>
+        <div className='flex gap-x-1'>
+          <span className='text-gray-400 font-bold text-xl'>/</span>
+          <h1 className='text-xl'>{title}</h1>
+        </div>
       </div>
 
       <div className='max-w-6xl mx-auto relative'>{children}</div>
 
-      <footer className='max-w-6xl mx-auto p-8'>
-        <div className='border-b w-full my-6'></div>
-        <GithubIcon />
+      <footer className='flex items-center justify-center gap-3 flex-wrap my-8'>
+        <div className='w-full h-[1px] bg-gray-300 max-w-6xl lg:mx-auto mx-0' />
+        <ul className='lg:w-full my-6 max-w-6xl mx-auto flex lg:flex-row flex-col  px-1 w-[90%] gap-x-6 justify-between'>
+          <span>&copy; Albert Dugba {new Date().getFullYear()}</span>
+          <div className='flex gap-x-6 lg:my-0 my-5'>
+            {socialLinks.map((link) => (
+              <li key={link.url}>
+                <a href={link.url} rel='noreferrer' target='_blank'>
+                  {link.icon}
+                </a>
+              </li>
+            ))}
+          </div>
+        </ul>
       </footer>
     </div>
   );
 };
 
 const navLinks = [
+  {
+    title: "About",
+    url: "/",
+  },
   {
     title: "My Experience",
     url: "/experience",
@@ -136,5 +157,20 @@ const navLinks = [
   {
     title: "My Blogs",
     url: "/blogs",
+  },
+];
+
+const socialLinks = [
+  {
+    url: "https://gitub.com/albertdugba",
+    icon: <GithubIcon />,
+  },
+  {
+    url: "https://linkedin.com/in/albertdugba",
+    icon: <LinkedInIcon />,
+  },
+  {
+    url: "https://twitter.com/albertdugba__",
+    icon: <TwitterIcon />,
   },
 ];

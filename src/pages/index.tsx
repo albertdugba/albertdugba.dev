@@ -21,7 +21,7 @@ const MotionImage = motion(ExoticImage);
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title="about">
       <div className='max-w-6xl mx-auto flex gap-10 p-8 lg:mt-20 mt-10 min-h-screen relative'>
         <div className='transition-all relative rounded-md lg:block hidden'>
           <motion.div
@@ -48,7 +48,11 @@ const About = () => {
 
           <ul className='flex items-center justify-center gap-3 flex-wrap my-8'>
             {socialLinks.map((link) => (
-              <li key={link.url}>{link.icon}</li>
+              <li key={link.url}>
+                <a href={link.url} rel='noreferrer' target='_blank'>
+                  {link.icon}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
