@@ -12,7 +12,7 @@ export const MobileMenu = ({ navLinks }: { navLinks: INavLinkProps[] }) => {
       <div className='flex flex-col items-cer mt-40 w-[90%] mx-auto px-2'>
         {navLinks.map((link, index) => (
           <li
-            className='relative text-lg my-4 font-light text gap-10 text text-left list-none'
+            className='relative text-lg my-4 font-normal text gap-10 text text-left list-none'
             key={index}
           >
             <Link href={link.url} className='relative'>

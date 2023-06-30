@@ -73,9 +73,7 @@ export const MyExperience = () => {
                         </div>
                       )}
 
-                      <span className='lg:text-sm lg:my-0 my-2 text-xs'>
-                        {duration}
-                      </span>
+                      <span className='text-sm lg:my-0 my-2'>{duration}</span>
                     </div>
                     <div className='mt-3 flex flex-col'>
                       <span
