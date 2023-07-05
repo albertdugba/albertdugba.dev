@@ -11,6 +11,8 @@ export const COMPANIES = [
     image: "/assets/images/montech.webp",
     technologies: [
       "Nextjs",
+      "React",
+      "React Native",
       "TypeScript",
       "TailwindCSS",
       "Firebase",

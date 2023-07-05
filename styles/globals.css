@@ -6,6 +6,9 @@
   --blue: #317ff9;
   --pink: #ffc7b2;
 
+  --bg-color: #ffffff;
+  --pinstripe-thickness: 1px;
+  --columns: 5;
   /* colors as colors */
   --white: #fff;
   --black100: #000;
@@ -26,6 +29,10 @@
   --border-radius: 16px;
   --spotifyArtistImage: "";
   --cardWidth: 90%;
+  --bg-color: #ffffff;
+  --pinstripe-thickness: 10px;
+  --columns: 6;
+  --rows: 5;
 }
 
 .content {
