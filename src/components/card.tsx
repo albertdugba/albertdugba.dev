@@ -25,7 +25,7 @@ export const BlogCard: FC<CardProps> = (props) => {
           />
         </Link>
       </div>
-      <div className='px-6 py-4 mb-auto'>
+      <div className='px-6 py-4 mb-auto z-50'>
         {/* <div className='mb-3'>
           <a
             href='#'
@@ -49,7 +49,7 @@ export const BlogCard: FC<CardProps> = (props) => {
         </Link>
         <p className='text-gray-500 text-sm'>{description}</p>
       </div>
-      <div className='flex items-center gap-6 px-6 pb-4'>
+      <div className='flex items-center gap-6 px-6 pb-4 z-50'>
         <div className='w-10'>
           <Image
             src={IMG}

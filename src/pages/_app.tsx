@@ -11,9 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Albert Dugba</title>
       </Head>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
+      <div>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
+      </div>
     </>
   );
 }
