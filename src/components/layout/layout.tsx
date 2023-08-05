@@ -154,10 +154,10 @@ const navLinks = [
     title: "My Portfolio",
     url: "/portfolio",
   },
-  {
-    title: "My Blogs",
-    url: "/blogs",
-  },
+  // {
+  //   title: "My Blogs",
+  //   url: "/blogs",
+  // },
 ];
 
 const socialLinks = [
