@@ -11,7 +11,7 @@ export function Seo({
   title,
   description,
   linkUrl,
-  imageUrl = "https://res.cloudinary.com/dsdifoazf/image/upload/v1691345661/image_4_1_vtos7v.png",
+  imageUrl = "https://res.cloudinary.com/dsdifoazf/image/upload/v1691347988/image_4_1_wgoyz7.jpg",
 }: SeoProps) {
   return (
     <Head>
