@@ -50,8 +50,8 @@ const CardContent = ({ data }: any) => {
       initial='inactive'
     >
       <motion.div className='p-5'>
-        <h2 className='title'>{data.title}</h2>
-        <p>{data.description}</p>
+        <h2 className='text-2xl text-gray-800'>{data.title}</h2>
+        <p className='text-lg text-gray-600 my-2'>{data.description}</p>
         <ul className=''>
           {data?.stacks?.map((stack: any, i: number) => (
             <li
@@ -62,8 +62,8 @@ const CardContent = ({ data }: any) => {
             </li>
           ))}
         </ul>
-        {/* <button className='bg-primary py-2 text-sm rounded-[4px] text-white px-4 my-4'>
-          Learn more
+        {/* <button className='bg-primary py-2 text-xs leading-6 rounded-[20px] text-white px-4 my-4'>
+          Visit Site
         </button> */}
       </motion.div>
     </motion.div>

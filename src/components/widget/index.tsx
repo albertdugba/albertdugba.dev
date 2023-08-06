@@ -16,17 +16,25 @@ export const SpotifyWidget = () => {
           layout
           initial={{ opacity: 0 }}
           animate={{ opacity: currentTrack?.isPlaying ? 1 : 0 }}
-          exit={{ opacity: !currentTrack?.isPlaying ? 0 : 0 }}
+          // exit={{ opacity: !currentTrack?.isPlaying ? 0 : 0 }}
           style={{
-            boxShadow: "0px -4px 12px rgba(0, 0, 0, 0.06)",
+            boxShadow: "0px -4px 12px rgba(0, 0, 0, 0.1)",
             backdropFilter: "blur(6px)",
           }}
-          className='fixed right-0 mx-auto md:3/5 lg:-bottom-2 -bottom-3 bg-white shadow-lg rounded-md z-[9999]'
+          className='fixed right-4 mx-auto bottom-4 bg-white shadow-lg rounded-md z-[9999]'
         >
           <span className='bg-green rounded-tl-md text-xs p-1.5 m-0 text-gray-100 w-full'>
-            {currentTrack?.isPlaying
-              ? "Currently listening on spotify"
-              : "Not listening"}
+            <a
+              role='tooltip'
+              rel='noreferrer'
+              target='_blank'
+              href={currentTrack?.songUrl}
+              className='underline'
+            >
+              {currentTrack?.isPlaying
+                ? "Currently listening on spotify"
+                : "Not listening"}
+            </a>
           </span>
 
           <motion.div layout className='flex items-center'>
@@ -44,11 +52,11 @@ export const SpotifyWidget = () => {
             ) : (
               <SpotifyIcon />
             )}
-            <div>
-              <h1>
+            <div className='px-4'>
+              <h1 className='text-sm'>
                 {currentTrack?.title && truncateString(currentTrack?.title, 18)}
               </h1>
-              <p className='text-gray-500 text-sm'>
+              <p className='text-gray-500 text-xs'>
                 {currentTrack?.artist &&
                   truncateString(currentTrack?.artist, 20)}
               </p>

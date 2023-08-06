@@ -2,12 +2,11 @@ export const COMPANIES = [
   {
     title: "Montech Studios Inc",
     role: "Frontend Dev.",
-    showLink: true,
-    link: "https://montech.io",
+    websiteUrl: "https://montech.io",
     duration: "November 2021 - Present",
     description:
       "Collaborate closely with the user interface (UI), backend development team, and project managers to ensure the delivery of top-notch, resilient production code for various projects catered to a wide range of clients like Derived Arts, Cryto University, Ecet, tlc, and others.",
-    id: "montech",
+    id: 1,
     image: "/assets/images/montech.webp",
     technologies: [
       "Nextjs",
@@ -25,10 +24,9 @@ export const COMPANIES = [
   },
   {
     title: "Origo Health",
-    id: "origo",
-    showLink: true,
+    id: 2,
     role: "Frontend Eng.",
-    link: "https://origohealth.net",
+    websiteUrl: "https://origohealth.net",
     duration: "October 2020 - August 2021",
     description:
       "Worked with 1 other frontend engineer to develop highly accessible and inclusive user interfaces for appointment dashboards tailored to the needs of both patients and doctors. Our work was greatly appreciated and well-received by the users.",
@@ -45,9 +43,8 @@ export const COMPANIES = [
 
   {
     title: "Ytakenote",
-    id: "ytakenote",
-    showLink: false,
-    link: "https://ytakenote.netlify.app",
+    id: 3,
+    websiteUrl: "https://ytakenote.netlify.app",
     role: "Frontend Eng.",
     duration: "Oct 2020 - Aug 2021",
     description:

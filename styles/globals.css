@@ -19,10 +19,12 @@
   --purpleColor: #8057d7;
   --grayColor: #f3ecfa;
   --lightPurple: #bba2f1;
+  --lightPurple200: #8057d766;
 
   /* colors as intents */
   --primaryColor: var(--purpleColor);
   --active-color: #f1f1f1;
+  --link-color: var(--lightPurple200);
 
   /* units */
   --borderRadius: 3px;
@@ -146,8 +148,7 @@
   width: 40%;
   top: 14px;
   right: 0;
-  background-color: var(--primaryColor);
-  opacity: 0.4;
+  background-color: var(--link-color);
 }
 
 /* tabs */
