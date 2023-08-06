@@ -4,6 +4,7 @@ import ProductSans from "@next/font/local";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "../../styles/globals.css";
+import { Seo } from "~/components/seo";
 
 const myFonts = ProductSans({
   src: [
@@ -23,9 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <title>Albert Dugba</title>
-      </Head>
+      <Seo
+        title='Albert Dugba - Frontend Engineer'
+        description="Hi my name is Albert Dugba. I'm a frontend engineer with 3+ years of experience with a knack for building digital experiences on the web."
+        linkUrl='https://albertdugba.dev'
+        imageUrl='https://res.cloudinary.com/dsdifoazf/image/upload/v1691345661/image_4_1_vtos7v.png'
+      />
       <div className={`${myFonts.className}`}>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />

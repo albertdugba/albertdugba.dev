@@ -5,7 +5,7 @@ export const Me = () => {
   return (
     <div>
       <p className='text-md leading-7'>
-        My name is <strong>Albert Dugba</strong>, a passionate web developer
+        My name is <strong>Albert Dugba</strong>, a passionate frontend developer
         with nearly 4 years of experience. I specialize in creating exceptional
         online experiences for a diverse range of industries, including web3,
         social, education, and health. My journey into web development began in
