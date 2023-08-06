@@ -50,12 +50,15 @@ export const MyExperience = () => {
                       {showLink ? (
                         <a rel='noreferrer' href={link} target='_blank'>
                           <div
-                            className={cn("flex items-center gap-x-1", {
-                              "text-white": selected === i,
-                              "text-purple-700": selected !== i,
-                            })}
+                            className={cn(
+                              "flex items-center gap-x-1 font-medium text-lg",
+                              {
+                                "text-white": selected === i,
+                                "text-purple-700": selected !== i,
+                              }
+                            )}
                           >
-                            <span>{role}</span>
+                            <h2>{role}</h2>
                             <span>@</span>
                             <h1 className='text-base'>{title}</h1>
                             <LinkIcon />
@@ -63,10 +66,13 @@ export const MyExperience = () => {
                         </a>
                       ) : (
                         <div
-                          className={cn("flex items-center gap-x-1", {
-                            "text-white": selected === i,
-                            "text-purple-700": selected !== i,
-                          })}
+                          className={cn(
+                            "flex items-center gap-x-1 font-medium text-lg",
+                            {
+                              "text-white": selected === i,
+                              "text-purple-700": selected !== i,
+                            }
+                          )}
                         >
                           <span>{role}</span>
                           <span>@</span>
@@ -85,7 +91,7 @@ export const MyExperience = () => {
                     </div>
                     <div className='mt-3 flex flex-col'>
                       <span
-                        className={cn("text-sm my-1.5", {
+                        className={cn("text-md my-1.5 leading-7", {
                           "text-gray-500": selected !== i,
                         })}
                       >

@@ -9,6 +9,7 @@ module.exports = {
         red: "var(--redColor)",
         lightPurple: "var(--lightPurple)",
         grayColor: "var(--grayColor)",
+        linkColor: "var(---link-color)",
       },
     },
   },
