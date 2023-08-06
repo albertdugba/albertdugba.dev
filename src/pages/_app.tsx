@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
         title='Albert Dugba - Frontend Engineer'
         description="Hi my name is Albert Dugba. I'm a frontend engineer with 3+ years of experience with a knack for building digital experiences on the web."
         linkUrl='https://albertdugba.dev'
-        imageUrl='https://res.cloudinary.com/dsdifoazf/image/upload/v1691345661/image_4_1_vtos7v.png'
+        imageUrl='https://res.cloudinary.com/dsdifoazf/image/upload/v1691347988/image_4_1_wgoyz7.jpg'
       />
       <div className={`${myFonts.className}`}>
         <QueryClientProvider client={queryClient}>
