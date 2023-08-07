@@ -16,6 +16,10 @@ export function Seo({
   return (
     <Head>
       <title>{title}</title>
+      <meta charSet='utf-8' />
+      <meta name='robots' content='follow, index' />
+      <meta content='IE=edge' httpEquiv='X-UA-Compatible' />
+      <meta content='width=device-width, initial-scale=1' name='viewport' />
       <meta name='description' content={description} />
 
       <meta itemProp='name' content={title} />
