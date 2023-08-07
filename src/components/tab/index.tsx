@@ -99,11 +99,11 @@ const tabs = [
     color: "var(--greenColor)",
     component: <SpotifyPlayLists />,
   },
-  {
-    title: "My Movies",
-    id: "movies",
-    icon: <MoviesIcon />,
-    color: "var(--black200)",
-    component: <MyMovies />,
-  },
+  // {
+  //   title: "My Movies",
+  //   id: "movies",
+  //   icon: <MoviesIcon />,
+  //   color: "var(--black200)",
+  //   component: <MyMovies />,
+  // },
 ];
