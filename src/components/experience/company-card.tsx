@@ -39,7 +39,7 @@ export function CompanyCard(props: CompanyCardProps) {
                 >
                   <h2>{data.role}</h2>
                   <span>@</span>
-                  <h1 className='text-base'>{data.role}</h1>
+                  <h1 className='text-base'>{data.title}</h1>
                   <LinkIcon />
                 </div>
               </a>
@@ -50,10 +50,9 @@ export function CompanyCard(props: CompanyCardProps) {
                   "text-purple-700": selected !== index,
                 })}
               >
-                <span>{data.role}</span>
+                <span>{data.title}</span>
                 <span>@</span>
                 <h1 className='text-base'>{data.title}</h1>
-                <LinkIcon />
               </div>
             )}
 

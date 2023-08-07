@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Layout } from "~/components/layout";
+import { Seo } from "~/components/seo";
 
 const PortFoliio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -24,19 +25,27 @@ const PortFoliio = () => {
   }, [data]);
 
   return (
-    <Layout title='projects'>
-      <div className='w-full mt-20'>
-        <motion.div>
-          <AnimatePresence initial={false}>
-            <div className='grid lg:grid-cols-2 grid-cols-1 lg:w-full w-full gap-x-4'>
-              {data.map((item, index) => (
-                <CardContent key={index} data={item} />
-              ))}
-            </div>
-          </AnimatePresence>
-        </motion.div>
-      </div>
-    </Layout>
+    <>
+      <Seo
+        title='Albert Dugba - My Projects'
+        description='These are some of personal projects & portfolio'
+        linkUrl='https://albertdugba.dev/portfolio'
+        imageUrl='https://res.cloudinary.com/dsdifoazf/image/upload/v1691347988/image_4_1_wgoyz7.jpg'
+      />
+      <Layout title='projects'>
+        <div className='w-full mt-20'>
+          <motion.div>
+            <AnimatePresence initial={false}>
+              <div className='grid lg:grid-cols-2 grid-cols-1 lg:w-full w-full gap-x-4'>
+                {data.map((item, index) => (
+                  <CardContent key={index} data={item} />
+                ))}
+              </div>
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </Layout>
+    </>
   );
 };
 export default PortFoliio;
