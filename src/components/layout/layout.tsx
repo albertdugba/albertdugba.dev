@@ -13,7 +13,7 @@ interface LayoutProps {
   title: string;
 }
 
-type Direction = "up" | "down" | "";
+type Direction = "up" | "down" | {};
 
 export const Layout = ({ children, title }: LayoutProps) => {
   const router = useRouter();
@@ -55,10 +55,10 @@ export const Layout = ({ children, title }: LayoutProps) => {
 
   const transform =
     direction === "up"
-      ? "translateY(0%)"
+      ? "translateY(10%)"
       : direction === "down"
-      ? "translateY(-200%)"
-      : "translateY(-10%)";
+      ? "translateY(-150%)"
+      : "translateY(10%)";
 
   const headerStyles = {
     boxShadow: isNavOpen
@@ -67,7 +67,7 @@ export const Layout = ({ children, title }: LayoutProps) => {
       ? "none"
       : "0px 0px 20px 9px rgba(0, 0, 0, 0.045)",
     backdropFilter: direction === "down" ? "blur(6px)" : "blur(0px)",
-    transform,
+    // transform,
     transition: "400ms",
     backggroundColor: "white",
   };
