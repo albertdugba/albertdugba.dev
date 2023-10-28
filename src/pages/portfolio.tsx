@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Layout } from "~/components/layout";
 import { Seo } from "~/components/seo";
 
-const PortFoliio = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+const PortFolio = () => {
   useEffect(() => {
     const handleResize = () => {
       if (data.length === 1 && window.innerWidth >= 768) {
@@ -48,7 +46,7 @@ const PortFoliio = () => {
     </>
   );
 };
-export default PortFoliio;
+export default PortFolio;
 
 const CardContent = ({ data }: any) => {
   return (
