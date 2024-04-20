@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* colors as colors */
+  --greenColor: #1ed760;
+  --lemonColor: #a7f381;
+  --pinkColor: #7b0dc0;
+  --purpleColor: #1a0356;
+  --lightPurple: #bba2f1;
+  --lightPurple200: #8057d766;
+
+  /* colors as intents */
+  --primaryColor: var(--purpleColor);
+  --secondaryColor: var(--lemonColor);
+  --active-color: #f1f1f1;
+  --link-color: var(--lightPurple200);
+}
