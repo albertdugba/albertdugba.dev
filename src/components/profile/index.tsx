@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export const ProfileInfo = () => {
@@ -8,12 +9,15 @@ export const ProfileInfo = () => {
           <span>Software Engineer</span> {"  "}
         </h1>
       </div>
-      <h1 className='text-xl text-gray-300'>Hi, I&apos;m Albert.</h1>
+      <h1 className='text-xl text-gray-300 mb-8 font-semibold'>
+        Hi, I&apos;m Albert.
+      </h1>
       <p className='text-md leading-7 text-gray-300'>
-        Iam a software engineer based in the United Kingdom 🇬🇧, I specialize in
-        developing frontend web and mobile applications. With over four years of
-        experience, I&apos;ve worked across various sectors, from web3 and
-        social platforms to educTech and healthTech.
+        I&apos;m a software engineer based in the United Kingdom 🇬🇧, I
+        specialize in developing frontend web and mobile applications. With 4
+        years of experience, I&apos;ve worked across various sectors and
+        organizations, from web3 and social platforms to educTech and
+        healthTech.
       </p>
 
       <p className='text-md leading-7 text-gray-300 my-6'>
@@ -26,6 +30,35 @@ export const ProfileInfo = () => {
         Prior to that, I was part of a small frontend team at OrigoHealth, a
         healthcare startup focused on connecting doctors and patients.
       </p>
+
+      <ul className='flex items-center gap-8 my-10 w-full p-5 rounded-xl'>
+        {ICONS_LIST.map((icon, i) => (
+          <Image key={i} src={icon.image} height={30} width={30} alt='Icons' />
+        ))}
+      </ul>
     </div>
   );
 };
+
+const ICONS_LIST = [
+  {
+    image: "/icons/linkedin.svg",
+    href: "https://linkedin.com/in/albertdugba",
+  },
+  {
+    image: "/icons/github.svg",
+    href: "https://github.com/albertdugba",
+  },
+  {
+    image: "/icons/twitter.svg",
+    href: "https://twitter.com/albertdugba__",
+  },
+  {
+    image: "/icons/instagram.svg",
+    href: "https://instagram.com/albertdugba___",
+  },
+  {
+    image: "/icons/medium.svg",
+    href: "https://medium.com/@albert.dugba",
+  },
+];

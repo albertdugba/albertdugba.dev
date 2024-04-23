@@ -14,59 +14,35 @@ export const HomePage = () => {
 
   const MotionImage = motion(ExoticImage);
 
-  const GRID_LENGTH = 4;
-
   return (
-    <div className='w-full min-h-screen bg-primary relative'>
-      <div className='absolute bottom-3 left-0'>
+    <div>
+      <div className='absolute bottom-6 top-20 left-0 w-1/6'>
         <h1
           style={{ writingMode: "vertical-rl" }}
-          className='text-white text-[12rem] opacity-5'
+          className='text-white text-[9.5rem] opacity-5 p-0'
         >
-          My Blogs
+          about me.
         </h1>
       </div>
-      <div className='absolute inset-0'>
-        <div className={`grid grid-rows-${GRID_LENGTH} h-full`}>
-          {Array.from({ length: GRID_LENGTH }).map((_, i) => (
-            <span
-              key={i}
-              className='border-[1px] border-secondary w-full h-full opacity-5'
-            ></span>
-          ))}
-        </div>
-      </div>
-      <div className='absolute inset-0 w-full'>
-        <div className={`grid grid-cols-${GRID_LENGTH} h-full`}>
-          {Array.from({ length: GRID_LENGTH }).map((_, i) => (
-            <span
-              key={i}
-              className='border-[1px] border-dashed border-secondary w-full h-full opacity-5'
-            >
-              Hello
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* <Na /> */}
-
-      <div className='relative h-[90%] lg:p-5 p-6 max-w-6xl -mt-10 mx-auto flex items-center justify-center'>
-        <div className='flex md:flex-row flex-col w-full lg:gap-20 gap-10'>
-          <div>
+      <div className='relative h-[90%]  max-w-6xl mt-12 mx-auto flex items-center justify-center'>
+        <div className='flex md:flex-row flex-col w-full lg:gap-10 gap-10'>
+          <div className='lg:p-0 p-6'>
             <ProfileInfo />
           </div>
 
-          <div className='relative lg:h-[480px] h-[300px] w-full z-50 lg:mr-6'>
-            <MotionImage
-              src='/albert-01.jpeg'
-              alt=''
-              height={550}
-              width={200}
-              className='object-cover w-full h-full z-50 absolute rounded-lg'
-            />
-            <div className='lg:block hidden absolute top-7 bg-[#6ddc6f] dary w-full h-full -right-8 z-10 rounded-lg'></div>
-            <div className='lg:block hidden absolute top-4 bg-secondary w-full h-full -right-4 z-10 rounded-lg'></div>
+          <div className='w-full lg:bg-transparent bg-seconary py-10  -mt-10'>
+            <div className='relative lg:h-[500px] h-[250px] lg:w-[95%] w-8/12 mx-auto z-50 lg:mr-20'>
+              <div className=''>
+                <MotionImage
+                  src='/albert.jpg'
+                  alt=''
+                  fill
+                  className='object-cover w-full h-full z-50 absolute rounded-lg'
+                />
+              </div>
+              <div className='lg:block hidden absolute top-7 bg-[#6ddc6f] dary w-full h-full -right-8 z-10 rounded-lg'></div>
+              <div className='lg:block hidden absolute top-4 bg-secondary w-full h-full -right-4 z-10 rounded-lg'></div>
+            </div>
           </div>
         </div>
       </div>
