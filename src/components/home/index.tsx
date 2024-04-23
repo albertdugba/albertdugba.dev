@@ -25,13 +25,13 @@ export const HomePage = () => {
         </h1>
       </div>
       <div className='relative h-[90%]  max-w-6xl mt-12 mx-auto flex items-center justify-center'>
-        <div className='flex md:flex-row flex-col w-full lg:gap-10 gap-10'>
+        <div className='flex md:flex-row flex-col-reverse w-full lg:gap-10 gap-10'>
           <div className='lg:p-0 p-6'>
             <ProfileInfo />
           </div>
 
-          <div className='w-full lg:bg-transparent bg-seconary py-10  -mt-10'>
-            <div className='relative lg:h-[500px] h-[250px] lg:w-[95%] w-8/12 mx-auto z-50 lg:mr-20'>
+          <div className='w-full  lg:bg-transparent bg-seconary lg:py-10 lg:-mt-10 mt-10'>
+            <div className='relative lg:h-[500px] h-[450px] lg:w-[95%] w-[85%] mx-auto z-50 lg:mr-20'>
               <div className=''>
                 <MotionImage
                   src='/albert.jpg'

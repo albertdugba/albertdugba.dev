@@ -5,7 +5,7 @@ export const ProfileInfo = () => {
   return (
     <div className=''>
       <div className='flex gap-2 mb-6'>
-        <h1 className='text-6xl text-secondary'>
+        <h1 className='lg:text-6xl md:text-5xl text-3xl text-secondary'>
           <span>Software Engineer</span> {"  "}
         </h1>
       </div>
