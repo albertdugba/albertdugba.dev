@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* colors as colors */
+  --greenColor: #1ed760;
+  --lemonColor: #a7f381;
+  --darkGreen: #0a1501;
+
+  /* colors as intents */
+  --primaryColor: var(--darkGreen);
+  --secondaryColor: var(--lemonColor);
+  --active-color: #f1f1f1;
+}
