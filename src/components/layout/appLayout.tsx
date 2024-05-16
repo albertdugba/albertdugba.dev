@@ -6,34 +6,16 @@ interface AppLayoutProps {
 }
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
-  const GRID_LENGTH = 4;
   return (
     <div className='w-full min-h-screen bg-primary relative'>
       <Header />
 
-      {/* <div className='absolute left-0 right-0 bottom-0 top-20'>
-        <div className={`grid grid-cols-${GRID_LENGTH} h-full`}>
-          {Array.from({ length: GRID_LENGTH }).map((_, i) => (
-            <span
-              key={i}
-              className='border-[0.8px] border-dashed border-secondary w-full h-full opacity-20'
-            ></span>
-          ))}
-        </div>
-      </div> */}
-
-      <div className='absolute left-0 right-0 bottom-0 top-20 w-fit -z-[2px]'>
-        <div className={`grid grid-rows-${GRID_LENGTH} h-full`}>
-          {Array.from({ length: GRID_LENGTH }).map((_, i) => (
-            <span
-              key={i}
-              className='border-[0.8px] border-dashed border-secondary w-full h-full opacity-20'
-            ></span>
-          ))}
-        </div>
+      <div className='max-w-6xl mx-auto h-full'>
+        {children}
+        <p className='text-gray-400 lg:text-base text-sm block w-fit lg:ml-0 ml-5 -mt-12 lg:-mt-0'>
+          Copyright Albert Dugba &copy; {new Date().getFullYear()}
+        </p>
       </div>
-
-      <div className='max-w-6xl mx-auto h-full'>{children}</div>
     </div>
   );
 };

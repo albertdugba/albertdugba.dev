@@ -12,6 +12,7 @@ const config: Config = {
         primary: "var(--primaryColor)",
         secondary: "var(--secondaryColor)",
         green: "var(--greenColor)",
+        lightGreen: "#d3f4c333",
         red: "var(--redColor)",
         lightPurple: "var(--lightPurple)",
         grayColor: "var(--grayColor)",

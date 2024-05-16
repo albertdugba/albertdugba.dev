@@ -4,17 +4,12 @@
 
 :root {
   /* colors as colors */
-  /* 060772 */
   --greenColor: #1ed760;
   --lemonColor: #a7f381;
-  --pinkColor: #450672;
-  --purpleColor: #140242;
-  --lightPurple: #bba2f1;
-  --lightPurple200: #8057d766;
+  --darkGreen: #0a1501;
 
   /* colors as intents */
-  --primaryColor: var(--purpleColor);
+  --primaryColor: var(--darkGreen);
   --secondaryColor: var(--lemonColor);
   --active-color: #f1f1f1;
-  --link-color: var(--lightPurple200);
 }
