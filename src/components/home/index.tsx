@@ -43,19 +43,23 @@ export const HomePage = () => {
               initial={{ rotate: "-24deg" }}
               animate={{ rotate: "12deg" }}
               transition={{ duration: 0.5, type: "spring" }}
-              src={"/albert.jpg"}
+              src='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'
               fill
               alt='Albert Dugba'
               className='rounded-lg shadow-lg z-[999] object-cover overflow-hidden'
+              placeholder='blur'
+              blurDataURL='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'
             />
           </motion.div>
 
           <div className='lg:w-2/5 w-full md:bg-transparent bg-seconary lg:py-10 lg:-mt-10 mt-10'>
             <div className='relative lg:block hidden h-[500px] w-full mx-auto z-50 md:mr-16'>
               <MotionImage
-                src='/albert.jpg'
+                src='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'
                 alt='Albert Dugba'
                 fill
+                placeholder='blur'
+                blurDataURL='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'
                 className='object-cover w-full h-full z-50 absolute rounded-lg'
               />
 
