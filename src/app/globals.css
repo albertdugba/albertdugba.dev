@@ -6,7 +6,7 @@
   /* colors as colors */
   --greenColor: #1ed760;
   --lemonColor: #a7f381;
-  --darkGreen: #0a1501;
+  --darkGreen: #0e1f01;
 
   /* colors as intents */
   --primaryColor: var(--darkGreen);
