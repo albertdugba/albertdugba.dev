@@ -27,9 +27,9 @@ export const HomePage = () => {
 
   return (
     <div>
-      <div className='relative h-[90%]  max-w-6xl lg:mt-12 mx-auto flex items-center justify-center'>
+      <div className='relative h-[90%] max-w-6xl lg:mt-16 mx-auto flex items-center justify-center'>
         <div className='flex lg:flex-row flex-col-reverse w-full lg:gap-10 gap-10'>
-          <div className='lg:p-0 p-6 lg:w-4/5 w-full'>
+          <div className='lg:p-0 lg:w-4/5 w-full'>
             <ProfileInfo />
           </div>
 
@@ -52,7 +52,7 @@ export const HomePage = () => {
             />
           </motion.div>
 
-          <div className='lg:w-2/5 w-full md:bg-transparent bg-seconary lg:py-10 lg:-mt-10 mt-10'>
+          <div className='lg:w-2/4 w-full md:bg-transparent bg-seconary lg:py-10 lg:-mt-10 mt-10'>
             <div className='relative lg:block hidden h-[500px] w-full mx-auto z-50 md:mr-16'>
               <MotionImage
                 src='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'

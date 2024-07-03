@@ -1,0 +1,161 @@
+.Post-Content p {
+  line-height: 1.73rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Post-Content {
+  margin: 0 auto;
+  line-height: 1.75rem;
+}
+
+.Post-Content h2,
+.Post-Content h3,
+.Post-Content h4,
+.Post-Content h5,
+.Post-Content h6 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Post-Content article > * + * {
+  margin-top: 1em;
+}
+
+.Post-Content article p {
+  color: var(--article-color);
+  line-height: 1.75rem;
+}
+
+.Post-Content aside p {
+  margin: var(--gap-half) 0;
+  line-height: 1.75rem;
+}
+
+.Post-Content video,
+.Post-Content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.Post-Content ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  padding-left: var(--gap);
+}
+
+.Post-Content ul li {
+  list-style-type: circle;
+}
+
+.Post-Content ol {
+  padding: 0;
+  list-style-position: inside;
+}
+
+.Post-Content ol li:not(:last-child),
+.Post-Content ul li:not(:last-child) {
+  margin-bottom: var(--gap);
+}
+
+.Post-Content ol > li > ul {
+  margin-left: var(--gap-double);
+  list-style-position: inside;
+  list-style-type: circle;
+}
+
+.Post-Content aside,
+.Post-Content blockquote {
+  border: 1px solid var(--lighter-gray);
+  background: var(--lightest-gray);
+  padding: var(--gap-half);
+  color: var(--article-color);
+  margin: var(--gap-half) 0;
+  line-height: 1.75rem;
+}
+
+/* Code Snippets */
+
+.Post-Content .token-line:not(:last-child) {
+  min-height: 1.4rem;
+}
+
+.Post-Content article *:not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+.Post-Content article *:not(pre) > code::before,
+.Post-Content article *:not(pre) > code::after {
+  content: "\`";
+  color: var(--gray);
+  user-select: none;
+}
+
+.Post-Content article pre {
+  overflow-x: auto;
+  background: var(--lightest-gray);
+  border-radius: var(--inline-radius);
+  line-height: 1.8;
+  padding: 1rem;
+  font-size: 14px;
+}
+
+/* if article pre has a div above it, remove the border radius up top */
+.Post-Content article div + pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Linkable Headers */
+
+.Post-Content .header-link {
+  /* padding-top: var(--header-height); */
+  color: inherit;
+  text-decoration: none;
+}
+
+.Post-Content article a {
+  text-decoration: none;
+}
+
+.Post-Content article a:hover {
+  text-decoration: underline;
+}
+
+.Post-Content sup {
+  font-size: 0.8em;
+  vertical-align: super;
+  line-height: 1;
+  padding-top: var(--header-height);
+}
+
+.Post-Content .header-link::after {
+  opacity: 0;
+  content: "#";
+  margin-left: var(--gap-half);
+  color: var(--gray);
+}
+
+.Post-Content .header-link:hover::after {
+  opacity: 1;
+}
+
+.Post-Content article ol li p:first-child {
+  display: inline;
+  line-height: 1.75rem;
+}
+
+.Post-Content article details {
+  margin-top: var(--gap-half);
+  margin-bottom: var(--gap-half);
+}
+
+@media screen and (max-width: 760px) {
+  .Post-Content .header-link::after {
+    opacity: 0.5;
+  }
+}

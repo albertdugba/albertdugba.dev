@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className='w-full h-20 p-8 bg-primary'>
-      <nav className='max-w-6xl mx-auto flex items-center justify-between'>
+    <header className='w-full h-20 py-12 bg-primary'>
+      <nav className='max-w-5xl mx-auto flex items-center justify-between'>
         <Link href='/' className='flex item-center bg-secondary p-2 rounded-md'>
           <h1 className='text-xl text-primary font-bold'>AD</h1>
         </Link>
@@ -35,7 +35,7 @@ export function Header() {
 const LINKS = [
   {
     label: "Writings",
-    href: "/blogs",
+    href: "/blog",
   },
   // {
   //   label: "Projects",
