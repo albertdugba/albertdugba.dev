@@ -37,10 +37,10 @@ const LINKS = [
     label: "Writings",
     href: "/blog",
   },
-  // {
-  //   label: "Projects",
-  //   href: "/projects",
-  // },
+  {
+    label: "Projects",
+    href: "/projects",
+  },
   {
     label: "Resume",
     href: "/resume",

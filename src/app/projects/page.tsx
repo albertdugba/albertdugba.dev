@@ -1,28 +1,19 @@
 import Image from "next/image";
+import { Title } from "~/components/title";
 
 const MyProjects = () => {
   const PROJECT = [
     "/projects/diabetes.png",
-    "/projects/diabetes.png",
+    "/projects/mox-wallet.png",
     "/projects/diabetes.png",
   ];
 
   return (
     <div className='h-full lg:p-0 p-6'>
-      <div className='absolute bottom-6 top-20 left-0 w-1/6'>
-        <h1
-          style={{ writingMode: "vertical-rl" }}
-          className='text-white inline-block text-[8.40rem] opacity-5 p-0'
-        >
-          my projects
-        </h1>
-      </div>
-
       <div className='mt-14 pb-20'>
-        <h1 className='text-white text-center'>
-          Selected Projects I have worked on
-        </h1>
-        <ul className='h-full w-full my-10'>
+        <h1 className='text-white text-center'></h1>
+        <Title title='Selected Projects' />
+        <ul className='h-full flex w-full my-10'>
           {PROJECT.map((img, i) => (
             <Card key={i} image={img} />
           ))}
@@ -34,17 +25,27 @@ const MyProjects = () => {
 
 const Card = ({ image }: { image: string }) => {
   return (
-    <li className='h-full w-full text-white border border-gray-600 rounded-md my-5'>
-      <div className='relative block w-full h-[200px] rounded-md bg-primary'>
+    <div className='w-full rounded-xl text-white p-2 hover:border-2 hover:border-secondary  hover:transition-all hover:-translate-y-2'>
+      <div className='relative lg:h-[200px] h-[180px] w-full mb-4'>
         <Image
           src={image}
-          height={600}
-          width={350}
-          alt='Company'
-          className='object-cover w-ful h-full rounded-tl-md rounded-bl-md'
+          placeholder='blur'
+          blurDataURL='/blog/pnpm.avif'
+          fill
+          alt=''
+          className='w-full h-auto object-cover rounded-xl'
         />
       </div>
-    </li>
+
+      {/* // <h1 className='text-xl text-primary mb-3 text-white'>{post?.title}</h1> */}
+
+      {/* // <div className='h-16 mb-5 w-full'>
+        //   <p className='text-sm font-light text-white line-clamp-4'>
+        //     {post?.description}
+        //   </p>
+        // </div>
+      </Link> */}
+    </div>
   );
 };
 

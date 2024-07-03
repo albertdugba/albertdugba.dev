@@ -15,8 +15,6 @@ async function PostPage({
 }) {
   const post = await getPost(params.slug);
 
-  console.log({ post });
-
   if (!post) return notFound();
 
   return (
@@ -26,8 +24,8 @@ async function PostPage({
         <div className='flex flex-wrap p-2 gap-2'>
           <span>{post.date}</span>
           <ul className='flex gap-2 mb-6'>
-            --{" "}
-            {"-- "}{!!post?.tags && (
+            -- {"-- "}
+            {!!post?.tags && (
               <li className='!list-none'>{post.tags.join(",   ")}</li>
             )}
             -- {readingTime(post.body).text}
