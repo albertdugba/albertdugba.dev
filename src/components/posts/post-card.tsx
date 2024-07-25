@@ -5,13 +5,14 @@ import { Post } from "~/types";
 interface BlogCard {
   post?: Post;
 }
+
 export const BlogCard = ({ post }: BlogCard) => {
   return (
     <div className='w-full rounded-xl text-white p-2 hover:border-2 hover:border-secondary  hover:transition-all hover:-translate-y-2'>
       <Link href={`/blog/${post?.slug}`}>
         <div className='relative lg:h-[200px] h-[180px] w-full mb-4'>
           <Image
-            src='/blog/pnpm.avif'
+            src={post?.image || "/blog/pnpm.avif"}
             placeholder='blur'
             blurDataURL='/blog/pnpm.avif'
             fill

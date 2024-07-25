@@ -2,6 +2,8 @@ import NextImage from "next/image";
 import { MDXComponents } from "mdx/types";
 import { MDXImage } from "./mdx-image";
 import { Code } from "bright";
+import { File, FileTree, Folder } from "./file-tree";
+import { MDXNote } from "./mdx-note";
 
 // material-palenight
 Code.theme = {
@@ -37,4 +39,8 @@ export const mdxComponents: MDXComponents = {
       {children}
     </details>
   ),
+  Folder: Folder,
+  FileTree: FileTree,
+  File: File,
+  Note: MDXNote,
 };

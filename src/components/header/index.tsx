@@ -41,8 +41,8 @@ const LINKS = [
     label: "Projects",
     href: "/projects",
   },
-  {
-    label: "Resume",
-    href: "/resume",
-  },
+  // {
+  //   label: "Resume",
+  //   href: "/resume",
+  // },
 ];

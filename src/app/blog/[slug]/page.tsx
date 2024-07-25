@@ -36,7 +36,7 @@ async function PostPage({
             src={post.image}
             alt={post.title}
             fill
-            className='object-fill rounded-xl'
+            className='object-contain'
           />
         </div>
 
