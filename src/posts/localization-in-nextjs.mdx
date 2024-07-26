@@ -8,16 +8,16 @@ tags: ["i18next", "localization"]
 image: "/blog/world.jpg"
 ---
 
-Localization is a very important aspect of building application that will especially when you have users with different languages in new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but its very important.
-In this article, we will be looking at how to setup localization in nextjs application with the app router.
+Localization is a very important aspect of building an application, especially when you have users with different languages in a new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but it's very important.
+In this article, we will be looking at how to set up localization in nextjs application with the app router.
 
 ### What we will cover in this post
 
 - Create a new nextjs application
 - Install the 118next package
 - Write translation files
-- Congigure the `next-intl` package
-- Tailor our internationalization library accordingly our needs
+- Configure the `next-intl` package
+- Tailor our internationalization library according to our needs
 
 For the purposes of the post, we will be building out a basic e-commerce application.
 
@@ -37,10 +37,10 @@ pnpm install next-intl
 
 #### Create Messages file
 
-After the installation, the first step is to create a messages folder in the root of your application
-You fetch save the messages locally or fetch them from a remote source depending on your workflow.
+After the installation, the first step is to create a messages folder at the root of your application
+You can save the messages locally or fetch them from a remote source depending on your workflow.
 
-At the root of your project, create messages folder where you can create JSON files for each locale like below.
+At the root of your project, create a messages folder where you can create JSON files for each locale like below.
 
 ```messages/en.json
 {
@@ -65,9 +65,9 @@ const nextConfig = {};
 export default withNextIntl(nextConfig);
 ```
 
-#### Create `i18n.ts` file to setup configuration
+#### Create `i18n.ts` file to setup the configuration
 
-After this, create a `i18n.ts` file. This is to create a request scoped configuration that can be used to provide messages based on the user's locale in the server components
+After this, create a `i18n.ts` file. This is to create a request-scoped configuration that can be used to provide messages based on the user's locale in the server components
 
 ```i18n.ts
 import { notFound } from "next/navigation";
@@ -174,7 +174,7 @@ Your project structure should look like this
 ## Rendering i18n messages with the `useTranslations` hook
 
 It is now time to render the 118next messages based on the user settings in the UI. `next-intl ` provides a `useTranslations` hook used to render the messages. The hook takes in a `namespace` or a `key` based on the structure of your `"language.json"` file.
-To illustrate lets integrate the translation capabilities into our product app starting from the hero HeroSection. In our application we have
+To illustrate let's integrate the translation capabilities into our product app starting from the hero HeroSection. In our application we have
 
 ```messages/en.json
  "Hero": {
@@ -206,7 +206,7 @@ export const HeroSection = () => {
 ```
 
 It uses the `key` to retrieve the corresponding messages.
-Now when you check your browser on `http://localhost:3000/en`, it shows English version of the translations whiles `http://localhost:3000/de` shows the German version like below
+Now when you check your browser on `http://localhost:3000/en`, it shows the English version of the translations while `http://localhost:3000/de` shows the German version like below
 ![(Translation Example)](/blog/localization/lang.gif)
 
 ## Interpolation of dynamic values
@@ -243,7 +243,7 @@ t.rich('message', {
 });
 ```
 
-To render an array of messages, we can use map over the keys to the corresponding messages like in our little e-commerce application
+To render an array of messages, we can map over the keys to the corresponding messages like in our little e-commerce application
 
 ```en.json
     "data": {
@@ -257,7 +257,7 @@ To render an array of messages, we can use map over the keys to the correspondin
     }
 ```
 
-The recommended approach to render the products cards is to map over the keys like this
+The recommended approach to render the product cards is to map over the keys like this
 
 ```page.tsx
 import {useTranslations, useMessages} from 'next-intl';
