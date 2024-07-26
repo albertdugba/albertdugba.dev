@@ -44,11 +44,11 @@
   --gray: #999;
   --light-gray: #444;
   --lighter-gray: #222;
-  --lightest-gray: #1a1a1a;
+  --lightest-gray: #112507;
   --article-color: #eaeaea;
   --gray-alpha: rgba(255, 255, 255, 0.5);
   --selection: rgba(255, 255, 255, 0.88);
-  --link: #579dff;
+  --link: #32a857;
   --green: #2ecc71;
   --red: #e74c3c;
 
@@ -63,6 +63,12 @@
   /* Fading */
   --timing: 0.3s;
   --fade-in: var(--timing) ease-in-out;
+}
+
+@layer {
+  .Post-Content a {
+    @apply underline font-semibold text-white hover:bg-lightGreen;
+  }
 }
 
 ::selection {
@@ -164,9 +170,8 @@ a.reset:hover {
   color: var(--link);
 }
 
-pre,
-code {
-  /* font-family: var(--font-mono); */
+p code {
+  /* background-color: #e8ece5; */
 }
 
 summary {

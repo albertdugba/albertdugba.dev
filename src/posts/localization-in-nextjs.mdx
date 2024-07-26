@@ -2,23 +2,23 @@
 title: Localization in Nextjs with App Router
 description: Build multilingual UIs in Nextjs with App Router
 slug: localization-in-next-js
-date: July 20, 2024
+date: July 26, 2024
 tags: ["i18next", "localization"]
 image: "/blog/world.jpg"
 ---
 
-import { Folder, File } from "../components/markdown/file-tree.tsx";
-
 Localization is a very important aspect of building application that will especially when you have users with different languages in new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but its very important.
 In this article, we will be looking at how to setup localization in nextjs application with the app router.
 
-### What we will cover in this article
+### What we will cover in this post
 
 - Create a new nextjs application
 - Install the 118next package
 - Write translation files
 - Congigure the `next-intl` package
 - Tailor our internationalization library accordingly our needs
+
+For the purposes of the post, we will be building out a basic e-commerce application.
 
 #### Create a new nextjs application
 
@@ -34,39 +34,12 @@ pnpm create-next-app@latest
 pnpm install next-intl
 ```
 
-With the `next-intl` library there are 2 main ways of creating configuring internationalization,
-
-> Routing: We have the routing which will use unique pathnames for every language that your application supports which is what we're going to be covering in this article
-> Domain based: We have the routing which will use unique pathnames for every language that your application supports which is what we're going to be covering in this article
-
 #### Create Messages file
 
 After the installation, the first step is to create a messages folder in the root of your application
-With the folder, create your json file with your translation files.
+You fetch save the messages locally or fetch them from a remote source depending on your workflow.
 
-#### Project tree
-
-<FileTree>
-  <Folder name='Root'>
-    <Folder name='src'>
-      <Folder name='components'>
-        <File name='Header.js' />
-        <File name='Footer.js' />
-      </Folder>
-      <Folder name='pages'>
-        <File name='index.js' />
-        <File name='about.js' />
-      </Folder>
-    </Folder>
-    <Folder name='public'>
-      <Folder name='images'>
-        <File name='logo.png' />
-      </Folder>
-    </Folder>
-    <File name='package.json' />
-    <File name='README.md' />
-  </Folder>
-</FileTree>
+At the root of your project, create messages folder where you can create JSON files for each locale like below.
 
 ```messages/en.json
 {
@@ -167,6 +140,35 @@ export default async function LocaleLayout({
   );
 }
 ```
+
+Your project structure should look like this
+
+<FileTree>
+  <Folder name='public'></Folder>
+  <Folder name='messages'>
+    <File name='en.json' />
+    <File name='de.json' />
+  </Folder>
+  <Folder name='src'>
+    <File name='config.ts' />
+    <File name='i18n.ts' />
+    <File name='middleware.ts' />
+    <File name='navigation.ts' />
+    <Folder name='app' levels={4}>
+      <Folder name='[locale]'>
+        <File name='layout.tsx' />
+        <File name='page.tsx' />
+        <Folder name='components'></Folder>
+      </Folder>
+    </Folder>
+    <Folder name='pages'>
+      <File name='index.js' />
+      <File name='about.js' />
+    </Folder>
+  </Folder>
+  <File name='package.json' />
+  <File name='README.md' />
+</FileTree>
 
 ## Rendering i18n messages with the `useTranslations` hook
 
@@ -337,4 +339,100 @@ t(
 );
 ```
 
-<Note>You should know that</Note>
+## Implementing language switching in Next.js App Router using next-intl
+
+`next-intl` simplifies language switching in Next.js by automatically handling locale information within standard navigation APIs.
+By employing shared pathnames, you can directly map Next.js routes to user-requested URLs without additional complexity.
+With this configuration, you gain access to routing components and methods like Link and usePathname, enabling intuitive navigation within your Next.js project.
+Create a `navigation.ts` in your `src` folder and add the following:
+
+```navigation.ts
+import { createSharedPathnamesNavigation } from "next-intl/navigation";
+import { locales } from "./config";
+
+export const { Link, redirect, usePathname, useRouter } =
+  createSharedPathnamesNavigation({ locales });
+
+```
+
+To implement a language switch feature in your Navbar or any desired page, you can attach the pathname to the href property along with a locale. Here’s an example of a `Header.tsx` component:
+
+```Header.tsx
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+import { locales } from "~/config";
+import { LocalLink } from "./LocalLink";
+
+type LocaleItem = "en" | "de";
+
+const NAV_LINKS = ["Shop", "Cart"];
+
+export const Header = () => {
+  const [selected, setSelected] = useState<LocaleItem>();
+  const pathname = usePathname();
+
+  const localePath = pathname.split("/")[1];
+
+  const handleChangeLocale = (item: LocaleItem) => {
+    setSelected(item);
+  };
+
+  useEffect(() => {
+    setSelected(localePath as LocaleItem);
+  }, [localePath]);
+
+  return (
+    <header className='flex items-center justify-between'>
+      <h1>Tech Shop</h1>
+
+      <ul className='flex items-center gap-2'>
+        {NAV_LINKS.map((nav) => (
+          <li key={nav}>
+            <Link href='#'>{nav}</Link>
+          </li>
+        ))}
+      </ul>
+      <div className='relative flex items-center justify-center rounded-full'>
+        <ul className='bg-white flex'>
+          {locales.map((locale, i) => (
+            <li
+              key={i}
+              onClick={() => handleChangeLocale(locale as LocaleItem)}
+              className={`border-l border-t border-b last:border-r ${
+                selected === locale ? "bg-gray-100" : ""
+              }`}
+            >
+              <LocalLink
+                locale={locale}
+                className={`flex p-4 items-center gap-2`}
+              >
+                <Image
+                  src={`/icons/${locale}.svg`}
+                  alt=''
+                  height={20}
+                  width={20}
+                  className='rounded-full'
+                />
+                <h4 className='uppercase text-sm'>{locale}</h4>
+              </LocalLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  );
+};
+```
+
+### Wrapping up
+
+I hope this post was helpful to you. You can find the [complete source code on github](https://github.com/albertdugba/localization-in-nextjs-sample-app) and the [demo-app](https://localization-in-nextjs-sample-app.vercel.app/en) over here.
+You can read more on the [official documentation site](https://next-intl-docs.vercel.app/)
+
+### References
+
+- [next-intl documentation](https://next-intl-docs.vercel.app/)

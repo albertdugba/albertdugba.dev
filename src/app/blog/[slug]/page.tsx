@@ -23,12 +23,13 @@ async function PostPage({
         <Title title={post.title} />
         <div className='flex flex-wrap p-2 gap-2'>
           <span>{post.date}</span>
-          <ul className='flex gap-2 mb-6'>
-            -- {"-- "}
+          <ul className='flex items-center justify-center gap-2 mb-6'>
+            <span className='bg-white h-1 w-1 rounded-full'></span>
             {!!post?.tags && (
               <li className='!list-none'>{post.tags.join(",   ")}</li>
             )}
-            -- {readingTime(post.body).text}
+            <span className='bg-white h-1 w-1 rounded-full'></span>{" "}
+            <span> {readingTime(post.body).text}</span>
           </ul>
         </div>
         <div className='relative shadow-2xl lg:h-[500px] h-[300px] my-8'>

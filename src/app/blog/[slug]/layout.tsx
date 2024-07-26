@@ -29,9 +29,7 @@ async function getData({ slug }: { slug: string }) {
   const postIndex = posts.findIndex((p) => p?.slug === slug);
 
   if (postIndex === -1) {
-    throw new Error(
-      `${slug} not found in posts. Did you forget to rename the file?`
-    );
+    throw new Error(`${slug} not found in posts.`);
   }
 
   const post = posts[postIndex];
@@ -54,11 +52,22 @@ export default async function PostLayout({
     slug: string;
   };
 }) {
-  const { previous, next, title, date, lastModified } = await getData(params);
+  const { previous, next, slug } = await getData(params);
 
   return (
     <>
       <article className='Post-Content'>{children}</article>
+      <div className='p-5 rounded-xl bg-secondary text-primary'>
+        <p>
+          See something that looks a little off? Feel free to{" "}
+          <a
+            className='font-semibold'
+            href={`https://github.com/albertdugba/albertdugba.dev/blob/main/src/posts/${slug}.mdx`}
+          >
+            open a pull request here.
+          </a>
+        </p>
+      </div>
       <Navigation previous={previous} next={next} />
     </>
   );
