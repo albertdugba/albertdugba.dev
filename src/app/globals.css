@@ -11,6 +11,7 @@
   --lemonColor: #a7f381;
   --darkGreen: #0b1901;
   --grayColor: #f1f1f1f1;
+  /* ---wer: rgb(23, 31, 26); */
 
   /* colors as intents */
   --primaryColor: var(--darkGreen);

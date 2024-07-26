@@ -15,11 +15,34 @@ export const generateMetadata = async ({
   };
 }): Promise<Metadata> => {
   const post = (await getAllPosts()).find((p) => p?.slug === params.slug);
+
+  const previousImages = [post?.image];
   return {
+    metadataBase: new URL("https://albertdugba.dev/blog/"),
     title: post?.title,
     description: post?.description,
+    keywords: post?.tags,
     alternates: {
       canonical: `https://albertdugba.dev/blog/${params.slug}`,
+    },
+    twitter: {
+      title: post?.title,
+      site: "AlbertDugba",
+      card: "summary_large_image",
+      description: post?.description,
+      images: [
+        {
+          url: post?.image as string,
+          alt: post?.description,
+        },
+      ],
+    },
+    openGraph: {
+      images: [...(previousImages as string[])],
+      title: post?.title,
+      description: post?.description,
+      authors: "Albert Dugba",
+      tags: post?.tags,
     },
   };
 };
