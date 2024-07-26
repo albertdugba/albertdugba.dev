@@ -14,7 +14,7 @@ export const BlogCard = ({ post }: BlogCard) => {
           <Image
             src={post?.image || "/blog/pnpm.avif"}
             placeholder='blur'
-            blurDataURL='/blog/pnpm.avif'
+            blurDataURL='/images/image-placeholder.jpeg'
             fill
             alt=''
             className='w-full h-auto object-cover rounded-xl'

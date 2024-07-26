@@ -59,7 +59,7 @@ export const HomePage = () => {
                 alt='Albert Dugba'
                 fill
                 placeholder='blur'
-                blurDataURL='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'
+                blurDataURL='/images/image-placeholder.jpeg'
                 className='object-cover w-full h-full z-50 absolute rounded-lg'
               />
 

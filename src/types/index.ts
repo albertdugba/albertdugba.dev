@@ -9,6 +9,6 @@ export type Post = Base & {
   date: string;
   tags: string[];
   body: string;
-  lastModified?: number;
+  lastModified: number;
   image: string;
 };
