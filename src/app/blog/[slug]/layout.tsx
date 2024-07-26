@@ -16,12 +16,12 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const post = (await getAllPosts()).find((p) => p?.slug === params.slug);
 
-  const extractImage = post?.image.split("/blog")[1];
+  // const extractImage = post?.image.split("/blog")[1];
 
-  const previousImages = [extractImage];
+  const previousImages = [post?.image];
 
   return {
-    metadataBase: new URL("https://albertdugba.dev/blog/"),
+    metadataBase: new URL("https://albertdugba.dev"),
     title: post?.title,
     description: post?.description,
     keywords: post?.tags,
