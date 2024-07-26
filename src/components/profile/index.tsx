@@ -14,16 +14,17 @@ export const ProfileInfo = () => {
           <span>Frontend Engineer</span> {"  "}
         </h1>
       </div>
-      <h1 className='text-lg text-gray-400 mb-6 font-medium'>
+      <h1 className='text-lg text-gray-300 mb-6 font-medium'>
         Hi, I&apos;m Albert Dugba
       </h1>
       <p className='text-md leading-7 text-gray-300'>
-        I&apos;m a software engineer currently based in the United Kingdom 🇬🇧.
-        With 3.5 years of experience, I have worked accross startups, agencies
-        building software products and websites for web and mobile applications.
-        I have worked on projects in healthcare, web3 (NFT marketplace). I excel
-        in thriving in fast-paced environments and possesses a strong commitment
-        to continuous learning and adaptation to new technologies.
+        I&apos;m a software engineer and a technical writer currently based in
+        the United Kingdom 🇬🇧. With 4 years of experience, I have worked accross
+        startups, agencies building software products and websites for web and
+        mobile applications. I have worked on projects in healthcare, web3 (NFT
+        marketplace). I excel in thriving in fast-paced environments and
+        possesses a strong commitment to continuous learning and adaptation to
+        new technologies.
       </p>
 
       <p className='text-md leading-7 text-gray-300 my-6'>
@@ -35,7 +36,6 @@ export const ProfileInfo = () => {
         >
           Frontend Engineer at Drdogood as a contractor
         </a>{" "}
-        {}
         to improve healthcare in Ghana between doctors and patients.
       </p>
       <p className='text-md leading-7 text-gray-300'>

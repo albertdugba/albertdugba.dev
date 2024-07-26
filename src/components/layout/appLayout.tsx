@@ -7,15 +7,13 @@ interface AppLayoutProps {
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className='w-full min-h-screen bg-primary relative'>
+    <div className='w-full min-h-screen bg-primary relative lg:px-8 px-5'>
       <Header />
 
-      <div className='max-w-6xl mx-auto h-full'>
-        {children}
-        <p className='text-gray-400 lg:text-base text-sm block w-fit lg:ml-0 ml-5 -mt-12 lg:-mt-0'>
-          Copyright Albert Dugba &copy; {new Date().getFullYear()}
-        </p>
-      </div>
+      <div className='max-w-5xl mx-auto h-full'>{children}</div>
+      <footer className='max-w-5xl mx-auto text-gray-400 lg:text-base text-sm py-10'>
+        Copyright Albert Dugba &copy; {new Date().getFullYear()}
+      </footer>
     </div>
   );
 };

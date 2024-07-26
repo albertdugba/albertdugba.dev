@@ -9,10 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fec/remark-a11y-emoji": "^4.0.2",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.3",
+    "@types/mdx": "^2.0.13",
+    "@types/prismjs": "^1.26.4",
+    "bright": "^0.8.5",
     "framer-motion": "^11.1.7",
+    "gray-matter": "^4.0.3",
+    "install": "^0.13.0",
     "next": "14.2.2",
+    "next-mdx-remote": "^5.0.0",
+    "prismjs": "^1.29.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

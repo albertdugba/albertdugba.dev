@@ -1,0 +1,438 @@
+---
+title: Localization in Nextjs with App Router
+description: Build multilingual UIs in Nextjs with App Router
+slug: localization-in-next-js
+date: July 26, 2024
+tags: ["i18next", "localization"]
+image: "/blog/world.jpg"
+---
+
+Localization is a very important aspect of building application that will especially when you have users with different languages in new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but its very important.
+In this article, we will be looking at how to setup localization in nextjs application with the app router.
+
+### What we will cover in this post
+
+- Create a new nextjs application
+- Install the 118next package
+- Write translation files
+- Congigure the `next-intl` package
+- Tailor our internationalization library accordingly our needs
+
+For the purposes of the post, we will be building out a basic e-commerce application.
+
+#### Create a new nextjs application
+
+I prefer to use <code>pnpm</code> but you can any package manager of your choice.
+
+```zsh
+pnpm create-next-app@latest
+```
+
+#### Install the `next-intl` library
+
+```
+pnpm install next-intl
+```
+
+#### Create Messages file
+
+After the installation, the first step is to create a messages folder in the root of your application
+You fetch save the messages locally or fetch them from a remote source depending on your workflow.
+
+At the root of your project, create messages folder where you can create JSON files for each locale like below.
+
+```messages/en.json
+{
+  "Index": {
+    "title": "Hello world!"
+  }
+}
+```
+
+#### Configure Plugin
+
+The next step is to configure the `createNextIntlPlugin` plugin from the `next-intl` package in your `next.config` files. This plugin will provide the i18n configuration to the server components as follows:
+
+```next.config.json
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);
+```
+
+#### Create `i18n.ts` file to setup configuration
+
+After this, create a `i18n.ts` file. This is to create a request scoped configuration that can be used to provide messages based on the user's locale in the server components
+
+```i18n.ts
+import { notFound } from "next/navigation";
+import { getRequestConfig } from "next-intl/server";
+
+const locales = ["en", "de"];
+
+export default getRequestConfig(async ({ locale }) => {
+  if (!locales.includes(locale)) notFound();
+
+  return {
+    messages: (await import(`../messages/${locale}.json`)).default,
+  };
+});
+
+```
+
+#### Create a middleware to handle requests
+
+Middleware is used to determine the locale for each request and handle redirects accordingly. In this step, you'll list all the supported locales for your application and match them with the pathnames. You can also set a default locale so that incoming requests automatically default to it if no specific locale is specified.
+
+```middleware.ts
+import createMiddleware from 'next-intl/middleware';
+
+export default createMiddleware({
+  locales: ['en', 'de'],
+  defaultLocale: 'en'
+});
+
+export const config = {
+  matcher: ['/', '/(de|en)/:path*']
+};
+```
+
+This code sets up middleware that supports English and German, with English as the default locale. It will match the specified paths and handle locale-based routing for your application.
+
+#### Create a locale in the `app/[locale]/layout.tsx` file
+
+Since we have already set up the middleware with the respective locales, we can retrieve the matched locale from the params and use it to configure the page language in the layout.tsx file. We will then pass the messages to the NextIntlClientProvider.
+
+```app/[locale]/layout.tsx
+import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { Header } from "./Header";
+import ProductCard from "./Card";
+import { HeroSection } from "./HeroSection";
+
+export default async function LocaleLayout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider
+          messages={JSON.stringify(messages) as unknown as AbstractIntlMessages}
+        >
+          <div className='max-w-6xl mx-auto p-12'>
+            <Header />
+          </div>
+          <HeroSection />
+          <main className='max-w-6xl mx-auto p-12'>{children}</main>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+Your project structure should look like this
+
+<FileTree>
+  <Folder name='public'></Folder>
+  <Folder name='messages'>
+    <File name='en.json' />
+    <File name='de.json' />
+  </Folder>
+  <Folder name='src'>
+    <File name='config.ts' />
+    <File name='i18n.ts' />
+    <File name='middleware.ts' />
+    <File name='navigation.ts' />
+    <Folder name='app' levels={4}>
+      <Folder name='[locale]'>
+        <File name='layout.tsx' />
+        <File name='page.tsx' />
+        <Folder name='components'></Folder>
+      </Folder>
+    </Folder>
+    <Folder name='pages'>
+      <File name='index.js' />
+      <File name='about.js' />
+    </Folder>
+  </Folder>
+  <File name='package.json' />
+  <File name='README.md' />
+</FileTree>
+
+## Rendering i18n messages with the `useTranslations` hook
+
+It is now time to render the 118next messages based on the user settings in the UI. `next-intl ` provides a `useTranslations` hook used to render the messages. The hook takes in a `namespace` or a `key` based on the structure of your `"language.json"` file.
+To illustrate lets integrate the translation capabilities into our product app starting from the hero HeroSection. In our application we have
+
+```messages/en.json
+ "Hero": {
+    "title": "Der beste Online-Shop der Welt für Laptops und Macbooks",
+    "ctaButton": "Jetzt kaufen"
+  },
+```
+
+```HeroSection.tsx
+import { useTranslations } from "next-intl";
+
+export const HeroSection = () => {
+  const t = useTranslations("Hero");
+  return (
+    <section className='Hero-banner flex items-center justify-center lg:p-8 p-4'>
+      <div className='flex flex-col'>
+        <h1 className='lg:text-3xl text-lg text-white text-center'>
+          {t("title")}
+        </h1>
+        <div className='flex items-center justify-center'>
+          <button className='bg-black text-white px-6 py-2 w-fit my-8'>
+            Shop Now
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+```
+
+It uses the `key` to retrieve the corresponding messages.
+Now when you check your browser on `http://localhost:3000/en`, it shows English version of the translations whiles `http://localhost:3000/de` shows the German version like below
+![(Translation Example)](/blog/localization/lang.gif)
+
+## Interpolation of dynamic values
+
+This is a technique that can be used to insert dynamic values into a prefixed text.
+
+```message.json
+"message": "Hello {name}!"
+```
+
+We can replace the `{name}` with a dynamic value
+
+```component.tsx
+t('message', {name: 'Albert'});
+```
+
+resulting in
+
+```output.json
+"Hello Albert"
+```
+
+`next-intl` also supports formatting rich texts with custom tags
+
+```en.json
+{
+  "message": "Please refer to <guidelines>the guidelines</guidelines>."
+}
+```
+
+```
+t.rich('message', {
+  guidelines: (chunks) => <a href="/guidelines">{chunks}</a>
+});
+```
+
+To render an array of messages, we can use map over the keys to the corresponding messages like in our little e-commerce application
+
+```en.json
+    "data": {
+      "product1": {
+        "title": "Macbook Pro",
+        "price": 1200,
+        "image": "/products/macbook-pro.jpg",
+        "description": "Work on anything, anywhere with the incredibly light and speedy Macbook Air 2020. The M1 chip is a game-changer. It's 3.5x faster than the previous Macbook Air, and packs in 8 CPU and 7 GPU cores so you can take on video-editing and gaming. Plus, it's incredibly power-efficient. The M1 lets you browse for up to 15 hours, or watch Apple TV for around 18 - that's a full flight from London to Sydney!"
+      },
+     ...others
+    }
+```
+
+The recommended approach to render the products cards is to map over the keys like this
+
+```page.tsx
+import {useTranslations, useMessages} from 'next-intl';
+
+function ProductList() {
+  const t = useTranslations('Products');
+
+  const messages = useMessages();
+  const keys = Object.keys(messages.Products.data);
+
+  return (
+    <ul>
+      {keys.map((key) => (
+        <li key={key}>
+          <h2>{t(`${key}.title`)}</h2>
+          <p>{t(`${key}.description`)}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+We need to render each product card so we can use `Object.values` like this
+
+```page.tsx
+export default function Index() {
+  const t = useTranslations("Product");
+  const messages: any = useMessages();
+
+  const products = Object.values(messages.Product.data) as unknown as Product[];
+
+  return (
+    <div>
+      <div className='mt-4'>
+        <div className='mb-4'>
+          <h1>{t("title")}</h1>
+        </div>
+        <ul className='grid lg:grid-cols-3 grid-cols-1 gap-9'>
+          {products.map((product: Product, i: number) => (
+            <li key={i}>
+              <ProductCard
+                buttonText={t("productCardMeta.buttonText")}
+                key={i}
+                product={product}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+```
+
+This should work as expected
+
+### Formatting Numbers
+
+You can also format a number within a message
+
+```en.json
+{
+  "price": "This product costs {price, number, currency}"
+}
+```
+
+```
+t(
+  'price',
+  {price: 32000.99},
+  {
+    number: {
+      currency: {
+        style: 'currency',
+        currency: 'EUR'
+      }
+    }
+  }
+);
+```
+
+## Implementing language switching in Next.js App Router using next-intl
+
+`next-intl` simplifies language switching in Next.js by automatically handling locale information within standard navigation APIs.
+By employing shared pathnames, you can directly map Next.js routes to user-requested URLs without additional complexity.
+With this configuration, you gain access to routing components and methods like Link and usePathname, enabling intuitive navigation within your Next.js project.
+Create a `navigation.ts` in your `src` folder and add the following:
+
+```navigation.ts
+import { createSharedPathnamesNavigation } from "next-intl/navigation";
+import { locales } from "./config";
+
+export const { Link, redirect, usePathname, useRouter } =
+  createSharedPathnamesNavigation({ locales });
+
+```
+
+To implement a language switch feature in your Navbar or any desired page, you can attach the pathname to the href property along with a locale. Here’s an example of a `Header.tsx` component:
+
+```Header.tsx
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+import { locales } from "~/config";
+import { LocalLink } from "./LocalLink";
+
+type LocaleItem = "en" | "de";
+
+const NAV_LINKS = ["Shop", "Cart"];
+
+export const Header = () => {
+  const [selected, setSelected] = useState<LocaleItem>();
+  const pathname = usePathname();
+
+  const localePath = pathname.split("/")[1];
+
+  const handleChangeLocale = (item: LocaleItem) => {
+    setSelected(item);
+  };
+
+  useEffect(() => {
+    setSelected(localePath as LocaleItem);
+  }, [localePath]);
+
+  return (
+    <header className='flex items-center justify-between'>
+      <h1>Tech Shop</h1>
+
+      <ul className='flex items-center gap-2'>
+        {NAV_LINKS.map((nav) => (
+          <li key={nav}>
+            <Link href='#'>{nav}</Link>
+          </li>
+        ))}
+      </ul>
+      <div className='relative flex items-center justify-center rounded-full'>
+        <ul className='bg-white flex'>
+          {locales.map((locale, i) => (
+            <li
+              key={i}
+              onClick={() => handleChangeLocale(locale as LocaleItem)}
+              className={`border-l border-t border-b last:border-r ${
+                selected === locale ? "bg-gray-100" : ""
+              }`}
+            >
+              <LocalLink
+                locale={locale}
+                className={`flex p-4 items-center gap-2`}
+              >
+                <Image
+                  src={`/icons/${locale}.svg`}
+                  alt=''
+                  height={20}
+                  width={20}
+                  className='rounded-full'
+                />
+                <h4 className='uppercase text-sm'>{locale}</h4>
+              </LocalLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  );
+};
+```
+
+### Wrapping up
+
+I hope this post was helpful to you. You can find the [complete source code on github](https://github.com/albertdugba/localization-in-nextjs-sample-app) and the [demo-app](https://localization-in-nextjs-sample-app.vercel.app/en) over here.
+You can read more on the [official documentation site](https://next-intl-docs.vercel.app/)
+
+### References
+
+- [next-intl documentation](https://next-intl-docs.vercel.app/)
