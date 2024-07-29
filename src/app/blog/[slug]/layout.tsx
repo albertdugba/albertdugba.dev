@@ -18,6 +18,8 @@ export const generateMetadata = async ({
 
   const previousImages = [post?.image];
 
+  console.log(previousImages);
+
   return {
     metadataBase: new URL("https://albertdugba.dev/"),
     title: post?.title,
