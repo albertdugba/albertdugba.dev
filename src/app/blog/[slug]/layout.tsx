@@ -25,9 +25,6 @@ export const generateMetadata = async ({
     title: post?.title,
     description: post?.description,
     keywords: post?.tags,
-    alternates: {
-      canonical: `https://albertdugba.dev/blog/${params.slug}`,
-    },
     authors: [{ name: "Albert Dugba" }],
     creator: "Albert Dugba",
     twitter: {
