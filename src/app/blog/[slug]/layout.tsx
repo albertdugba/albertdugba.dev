@@ -16,18 +16,18 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const post = (await getAllPosts()).find((p) => p?.slug === params.slug);
 
-  const extractImage = post?.image.split("/blog")[1];
-
-  const previousImages = [extractImage];
+  const previousImages = [post?.image];
 
   return {
-    metadataBase: new URL("https://albertdugba.dev/blog/"),
+    metadataBase: new URL("https://albertdugba.dev/"),
     title: post?.title,
     description: post?.description,
     keywords: post?.tags,
     alternates: {
       canonical: `https://albertdugba.dev/blog/${params.slug}`,
     },
+    authors: [{ name: "Albert Dugba" }],
+    creator: "Albert Dugba",
     twitter: {
       title: post?.title,
       site: "AlbertDugba",
@@ -37,8 +37,8 @@ export const generateMetadata = async ({
         {
           url: post?.image as string,
           alt: post?.description,
-          height: 500,
-          width: 300,
+          width: 1200,
+          height: 630,
         },
       ],
     },
