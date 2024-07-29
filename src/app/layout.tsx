@@ -8,6 +8,7 @@ import { GoogleAnalytics } from "~/components/analytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://albertdugba.dev"),
   title: "Albert Dugba",
   description:
     "Experienced frontend software engineer focused on building enterprise grade, accessible, scalable web and mobile applications.",
