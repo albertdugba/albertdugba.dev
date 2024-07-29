@@ -10,9 +10,35 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Albert Dugba",
   description:
-    "Albert Dugba is a sofware engineer. I am originally from Ghana but currently based in the UK🇬🇧.",
+    "Experienced frontend software engineer focused on building enterprise grade, accessible, scalable web and mobile applications.",
   icons: {
     icon: "/favicon.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [{ url: "/images/profile.png" }],
+  },
+  openGraph: {
+    title: "Albert Dugba",
+    description:
+      "Experienced frontend software engineer focused on building enterprise grade, accessible, scalable web and mobile applications.",
+    url: "https://albertdugba.dev",
+    siteName: "Albert Dugba",
+    images: [
+      {
+        url: "/images/intro.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "/images/intro.png",
+        width: 1800,
+        height: 1600,
+        alt: "Albert Dugba",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
 };
 
