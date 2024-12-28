@@ -4,13 +4,14 @@ import { MDXImage } from "./mdx-image";
 import { Code } from "bright";
 import { File, FileTree, Folder } from "./file-tree";
 import { MDXNote } from "./mdx-note";
+import { CopyButton } from "./copy-button";
 
-// material-palenight
-Code.theme = {
-  dark: "nord",
-  light: "material-palenight",
-  lightSelector: '[data-theme="light"]',
-};
+// Code.theme = {
+//   dark: "one-dark-pro",
+//   light: "github-light",
+//   lightSelector: '[data-theme="light"]',
+// };
+Code.theme = "min-dark";
 
 export const mdxComponents: MDXComponents = {
   pre: ({
@@ -20,7 +21,11 @@ export const mdxComponents: MDXComponents = {
     React.HTMLAttributes<HTMLElement>,
     HTMLPreElement
   >) => {
-    return <Code {...props}>{children as any}</Code>;
+    return (
+      <Code {...props} lineNumbers className='code-editor'>
+        {children}
+      </Code>
+    );
   },
   img: MDXImage as any,
   Image: NextImage as any,
@@ -43,4 +48,5 @@ export const mdxComponents: MDXComponents = {
   FileTree: FileTree,
   File: File,
   Note: MDXNote,
+  CopyButton: CopyButton,
 };

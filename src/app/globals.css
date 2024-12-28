@@ -11,14 +11,12 @@
   --lemonColor: #a7f381;
   --darkGreen: #0b1901;
   --grayColor: #f1f1f1f1;
-  /* ---wer: rgb(23, 31, 26); */
 
   /* colors as intents */
   --primaryColor: var(--darkGreen);
   --secondaryColor: var(--lemonColor);
   --active-color: var(--grayColor);
 
-  /* others */
   /* Spacing */
   --gap-quarter: 0.25rem;
   --gap-half: 0.5rem;
@@ -72,6 +70,18 @@
   }
 }
 
+@font-face {
+  font-family: "Mono Lisa";
+  font-style: italic;
+  src: url("/fonts/MonoLisaVariableItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Mono Lisa";
+  font-style: normal;
+  src: url("/fonts/MonoLisaVariableNormal.woff2") format("woff2");
+}
+
 ::selection {
   text-shadow: none;
   background: var(--secondaryColor);
@@ -90,6 +100,7 @@ body {
   -webkit-text-size-adjust: 110%;
   font-size: 16px;
   line-height: 1.75rem;
+  scroll-behavior: smooth;
 }
 
 body {

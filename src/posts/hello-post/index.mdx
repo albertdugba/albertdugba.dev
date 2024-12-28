@@ -1,0 +1,159 @@
+---
+title: First post
+description: Building component library with vite library mode
+slug: building-component-library-with-vite-lib-mode
+date: October 10, 2024
+lastModified: October 10, 2024
+tags: ["vite", "components", "react", "npm"]
+image: "/blog/component-lib.png"
+isPublished: false
+---
+
+## Create a new vite application
+
+In this article, we’ll walk through building a component library using Vite’s library mode. Vite is a great tool for creating React applications, and we'll explore how to create a component library and publish it to npm.
+
+### What we’ll cover:
+
+- [Setting up a new Vite app](#new-app)
+- [Creating a component API (Toast)](#component-api)
+- [Building the library and generating type definitions](#build)
+- [Publishing to npm](#npm-publish)
+- [Managing changelogs](#changelog)
+
+<div id='new-app' />
+### Setting up a new Vite app
+
+I prefer using `pnpm`, but feel free to use the package manager of your choice. To create a new Vite app, run the following command:
+
+```bash
+pnpm create vite
+```
+
+When prompted, give the project a name. In our case, we’ll call it `vite-toastify`, since we’re building a toast component library. Be sure to select React as the project variant.
+Next, change into the project directory and install the necessary dependencies:
+
+```bash
+cd vite-toastify
+pnpm install
+```
+
+Now, open the project in your preferred code editor, and to start the development server, run:
+
+```bash
+pnpm run dev
+```
+
+<div id='component-api' />
+### Creating a component API `vite-toastify` To create a versatile toast componentAPI,
+we want it to:
+
+- Support different `variants` (success, error, info, etc.).
+- Allow flexible `positioning` around the document.
+- Provide a `hook` to trigger toasts from anywhere in the application.
+- Include `timing` options to control display duration and delays.
+
+This API will make our toast component adaptable and easy to integrate into various parts of a React application.
+
+Create a components folder within the `src` folder and create a `Toast` component
+We will use context to manage the toast. Create the relevant types that will to shape out toast component
+
+```tsx
+export type ToastVariants = "success" | "error" | "info" | "warning";
+export type ToastPosition =
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+
+export type ToastMessage = {
+  message: string;
+  id: number;
+  position: ToastPosition;
+  variant: ToastVariants;
+};
+
+export type ToastContextProps = {
+  addToast: (toast: ToastMessage) => void;
+  removeToast: (id: number) => void;
+};
+```
+
+Now lets create the provide and add the methods to add and remove toast
+
+```tsx
+const ToastContext = createContext<ToastContextProps | null>(null);
+
+export const ToastProvider = ({ children }: PropsWithChildren) => {
+  const [toasts, setToasts] = useState<ToastMessage[]>([]);
+
+  const addToast = useCallback((toast: Omit<ToastMessage, "id">) => {
+    const id = Date.now();
+    setToasts((prevToasts) => [...prevToasts, { id, ...toast }]);
+  }, []);
+
+  const removeToast = useCallback((id: number) => {
+    setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
+  }, []);
+
+  return (
+    <ToastContext.Provider value={{ addToast, removeToast }}>
+      {children}
+      <div className={`toast-container`}>
+        {toasts.map((toast, index) => (
+          <Toast
+            key={toast.id}
+            message={toast.message}
+            variant={toast.variant}
+            duration={toast.duration ?? 3000}
+            onClose={() => removeToast(toast.id)}
+            index={index}
+          />
+        ))}
+      </div>
+    </ToastContext.Provider>
+  );
+};
+```
+
+We need to create the `Toast` component that would hold the `toast` message
+
+```Toast.tsx
+import { useEffect, useRef } from "react";
+import { ToastPosition, ToastVariants } from "./ToastProvider";
+
+interface ToastProps {
+  message: string;
+  duration: number;
+  onClose: () => void;
+  variant: ToastVariants;
+  position: ToastPosition;
+  index: number;
+}
+
+export const Toast = ({
+  message,
+  duration,
+  onClose,
+  variant,
+  position,
+  index,
+}: ToastProps) => {
+
+  useEffect(() => {
+    const timer = setTimeout(onClose, duration);
+    return () => clearTimeout(timer);
+  }, [duration, onClose]);
+
+  return (
+    <div className={`toast ${variant} ${position}`}>
+      {message}
+      <button onClick={onClose} className='toast-close-btn'>
+        &times;
+      </button>
+    </div>
+  );
+};
+```
+
+The `Toast` component is pretty simple, it accepts props for each toast message with the `duration`, `message` and the the functio to close (`onClose`)

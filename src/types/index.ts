@@ -11,4 +11,5 @@ export type Post = Base & {
   body: string;
   lastModified: number;
   image: string;
+  isPublished: boolean;
 };

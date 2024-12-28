@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaulTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -6,6 +7,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -22,6 +24,9 @@ const config: Config = {
         "article-color": "var(--article-color)",
         bg: "var(--bg)",
         fg: "var(--fg)",
+      },
+      fontFamily: {
+        mono: ["Mono Lisa", ...defaulTheme.fontFamily.mono],
       },
     },
   },

@@ -11,23 +11,23 @@ export const ProfileInfo = () => {
         <h1
           className={`lg:text-6xl md:text-5xl text-3xl text-secondary ${overPass.className}`}
         >
-          <span>Frontend Engineer</span> {"  "}
+          <span>Software Engineer</span> {"  "}
         </h1>
       </div>
       <h1 className='text-lg text-gray-300 mb-6 font-medium'>
         Hi, I&apos;m Albert Dugba
       </h1>
       <p className='text-md leading-7 text-gray-300'>
-        I&apos;m a software engineer and a technical writer currently based in
-        the United Kingdom 🇬🇧. With 4 years of experience, I have worked accross
-        startups, agencies building software products and websites for web and
-        mobile applications. I have worked on projects in healthcare, web3 (NFT
-        marketplace). I excel in thriving in fast-paced environments and
-        possesses a strong commitment to continuous learning and adaptation to
-        new technologies.
+        I&apos;m a software engineer and a technical writer. With over 4 years
+        of experience, I have worked accross startups, agencies building
+        software products and websites for web and mobile applications. I have
+        worked on variety of products and projects in healthcare, web3, social,
+        fintech. I excel in thriving in fast-paced environments and possesses a
+        strong commitment to continuous learning and adaptation to new
+        technologies.
       </p>
 
-      <p className='text-md leading-7 text-gray-300 my-6'>
+      {/* <p className='text-md leading-7 text-gray-300 my-6'>
         Currently, I&apos;m a{" "}
         <a
           href='https://drdogood.health'
@@ -57,7 +57,7 @@ export const ProfileInfo = () => {
           OrigoHealth{}
         </a>{" "}
         a healthcare startup focused on connecting doctors and patients.
-      </p>
+      </p> */}
 
       <ul className='flex items-center gap-8 my-10 w-full rounded-xl'>
         {ICONS_LIST.map((icon, i) => (
