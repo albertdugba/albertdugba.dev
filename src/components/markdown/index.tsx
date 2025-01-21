@@ -6,12 +6,11 @@ import { File, FileTree, Folder } from "./file-tree";
 import { MDXNote } from "./mdx-note";
 import { CopyButton } from "./copy-button";
 
-// Code.theme = {
-//   dark: "one-dark-pro",
-//   light: "github-light",
-//   lightSelector: '[data-theme="light"]',
-// };
-Code.theme = "min-dark";
+Code.theme = {
+  dark: "one-dark-pro",
+  light: "github-light",
+  lightSelector: '[data-theme="light"]',
+};
 
 export const mdxComponents: MDXComponents = {
   pre: ({
@@ -22,7 +21,7 @@ export const mdxComponents: MDXComponents = {
     HTMLPreElement
   >) => {
     return (
-      <Code {...props} lineNumbers className='code-editor'>
+      <Code {...props} lineNumbers lang='bash'>
         {children}
       </Code>
     );

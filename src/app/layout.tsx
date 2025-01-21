@@ -50,9 +50,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-primary`}>
+      <body
+        className={`${inter.className} bg-primary`}
+        suppressHydrationWarning
+      >
         <AppLayout>
-          {children}
+          <main>{children}</main>
+
           <GoogleAnalytics />
         </AppLayout>
       </body>

@@ -12,14 +12,6 @@ const Card = ({ url }: { url: string }) => {
           className='object-contain w-full h-full rounded-xl'
         />
       </div>
-
-      {/* <button className='text-base bg-secondary px-4 py-1 rounded-full'>
-        lifewithdiabetes
-      </button>
-      <p className='opacity-5'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore,
-        expedita!
-      </p> */}
     </div>
   );
 };
@@ -35,13 +27,12 @@ const ProjectsPage = () => {
         />
 
         <div className='flex items-center justify-center'>
-          <div className='flex flex-wrap gap-7'>
+          <div className='grid grid-cols-3 gap-7'>
             <Card url='/projects/lwd-logo.webp' />
-            <Card url='/projects/creator-mode-logo.svg' />
-            <Card url='/projects/creator-mode-logo.svg' />
-            <Card url='/projects/creator-mode-logo.svg' />
-            <Card url='/projects/creator-mode-logo.svg' />
-            <Card url='/projects/creator-mode-logo.svg' />
+            <Card url='/projects/lwd-logo.webp' />
+            <Card url='/projects/lwd-logo.webp' />
+            <Card url='/projects/lwd-logo.webp' />
+            <Card url='/projects/lwd-logo.webp' />
           </div>
         </div>
       </div>

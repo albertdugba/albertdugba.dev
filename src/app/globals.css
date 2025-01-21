@@ -66,7 +66,8 @@
 
 @layer {
   .Post-Content a {
-    @apply underline font-semibold text-white hover:bg-lightGreen;
+    @apply underline font-semibold hover:bg-lightGreen;
+    color: var(--link);
   }
 }
 
@@ -242,4 +243,25 @@ th {
 
 .icon {
   color: var(--gray) !important;
+}
+.stripe-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg-stripe-solid {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-stripe-dashed {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  background-size: 1px 8px;
+  background-repeat: repeat-y;
 }

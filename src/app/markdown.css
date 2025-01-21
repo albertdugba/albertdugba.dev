@@ -5,15 +5,11 @@
 }
 
 .Post-Content p code {
-  border: 1px solid #153002;
-  background-color: #152b06;
+  border: 1px solid var(--lighter-gray);
+  background-color: var(--lightest-gray);
   border-radius: 5px;
-  font-weight: lighter;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-family: monospace;
+  font-weight: 400;
+  padding: 2px 5px;
 }
 
 .Post-Content {
@@ -108,7 +104,7 @@
 
 .Post-Content article *:not(pre) > code {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .Post-Content article *:not(pre) > code::before,

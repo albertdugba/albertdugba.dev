@@ -14,51 +14,30 @@ export const ProfileInfo = () => {
           <span>Software Engineer</span> {"  "}
         </h1>
       </div>
-      <h1 className='text-lg text-gray-300 mb-6 font-medium'>
+      <h1 className='text-lg text-gray-300 mb-4 font-medium'>
         Hi, I&apos;m Albert Dugba
       </h1>
-      <p className='text-md leading-7 text-gray-300'>
-        I&apos;m a software engineer and a technical writer. With over 4 years
-        of experience, I have worked accross startups, agencies building
-        software products and websites for web and mobile applications. I have
-        worked on variety of products and projects in healthcare, web3, social,
-        fintech. I excel in thriving in fast-paced environments and possesses a
-        strong commitment to continuous learning and adaptation to new
-        technologies.
+
+      <p className='text-lg leading-8 animate-fade-in'>
+        I'm a software engineer and technical writer with over 4 years of
+        experience building web and mobile applications at startups and
+        agencies. My projects span healthcare, web3, social platforms, and
+        fintech solutions.
       </p>
 
-      {/* <p className='text-md leading-7 text-gray-300 my-6'>
-        Currently, I&apos;m a{" "}
-        <a
-          href='https://drdogood.health'
-          target='_blank'
-          className='underline font-semibold text-white hover:bg-lightGreen'
-        >
-          Frontend Engineer at Drdogood as a contractor
-        </a>{" "}
-        to improve healthcare in Ghana between doctors and patients.
+      <p className='text-lg leading-8 animate-fade-in delay-100 mt-3'>
+        I thrive in fast-paced environments and teams that prioritize delivering
+        exceptional user experiences. I&apos;m passionate about shipping
+        impactful features while maintaining robust frontend infrastructure
+        through design systems, CI/CD, optimized build tools.
       </p>
-      <p className='text-md leading-7 text-gray-300'>
-        Prior to that, I worked as a{" "}
-        <a
-          href='https://montech.io'
-          target='_blank'
-          className='underline font-semibold text-white hover:bg-lightGreen'
-        >
-          Frontend Engineer at Montech Studios {}
-        </a>
-        where I build, managed different kinds of projects for various clients
-        and needs. Before that I was part of a small team at{" "}
-        <a
-          href='https://origohealth.net'
-          target='_blank'
-          className='underline font-semibold text-white hover:bg-lightGreen'
-        >
-          OrigoHealth{}
-        </a>{" "}
-        a healthcare startup focused on connecting doctors and patients.
-      </p> */}
 
+      <p className='text-lg leading-8 animate-fade-in delay-200'>
+        Currently exploring system architecture and learning Go to expand my
+        technical capabilities.
+      </p>
+
+      <h4>Connect with me:</h4>
       <ul className='flex items-center gap-8 my-10 w-full rounded-xl'>
         {ICONS_LIST.map((icon, i) => (
           <li key={i}>

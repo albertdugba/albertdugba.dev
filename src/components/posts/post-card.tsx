@@ -9,15 +9,15 @@ interface BlogCard {
 export const BlogCard = ({ post }: BlogCard) => {
   return (
     <div className='w-full rounded-xl text-white p-2 hover:border-2 hover:border-secondary hover:transition-all hover:-translate-y-2'>
-      <Link href={`/blog/${post?.slug}`} className='border'>
+      <Link href={`/blog/${post?.slug}`}>
         <figure className='relative lg:h-[200px] h-[180px] w-full mb-4'>
           <Image
-            src={post?.image || "/blog/pnpm.avif"}
+            src={post?.image ?? "/blog/pnpm.avif"}
             placeholder='blur'
             blurDataURL='/images/image-placeholder.jpeg'
             fill
             alt=''
-            className='w-full h-auto object-cover'
+            className='w-full h-auto object-cover rounded-xl'
           />
         </figure>
       </Link>
@@ -30,6 +30,10 @@ export const BlogCard = ({ post }: BlogCard) => {
             {post?.description}
           </p>
         </div>
+
+        <span className='text-sm font-light text-white line-clamp-4'>
+          {post?.date}
+        </span>
       </Link>
     </div>
   );
