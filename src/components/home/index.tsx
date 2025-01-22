@@ -53,7 +53,7 @@ export const HomePage = () => {
           </motion.div>
 
           <div className='lg:w-2/4 w-full md:bg-transparent bg-seconary lg:py-10 lg:-mt-10 mt-10'>
-            <div className='relative lg:block hidden h-[500px] w-full mx-auto z-50 md:mr-16'>
+            <div className='relative lg:block hidden h-[450px] -ml-6 w-full mx-auto z-50 md:mr-16'>
               <MotionImage
                 src='/images/albert.jpeg'
                 alt='Albert Dugba'
@@ -63,8 +63,8 @@ export const HomePage = () => {
                 className='object-cover w-full h-full z-50 absolute rounded-lg'
               />
 
-              <div className='lg:block hidden absolute top-7 bg-[#6ddc6f] dary w-full h-full -right-8 z-10 rounded-lg'></div>
-              <div className='lg:block hidden absolute top-4 bg-secondary w-full h-full -right-4 z-10 rounded-lg'></div>
+              <div className='lg:block hidden absolute top-7 bg-[#6ddc6f] dary w-full h-full -right-6 z-10 rounded-lg'></div>
+              <div className='lg:block hidden absolute top-4 bg-secondary w-full h-full -right-3 z-10 rounded-lg'></div>
             </div>
           </div>
         </div>

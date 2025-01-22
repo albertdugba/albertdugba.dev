@@ -26,14 +26,8 @@ const ProjectsPage = () => {
           align='center'
         />
 
-        <div className='flex items-center justify-center'>
-          <div className='grid grid-cols-3 gap-7'>
-            <Card url='/projects/lwd-logo.webp' />
-            <Card url='/projects/lwd-logo.webp' />
-            <Card url='/projects/lwd-logo.webp' />
-            <Card url='/projects/lwd-logo.webp' />
-            <Card url='/projects/lwd-logo.webp' />
-          </div>
+        <div className='flex items-center justify-center h-full'>
+          <h1>Coming Soon</h1>
         </div>
       </div>
     </div>
