@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppLayout } from "~/components/layout/appLayout";
 import { GoogleAnalytics } from "~/components/analytics";
-import { ThemeProvider } from "~/components/provider/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,17 +49,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' data-theme='light'>
       <body
         className={`${inter.className} bg-primary`}
         suppressHydrationWarning
       >
-        <ThemeProvider>
-          <AppLayout>
-            <main>{children}</main>
-            <GoogleAnalytics />
-          </AppLayout>
-        </ThemeProvider>
+        <AppLayout>
+          <main>{children}</main>
+          <GoogleAnalytics />
+        </AppLayout>
       </body>
     </html>
   );

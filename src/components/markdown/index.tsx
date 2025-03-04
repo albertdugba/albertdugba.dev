@@ -7,8 +7,8 @@ import { MDXNote } from "./mdx-note";
 import { CopyButton } from "./copy-button";
 
 Code.theme = {
-  dark: "light-plus",
-  light: "light-plus",
+  dark: "one-dark-pro",
+  light: "min-light",
   lightSelector: '[data-theme="light"]',
 };
 
@@ -21,7 +21,7 @@ export const mdxComponents: MDXComponents = {
     HTMLPreElement
   >) => {
     return (
-      <Code className=' shadow-sm bg-gray-50' {...props}>
+      <Code className='bg-gray-200 rounded-md border border-stripeColor' lineNumbers {...props}>
         {children}
       </Code>
     );

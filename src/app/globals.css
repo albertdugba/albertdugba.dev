@@ -26,7 +26,7 @@
   --lemonColor: #a7f381;
   --darkGreen: #fff;
   --grayColor: #f1f1f1f1;
-  --lemonColor: #112507;
+  --lemonColor: #153405;
   --bg: #fafbfc;
   --bg-alpha: rgba(255, 255, 255, 0.9);
   --fg: hsl(0, 0%, 7%);
@@ -74,7 +74,7 @@ body {
 
 ::selection {
   text-shadow: none;
-  background: var(--secondaryColor);
+  background: var(--lighter-gray);
   color: var(--bg);
 }
 

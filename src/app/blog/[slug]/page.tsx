@@ -37,7 +37,7 @@ async function PostPage({
             src={post.image}
             alt={post.title}
             fill
-            className='object-contain border'
+            className='object-contain'
           />
         </div>
 

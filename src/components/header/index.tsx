@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ThemeSwitch } from "../provider/theme-switcher";
 
 export function Header() {
   const pathname = usePathname();
@@ -32,7 +31,7 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
           </ul>
         </nav>
       </div>

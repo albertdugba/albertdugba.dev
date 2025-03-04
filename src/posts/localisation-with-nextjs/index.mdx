@@ -9,9 +9,8 @@ image: "/blog/world.jpg"
 isPublished: true
 ---
 
-{/* Localization is a very important aspect of building an application, especially when you have users with different languages in a new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but it's very important.
-In this article, we will be looking at how to set up localization in nextjs application with the app router. */}
-I've been using TypeScript for over four years now, and, overall, it's been a great experience. With time, the friction of using it has minimized until it became zero, making me much more productive when writing types or even approaching problems type-first. Although I'm far from being a true type wizard, I dare consider myself proficient with the language, having gone through my share of type gymnastics, conditional types, nested generics, and contemplating the sacred difference between type and interface. Thruthfully, I thought I understood the language rather well.
+Localization is a very important aspect of building an application, especially when you have users with different languages in a new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but it's very important.
+In this article, we will be looking at how to set up localization in nextjs application with the app router.
 
 ### What we will cover in this post
 
@@ -91,16 +90,16 @@ export default getRequestConfig(async ({ locale }) => {
 
 Middleware is used to determine the locale for each request and handle redirects accordingly. In this step, you'll list all the supported locales for your application and match them with the pathnames. You can also set a default locale so that incoming requests automatically default to it if no specific locale is specified.
 
-```middleware.ts
-import createMiddleware from 'next-intl/middleware';
+```js
+import createMiddleware from "next-intl/middleware";
 
 export default createMiddleware({
-  locales: ['en', 'de'],
-  defaultLocale: 'en'
+  locales: ["en", "de"],
+  defaultLocale: "en",
 });
 
 export const config = {
-  matcher: ['/', '/(de|en)/:path*']
+  matcher: ["/", "/(de|en)/:path*"],
 };
 ```
 
@@ -178,7 +177,7 @@ Your project structure should look like this
 It is now time to render the 118next messages based on the user settings in the UI. `next-intl ` provides a `useTranslations` hook used to render the messages. The hook takes in a `namespace` or a `key` based on the structure of your `"language.json"` file.
 To illustrate let's integrate the translation capabilities into our product app starting from the hero HeroSection. In our application we have
 
-```messages/en.json
+```js
  "Hero": {
     "title": "Der beste Online-Shop der Welt für Laptops und Macbooks",
     "ctaButton": "Jetzt kaufen"
@@ -233,7 +232,7 @@ resulting in
 
 `next-intl` also supports formatting rich texts with custom tags
 
-```en.json
+```.js
 {
   "message": "Please refer to <guidelines>the guidelines</guidelines>."
 }
@@ -247,7 +246,7 @@ t.rich('message', {
 
 To render an array of messages, we can map over the keys to the corresponding messages like in our little e-commerce application
 
-```en.json
+```js
     "data": {
       "product1": {
         "title": "Macbook Pro",
@@ -261,7 +260,7 @@ To render an array of messages, we can map over the keys to the corresponding me
 
 The recommended approach to render the product cards is to map over the keys like this
 
-```page.tsx
+```.js
 import {useTranslations, useMessages} from 'next-intl';
 
 function ProductList() {
@@ -285,7 +284,7 @@ function ProductList() {
 
 We need to render each product card so we can use `Object.values` like this
 
-```page.tsx
+```js
 export default function Index() {
   const t = useTranslations("Product");
   const messages: any = useMessages();
@@ -321,7 +320,7 @@ This should work as expected
 
 You can also format a number within a message
 
-```en.json
+```js
 {
   "price": "This product costs {price, number, currency}"
 }
@@ -349,7 +348,7 @@ By employing shared pathnames, you can directly map Next.js routes to user-reque
 With this configuration, you gain access to routing components and methods like Link and usePathname, enabling intuitive navigation within your Next.js project.
 Create a `navigation.ts` in your `src` folder and add the following:
 
-```navigation.ts
+```.ts
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { locales } from "./config";
 
@@ -360,7 +359,7 @@ export const { Link, redirect, usePathname, useRouter } =
 
 To implement a language switch feature in your Navbar or any desired page, you can attach the pathname to the href property along with a locale. Here’s an example of a `Header.tsx` component:
 
-```Header.tsx
+```js
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";

@@ -82,7 +82,7 @@ export default async function PostLayout({
   return (
     <>
       <article className='Post-Content'>{children}</article>
-      <div className='p-5 rounded-xl bg-white/10 text-primary'>
+      <div className='p-5 rounded-lg bg-gray-100 text-secondary mb-2'>
         <p>
           See something that looks a little off? Feel free to{" "}
           <a

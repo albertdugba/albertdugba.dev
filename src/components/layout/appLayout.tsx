@@ -21,7 +21,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
           <Header />
         </div>
         <div className='max-w-5xl mx-auto h-full lg:px-3 px-5'>{children}</div>
-        <footer className='border-t border-white/5 w-full'>
+        <footer className='border-t border-stripeColor w-full'>
           <div className='max-w-5xl mx-auto text-gray-400 lg:text-base text-sm py-10 lg:px-3 px-5'>
             Copyright Albert Dugba &copy; {new Date().getFullYear()}
           </div>
