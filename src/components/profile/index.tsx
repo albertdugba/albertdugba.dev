@@ -15,30 +15,25 @@ export const ProfileInfo = () => {
           <span>Software Engineer</span> {"  "}
         </h1>
       </div>
-      <h1 className='text-lg text-gray-300 mb-4 font-medium'>
-        Hi, I&apos;m Albert Dugba
+      <h1 className='text-lg text-lighter-gray mb-4 font-medium'>
+        Hi, 👋 I&apos;m Albert Dugba
       </h1>
 
-      <p className='text-lg leading-8 animate-fade-in'>
+      <p className='lg:leading-8 leading-6 animate-fade-in'>
         I&apos;m a frontend software engineer and technical writer with over 4
         years of experience building web and mobile applications at startups and
         agencies. I have worked on projects in healthcare, blockchain, social
         platforms, and fintech solutions.
       </p>
 
-      <p className='text-lg leading-8 animate-fade-in delay-100 mt-3'>
+      <p className='lg:leading-8 mt-3'>
         I thrive in fast-paced environments and teams that prioritize delivering
         exceptional user experiences. I&apos;m passionate about shipping
         impactful features while maintaining robust frontend infrastructure
         through design systems, CI/CD, optimized build tools.
       </p>
 
-      {/* <p className='text-lg leading-8 mt-2'>
-        Currently exploring system architecture and learning <GoIcon />,{" "}
-        <AWSIcon /> to expand my technical capabilities.
-      </p> */}
-
-      <p className='text-lg leading-8 mt-2'>
+      <p className='leading-8 mt-2'>
         Currently exploring system architecture and learning{" "}
         <span className='inline-block transition-transform duration-300 ease-in-out hover:scale-125 hover:rotate-12'>
           <GoIcon />
@@ -50,7 +45,7 @@ export const ProfileInfo = () => {
         to expand my technical capabilities.
       </p>
 
-      <h4 className='text-lg mt-5'>Connect with me:</h4>
+      <h4 className='lg:text-lg text-sm mt-5'>Connect with me:</h4>
       <ul className='flex items-center gap-8 my-10 w-full rounded-xl'>
         {ICONS_LIST.map((icon, i) => (
           <li key={i}>

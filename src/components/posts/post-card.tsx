@@ -1,39 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Post } from "~/types";
+import type { Post } from "~/types";
 
-interface BlogCard {
+interface BlogCardProps {
   post?: Post;
 }
 
-export const BlogCard = ({ post }: BlogCard) => {
+export const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <div className='w-full rounded-xl text-white p-2 hover:border-2 hover:border-secondary hover:transition-all hover:-translate-y-2'>
-      <Link href={`/blog/${post?.slug}`}>
-        <figure className='relative lg:h-[200px] h-[180px] w-full mb-4'>
+    <div className='group w-full overflow-hidden rounded-xl border border-transparent bg-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-secondary'>
+      <Link href={`/blog/${post?.slug}`} className='block'>
+        <div className='relative aspect-video w-full overflow-hidden'>
           <Image
             src={post?.image ?? "/blog/pnpm.avif"}
             placeholder='blur'
             blurDataURL='/images/image-placeholder.jpeg'
             fill
-            alt=''
-            className='w-full h-auto object-cover rounded-xl'
+            alt={post?.title || "Blog post"}
+            className='object-cover'
           />
-        </figure>
-      </Link>
+        </div>
 
-      <Link href={`/blog/${post?.slug}`}>
-        <h1 className='text-xl text-primary mb-3 text-white'>{post?.title}</h1>
+        <div className='p-5'>
+          <p className='mb-2 text-xs font-light text-lighter-gray/70'>
+            {post?.date}
+          </p>
 
-        <div className='h-16 mb-5 w-full'>
-          <p className='text-sm font-light text-white line-clamp-4'>
+          <h2 className='mb-3 text-lg font-medium text-lighter-gray transition-colors duration-300 group-hover:text-secondary'>
+            {post?.title}
+          </h2>
+
+          <p className='line-clamp-2 text-sm font-light leading-relaxed text-lighter-gray/80'>
             {post?.description}
           </p>
         </div>
-
-        <span className='text-sm font-light text-white line-clamp-4'>
-          {post?.date}
-        </span>
       </Link>
     </div>
   );

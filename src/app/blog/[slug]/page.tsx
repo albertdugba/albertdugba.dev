@@ -20,7 +20,7 @@ async function PostPage({
   return (
     <div className='min-h-screen w-full items-center justify-center lg:mt-24 md:py-16 py-14'>
       <div>
-        <Title title={post.title} />
+        <Title title={post.title} size='normal' align='left' />
         <div className='flex flex-wrap p-2 gap-2'>
           <span>{post.date}</span>
           <ul className='flex items-center justify-center gap-2 mb-6'>
@@ -32,12 +32,12 @@ async function PostPage({
             <span> {readingTime(post.body).text}</span>
           </ul>
         </div>
-        <div className='relative shadow-2xl lg:h-[500px] h-[300px] my-8'>
+        <div className='relative lg:h-[400px] h-[300px] my-8 overflow-hidden'>
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className='object-contain'
+            className='object-contain border'
           />
         </div>
 

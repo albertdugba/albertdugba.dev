@@ -11,14 +11,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primaryColor)",
-        secondary: "var(--secondaryColor)",
+        primary: "var(--darkGreen)",
+        secondary: "var(--lemonColor)",
         green: "var(--greenColor)",
-        lightGreen: "#d3f4c333",
-        red: "var(--redColor)",
-        lightPurple: "var(--lightPurple)",
+        lightGreen: "var(--lightGreen)",
         grayColor: "var(--grayColor)",
         linkColor: "var(---link-color)",
+        stripeColor: "var(--stripe-color)",
         "lighter-gray": "var(--lighter-gray)",
         "lightest-gray": "var(--lightest-gray)",
         "article-color": "var(--article-color)",
@@ -27,6 +26,12 @@ const config: Config = {
       },
       fontFamily: {
         mono: ["Mono Lisa", ...defaulTheme.fontFamily.mono],
+      },
+      fontSize: {
+        sm: "14px",
+      },
+      maxWidth: {
+        "4xl": "58.5rem",
       },
     },
   },

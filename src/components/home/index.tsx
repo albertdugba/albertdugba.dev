@@ -16,12 +16,12 @@ export const HomePage = () => {
 
   const imageVariants = {
     initial: {
-      rotate: "24deg",
-      backgroundColor: "#fff",
+      rotate: "34deg",
+      backgroundColor: "var(--lemonColor)",
     },
     animate: {
       rotate: "-12deg",
-      backgroundColor: "var(--secondaryColor)",
+      backgroundColor: "var(--lemonColor)",
     },
   };
 
@@ -37,7 +37,7 @@ export const HomePage = () => {
             variants={imageVariants}
             initial='initial'
             animate='animate'
-            className='-rotate-12 relative h-48 w-52 transition-all rounded-md shadow-xl md:hidden block mx-auto'
+            className='-rotate-12 relative lg:size-96 size-48 transition-all rounded-md shadow-xl bg-primary block mx-auto lg:mt-0 mt-16'
           >
             <MotionImage
               initial={{ rotate: "-24deg" }}
@@ -51,22 +51,6 @@ export const HomePage = () => {
               blurDataURL='https://res.cloudinary.com/dsdifoazf/image/upload/v1715871236/albert_1_kjvfaa.webp'
             />
           </motion.div>
-
-          <div className='lg:w-2/4 w-full md:bg-transparent bg-seconary lg:py-10 lg:-mt-10 mt-10'>
-            <div className='relative lg:block hidden h-[450px] -ml-6 w-full mx-auto z-50 md:mr-16'>
-              <MotionImage
-                src='/images/albert.jpeg'
-                alt='Albert Dugba'
-                fill
-                placeholder='blur'
-                blurDataURL='/images/image-placeholder.jpeg'
-                className='object-cover w-full h-full z-50 absolute rounded-lg'
-              />
-
-              <div className='lg:block hidden absolute top-7 bg-[#6ddc6f] dary w-full h-full -right-6 z-10 rounded-lg'></div>
-              <div className='lg:block hidden absolute top-4 bg-secondary w-full h-full -right-3 z-10 rounded-lg'></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -9,8 +9,9 @@ image: "/blog/world.jpg"
 isPublished: true
 ---
 
-Localization is a very important aspect of building an application, especially when you have users with different languages in a new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but it's very important.
-In this article, we will be looking at how to set up localization in nextjs application with the app router.
+{/* Localization is a very important aspect of building an application, especially when you have users with different languages in a new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but it's very important.
+In this article, we will be looking at how to set up localization in nextjs application with the app router. */}
+I've been using TypeScript for over four years now, and, overall, it's been a great experience. With time, the friction of using it has minimized until it became zero, making me much more productive when writing types or even approaching problems type-first. Although I'm far from being a true type wizard, I dare consider myself proficient with the language, having gone through my share of type gymnastics, conditional types, nested generics, and contemplating the sacred difference between type and interface. Thruthfully, I thought I understood the language rather well.
 
 ### What we will cover in this post
 
@@ -105,7 +106,7 @@ export const config = {
 
 This code sets up middleware that supports English and German, with English as the default locale. It will match the specified paths and handle locale-based routing for your application.
 
-#### Create a locale in the `app/[locale]/layout.tsx` file
+###### Create a locale in the `app/[locale]/layout.tsx` file
 
 Since we have already set up the middleware with the respective locales, we can retrieve the matched locale from the params and use it to configure the page language in the layout.tsx file. We will then pass the messages to the NextIntlClientProvider.
 

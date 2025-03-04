@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeSwitch } from "../provider/theme-switcher";
 
 export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className='w-full border-b border-dashed border-white/10'>
+    <header className='w-full border-b border-dashed border-stripeColor'>
       <div className='max-w-5xl mx-auto lg:px-3 px-5'>
         <nav className='flex items-center justify-between h-20 py-12'>
           <Link
@@ -24,13 +25,14 @@ export function Header() {
                   className={`${
                     link.href === pathname
                       ? "border-secondary border-b text-secondary"
-                      : "text-white"
+                      : "text-lighter-gray"
                   }`}
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
+            <ThemeSwitch />
           </ul>
         </nav>
       </div>
