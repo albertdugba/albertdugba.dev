@@ -20,7 +20,7 @@ export const ProfileInfo = () => {
       </h1>
 
       <p className='lg:leading-8 leading-6 animate-fade-in'>
-        I&apos;m a frontend software engineer and technical writer with over 4
+        I&apos;m a frontend software engineer and technical writer with over 5
         years of experience building web and mobile applications at startups and
         agencies. I have worked on projects in healthcare, blockchain, social
         platforms, and fintech solutions.

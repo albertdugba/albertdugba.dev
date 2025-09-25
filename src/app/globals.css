@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @import "./markdown.css";
+:root {
+  --blueColor: rgb(226, 233, 242);
+  --textBlueColor: rgb(216, 216, 237);
+}
 
 [data-theme="dark"] {
   --bg: #0b1901;

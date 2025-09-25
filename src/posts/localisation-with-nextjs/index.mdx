@@ -43,7 +43,7 @@ You can save the messages locally or fetch them from a remote source depending o
 
 At the root of your project, create a messages folder where you can create JSON files for each locale like below.
 
-```messages/en.json
+```js
 {
   "Index": {
     "title": "Hello world!"
@@ -55,7 +55,7 @@ At the root of your project, create a messages folder where you can create JSON 
 
 The next step is to configure the `createNextIntlPlugin` plugin from the `next-intl` package in your `next.config` files. This plugin will provide the i18n configuration to the server components as follows:
 
-```next.config.json
+```js
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
@@ -70,7 +70,7 @@ export default withNextIntl(nextConfig);
 
 After this, create a `i18n.ts` file. This is to create a request-scoped configuration that can be used to provide messages based on the user's locale in the server components
 
-```i18n.ts
+```js
 import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
 

@@ -8,7 +8,7 @@ import { CopyButton } from "./copy-button";
 
 Code.theme = {
   dark: "one-dark-pro",
-  light: "min-light",
+  light: "github-light",
   lightSelector: '[data-theme="light"]',
 };
 

@@ -1,0 +1,382 @@
+---
+title: Building embedded Widgets with esbuild and Preact
+description: Learn how to create embedded widgets with esbuild and Preact
+slug: how-to-create-embedded-widgets-with-esbuild
+date: March 4, 2025
+lastModified: March 4, 2025
+tags: ["widget", "preact", "esbuild", "javascript", "bundle", "sdk"]
+image: "/blog/esbuild-widget.png"
+isPublished: true
+---
+
+### Introduction
+
+Embedded widgets are lightweight, reusable components that add interactive functionality to websites, such as feedback forms, cryptocurrency price trackers, or live chats. They allow developers to share features across multiple platforms without requiring full app integration. In this post, we’ll walk through creating, bundling, and embedding a widget using esbuild, a modern JavaScript bundler, and Preact, a lightweight React alternative. By the end, you'll have a self-contained widget that can be easily integrated into any website.
+
+#### Tools and Libraries
+
+- **esbuild**: Blazing-fast bundling, perfect for producing optimized, standalone JS files.
+- **Preact**: A small, fast React-like library (3KB) for building UI components, ideal for widgets.
+
+#### Prerequisites
+
+- Node.js (v16+) and npm installed.
+- Basic JavaScript, HTML, and CSS knowledge.
+- Familiarity with Preact or React is helpful but not required.
+
+#### Installing Tools
+
+Initialize a project:
+We're going to be using vite to scaffold our project. Vite is a build tool that leverages esbuild to provide a fast development experience. To get started, run the following commands:
+
+```bash
+pnpm init vite@latest
+```
+
+Make sure to select the `preact` template when prompted and chose typescript as the language and add the name of the project.
+For this article we're going to be building cryptocurrency price widget. We're going to be using the CoinGecko API to fetch the latest prices of cryptocurrencies.
+
+<Note>
+  Preact is a light weight version of React that is perfect for things like
+  this. It has a similar API to React and is only 3kb in size. To get started,
+  install Preact and the CoinGecko API client:
+</Note>
+The api will look like this:
+
+```js
+  <div id="my-widget-root" />
+    <script>
+      window.CoinGeckomarketWidget.init({
+        theme: "light",
+        container: "my-widget-root",
+      });
+    </script>
+
+```
+
+Its going to be a simple widget that fetches the latest prices of cryptocurrencies and displays them. You can pass in a `theme` config and also pass in additional styling to the `container` config.
+
+### 3. Building the Widget Component with Preact
+
+You should have a file structure like this
+
+<FileTree>
+  <Folder name='public' />
+  <Folder name='src'>
+    <Folder name='widgets'>
+      <Folder name='api'>
+        <File name='index.ts' />
+      </Folder>
+      <Folder name='components'>
+        <Folder name='crypto-list'>
+          <File name='index.tsx' />
+          <File name='styles.modules.css' />
+        </Folder>
+        <Folder name='sidebar'>
+          <File name='index.tsx' />
+          <File name='styles.modules.css' />
+        </Folder>
+      </Folder>
+      <File name="entry.tsx"/>
+    </Folder>
+  </Folder>
+
+  <File name='package.json' />
+  <File name='README.md' />
+</FileTree>
+
+Inside the api folder, lets write the function to fetch the latest prices of cryptocurrencies.
+
+```js
+export type CryptoData = {
+  id: string,
+  symbol: string,
+  name: string,
+  image: string,
+  current_price: number,
+  market_cap: number,
+  market_cap_rank: number,
+  fully_diluted_valuation: number,
+  total_volume: number,
+  high_24h: number,
+  low_24h: number,
+  price_change_24h: number,
+  price_change_percentage_24h: number,
+  market_cap_change_24h: number,
+};
+
+export async function getCoins(): Promise<CryptoData[]> {
+  try {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"
+    );
+
+    if (!response.ok) {
+      throw new Error("An error occured");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(`An error occurred: ${error}`);
+  }
+}
+```
+
+We can now move to the `CryptoList` component. This component will be responsible for displaying the list of cryptocurrencies.
+
+```js
+import { useEffect, useState } from "preact/hooks";
+import styles from "./styles.module.css";
+import type { CryptoData } from "../../api/type";
+import { formatLargeNumber, formatNumber } from "../../utils";
+
+interface SideDrawerProps {
+  isOpen: boolean;
+  onClose: () => void;
+  crypto: CryptoData | null;
+  theme: "light" | "dark" | "neubrutalism";
+}
+
+export const SideDrawer = ({
+  isOpen,
+  onClose,
+  crypto,
+  theme,
+}: SideDrawerProps) => {
+  const [animateIn, setAnimateIn] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setAnimateIn(true);
+    } else {
+      setAnimateIn(false);
+    }
+  }, [isOpen]);
+
+  if (!crypto) return null;
+
+  const getPercentageChangeClass = (change: number) => {
+    return change >= 0 ? styles.positive : styles.negative;
+  };
+
+  return (
+    <>
+      <div
+        className={`${styles.overlay} ${
+          animateIn ? styles.overlayVisible : ""
+        } ${styles[theme]}`}
+        onClick={onClose}
+      ></div>
+      <div
+        className={`${styles.drawer} ${animateIn ? styles.drawerOpen : ""} ${
+          styles[theme]
+        }`}
+      >
+        <div className={styles.drawerHeader}>
+          <div className={styles.cryptoHeader}>
+            <img
+              src={crypto.image || "/placeholder.svg"}
+              alt={crypto.name}
+              className={styles.cryptoIcon}
+            />
+            <div className={styles.cryptoInfo}>
+              <h2 className={styles.cryptoName}>{crypto.name}</h2>
+              <span className={styles.cryptoSymbol}>
+                {crypto.symbol.toUpperCase()}
+              </span>
+            </div>
+          </div>
+          <button className={styles.closeButton} onClick={onClose}>
+            ×
+          </button>
+        </div>
+        <div className={styles.drawerContent}>
+          <div className={styles.priceSection}>
+            <h3 className={styles.currentPrice}>
+              {formatNumber(crypto.current_price)}
+            </h3>
+            <div
+              className={`${styles.priceChange} ${getPercentageChangeClass(
+                crypto.price_change_percentage_24h
+              )}`}
+            >
+              <span className={styles.changeArrow}>
+                {crypto.price_change_percentage_24h >= 0 ? "↑" : "↓"}
+              </span>
+              <span className={styles.changeValue}>
+                {Math.abs(crypto.price_change_percentage_24h).toFixed(2)}%
+              </span>
+            </div>
+          </div>
+
+          <div className={styles.statsGrid}>
+            <div className={styles.statItem}>
+              <div className={styles.statLabel}>Market Cap</div>
+              <div className={styles.statValue}>
+                {formatLargeNumber(crypto.market_cap)}
+              </div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statLabel}>Volume (24h)</div>
+              <div className={styles.statValue}>
+                {formatLargeNumber(crypto.total_volume)}
+              </div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statLabel}>Circulating Supply</div>
+              <div className={styles.statValue}>
+                {formatLargeNumber(crypto.circulating_supply)}
+              </div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statLabel}>Total Supply</div>
+              <div className={styles.statValue}>
+                {formatLargeNumber(crypto.total_supply || 0)}
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.priceHistory}>
+            <h3 className={styles.sectionTitle}>Price History</h3>
+            <div className={styles.priceRanges}>
+              <div className={styles.priceRange}>
+                <div className={styles.rangeLabel}>24h Low / High</div>
+                <div className={styles.rangeValues}>
+                  <span>{formatNumber(crypto.low_24h)}</span>
+                  <span className={styles.rangeDivider}>/</span>
+                  <span>{formatNumber(crypto.high_24h)}</span>
+                </div>
+              </div>
+              <div className={styles.priceRange}>
+                <div className={styles.rangeLabel}>All-Time High</div>
+                <div className={styles.rangeValues}>
+                  <span>{formatNumber(crypto.ath)}</span>
+                  <span
+                    className={`${styles.athChange} ${getPercentageChangeClass(
+                      crypto.ath_change_percentage
+                    )}`}
+                  >
+                    {crypto.ath_change_percentage.toFixed(2)}%
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.actionButtons}>
+            <button className={`${styles.actionButton} ${styles.buyButton}`}>
+              Buy
+            </button>
+            <button className={`${styles.actionButton} ${styles.sellButton}`}>
+              Sell
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+```
+
+Create an `esbuild.config.mjs` and add the following code
+
+```js
+import * as esbuild from "esbuild";
+import cssModulesPlugin from "esbuild-css-modules-plugin";
+
+const config = {
+  entryPoints: ["./src/widget/entry.tsx"],
+  bundle: true,
+  minify: true,
+  minifyWhitespace: true,
+  minifyIdentifiers: true,
+  minifySyntax: true,
+  sourcemap: false,
+  logLevel: "info",
+  metafile: true,
+  target: ["es2020"],
+  format: "iife",
+  outfile: "dist/coinmarket-widget.js",
+  loader: {
+    ".tsx": "tsx",
+    ".ts": "ts",
+  },
+  plugins: [
+    cssModulesPlugin({
+      inject: false,
+      emitDeclarationFile: false,
+      localsConvention: "camelCase",
+    }),
+  ],
+  define: {
+    "process.env.NODE_ENV": JSON.stringify("production"),
+    global: "window",
+  },
+  inject: ["./preact-shim.js"],
+  alias: {
+    react: "preact/compat",
+    "react-dom": "preact/compat",
+  },
+};
+
+esbuild.build(config).catch(() => process.exit(1));
+```
+
+Lets break the configuration above
+
+#### Entry Point
+
+```js
+  entryPoints: ["./src/widget/entry.tsx"],
+```
+
+This specifies the main file that Esbuild should start bundling from. In this case, the entry file is entry.tsx inside the src/widget directory.
+
+#### Bundling and Minification
+
+```js
+ bundle: true,
+ minify: true,
+ minifyWhitespace: true,
+ minifyIdentifiers: true,
+ minifySyntax: true,
+```
+
+- `bundle`: true ensures that all dependencies are included in the output file.
+- `minify`: true enables code minification.
+  The other minify options optimize whitespace, shorten variable names, and simplify syntax to reduce file size.
+
+#### Target and Output Format
+
+```js
+  target: ["es2020"],
+  format: "iife",
+  outfile: "dist/coinmarket-widget.js",
+```
+
+- **`target`**: ["es2020"] specifies the JavaScript version to target.
+- **`format`**: "iife" bundles the code into an Immediately Invoked Function Expression (IIFE).
+- **`outfile`**: `dist/coinmarket-widget.js` defines the output file path.
+
+<Note>
+  The `IIFE` format is ideal for standalone scripts that don't need to export
+  functions or variables.
+</Note>
+
+#### CSS Modules Plugin
+
+**cssModulesPlugin** is a custom plugin that processes CSS files with CSS Modules.
+
+```js
+  plugins: [
+    cssModulesPlugin({
+      inject: false,
+      emitDeclarationFile: false,
+      localsConvention: "camelCase",
+    }),
+  ],
+```
+
+- `inject: false` disables CSS injection into the output file.
+- `emitDeclarationFile: false` prevents the generation of TypeScript declaration files.
+- `localsConvention: "camelCase"` converts CSS class names to camelCase for JavaScript access.
