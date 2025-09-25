@@ -10,7 +10,7 @@ export const ProfileInfo = () => {
     <div className='w-full'>
       <div className='flex gap-2 mb-6'>
         <h1
-          className={`lg:text-6xl md:text-5xl text-3xl text-secondary ${overPass.className}`}
+          className={`lg:text-6xl md:text-5xl text-3xl text-secondary  ${overPass.className}`}
         >
           <span>Software Engineer</span> {"  "}
         </h1>
