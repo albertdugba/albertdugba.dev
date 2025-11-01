@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import { Overpass } from "next/font/google";
-import { AWSIcon, GoIcon } from "../icons";
 
 const overPass = Overpass({ subsets: ["latin"] });
 
@@ -20,37 +19,54 @@ export const ProfileInfo = () => {
       </h1>
 
       <p className='lg:leading-8 leading-6 animate-fade-in'>
-        I&apos;m a Senior UI Engineer at Deciphex, building high-end web applications
-        and tooling for lab pathology and diagnostics alongside a mixed team of senior
-        developers.
+        I&apos;m a Senior Frontend Engineer at{" "}
+        <a
+          href='https://www.deciphex.com/'
+          target='_blank'
+          className='font-bold underline text-secondary'
+        >
+          Deciphex
+        </a>
+        , building high-end UI applications and tooling for lab pathology and
+        diagnostics.
       </p>
 
       <p className='lg:leading-8 mt-3'>
-        Previously, I was a Senior Frontend Developer at DrDoGood, where I built a
-        telemedicine platform connecting doctors and patients for virtual consultations
-        and appointment scheduling. Before that, I worked at Montech Studios, a software
-        development agency, crafting user interfaces across web3, blockchain, fintech,
-        and edtech projects. Prior to Montech, I was at OrigoHealth, developing digital
-        healthcare solutions for patient care and medical services.
+        Previously, I was one of the founding frontend engineers at{" "}
+        <a
+          href='https://www.drdogood.health/'
+          target='_blank'
+          className='font-bold underline  text-secondary'
+        >
+          DrDoGood
+        </a>
+        , building a telemedicine platform connecting doctors and patients for
+        virtual consultations and appointment scheduling. Before that, I worked at{" "}
+        <a
+          href='https://www.montech.io/'
+          target='_blank'
+          className='font-bold underline  text-secondary'
+        >
+          Montech Studios
+        </a>
+        , a software development studio, building user interfaces across web3,
+        blockchain, fintech, and edtech projects. Prior to Montech, I was at{" "}
+        <a
+          href='https://origohealth.net/'
+          target='_blank'
+          className='font-bold underline text-secondary'
+        >
+          OrigoHealth
+        </a>
+        , developing digital healthcare solutions for patient care and medical
+        services.
       </p>
 
       <p className='lg:leading-8 mt-3'>
         I&apos;m passionate about shipping impactful features while maintaining
-        robust frontend infrastructure through design systems, CI/CD, and optimized
-        build tools.
+        robust frontend infrastructure through design systems, CI/CD, and
+        optimized build tools.
       </p>
-
-      {/* <p className='leading-8 mt-2'>
-        Currently exploring system architecture and learning{" "}
-        <span className='inline-block transition-transform duration-300 ease-in-out hover:scale-125 hover:rotate-12'>
-          <GoIcon />
-        </span>
-        {", "}
-        <span className='inline-block transition-transform duration-300 ease-in-out hover:scale-125 hover:rotate-12'>
-          <AWSIcon />
-        </span>{" "}
-        to expand my technical capabilities.
-      </p> */}
 
       <h4 className='lg:text-lg text-sm mt-5'>Connect with me:</h4>
       <ul className='flex items-center gap-8 my-10 w-full rounded-xl'>
@@ -62,8 +78,6 @@ export const ProfileInfo = () => {
           </li>
         ))}
       </ul>
-
-      <div></div>
     </div>
   );
 };
