@@ -20,20 +20,27 @@ export const ProfileInfo = () => {
       </h1>
 
       <p className='lg:leading-8 leading-6 animate-fade-in'>
-        I&apos;m a frontend software engineer and technical writer with over 5
-        years of experience building web and mobile applications at startups and
-        agencies. I have worked on projects in healthcare, blockchain, social
-        platforms, and fintech solutions.
+        I&apos;m a Senior UI Engineer at Deciphex, building high-end web applications
+        and tooling for lab pathology and diagnostics alongside a mixed team of senior
+        developers.
       </p>
 
       <p className='lg:leading-8 mt-3'>
-        I thrive in fast-paced environments and teams that prioritize delivering
-        exceptional user experiences. I&apos;m passionate about shipping
-        impactful features while maintaining robust frontend infrastructure
-        through design systems, CI/CD, optimized build tools.
+        Previously, I was a Senior Frontend Developer at DrDoGood, where I built a
+        telemedicine platform connecting doctors and patients for virtual consultations
+        and appointment scheduling. Before that, I worked at Montech Studios, a software
+        development agency, crafting user interfaces across web3, blockchain, fintech,
+        and edtech projects. Prior to Montech, I was at OrigoHealth, developing digital
+        healthcare solutions for patient care and medical services.
       </p>
 
-      <p className='leading-8 mt-2'>
+      <p className='lg:leading-8 mt-3'>
+        I&apos;m passionate about shipping impactful features while maintaining
+        robust frontend infrastructure through design systems, CI/CD, and optimized
+        build tools.
+      </p>
+
+      {/* <p className='leading-8 mt-2'>
         Currently exploring system architecture and learning{" "}
         <span className='inline-block transition-transform duration-300 ease-in-out hover:scale-125 hover:rotate-12'>
           <GoIcon />
@@ -43,7 +50,7 @@ export const ProfileInfo = () => {
           <AWSIcon />
         </span>{" "}
         to expand my technical capabilities.
-      </p>
+      </p> */}
 
       <h4 className='lg:text-lg text-sm mt-5'>Connect with me:</h4>
       <ul className='flex items-center gap-8 my-10 w-full rounded-xl'>
