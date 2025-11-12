@@ -1,30 +1,22 @@
+import React from "react";
 import NextImage from "next/image";
 import { MDXComponents } from "mdx/types";
 import { MDXImage } from "./mdx-image";
-import { Code } from "bright";
 import { File, FileTree, Folder } from "./file-tree";
 import { MDXNote } from "./mdx-note";
 import { CopyButton } from "./copy-button";
-
-Code.theme = {
-  dark: "one-dark-pro",
-  light: "github-light",
-  lightSelector: '[data-theme="light"]',
-};
+import { CodeBlock } from "./code-block";
 
 export const mdxComponents: MDXComponents = {
-  pre: ({
-    children,
-    ...props
-  }: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
-    HTMLPreElement
-  >) => {
-    return (
-      <Code className='bg-gray-200 rounded-md border border-stripeColor' lineNumbers {...props}>
-        {children}
-      </Code>
-    );
+  pre: ({ children }: any) => {
+    if (React.isValidElement(children) && children.type === "code") {
+      const { className, children: code } = children.props as any;
+      const codeString = typeof code === "string" ? code : "";
+
+      return <CodeBlock className={className}>{codeString}</CodeBlock>;
+    }
+
+    return <pre>{children}</pre>;
   },
   img: MDXImage as any,
   Image: NextImage as any,

@@ -1,16 +1,24 @@
 .Post-Content p {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-size: 17px;
+  font-size: 1rem;
+  line-height: 1.625;
+  letter-spacing: -0.003em;
+}
+
+@media (min-width: 640px) {
+  .Post-Content p {
+    font-size: 1.125rem;
+  }
 }
 
 .Post-Content p code {
-  border: 1px solid var(--lighter-gray);
+  border: 1px solid var(--lightest-gray);
   background-color: var(--lightest-gray);
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: 400;
-  padding: 2px 4px;
-  font-size: 14px;
+  padding: 0.18rem 0.3rem;
+  font-size: 90%;
 }
 
 .Post-Content {
@@ -24,6 +32,49 @@
 .Post-Content h5,
 .Post-Content h6 {
   padding-top: 0.7rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 2rem;
+}
+
+.Post-Content h2 {
+  font-size: 1.5rem;
+}
+
+.Post-Content h3 {
+  font-size: 1.25rem;
+}
+
+.Post-Content h4 {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 640px) {
+  .Post-Content h2 {
+    font-size: 1.875rem;
+  }
+
+  .Post-Content h3 {
+    font-size: 1.5rem;
+  }
+
+  .Post-Content h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Post-Content h2 {
+    font-size: 2.25rem;
+  }
+
+  .Post-Content h3 {
+    font-size: 1.875rem;
+  }
+
+  .Post-Content h4 {
+    font-size: 1.5rem;
+  }
 }
 
 .Post-Content article > * + * {
@@ -32,7 +83,8 @@
 
 .Post-Content article p {
   color: var(--article-color);
-  line-height: 1.55rem;
+  line-height: 1.625;
+  letter-spacing: -0.003em;
 }
 .Post-Content p {
   color: var(--article-color);
@@ -40,7 +92,8 @@
 
 .Post-Content aside p {
   margin: var(--gap-half) 0;
-  line-height: 1.55rem;
+  line-height: 1.625;
+  letter-spacing: -0.003em;
 }
 
 .Post-Content video,

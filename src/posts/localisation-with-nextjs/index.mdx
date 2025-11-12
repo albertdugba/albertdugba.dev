@@ -83,7 +83,6 @@ export default getRequestConfig(async ({ locale }) => {
     messages: (await import(`../messages/${locale}.json`)).default,
   };
 });
-
 ```
 
 #### Create a middleware to handle requests
@@ -284,7 +283,8 @@ function ProductList() {
 
 We need to render each product card so we can use `Object.values` like this
 
-```js
+```HomePage.tsx
+js
 export default function Index() {
   const t = useTranslations("Product");
   const messages: any = useMessages();

@@ -224,3 +224,24 @@ th {
   background-size: 1px 8px;
   background-repeat: repeat-y;
 }
+
+/* Enhanced Code Block Styles with Prism */
+pre code {
+  display: table;
+  width: 100%;
+}
+
+pre code .table-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Highlighted lines */
+pre code .highlighted {
+  background: rgba(200, 200, 255, 0.1);
+  border-left: 2px solid rgb(59, 130, 246);
+  padding-left: calc(0.5rem - 2px);
+}
+
+[data-theme="light"] pre code {
+  color: #24292f;
+}
