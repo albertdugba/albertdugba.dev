@@ -25,7 +25,7 @@ export const mdxComponents: MDXComponents = {
     summary,
     ...props
   }: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement>,
+    React.DetailsHTMLAttributes<HTMLDetailsElement>,
     HTMLDetailsElement
   > & {
     summary: string;

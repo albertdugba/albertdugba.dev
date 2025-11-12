@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Check, Copy } from "lucide-react";
-import { Highlight, Token, themes } from "prism-react-renderer";
+import { Highlight, Token } from "prism-react-renderer";
 import {
   parseLanguageAndFilename,
   getBadgeStyles,

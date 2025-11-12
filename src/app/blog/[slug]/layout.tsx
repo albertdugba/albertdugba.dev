@@ -16,35 +16,69 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const post = (await getAllPosts()).find((p) => p?.slug === params.slug);
 
-  const previousImages = [post?.image];
+  if (!post) {
+    return {
+      title: "Post not found",
+      description: "The requested blog post could not be found",
+    };
+  }
+
+  const baseUrl = "https://albertdugba.dev";
+  const postUrl = `${baseUrl}/blog/${post.slug}`;
+  const ogImageUrl = `${postUrl}/opengraph-image`;
 
   return {
-    metadataBase: new URL("https://albertdugba.dev"),
-    title: post?.title,
-    description: post?.description,
-    keywords: post?.tags,
-    authors: [{ name: "Albert Dugba" }],
+    metadataBase: new URL(baseUrl),
+    title: `${post.title} | Albert Dugba`,
+    description: post.description,
+    keywords: post.tags,
+    authors: [{ name: "Albert Dugba", url: baseUrl }],
     creator: "Albert Dugba",
+    publisher: "Albert Dugba",
+    alternates: {
+      canonical: postUrl,
+      types: {
+        "application/rss+xml": `${baseUrl}/rss.xml`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     twitter: {
-      title: post?.title,
-      site: "AlbertDugba",
       card: "summary_large_image",
-      description: post?.description,
-      images: [
-        {
-          url: post?.image as string,
-          alt: post?.description,
-          width: 1200,
-          height: 630,
-        },
-      ],
+      title: post.title,
+      description: post.description,
+      site: "@AlbertDugba",
+      creator: "@AlbertDugba",
+      images: [ogImageUrl],
     },
     openGraph: {
-      images: [...(previousImages as string[])],
-      title: post?.title,
-      description: post?.description,
-      authors: "Albert Dugba",
-      tags: post?.tags,
+      type: "article",
+      url: postUrl,
+      title: post.title,
+      description: post.description,
+      siteName: "Albert Dugba's Blog",
+      locale: "en_US",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      authors: ["Albert Dugba"],
+      publishedTime: new Date(post.date || "").toISOString(),
+      modifiedTime: new Date(post.lastModified || post.date || "").toISOString(),
+      tags: post.tags,
     },
   };
 };
