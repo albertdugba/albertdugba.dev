@@ -9,7 +9,7 @@ export async function GET() {
   <channel>
     <title>Albert Dugba's Blog</title>
     <link>${baseUrl}</link>
-    <description>Thoughts on software engineering, web development, and technology</description>
+    <description>Thoughts on software engineering, and personal life</description>
     <language>en-US</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>

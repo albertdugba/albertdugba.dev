@@ -9,7 +9,7 @@ const PostsPage = async () => {
   return (
     <div className='min-h-screen w-full items-center justify-center lg:py-24 md:py-16 py-14'>
       <div className=''>
-        <Title title='Blogs' />
+        <Title title='Posts' />
 
         <Posts posts={posts} />
       </div>

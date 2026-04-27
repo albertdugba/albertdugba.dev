@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import { Overpass } from "next/font/google";
 
@@ -41,7 +40,8 @@ export const ProfileInfo = () => {
           DrDoGood
         </a>
         , building a telemedicine platform connecting doctors and patients for
-        virtual consultations and appointment scheduling. Before that, I worked at{" "}
+        virtual consultations and appointment scheduling. Before that, I worked
+        at{" "}
         <a
           href='https://www.montech.io/'
           target='_blank'
@@ -63,40 +63,12 @@ export const ProfileInfo = () => {
       </p>
 
       <p className='lg:leading-8 mt-3'>
-        I&apos;m passionate about shipping impactful features while maintaining
-        robust frontend infrastructure through design systems, CI/CD, and
-        optimized build tools.
+        Beyond product engineering, I specialize in developer tooling, design
+        systems, CI/CD, and frontend infrastructure, with a focus on improving
+        developer experience and building systems that scale across teams and
+        products.
       </p>
 
-      <h4 className='lg:text-lg text-sm mt-5'>Connect with me:</h4>
-      <ul className='flex items-center gap-8 my-10 w-full rounded-xl'>
-        {ICONS_LIST.map((icon, i) => (
-          <li key={i}>
-            <a href={icon.href} target='_blank'>
-              <Image src={icon.image} height={30} width={30} alt='Icons' />
-            </a>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
-
-const ICONS_LIST = [
-  {
-    image: "/icons/linkedin.svg",
-    href: "https://linkedin.com/in/albertdugba",
-  },
-  {
-    image: "/icons/github.svg",
-    href: "https://github.com/albertdugba",
-  },
-  {
-    image: "/icons/twitter.svg",
-    href: "https://twitter.com/albertdugba__",
-  },
-  {
-    image: "/icons/medium.svg",
-    href: "https://medium.com/@albert.dugba",
-  },
-];

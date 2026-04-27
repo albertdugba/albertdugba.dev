@@ -10,36 +10,36 @@ isPublished: true
 ---
 
 Localization is a very important aspect of building an application, especially when you have users with different languages in a new target market. The goal of localization is to break down the communication barriers making content more accessible to everyone. It's not something we think about but it's very important.
-In this article, we will be looking at how to set up localization in nextjs application with the app router.
 
-### What we will cover in this post
+In this article, we will be looking at how to set up localization in a Next.js application with the App Router.
 
-- Create a new nextjs application
-- Install the 118next package
+## What we will cover in this post
+
+- Create a new Next.js application
+- Install the `next-intl` package
 - Write translation files
 - Configure the `next-intl` package
 - Tailor our internationalization library according to our needs
 
-For the purposes of the post, we will be building out a basic e-commerce application. To see a live working version of this blog post, check out the [demo-app](https://localization-in-nextjs-sample-app.vercel.app/en) over here. You can also access to the [complete source code on github](https://github.com/albertdugba/localization-in-nextjs-sample-app) here too.
+For the purposes of this post, we will be building out a basic e-commerce application. To see a live working version, check out the [demo app](https://localization-in-nextjs-sample-app.vercel.app/en). You can also access the [complete source code on GitHub](https://github.com/albertdugba/localization-in-nextjs-sample-app).
 
-#### Create a new nextjs application
+### Create a new Next.js application
 
-I prefer to use <code>pnpm</code> but you can any package manager of your choice.
+I prefer to use `pnpm` but you can use any package manager of your choice.
 
 ```zsh
 pnpm create-next-app@latest
 ```
 
-#### Install the `next-intl` library
+### Install the `next-intl` library
 
 ```
 pnpm install next-intl
 ```
 
-#### Create Messages file
+### Create Messages file
 
-After the installation, the first step is to create a messages folder at the root of your application
-You can save the messages locally or fetch them from a remote source depending on your workflow.
+After the installation, the first step is to create a messages folder at the root of your application. You can save the messages locally or fetch them from a remote source depending on your workflow.
 
 At the root of your project, create a messages folder where you can create JSON files for each locale like below.
 
@@ -51,9 +51,9 @@ At the root of your project, create a messages folder where you can create JSON 
 }
 ```
 
-#### Configure Plugin
+### Configure Plugin
 
-The next step is to configure the `createNextIntlPlugin` plugin from the `next-intl` package in your `next.config` files. This plugin will provide the i18n configuration to the server components as follows:
+The next step is to configure the `createNextIntlPlugin` plugin from the `next-intl` package in your `next.config` file. This plugin will provide the i18n configuration to the server components as follows:
 
 ```js
 import createNextIntlPlugin from "next-intl/plugin";
@@ -66,9 +66,9 @@ const nextConfig = {};
 export default withNextIntl(nextConfig);
 ```
 
-#### Create `i18n.ts` file to setup the configuration
+### Create `i18n.ts` file to set up the configuration
 
-After this, create a `i18n.ts` file. This is to create a request-scoped configuration that can be used to provide messages based on the user's locale in the server components
+After this, create an `i18n.ts` file. This is to create a request-scoped configuration that can be used to provide messages based on the user's locale in the server components.
 
 ```js
 import { notFound } from "next/navigation";
@@ -85,7 +85,7 @@ export default getRequestConfig(async ({ locale }) => {
 });
 ```
 
-#### Create a middleware to handle requests
+### Create a middleware to handle requests
 
 Middleware is used to determine the locale for each request and handle redirects accordingly. In this step, you'll list all the supported locales for your application and match them with the pathnames. You can also set a default locale so that incoming requests automatically default to it if no specific locale is specified.
 
@@ -104,7 +104,7 @@ export const config = {
 
 This code sets up middleware that supports English and German, with English as the default locale. It will match the specified paths and handle locale-based routing for your application.
 
-###### Create a locale in the `app/[locale]/layout.tsx` file
+### Create a locale in the `app/[locale]/layout.tsx` file
 
 Since we have already set up the middleware with the respective locales, we can retrieve the matched locale from the params and use it to configure the page language in the layout.tsx file. We will then pass the messages to the NextIntlClientProvider.
 
@@ -173,8 +173,9 @@ Your project structure should look like this
 
 ## Rendering i18n messages with the `useTranslations` hook
 
-It is now time to render the 118next messages based on the user settings in the UI. `next-intl ` provides a `useTranslations` hook used to render the messages. The hook takes in a `namespace` or a `key` based on the structure of your `"language.json"` file.
-To illustrate let's integrate the translation capabilities into our product app starting from the hero HeroSection. In our application we have
+It is now time to render the `next-intl` messages based on the user settings in the UI. `next-intl` provides a `useTranslations` hook used to render the messages. The hook takes in a `namespace` or a `key` based on the structure of your `"language.json"` file.
+
+To illustrate, let's integrate the translation capabilities into our product app starting from the HeroSection. In our application we have
 
 ```js
  "Hero": {
@@ -284,7 +285,6 @@ function ProductList() {
 We need to render each product card so we can use `Object.values` like this
 
 ```HomePage.tsx
-js
 export default function Index() {
   const t = useTranslations("Product");
   const messages: any = useMessages();
@@ -316,7 +316,7 @@ export default function Index() {
 
 This should work as expected
 
-### Formatting Numbers
+## Formatting Numbers
 
 You can also format a number within a message
 
@@ -343,10 +343,9 @@ t(
 
 ## Implementing language switching in Next.js App Router using next-intl
 
-`next-intl` simplifies language switching in Next.js by automatically handling locale information within standard navigation APIs.
-By employing shared pathnames, you can directly map Next.js routes to user-requested URLs without additional complexity.
-With this configuration, you gain access to routing components and methods like Link and usePathname, enabling intuitive navigation within your Next.js project.
-Create a `navigation.ts` in your `src` folder and add the following:
+`next-intl` simplifies language switching in Next.js by automatically handling locale information within standard navigation APIs. By employing shared pathnames, you can directly map Next.js routes to user-requested URLs without additional complexity.
+
+With this configuration, you gain access to routing components and methods like `Link` and `usePathname`, enabling intuitive navigation within your Next.js project. Create a `navigation.ts` in your `src` folder and add the following:
 
 ```.ts
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
@@ -430,11 +429,10 @@ export const Header = () => {
 };
 ```
 
-### Wrapping up
+## Wrapping up
 
-I hope this post was helpful to you. You can find the [complete source code on github](https://github.com/albertdugba/localization-in-nextjs-sample-app) and the [demo-app](https://localization-in-nextjs-sample-app.vercel.app/en) over here.
-You can read more on the [official documentation site](https://next-intl-docs.vercel.app/)
+I hope this post was helpful to you. You can find the [complete source code on GitHub](https://github.com/albertdugba/localization-in-nextjs-sample-app) and the [demo app](https://localization-in-nextjs-sample-app.vercel.app/en). You can read more on the [official documentation site](https://next-intl-docs.vercel.app/).
 
-### References
+## References
 
 - [next-intl documentation](https://next-intl-docs.vercel.app/)

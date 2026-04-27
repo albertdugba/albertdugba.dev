@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { AppLayout } from "~/components/layout/appLayout";
 import { GoogleAnalytics } from "~/components/analytics";
@@ -58,6 +59,12 @@ export default function RootLayout({
           <main>{children}</main>
           <GoogleAnalytics />
         </AppLayout>
+        <Script
+          id="credibility-client-98765"
+          src="https://client.proofybubble.com/assets/embed.js"
+          strategy="afterInteractive"
+          data-app-id="fd85196130fac2e206826f4d134f362336c9df2e270a7c64c464b178de55e31e"
+        />
       </body>
     </html>
   );

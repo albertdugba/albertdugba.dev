@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logs</title>
+  </head>
+  <body>
+    <div id="logs"></div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("logs");
+        if (!container) return;
+
+        const style = document.createElement("style");
+        style.textContent = `
+          body {
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+          }
+          #logs {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+          }
+          header {
+            margin-bottom: 1rem;
+          }
+          header h1 {
+            font-size: 1.75rem;
+            margin: 0;
+            letter-spacing: 0.08em;
+          }
+          #log-status {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+          }
+          #log-list {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            background: rgba(15, 23, 42, 0.85);
+            box-shadow: 0 20px 60px rgba(2, 6, 23, 0.6);
+          }
+          .log-line {
+            display: block;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 0.25rem 0;
+            font-size: 0.85rem;
+          }
+          .log-line span {
+            margin-right: 0.5rem;
+          }
+          .log-line:last-child {
+            border: none;
+          }
+        `;
+
+        document.head.appendChild(style);
+
+        container.innerHTML = `
+          <header>
+            <h1>Logs</h1>
+            <p id="log-status">Connecting to SSE endpoint…</p>
+          </header>
+          <div id="log-list"></div>
+        `;
+
+        const statusEl = document.getElementById("log-status");
+        const listEl = document.getElementById("log-list");
+        if (!statusEl || !listEl) return;
+
+        const renderEntry = (entry) => {
+          const line = document.createElement("div");
+          line.className = "log-line";
+          line.innerHTML = `
+            <span>[${new Date(entry.timestamp).toISOString()}]</span>
+            <span>${entry.level.toUpperCase()}</span>
+            <span>${entry.message}</span>
+            <span style="color: #a5b4fc;">(id:${entry.id} since:${entry.since})</span>
+          `;
+
+          listEl.prepend(line);
+          const children = listEl.children;
+          if (children.length > 40) {
+            listEl.removeChild(children[children.length - 1]);
+          }
+        };
+
+        const source = new EventSource("http://localhost:3000/api/logs?since=week");
+
+        source.addEventListener("open", () => {
+          statusEl.textContent = "Connection opened — streaming logs.";
+        });
+
+        source.addEventListener("log", (event) => {
+          try {
+            const payload = JSON.parse(event.data);
+            renderEntry(payload);
+          } catch {
+            console.warn("Failed to parse log payload:", event.data);
+          }
+        });
+
+        source.addEventListener("done", () => {
+          statusEl.textContent = "Stream finished — reconnect to continue.";
+          source.close();
+        });
+
+        source.addEventListener("error", () => {
+          statusEl.textContent = "Stream error — attempting to reconnect…";
+        });
+
+        window.addEventListener("beforeunload", () => source.close());
+      });
+    </script>
+  </body>
+</html>

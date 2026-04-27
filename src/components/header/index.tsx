@@ -41,7 +41,7 @@ export function Header() {
 
 const LINKS = [
   {
-    label: "Writings",
+    label: "Posts",
     href: "/blog",
   },
   {
