@@ -13,7 +13,7 @@ function formatDate(date: string) {
 
 function PostTitle({ title }: { title: string }) {
   return (
-    <h2 className='text-lg sm:text-3xl font-bold leading-snug'>
+    <h1 className='text-lg sm:text-2xl font-bold leading-snug'>
       <Grit>
         <span className='relative inline-block'>
           <span
@@ -27,7 +27,7 @@ function PostTitle({ title }: { title: string }) {
           {title.slice(1)}
         </span>
       </Grit>
-    </h2>
+    </h1>
   );
 }
 
@@ -74,12 +74,28 @@ function ArticleRow({ post }: { post: Post }) {
   );
 }
 
-export const Posts = ({ posts }: { posts: Post[] }) => {
+export function RecentArticles({ posts }: { posts: (Post | null)[] }) {
+  const validPosts = posts.filter(Boolean) as Post[];
+
+  if (validPosts.length === 0) return null;
+
   return (
-    <div>
-      {posts.map((post) => (
-        <ArticleRow key={post.slug} post={post} />
-      ))}
-    </div>
+    <section className='mt-20 mb-16'>
+      <div className='flex items-baseline justify-between'>
+        <h2 className='text-2xl font-bold tracking-tight'>Recent Posts</h2>
+        <Link
+          href='/blog'
+          className='text-sm font-medium text-gray hover:text-secondary transition-colors'
+        >
+          View all →
+        </Link>
+      </div>
+
+      <div>
+        {validPosts.map((post) => (
+          <ArticleRow key={post.slug} post={post} />
+        ))}
+      </div>
+    </section>
   );
-};
+}

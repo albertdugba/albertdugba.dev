@@ -87,7 +87,7 @@ export const File = ({
 export const Folder = ({
   name,
   children,
-  defaultOpen = false,
+  defaultOpen = true,
   selectedFile,
   setSelectedFile,
 }: {

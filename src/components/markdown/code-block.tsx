@@ -3,11 +3,7 @@
 import React, { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { Highlight, Token } from "prism-react-renderer";
-import {
-  parseLanguageAndFilename,
-  getBadgeStyles,
-  isShellLanguage,
-} from "./code-block-utils";
+import { parseLanguageAndFilename, isShellLanguage } from "./code-block-utils";
 
 interface CodeBlockProps {
   children: string;
@@ -17,10 +13,6 @@ interface CodeBlockProps {
 interface CopyButtonProps {
   copied: boolean;
   onCopy: () => void;
-}
-
-interface LanguageBadgeProps {
-  badge: string;
 }
 
 interface LineNumberCellProps {
@@ -44,37 +36,11 @@ function CopyButton({ copied, onCopy }: CopyButtonProps) {
   return (
     <button
       onClick={onCopy}
-      className='absolute top-2 right-2 z-10 rounded px-2 py-1 text-xs text-gray-600 transition-all hover:bg-gray-200 hover:text-gray-900'
-      style={{ backgroundColor: "rgba(243, 244, 246, 0.8)" }}
+      className='rounded p-1 text-gray-400 transition-all hover:text-gray-600'
       aria-label='Copy code'
     >
-      <div className='flex items-center gap-1'>
-        {copied ? (
-          <>
-            <Check className='h-3 w-3' />
-            <span>Copied</span>
-          </>
-        ) : (
-          <>
-            <Copy className='h-3 w-3' />
-            <span>Copy</span>
-          </>
-        )}
-      </div>
+      {copied ? <Check className='h-4 w-4' /> : <Copy className='h-4 w-4' />}
     </button>
-  );
-}
-
-function LanguageBadge({ badge }: LanguageBadgeProps) {
-  return (
-    <div className='absolute -top-1 left-4 z-10'>
-      <span
-        className='inline-block rounded-b px-2.5 py-1 text-xs font-medium uppercase tracking-wider'
-        style={getBadgeStyles()}
-      >
-        {badge}
-      </span>
-    </div>
   );
 }
 
@@ -89,7 +55,8 @@ function LineNumberCell({
       className='table-cell text-center select-none px-4 py-1'
       style={{
         width: "60px",
-        color: "#637777",
+        color: "#c0c5cc",
+        backgroundColor: "#f3f4f6",
       }}
     >
       {isHighlighted && highlightType === "add" && (
@@ -119,14 +86,12 @@ function CodeLine({
   const getLineStyles = () => {
     if (!isHighlighted) return {};
 
-    const baseStyle = { color: "#ffffff" };
-
     if (highlightType === "add") {
-      return { ...baseStyle, backgroundColor: "rgba(46, 160, 67, 0.3)" };
+      return { backgroundColor: "rgba(46, 160, 67, 0.15)" };
     } else if (highlightType === "del") {
-      return { ...baseStyle, backgroundColor: "rgba(248, 81, 73, 0.3)" };
+      return { backgroundColor: "rgba(248, 81, 73, 0.15)" };
     } else {
-      return { ...baseStyle, backgroundColor: "rgba(59, 130, 246, 0.25)" };
+      return { backgroundColor: "rgba(59, 130, 246, 0.1)" };
     }
   };
 
@@ -152,9 +117,7 @@ function CodeLine({
               {...props}
               style={{
                 ...props.style,
-                color: isHighlighted
-                  ? "#ffffff"
-                  : props.style?.color || "#cbd5e0",
+                color: props.style?.color || "#24292f",
               }}
             />
           );
@@ -166,10 +129,8 @@ function CodeLine({
 
 export function CodeBlock({ children, className }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
-
   const {
     language,
-    filename,
     badge: languageBadge,
     highlightLines,
     highlightType,
@@ -190,108 +151,108 @@ export function CodeBlock({ children, className }: CodeBlockProps) {
 
   const code = typeof children === "string" ? children.trim() : "";
 
-  const customDarkTheme = {
+  const lightTheme = {
     plain: {
-      color: "#cbd5e0",
-      backgroundColor: "#011627",
+      color: "#24292f",
+      backgroundColor: "#ffffff",
     },
     styles: [
       {
         types: ["comment", "prolog", "doctype", "cdata"],
         style: {
-          color: "#637777",
+          color: "#6e7781",
           fontStyle: "italic" as const,
         },
       },
       {
         types: ["punctuation"],
         style: {
-          color: "#cbd5e0",
+          color: "#24292f",
         },
       },
       {
         types: ["namespace"],
         style: {
-          color: "#b2ccd6",
+          color: "#6e7781",
         },
       },
       {
         types: ["deleted"],
         style: {
-          color: "#ef5350",
+          color: "#cf222e",
         },
       },
       {
         types: ["property", "tag"],
         style: {
-          color: "#7fdbca",
+          color: "#116329",
         },
       },
       {
         types: ["string", "attr-value"],
         style: {
-          color: "#d9f5dd",
+          color: "#0a3069",
         },
       },
       {
         types: ["number", "boolean"],
         style: {
-          color: "#f78c6c",
+          color: "#0550ae",
         },
       },
       {
         types: ["keyword", "operator"],
         style: {
-          color: "#c792ea",
+          color: "#cf222e",
         },
       },
       {
         types: ["entity", "url", "symbol", "variable"],
         style: {
-          color: "#cbd5e0",
+          color: "#953800",
         },
       },
       {
         types: ["constant", "regex", "inserted"],
         style: {
-          color: "#80cbc4",
+          color: "#116329",
         },
       },
       {
         types: ["atrule", "attr-name", "selector"],
         style: {
-          color: "#c5e478",
+          color: "#0550ae",
         },
       },
       {
         types: ["function"],
         style: {
-          color: "#82aaff",
+          color: "#8250df",
         },
       },
       {
         types: ["class-name"],
         style: {
-          color: "#ffcb8b",
+          color: "#953800",
         },
       },
       {
         types: ["parameter"],
         style: {
-          color: "#cbd5e0",
+          color: "#24292f",
         },
       },
       {
         types: ["builtin"],
         style: {
-          color: "#cbd5e0",
+          color: "#0550ae",
         },
       },
     ],
   };
 
   return (
-    <Highlight theme={customDarkTheme} code={code} language={language}>
+    <Highlight theme={lightTheme} code={code} language={language}>
       {({
         className: highlightClassName,
         tokens,
@@ -299,40 +260,48 @@ export function CodeBlock({ children, className }: CodeBlockProps) {
         getTokenProps,
       }) => (
         <div
-          className='my-6 overflow-hidden rounded-lg border border-gray-200'
+          className='my-6 overflow-hidden rounded-xl border border-[#eaedf0]'
           data-language={language}
         >
-          {filename && (
-            <div className='px-4 py-2 text-sm font-mono bg-gray-200 text-gray-700 rounded-t-lg'>
-              {filename}
-            </div>
-          )}
+          <div
+            className='flex items-center justify-between px-4 py-2'
+            style={{
+              backgroundColor: "#fbfcff",
+              borderBottom: "1px solid #e1e1e2",
+            }}
+          >
+            <span>
+              {languageBadge && (
+                <span
+                  className='text-xs font-medium uppercase tracking-wider'
+                  style={{ color: "#555" }}
+                >
+                  {languageBadge}
+                </span>
+              )}
+            </span>
+            <CopyButton copied={copied} onCopy={handleCopy} />
+          </div>
 
           <div className='relative group overflow-x-auto overflow-y-hidden'>
-            {languageBadge && <LanguageBadge badge={languageBadge} />}
-
             <pre
-              className={`m-0 ${
-                filename ? "" : "rounded-t-lg"
-              } rounded-b-lg ${highlightClassName}`}
+              className={`m-0 ${highlightClassName}`}
               style={{
                 fontFamily: 'var(--font-mono, "Mono Lisa", monospace)',
-                paddingTop: languageBadge ? "2.5rem" : "1rem",
-                paddingRight: "1rem",
-                paddingBottom: "1rem",
+                paddingTop: "0rem",
+                paddingRight: "1.25rem",
+                paddingBottom: "0rem",
                 paddingLeft: "0",
-                backgroundColor: customDarkTheme.plain.backgroundColor,
-                color: customDarkTheme.plain.color,
-                lineHeight: "1.5",
-                letterSpacing: "0.025rem",
-                fontSize: "0.875rem",
+                backgroundColor: "#ffffff",
+                color: lightTheme.plain.color,
+                lineHeight: "1.7",
+                letterSpacing: "0.01rem",
+                fontSize: "0.9rem",
                 minWidth: "100%",
                 width: "fit-content",
               }}
             >
-              <CopyButton copied={copied} onCopy={handleCopy} />
-
-              <code style={{ color: customDarkTheme.plain.color }}>
+              <code style={{ color: lightTheme.plain.color }}>
                 {tokens.map((line, i) => (
                   <CodeLine
                     key={i}

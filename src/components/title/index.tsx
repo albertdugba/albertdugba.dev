@@ -5,11 +5,11 @@ const overPass = Overpass({ subsets: ["latin"] });
 const getAlignmentClass = (align?: "center" | "right" | "left") => {
   switch (align) {
     case "center":
-      return "center";
-    case "left":
-      return "left";
+      return "items-center justify-center text-center";
     case "right":
-      return "right";
+      return "items-end justify-end text-right";
+    case "left":
+      return "items-start justify-start text-left";
     default:
       return "";
   }
@@ -26,17 +26,15 @@ export const Title = ({
   subtitle?: string;
   size?: "normal" | "large";
 }) => (
-  <div className='flex flex-col gap-2 mb-6 items-center justify-center'>
+  <div className={`flex flex-col gap-2 mb-6 ${getAlignmentClass(align)}`}>
     <h1
       className={`${
         size === "large" ? "lg:text-6xl" : "lg:text-5xl"
-      } md:text-5xl text-3xl text-secondary ${
-        overPass.className
-      } text-${getAlignmentClass(align)}`}
+      } md:text-5xl text-3xl text-secondary ${overPass.className}`}
     >
       {title}
     </h1>
 
-    <h5 className='font-medium'>{subtitle}</h5>
+    {subtitle && <h5 className='font-medium'>{subtitle}</h5>}
   </div>
 );

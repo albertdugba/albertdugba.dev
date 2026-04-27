@@ -1,8 +1,8 @@
 .Post-Content p {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.625;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
   letter-spacing: -0.003em;
 }
 
@@ -17,13 +17,13 @@
   background-color: var(--lightest-gray);
   border-radius: 6px;
   font-weight: 400;
-  padding: 0.18rem 0.3rem;
-  font-size: 90%;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875em;
 }
 
 .Post-Content {
   margin: 0 auto;
-  line-height: 1.65rem;
+  line-height: 1.7;
 }
 
 .Post-Content h2,
@@ -31,10 +31,11 @@
 .Post-Content h4,
 .Post-Content h5,
 .Post-Content h6 {
-  padding-top: 0.7rem;
   font-weight: 700;
-  line-height: 1.25;
-  margin-top: 2rem;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
 }
 
 .Post-Content h2 {
@@ -51,29 +52,15 @@
 
 @media (min-width: 640px) {
   .Post-Content h2 {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
 
   .Post-Content h3 {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   .Post-Content h4 {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .Post-Content h2 {
-    font-size: 2.25rem;
-  }
-
-  .Post-Content h3 {
-    font-size: 1.875rem;
-  }
-
-  .Post-Content h4 {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -81,13 +68,10 @@
   margin-top: 1em;
 }
 
-.Post-Content article p {
+.Post-Content p {
   color: var(--article-color);
   line-height: 1.625;
   letter-spacing: -0.003em;
-}
-.Post-Content p {
-  color: var(--article-color);
 }
 
 .Post-Content aside p {
@@ -114,52 +98,55 @@
 }
 
 .Post-Content ul {
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: disc;
-  padding-left: var(--gap);
+  padding-left: 1.5rem;
 }
 
 .Post-Content div div aside {
-  margin-top: 20px;
-  padding-bottom: 10px;
+  margin-top: 1.25rem;
+  padding-bottom: 0.625rem;
 }
 
 .Post-Content ul li {
   list-style-type: inherit;
   font-size: inherit;
-  line-height: inherit;
-  margin-left: 16px;
+  line-height: 1.7;
+  color: var(--article-color);
 }
 
 .Post-Content ol {
-  padding: 0;
-  list-style-position: inside;
+  padding-left: 1.5rem;
+  list-style-position: outside;
 }
 
 .Post-Content ol li {
   padding: 0;
   list-style: decimal;
+  line-height: 1.7;
+  color: var(--article-color);
 }
 
 .Post-Content ol li:not(:last-child),
 .Post-Content ul li:not(:last-child) {
-  margin-bottom: var(--gap);
+  margin-bottom: 0.5rem;
 }
 
 .Post-Content ol > li > ul {
-  margin-left: var(--gap-double);
-  list-style-position: inside;
+  margin-left: 1.5rem;
+  list-style-position: outside;
   list-style-type: circle;
 }
 
 .Post-Content aside,
 .Post-Content blockquote {
-  border: 1px solid var(--lighter-gray);
+  border-left: 3px solid var(--secondary, var(--lighter-gray));
   background: var(--lightest-gray);
-  padding: var(--gap-half);
+  padding: 1rem 1.25rem;
   color: var(--article-color);
-  margin: var(--gap-half) 0;
-  line-height: 1.75rem;
+  margin: 1.5rem 0;
+  line-height: 1.7;
+  border-radius: 0 6px 6px 0;
 }
 
 .Post-Content .token-line:not(:last-child) {
@@ -199,7 +186,7 @@
 
 .Post-Content article a {
   text-decoration: none;
-  font-size: 0.5rem;
+  font-size: inherit;
 }
 
 .Post-Content article a:hover {

@@ -23,7 +23,11 @@ export const BlogCard = ({ post }: BlogCardProps) => {
 
         <div className='p-5'>
           <p className='mb-2 text-xs font-light text-lighter-gray/70'>
-            {post?.date}
+            {post?.date ? new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }) : ""}
           </p>
 
           <h2 className='mb-3 text-lg font-medium text-lighter-gray transition-colors duration-300 group-hover:text-secondary'>

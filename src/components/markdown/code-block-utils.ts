@@ -123,8 +123,8 @@ export function parseLanguageAndFilename(className?: string): LanguageInfo {
 
 export function getBadgeStyles() {
   return {
-    backgroundColor: "#a7f381",
-    color: "#0b1901",
+    backgroundColor: "#e8e8e8",
+    color: "#555",
   };
 }
 
