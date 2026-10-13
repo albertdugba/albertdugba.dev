@@ -1,12 +1,16 @@
+import { Overpass } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PostBody } from "~/components/posts/post-body";
+import { TableOfContents } from "~/components/posts/table-of-contents";
+import { extractHeadings } from "~/lib/extract-headings";
 import { getPost } from "~/lib/posts";
 import readingTime from "reading-time";
 import { StructuredData } from "~/components/structured-data";
-import { Grit } from "~/components/grit";
+
+const overpass = Overpass({ subsets: ["latin"] });
 
 async function PostPage({
   params,
@@ -27,73 +31,66 @@ async function PostPage({
       })
     : "";
 
+  const headings = extractHeadings(post.body);
+
   return (
     <>
       <StructuredData post={post} />
-      <div className='min-h-screen w-full pt-6'>
-        <nav className='flex items-center mb-10'>
-          <div className='flex items-center gap-2 text-sm'>
-            <Link
-              href='/blog'
-              className='text-gray hover:text-fg transition-colors'
-            >
-              Posts
-            </Link>
-            <span className='text-gray'>/</span>
-            {post.tags?.[0] && (
-              <span className='text-gray'>{post.tags[0]}</span>
-            )}
-          </div>
-        </nav>
+      <div className='mx-auto w-full max-w-5xl pt-10 sm:pt-16'>
+        <Link
+          href='/blog'
+          className='text-sm text-gray !no-underline transition-colors hover:text-fg'
+        >
+          ← Writing
+        </Link>
 
-        <header className='w-full mb-10'>
-          <h1 className='text-3xl sm:text-[2.5rem] lg:text-5xl font-bold tracking-[-0.03em] leading-[1.15] mb-4'>
-            <Grit>
-              <span className='relative inline-block'>
-                <span
-                  className='absolute -left-2 -top-1 w-6 h-6 sm:w-7 sm:h-7 z-0'
-                  style={{ backgroundColor: "var(--lemonAccent)" }}
-                  aria-hidden='true'
-                />
-                <span className='relative z-10'>{post.title.charAt(0)}</span>
-              </span>
-              <span className='underline decoration-[var(--lemonAccent)] decoration-4 underline-offset-2 [text-decoration-skip-ink:none]'>
-                {post.title.slice(1)}
-              </span>
-            </Grit>
+        <header className='mt-10 max-w-[46rem]'>
+          <h1
+            className={`${overpass.className} text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.08] tracking-[-0.03em] text-secondary`}
+          >
+            {post.title}
           </h1>
 
-          <time className='text-sm text-gray block mb-3'>{formattedDate}</time>
-
-          {!!post?.tags?.length && (
-            <div className='flex flex-wrap gap-1.5 mb-3'>
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className='text-xs font-semibold px-2 py-0.5 rounded-sm bg-secondary text-[var(--lemonAccent)]'
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          {post.description && (
+            <p className='mt-5 text-lg leading-8 text-gray'>
+              {post.description}
+            </p>
           )}
 
-          <span className='text-sm text-gray'>
-            {readingTime(post.body).text}
-          </span>
+          <div className='mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-2 font-mono text-xs text-gray'>
+            <time>{formattedDate}</time>
+            <span aria-hidden='true'>·</span>
+            <span>{readingTime(post.body).text}</span>
+            {post.tags?.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className='bg-[var(--lemonColor)] px-2 py-1 font-medium text-[var(--onSecondary)]'
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </header>
 
-        {/* Hero image — full width */}
-        <div className='relative lg:h-[440px] h-[280px] mb-14 overflow-hidden'>
+        <div className='relative mb-14 mt-10 aspect-[16/9] overflow-hidden rounded-xl border border-light-gray bg-lightest-gray'>
           <Image
             src={post.image}
-            alt={post.title}
+            alt=''
             fill
-            className='object-contain rounded-xl'
+            priority
+            sizes='(min-width: 1024px) 64rem, 100vw'
+            className='!rounded-none object-cover !p-0'
           />
         </div>
 
-        <PostBody>{post?.body}</PostBody>
+        <div className='relative flex gap-10'>
+          <div className='min-w-0 flex-1'>
+            <PostBody>{post?.body}</PostBody>
+          </div>
+          <aside className='sticky top-24 hidden w-52 shrink-0 self-start xl:block'>
+            <TableOfContents headings={headings} />
+          </aside>
+        </div>
       </div>
     </>
   );

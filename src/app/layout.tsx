@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   description:
     "Experienced frontend software engineer focused on building enterprise grade, accessible, scalable web and mobile applications.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
   twitter: {
     card: "summary_large_image",

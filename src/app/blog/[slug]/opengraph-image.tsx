@@ -18,13 +18,13 @@ export default async function Image({ params }: { params: { slug: string } }) {
         <div
           style={{
             fontSize: 48,
-            background: "#0b1901",
+            background: "#0a0a0a",
             width: "100%",
             height: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: "#a7f381",
+            color: "#ffffff",
           }}
         >
           Post not found
@@ -40,7 +40,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
     (
       <div
         style={{
-          background: "#0b1901",
+          background: "#0a0a0a",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -63,7 +63,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             style={{
               fontSize: 32,
               fontWeight: "bold",
-              color: "#a7f381",
+              color: "#ffffff",
               display: "flex",
             }}
           >
@@ -83,7 +83,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             style={{
               fontSize: 72,
               fontWeight: "bold",
-              color: "#a7f381",
+              color: "#ffffff",
               lineHeight: 1.2,
               margin: 0,
               display: "flex",
@@ -130,8 +130,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
                   <span
                     key={tag}
                     style={{
-                      backgroundColor: "#a7f381",
-                      color: "#0b1901",
+                      backgroundColor: "#ffffff",
+                      color: "#0a0a0a",
                       padding: "8px 16px",
                       borderRadius: "6px",
                       fontSize: 24,
