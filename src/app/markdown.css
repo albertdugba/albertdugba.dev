@@ -103,6 +103,17 @@
   padding-left: 1.5rem;
 }
 
+.Post-Content [data-toc] ul,
+.Post-Content [data-toc] li {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.Post-Content [data-toc] li::marker {
+  content: none;
+}
+
 .Post-Content div div aside {
   margin-top: 1.25rem;
   padding-bottom: 0.625rem;
@@ -138,7 +149,7 @@
   list-style-type: circle;
 }
 
-.Post-Content aside,
+.Post-Content aside:not(:has(> [data-toc])),
 .Post-Content blockquote {
   border-left: 3px solid var(--secondary, var(--lighter-gray));
   background: var(--lightest-gray);
@@ -193,6 +204,12 @@
   text-decoration: underline;
 }
 
+.Post-Content article a:has(code),
+.Post-Content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .Post-Content sup {
   font-size: 0.8em;
   vertical-align: super;
@@ -228,11 +245,115 @@
 }
 
 .code-editor {
-  font-family: Mono Lisa, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    Liberation Mono, Courier New, monospace;
+  font-family:
+    Mono Lisa,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
 }
 
 code > * {
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+/* Shiki dual themes (see code-block.tsx): pick light or dark per data-theme. */
+.shiki-block .shiki {
+  background-color: var(--shiki-light-bg);
+}
+.shiki-block .shiki,
+.shiki-block .shiki span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+}
+[data-theme="dark"] .shiki-block .shiki {
+  background-color: var(--shiki-dark-bg);
+}
+[data-theme="dark"] .shiki-block .shiki,
+[data-theme="dark"] .shiki-block .shiki span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+}
+
+/* Shiki code block styles */
+.shiki-block .shiki-content pre,
+.shiki-block .shiki-content code,
+.shiki-block .shiki-content code span {
+  font-family:
+    "Mono Lisa", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace !important;
+  letter-spacing: normal !important;
+  font-feature-settings: normal !important;
+}
+
+.shiki-block .shiki-content pre {
+  margin: 0;
+  padding: 1rem 0;
+  overflow-x: auto;
+}
+
+.shiki-block .shiki-content code {
+  display: block;
+}
+
+.shiki-block .shiki-content .line {
+  display: inline-block;
+  width: 100%;
+  padding: 0 1.25rem 0 1.25rem;
+}
+
+/* Diff: added lines */
+.shiki-block .shiki-content .line.diff.add {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+/* Diff: removed lines */
+.shiki-block .shiki-content .line.diff.remove {
+  background-color: rgba(248, 81, 73, 0.15);
+}
+
+/* Highlighted lines */
+.shiki-block .shiki-content .line.highlighted {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 2px 0 0 #0a0a0a;
+}
+
+/* Highlighted words */
+.shiki-block .shiki-content .highlighted-word {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 0 -2px;
+}
+
+/* Focus: dim unfocused lines */
+.shiki-block .shiki-content pre.has-focused .line:not(.focused) {
+  opacity: 0.4;
+  filter: blur(0.5px);
+  transition:
+    opacity 0.3s,
+    filter 0.3s;
+}
+
+.shiki-block .shiki-content pre.has-focused:hover .line:not(.focused) {
+  opacity: 1;
+  filter: none;
+}
+
+/* Error levels */
+.shiki-block .shiki-content .line.highlighted.error {
+  background-color: rgba(248, 81, 73, 0.15);
+}
+
+.shiki-block .shiki-content .line.highlighted.warning {
+  background-color: rgba(227, 179, 65, 0.15);
+}
+
+.shiki-block .shiki-content .line.highlighted.info {
+  background-color: rgba(0, 0, 0, 0.05);
 }

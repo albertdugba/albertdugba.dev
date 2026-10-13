@@ -1,22 +1,28 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "./theme-provider";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ThemeSwitch() {
-  const { theme, toggleTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  // The theme is only known on the client; render a placeholder until mounted.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
-      onClick={toggleTheme}
-      className='p-2 rounded-md hover:bg-[var(--lighterGray)] transition-all duration-200'
-      style={{ color: "var(--gray)" }}
-      aria-label='Toggle theme'
+      type='button'
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Toggle theme"}
+      className='flex size-8 items-center justify-center rounded-full text-gray transition-colors hover:text-lighter-gray'
     >
-      {theme === "dark" ? (
-        <Sun className='h-5 w-5' />
+      {mounted ? (
+        isDark ? <Sun className='size-4' /> : <Moon className='size-4' />
       ) : (
-        <Moon className='h-5 w-5' />
+        <span className='size-4' />
       )}
     </button>
   );

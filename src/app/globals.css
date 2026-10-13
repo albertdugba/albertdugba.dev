@@ -6,42 +6,73 @@
 :root {
   --blueColor: rgb(226, 233, 242);
   --textBlueColor: rgb(216, 216, 237);
+  /* Width of the left gutter AND the striped column — kept in one place so the
+     stripes always sit flush between the frame line and the text-start line. */
+  --gutter: 2.5rem;
 }
 
 [data-theme="dark"] {
-  --bg: #0b1901;
-  --lemonColor: #a7f381;
-  --lighter-gray: #fff;
-  --darkGreen: #0b1901;
-  --bg-alpha: hsla(0, 0%, 7%, 0.9);
-  --fg: #fafbfc;
-  --gray: #999;
-  --light-gray: #444;
-  --stripe-color: rgba(255, 255, 255, 0.1);
-  --lightest-gray: #112507;
-  --article-color: #eaeaea;
-  --gray-alpha: rgba(255, 255, 255, 0.5);
-  --selection: rgba(255, 255, 255, 0.88);
+  /* Dark take on the same palette: peach on deep aubergine, cream text. */
+  --greenColor: #ffc091;
+  --lightGreen: rgba(255, 192, 145, 0.15);
+  --darkGreen: #1d0823;
+  --grayColor: #2a1031;
+  --lemonColor: #ffc091;
+  --lemonAccent: #ffc091;
+  --onSecondary: #260a2f;
+  --code-bg: #2a1031;
+  --bg: #1d0823;
+  --bg-alpha: rgba(29, 8, 35, 0.9);
+  --fg: #f6ebe3;
+  --gray: #a898ad;
+  --light-gray: #3d2445;
+  --stripe-color: rgba(246, 235, 227, 0.1);
+  --lighter-gray: #f6ebe3;
+  --lightest-gray: #2a1031;
+  --article-color: #dccbd3;
+  --gray-alpha: rgba(246, 235, 227, 0.5);
+  --selection: rgba(255, 192, 145, 0.35);
+  --guide-line: rgba(246, 235, 227, 0.09);
+  --guide-hatch: rgba(246, 235, 227, 0.07);
+  --mark-stroke: rgba(246, 235, 227, 0.09);
+  --mark-dash: rgba(246, 235, 227, 0.1);
+  --mark-fill: rgba(246, 235, 227, 0.03);
 }
 
 [data-theme="light"] {
-  --greenColor: #1ed760;
-  --lightGreen: #d3f4c333;
-  --darkGreen: #fff;
-  --grayColor: #f1f1f1f1;
-  --lemonColor: #153405;
-  --lemonAccent: #a7f381;
-  --bg: #fafbfc;
+  /* Black and white: near-black ink on pure white, neutral greys only.
+     (Variable names are historical: "lemon" = accent, "darkGreen" = page.) */
+  --greenColor: #0a0a0a;
+  --lightGreen: rgba(0, 0, 0, 0.06);
+  --darkGreen: #ffffff;
+  --grayColor: #f4f4f4;
+  --lemonColor: #0a0a0a;
+  --lemonAccent: #0a0a0a;
+  /* Text or fills that sit on a --lemonColor surface (tags, dark cards). */
+  --onSecondary: #ffffff;
+  --code-bg: #f6f6f6;
+  --bg: #ffffff;
   --bg-alpha: rgba(255, 255, 255, 0.9);
-  --fg: hsl(0, 0%, 7%);
-  --gray: #666;
-  --light-gray: #ddd;
+  --fg: #0a0a0a;
+  --gray: #6b6b6b;
+  --light-gray: #e5e5e5;
   --stripe-color: rgba(0, 0, 0, 0.1);
-  --lighter-gray: #0b1901;
-  --lightest-gray: #f5f5f5;
-  --article-color: #333;
+  --lighter-gray: #0a0a0a;
+  --lightest-gray: #f6f6f6;
+  --article-color: #3a3a3a;
   --gray-alpha: rgba(0, 0, 0, 0.5);
   --selection: rgba(0, 0, 0, 0.88);
+  --guide-line: rgba(0, 0, 0, 0.09);
+  --guide-hatch: rgba(0, 0, 0, 0.08);
+  --mark-stroke: rgba(0, 0, 0, 0.1);
+  --mark-dash: rgba(0, 0, 0, 0.12);
+  --mark-fill: rgba(0, 0, 0, 0.03);
+}
+
+/* Keep the scrollbar's space reserved so locking scroll (e.g. the photo
+   lightbox) doesn't shift the page sideways. */
+html {
+  scrollbar-gutter: stable;
 }
 
 html,

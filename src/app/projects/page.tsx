@@ -1,36 +1,29 @@
-import Image from "next/image";
-import { Title } from "~/components/title";
+import type { Metadata } from "next";
+import { Overpass } from "next/font/google";
+import { ProjectGrid } from "~/components/projects/project-card";
 
-const Card = ({ url }: { url: string }) => {
-  return (
-    <div className='bg-white text-primary rounded-xl p-6 md:w-[320px] w-full'>
-      <div className='relative h-[200px] flex items-center justify-center'>
-        <Image
-          src={url}
-          alt=''
-          fill
-          className='object-contain w-full h-full rounded-xl'
-        />
-      </div>
-    </div>
-  );
+const overpass = Overpass({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Work | Albert Dugba",
+  description: "Products and projects Albert Dugba is building.",
 };
 
-const ProjectsPage = () => {
+export default function ProjectsPage() {
   return (
-    <div>
-      <div className='h-screen w-full items-center justify-center lg:py-24 md:py-16 py-14'>
-        <Title
-          title='Works'
-          subtitle='Brands and companies I have worked with'
-          align='center'
-        />
+    <div className='mx-auto w-full max-w-5xl pb-24 pt-20 sm:pt-28'>
+      <header className='mb-14 max-w-[40rem] sm:mb-16'>
+        <h1
+          className={`${overpass.className} text-[clamp(2.75rem,6vw,4.5rem)] leading-none tracking-[-0.03em] text-secondary`}
+        >
+          Work
+        </h1>
+        <p className='mt-5 text-lg leading-8 text-article-color'>
+          Products I&apos;m building and shipping.
+        </p>
+      </header>
 
-        <div className='flex items-center justify-center h-full'>
-          <h1>Coming Soon</h1>
-        </div>
-      </div>
+      <ProjectGrid />
     </div>
   );
-};
-export default ProjectsPage;
+}

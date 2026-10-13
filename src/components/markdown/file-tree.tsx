@@ -25,7 +25,7 @@ export const FileTree = ({ children }: { children: React.ReactNode }) => {
   });
 
   return (
-    <div className='font-mono text-sm rounded-md bg-muted/30 bg-gray-100 text-foreground overflow-hidden'>
+    <div className='font-mono text-sm rounded-md border border-light-gray bg-[var(--code-bg)] text-lighter-gray overflow-hidden'>
       <div className='p-2 text-xs font-medium uppercase tracking-wider text-muted-foreground'>
         Explorer
       </div>
@@ -37,11 +37,13 @@ export const FileTree = ({ children }: { children: React.ReactNode }) => {
 export const File = ({
   name,
   path,
+  comment,
   selectedFile,
   setSelectedFile,
 }: {
   name: string;
   path?: string;
+  comment?: string;
   selectedFile?: string | null;
   setSelectedFile?: (path: string | null) => void;
 }) => {
@@ -53,18 +55,18 @@ export const File = ({
     switch (extension) {
       case "js":
       case "jsx":
-        return <FileIcon className='h-4 w-4 text-yellow-400' />;
+        return <FileIcon className='h-4 w-4 text-gray' />;
       case "ts":
       case "tsx":
-        return <FileIcon className='h-4 w-4 text-blue-400' />;
+        return <FileIcon className='h-4 w-4 text-gray' />;
       case "css":
-        return <FileIcon className='h-4 w-4 text-pink-400' />;
+        return <FileIcon className='h-4 w-4 text-gray' />;
       case "json":
-        return <FileIcon className='h-4 w-4 text-yellow-600' />;
+        return <FileIcon className='h-4 w-4 text-gray' />;
       case "md":
         return <FileIcon className='h-4 w-4 text-slate-400' />;
       case "html":
-        return <FileIcon className='h-4 w-4 text-orange-400' />;
+        return <FileIcon className='h-4 w-4 text-gray' />;
       default:
         return <FileIcon className='h-4 w-4' />;
     }
@@ -80,6 +82,11 @@ export const File = ({
     >
       {getFileIcon()}
       <span className='truncate'>{name}</span>
+      {comment && (
+        <span className='ml-2 text-xs text-muted-foreground text-gray-400 truncate'>
+          {comment}
+        </span>
+      )}
     </div>
   );
 };

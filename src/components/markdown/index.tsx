@@ -6,8 +6,11 @@ import { File, FileTree, Folder } from "./file-tree";
 import { MDXNote } from "./mdx-note";
 import { CopyButton } from "./copy-button";
 import { CodeBlock } from "./code-block";
+import { MDXHeading2, MDXHeading3 } from "./mdx-heading";
 
 export const mdxComponents: MDXComponents = {
+  h2: MDXHeading2 as any,
+  h3: MDXHeading3 as any,
   pre: ({ children }: any) => {
     if (React.isValidElement(children) && children.type === "code") {
       const { className, children: code } = children.props as any;
