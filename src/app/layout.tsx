@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://albertdugba.dev"),
   title: "Albert Dugba",
   description:
-    "Experienced frontend software engineer focused on building enterprise grade, accessible, scalable web and mobile applications.",
+    "Ghanaian software engineer based in the UK, working on UI engineering, design systems, mobile apps, and developer tooling.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -22,27 +22,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: [{ url: "/images/profile.png" }],
   },
   openGraph: {
     title: "Albert Dugba",
     description:
-      "Experienced frontend software engineer focused on building enterprise grade, accessible, scalable web and mobile applications.",
+      "Ghanaian software engineer based in the UK, working on UI engineering, design systems, mobile apps, and developer tooling.",
     url: "https://albertdugba.dev",
     siteName: "Albert Dugba",
-    images: [
-      {
-        url: "/images/intro.png",
-        width: 800,
-        height: 600,
-      },
-      {
-        url: "/images/intro.png",
-        width: 1800,
-        height: 1600,
-        alt: "Albert Dugba",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },

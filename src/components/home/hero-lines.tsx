@@ -43,7 +43,7 @@ export function HeroArc() {
       aria-hidden='true'
       viewBox='0 0 600 600'
       fill='none'
-      className='pointer-events-none absolute left-[31rem] top-[26rem] -z-10 hidden h-[36rem] w-[36rem] max-w-none opacity-60 lg:block'
+      className='pointer-events-none absolute -right-48 top-[26rem] -z-10 hidden h-[36rem] w-[36rem] max-w-none opacity-60 lg:block'
     >
       <circle cx='300' cy='300' r='270' stroke={line} strokeDasharray='6 6' vectorEffect='non-scaling-stroke' />
       <path d='M470 -40L250 640' stroke={line} strokeDasharray='6 7' vectorEffect='non-scaling-stroke' />

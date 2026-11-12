@@ -1,164 +1,51 @@
 import { ImageResponse } from "next/og";
+import readingTime from "reading-time";
 import { getAllPosts } from "~/lib/posts";
+import { GRAY, OG_SIZE, OgFrame, ogFonts } from "~/lib/og";
 
-export const alt = "Blog Post";
-export const size = {
-  width: 1200,
-  height: 630,
-};
+export const alt = "Blog post by Albert Dugba";
+export const size = OG_SIZE;
 export const contentType = "image/png";
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+}
 
 export default async function Image({ params }: { params: { slug: string } }) {
   const posts = await getAllPosts();
   const post = posts.find((p) => p?.slug === params.slug);
+  const fonts = await ogFonts();
 
   if (!post) {
     return new ImageResponse(
       (
-        <div
-          style={{
-            fontSize: 48,
-            background: "#0a0a0a",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#ffffff",
-          }}
-        >
-          Post not found
-        </div>
+        <OgFrame footer={["WRITING", "albertdugba.dev/blog"]}>
+          <div style={{ fontSize: 80, fontWeight: 900, letterSpacing: "-0.045em" }}>Writing</div>
+        </OgFrame>
       ),
-      {
-        ...size,
-      }
+      { ...size, fonts }
     );
   }
 
+  // Long titles step down so they stay within three lines.
+  const titleSize = post.title.length > 70 ? 56 : post.title.length > 45 ? 66 : 76;
+  const meta = [formatDate(post.date), readingTime(post.body ?? "").text].join(" · ").toUpperCase();
+
   return new ImageResponse(
     (
-      <div
-        style={{
-          background: "#0a0a0a",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "space-between",
-          padding: "80px",
-          fontFamily: "system-ui",
-        }}
+      <OgFrame
+        footer={[meta, "albertdugba.dev/blog"]}
       >
-        {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
-          <div
-            style={{
-              fontSize: 32,
-              fontWeight: "bold",
-              color: "#ffffff",
-              display: "flex",
-            }}
-          >
-            albertdugba.dev
-          </div>
+        <div style={{ fontSize: titleSize, fontWeight: 900, lineHeight: 1.05, letterSpacing: "-0.04em", maxWidth: 1000 }}>
+          {post.title}
         </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-            maxWidth: "900px",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: 72,
-              fontWeight: "bold",
-              color: "#ffffff",
-              lineHeight: 1.2,
-              margin: 0,
-              display: "flex",
-              flexWrap: "wrap",
-            }}
-          >
-            {post.title}
-          </h1>
-          <p
-            style={{
-              fontSize: 32,
-              color: "#ffffff",
-              margin: 0,
-              display: "flex",
-            }}
-          >
-            {post.description}
-          </p>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              gap: "20px",
-              alignItems: "center",
-            }}
-          >
-            {post.tags && post.tags.length > 0 && (
-              <div
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                }}
-              >
-                {post.tags.slice(0, 3).map((tag: string) => (
-                  <span
-                    key={tag}
-                    style={{
-                      backgroundColor: "#ffffff",
-                      color: "#0a0a0a",
-                      padding: "8px 16px",
-                      borderRadius: "6px",
-                      fontSize: 24,
-                      fontWeight: "600",
-                      display: "flex",
-                    }}
-                  >
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            )}
+        {post.description && (
+          <div style={{ marginTop: 24, fontSize: 30, lineHeight: 1.35, color: GRAY, maxWidth: 940 }}>
+            {post.description.length > 140 ? `${post.description.slice(0, 137)}…` : post.description}
           </div>
-          <div
-            style={{
-              fontSize: 24,
-              color: "#cbd5e0",
-              display: "flex",
-            }}
-          >
-            {post.date}
-          </div>
-        </div>
-      </div>
+        )}
+      </OgFrame>
     ),
-    {
-      ...size,
-    }
+    { ...size, fonts }
   );
 }
