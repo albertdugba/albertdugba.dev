@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { Overpass } from "next/font/google";
-import { HeroBackground } from "./hero-background";
-import { HeroArc } from "./hero-lines";
 import { CompanyLink } from "./company-link";
 import { PracticeSentence } from "./practice-sentence";
 import { Socials } from "../socials";
@@ -12,20 +10,20 @@ export const Hero = () => {
   return (
     <section
       id='about'
-      className='relative isolate w-full max-w-[44rem] scroll-mt-8 pt-24 sm:pt-32 lg:pt-36'
+      className='relative isolate mx-auto w-full max-w-5xl scroll-mt-8 pt-24 sm:pt-32 lg:pt-36'
     >
-      <HeroBackground />
-      <HeroArc />
-
       <div className='relative z-10'>
         <div className='relative'>
           <p className='font-mono text-xs uppercase tracking-[0.14em] text-gray'>
             Software Engineer
           </p>
           <h1
-            className={`${overpass.className} mt-5 max-w-[38rem] text-[clamp(2.5rem,5.2vw,4.1rem)] leading-[1.05] tracking-[-0.03em] text-secondary`}
+            className={`${overpass.className} mt-5 text-[min(2.15rem,calc((100vw-2.5rem)/10))] sm:text-[clamp(2.15rem,5.2vw,4.1rem)] leading-[1.05] tracking-[-0.03em] text-secondary`}
           >
-            Building software that makes hard things feel simple
+            {/* Fixed breaks keep the headline at three lines on every screen. */}
+            <span className='block'>Turning complex</span>
+            <span className='block'>problems into</span>
+            <span className='block'>products people enjoy</span>
           </h1>
           <Socials size='lg' className='mt-9' />
           <div className='mt-8 h-px max-w-[13rem] bg-light-gray'>
@@ -34,8 +32,8 @@ export const Hero = () => {
         </div>
 
         <div className='mt-10 space-y-7 text-base leading-7 text-article-color sm:text-lg sm:leading-8'>
-          <p className='text-[1.075rem] leading-8 sm:text-xl sm:leading-9'>
-            I&apos;m Albert Dugba, a Ghanaian 🇬🇭 software engineer based in the UK. Today, I&apos;m a Product
+          <p>
+            I&apos;m Albert Dugba, a Ghanaian 🇬🇭 software engineer based in the UK. Presently, I&apos;m a Product
             Engineer at{" "}
             <CompanyLink href='https://www.deciphex.com/'>Deciphex</CompanyLink>
             , where I build interfaces and internal tools for a digital

@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { SwatchBook } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { IconType } from "react-icons";
+import { FaAws } from "react-icons/fa6";
 import {
   SiAndroid,
   SiApple,
@@ -14,7 +15,9 @@ import {
   SiEslint,
   SiExpo,
   SiFigma,
+  SiGnubash,
   SiGithubactions,
+  SiLinux,
   SiLit,
   SiNestjs,
   SiNextdotjs,
@@ -73,7 +76,6 @@ const PRACTICES: Practice[] = [
       { name: "Turborepo", icon: SiTurborepo, color: "#ef4444" },
       { name: "pnpm", icon: SiPnpm, color: "#f69220" },
       { name: "GitHub Actions", icon: SiGithubactions, color: "#2088ff" },
-      { name: "Docker", icon: SiDocker, color: "#2496ed" },
       { name: "ESLint", icon: SiEslint, color: "#4b32c3" },
       { name: "Vitest", icon: SiVitest, color: "#6e9f18" },
     ],
@@ -85,6 +87,16 @@ const BACKEND: Practice = {
   tools: [
     { name: "Node.js", icon: SiNodedotjs, color: "#5fa04e" },
     { name: "NestJS", icon: SiNestjs, color: "#e0234e" },
+  ],
+};
+
+const INFRA: Practice = {
+  label: "infra",
+  tools: [
+    { name: "Docker", icon: SiDocker, color: "#2496ed" },
+    { name: "Linux", icon: SiLinux, color: "var(--lighter-gray)" },
+    { name: "Bash", icon: SiGnubash, color: "#4eaa25" },
+    { name: "AWS", icon: FaAws, color: "#ff9900" },
   ],
 };
 
@@ -156,9 +168,9 @@ function PracticeList({ practices, offset }: { practices: Practice[]; offset: nu
 export function PracticeSentence() {
   return (
     <p id='practice'>
-      Most of my work is in <PracticeList practices={PRACTICES} offset={0} />, but I
-      also juggle <PracticeList practices={[BACKEND]} offset={PRACTICES.length} /> to get the job
-      done.
+      Most of my work is in <PracticeList practices={PRACTICES} offset={0} />. I also build{" "}
+      <PracticeList practices={[BACKEND]} offset={PRACTICES.length} /> and the{" "}
+      <PracticeList practices={[INFRA]} offset={PRACTICES.length + 1} /> to run them.
     </p>
   );
 }

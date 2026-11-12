@@ -14,7 +14,7 @@ export function HeroBackground() {
       <svg
         viewBox='0 0 760 640'
         fill='none'
-        className='absolute left-[24rem] top-0 h-[37rem] w-[43rem] max-w-none opacity-25'
+        className='absolute -right-24 top-0 h-[37rem] w-[43rem] max-w-none opacity-25'
       >
         {/* sweeping guide curves */}
         <path

@@ -12,7 +12,7 @@ export default async function Image() {
         footer={["SOFTWARE ENGINEER", "albertdugba.dev"]}
       >
         <div style={{ fontSize: 88, fontWeight: 900, lineHeight: 1.02, letterSpacing: "-0.045em", maxWidth: 940 }}>
-          Building software that makes hard things feel simple
+          Turning complex problems into products people enjoy
         </div>
       </OgFrame>
     ),
